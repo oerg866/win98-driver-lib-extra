@@ -1,0 +1,200 @@
+; INF file for Win9x NVidia RIVA 128 Display and Direct Draw drivers
+; Copyright 1997-99, NVidia Corporation
+
+[version]
+LayoutFile=layout.inf
+Class=DISPLAY
+signature="$CHICAGO$"
+Provider=%Mfg%
+SetupClass=BASE
+
+
+; Disk & Directory sections
+;----------------------------------------
+[DestinationDirs]
+DefaultDestDir  = 11    ; LDID_SYS
+NV3.Copy = 11
+Nv3Tweak.Files.Dll = 11
+Nv3Tweak.Files.Hlp = 18
+NV3.Copy.Inf = 17
+
+[SourceDisksNames]
+1="Windows 95/98 RIVA 128 Driver Disk",,0
+
+[SourceDisksFiles]
+nv3agp.inf=1
+nv3disp.drv=1
+nv3dd32.dll=1
+nv3api.dll=1
+nv3sys.dll=1
+nv3.vxd=1
+nv3mini2.vxd=1
+nv3rm.vxd=1
+vgartd.vxd=1
+nv3ogl.dll=1
+Nv3Tweak.Dll=1
+Nv3Tweak.Hlp=1
+Nv3QTwk.Dll=1
+
+
+; Manufacturers
+;----------------------------------------
+[Manufacturer]
+%Mfg%=Mfg
+
+; Driver sections
+;----------------------------------------
+[Mfg]
+%NVidia&DEV_0018.DeviceDesc%=NV3,,PCI\VEN_12D2&DEV_0018&SUBSYS_030012D2_REV_01
+%NVidia&DEV_0018.DeviceDesc%=NV3,,PCI\VEN_12D2&DEV_0018
+[ControlFlags]
+
+
+; Install sections
+;----------------------------------------
+[NV3]
+CopyFiles=NV3.Copy, NV3.Copy.Inf, Nv3Tweak.Files.Dll, Nv3Tweak.Files.Hlp
+DelReg=Prev.DelReg, Prev.DynReg
+AddReg=NV3.AddReg, NV3Tweak.AddReg, OEMDefaults.AddReg
+
+[DefaultUnInstall]
+DelFiles  = Nv3Tweak.Files.Hlp, Nv3Tweak.Files.Dll
+DelReg    = NV3Tweak.AddReg, Prev.DynReg
+
+[NV3.Copy]
+nv3disp.drv
+nv3dd32.dll
+nv3.vxd
+nv3mini2.vxd
+nv3rm.vxd
+nv3api.dll
+nv3sys.dll
+vgartd.vxd
+nv3ogl.dll
+
+[NV3.Copy.Inf]
+nv3agp.inf
+
+[Nv3Tweak.Files.Dll]
+Nv3Tweak.dll
+Nv3QTwk.dll
+
+[Nv3Tweak.Files.Hlp]
+Nv3Tweak.hlp
+
+[NV3.DelFiles]
+
+[Prev.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKLM,System\CurrentControlSet\Services\VxD\NV3RM
+HKLM,Software\Microsoft\Windows\CurrentVersion\OpenGLdrivers,RIVA128
+HKCR,CLSID\%ThisGUID%,,,"%Nv3TweakName%"
+HKCR,CLSID\%ThisGUID%\InProcServer32,,,"%11%\%ThisDLL%"
+HKCR,CLSID\%ThisGUID%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%HandlerKey%\%Nv3TweakName%,,,%ThisGUID%
+HKLM,%OldRootKey%\%DispSubKey%
+HKLM,%OldRootKey%\%OGLSubKey%
+HKLM,%OldD3DKey%
+HKLM,%UnInstKey%
+
+[Prev.DynReg]
+HKLM,%RunKey%,%QTwkValue%
+HKLM,%SettingsKey%\%NV3TweakName%\%OEMDefKey%
+
+[NV3.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\VGARTD,StaticVxD,2,"vgartd.vxd"
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"8,640,480"
+HKR,DEFAULT,drv,,nv3disp.drv
+HKR,DEFAULT,drv2,,nv3disp.drv
+HKR,DEFAULT,minivdd,,"nv3.vxd"
+HKR,DEFAULT,minivdd2,,"nv3mini2.vxd"
+HKR,DEFAULT,vdd,,"*vdd"
+; Make the default = adapter default
+;HKR,DEFAULT,RefreshRate,,0
+; Make the default = optimal
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,"MODES\4\640,480",drv,,vga.drv
+HKR,"MODES\4\640,480",vdd,,*vdd
+;HKR,"MODES\8\640,400"
+HKR,"MODES\8\640,480",,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\800,600",,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\1024,768",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1152,864",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1280,1024",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1600,1200",,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1080",,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1200",,,"60,70,72,75"
+;HKR,"MODES\16\640,400"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\16\1800,1440"
+;HKR,"MODES\32\640,400"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\1024,768",,,"60,70,72,75,85,100"
+HKR,"MODES\32\1152,864",,,"60,70,72,75,85"
+HKR,"MODES\32\1280,1024",,,"60,70"
+HKR,"MODES\32\1600,1200",,,"60"
+HKLM,Software\Microsoft\Windows\CurrentVersion\OpenGLdrivers,RIVA128,2,"nv3ogl.dll"
+
+[NV3Tweak.AddReg]
+HKCR,CLSID\%ThisGUID%,,,"%Nv3TweakName%"
+HKCR,CLSID\%ThisGUID%\InProcServer32,,,"%11%\%ThisDLL%"
+HKCR,CLSID\%ThisGUID%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%HandlerKey%\%Nv3TweakName%,,,%ThisGUID%
+HKLM,%UnInstKey%
+HKLM,%UnInstKey%,DisplayName,,%UnInstDisplayName%
+HKLM,%UnInstKey%,UninstallString,,"rundll.exe setupx.dll,InstallHinfSection DefaultUninstall 132 %17%\%ThisINF%"
+HKCU,"Control Panel\Keyboard","KeyboardSpeed",,"31"
+HKCU,"Control Panel\Keyboard","KeyboardDelay",,"0"
+
+[OEMDefaults.AddReg]
+;************************************************************
+; Use this section to modify registry settings upon install *
+; and to define which values NV3 Tweak should default to    *
+;************************************************************
+
+; Example: The first line sets up monitor timing upon installation
+; while the second line defines this as the default setting for
+; the control panel (user chooses "Restore Defaults" button).
+
+;HKLM,%SettingsKey%\%DispSubKey%,DMTOVERRIDE,65537,1,0,0,0
+;HKLM,%SettingsKey%\%NV3TweakName%\%OEMDefKey%,DMTOVERRIDE,65537,1,0,0,0
+
+;HKLM,%SettingsKey%\%Direct3DKey%,MIPMAPLEVELS,65537,0,0,0,0
+;HKLM,%SettingsKey%\%NV3TweakName%\%OEMDefKey%,MIPMAPLEVELS,65537,0,0,0,0
+
+; User visible strings
+;----------------------------------------
+[Strings]
+Mfg="NVidia"
+NVidia&DEV_0018.DeviceDesc="NVidia RIVA 128/128ZX"
+Nv3TweakName="NV3Tweak"
+UnInstKey="Software\Microsoft\Windows\CurrentVersion\Uninstall\NV3Tweak"
+HandlerKey="Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers"
+RunKey="Software\Microsoft\Windows\CurrentVersion\Run"
+OEMDefKey="Defaults"
+SettingsKey="Software\NVIDIA Corporation\RIVA 128"
+OGLSubKey="OpenGL"
+DispSubKey="Display"
+QTwkValue="NV3QuickTweak"
+ThisGUID="{110AED10-388C-11D0-8EBD-00A024D29F34}"
+ThisDLL="Nv3Tweak.dll"
+Direct3DKey="Direct3D"
+OldD3DKey="NV3D3D"
+OldRootKey="Software\NVIDIA Corporation"
+UnInstDisplayName="NV3Tweak (NVIDIA control panel applet)"
+ThisINF="NV3AGP.INF"

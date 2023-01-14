@@ -1,0 +1,172 @@
+** CMI8338 PCI Audio Windows 95/98 Drivers Release Note **
+
+
+ver 4.06.1055  04/12/99
+
+1. Fix sound problem when running DOS game WARCRAFT2 & DOOM2.
+2. Drivers version follow the WHQL naming rules that drivers 
+   supports DX6 the version must greater than 4.06.
+
+
+ver 4.05.1052  04/01/99
+
+1. Optional CPU utilization for HRTF positional audio.
+
+
+ver 4.05.1050  03/23/99
+
+1. Supports MCI four speakers mode for DVD.
+2. Fix a bug that play FM with wave at the same time.
+3. Open setting default volume control in INF file.
+4. Enhance HRTF positional audio performance when using over
+   four channels positional audio.
+5. Drivers version naming changed according to Microsoft rules.
+6. Restrict play two wave files simultaneously.
+
+ver 4.10.00.0144  02/09/99
+
+1. Fix four speakers muted problem when switching mixer four
+   speakers item during play DirectSound waves.
+2. Optional CPU performance for HRTF positional audio.
+
+
+ver 4.10.00.0141  02/04/99
+
+1. DirectSound functions support four speakers mode.
+
+
+ver 4.10.00.0140  02/02/99
+
+1. Recover master and wave volume panning control.
+2. Enhance positional audio performance.
+
+
+ver 4.10.00.0139  01/27/99
+
+1. Change the legacy device ID.
+2. Disable wave interpolation function.
+
+
+ver 4.10.00.0137  01/08/99
+
+1. Fix ACT4.0 wave test problem.
+
+
+ver 4.10.00.0136  01/07/99
+
+1. Solve the BitWave MODEM program sound problem.
+
+
+ver 4.10.00.0135  12/31/98
+
+1. Solve the sound incontinous problem in AudioWinbench 99 testing.
+2. Expanded DirectSound3D secondary buffer to 32.
+
+
+ver 4.10.00.0134  12/21/98
+
+1. Solve the rear speakers sound problem when quit from 
+   AudioWinbench 99 in Win98.
+
+
+ver 4.10.00.0133  12/18/98
+
+1. Solve the sound non-stop problem when quit 
+   from DirectSound3D games in Win98.
+2. Modify resources management of DirectSound3D.
+
+
+ver 4.10.00.0132  12/17/98
+
+1. Remove master and wave volume balance control.
+
+
+ver 4.10.00.0131  12/15/98
+
+1. Add safety check in DirectSound functions.
+
+
+ver 4.10.00.0129  12/12/98
+
+1. Fix wave volume mute control when use DirectSound to play wave.
+2. Fix rear speakers volume controls when use DirectSound3D.
+
+
+ver 4.10.00.0128  12/11/98
+
+1. Fix FM no output when play FM and wave at the same time
+   in four speakers mode.
+2. Fix volume panning control in four speakers mode.
+3. Modify master volume control to fit all of mixer sources
+   (including rear speakers) in four speakers mode.
+
+
+ver 4.10.00.0127  12/09/98
+
+1. Modify master volume control in four speakers mode.
+
+
+ver 4.10.00.0126  12/08/98
+
+1. Support four speakers when play wave.
+2. Remove the rear speaker control in mixer. 
+   (Use wave output volume to control both front and rear speakers.)
+3. Make mixer playback and recording volume control synchronously.
+4. Solve DirectSound wave output format error When SPDIF-OUT enabled.
+
+
+ver 4.10.00.0125  12/02/98
+
+1. Mute master volume during system suspended.
+2. Default master volume -3dB decay.
+3. Fix legacy device reload problem when come back from suspend mode.
+
+
+ver 4.10.00.0124  11/30/98
+
+1. Solve the game REDLINE RACER sound mute problem when 3D sound enabled.
+2. Fix legacy device problem when refresh the system in device manager.
+
+
+ver 4.10.00.0123  11/20/98
+
+1. Legacy device IRQ channel shared with others device.
+
+
+ver 4.10.00.0122  11/17/98
+
+1. Modify for A3D demo and Audio WinBench 99 noise problem.
+2. Mixer default set CD,wave and FM output on.
+3. Mixer default volume set to maximum.
+4. Mixer volume control move Surround and SPIDF In to advanced controls.
+5. Mixer recording control move SPDIF In to advanced controls.
+6. Solve mixer Aux In left and right channels inverse when panning.
+
+
+ver 4.10.00.0121  11/10/98
+
+1. Enable hardware SPDIF-out only when playing 44.1KHz wave.
+
+
+ver 4.10.00.0120  11/09/98
+
+1. Resolve the problem that IRQ conflict with INTEL 730 AGP card.
+2. Format check on SPDIF playing and recording when SPDIF-out enable.
+3. Automatic check on SPDIF-in device attaching for recording.
+4. Default installation mute all mixer output except wave and FM.
+
+
+ver 4.10.00.0119  11/04/98
+
+1. Correct first installation FM and MPU401 not loaded.
+2. Correct that WHQL(ACT4.0/HCT8.0) Dynamic configuration test failed.
+3. Merge softMIDI device with DOS mode MPU-401 MIDI emulator.
+4. Resolve WHQL(ACT4.0/HCT8.0) MIDI IN problem.
+
+
+ver 4.10.00.0118  10/20/98
+
+1. Wave and softMIDI can playback simultaneously.
+2. Resolve drivers conflicted with ATI AGP VGA card.
+3. Add DOS mode MPU-401 MIDI emulator.
+4. Add install Windows default mixer program.

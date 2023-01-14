@@ -1,0 +1,203 @@
+; 1371 + 1373 + 5880
+; Sound Blaster AudioPCI INF file
+; Windows 9x Drivers Only
+;
+; Date     : 30 Mar 2000
+; Revision : 1.14.006
+;
+; Copyright 1995-2000, Creative Technology Ltd.
+
+[Version]
+; needed for MS joystick files
+layoutfile=layout.inf
+
+Signature="$CHICAGO$"
+Class=MEDIA
+provider=%Creative%
+CatalogFile=ctpci9x.cat
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,1
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%MfgName%=CREATIVE
+
+[CREATIVE]
+%DEV_1371.DeviceDesc%=DEV1371.Device,PCI\VEN_1274&DEV_1371                   ; Concert AC97 PCI board
+%DEV_1371.DeviceDesc%=DEV1371.Device,PCI\VEN_1274&DEV_5880                   ; 5880 board
+%SSC-Legacy.DeviceDesc%=SSC_Legacy_Device, VIRTUAL\SSC-Legacy
+%ENSJoy.DeviceDesc%=ENSJoy.Device, VIRTUAL\*PNPB02F
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;---------------------------------------------------------------;
+[DEV1371.Device]
+UpdateAutoBat=Soundscape.UpdateAutoBat
+DelFiles=Soundscape.DeleteList
+CopyFiles=sscncrt.SystemCopyList,sscncrt.IosubsysCopyList
+AddReg=WAVE.AddReg, E4080.AddReg, sscncrt.AddReg, A3D.AddReg
+
+[SSC_Legacy_Device]
+AddReg=SSC_Legacy_Device.AddReg
+
+[ENSJoy.Device]
+AddReg=JOYSTICK.AddReg, MSJSTICK.AddReg
+UpdateInis=MSJSTICK.UpdateInis
+
+[Soundscape.UpdateAutoBat]
+CmdDelete=SSINIT.EXE
+CmdDelete=SBINIT.COM
+
+;---------------------------------------------------------------;
+
+[Soundscape.DeleteList]
+sndscape.drv,,
+vsndscp.386,,
+sscape.cpl,,
+sndscape.hlp,,
+concert.vxd,,
+sbpci.vxd,,
+sbpci9x.drv,,
+sbpcir16.dll,,
+sbpci9x.hlp,,
+
+[sscncrt.SystemCopyList]
+ctpci9x.vxd,,
+ctpci9x.drv,,
+ctpcir16.dll,,
+ctpcihlp.dll,,
+a3d.dll,,
+ac3api.dll,,
+
+; wavesets
+eapci2m.ecw,,
+default.ecw,eapci2m.ecw,
+
+[sscncrt.IosubsysCopyList]
+ensqio.vxd,,
+
+;---------------------------------------------------------------;
+
+[E4080.AddReg]
+HKR,Drivers\wave\ctpci9x.drv,Description,,%DEV_1371.DeviceDesc%
+HKR,Drivers\mixer\ctpci9x.drv,Description,,%DEV_1371.DeviceDesc%
+HKR,Drivers\aux\ctpci9x.drv,Description,,%DEV_1371.DeviceDesc%
+HKR,Drivers\midi\ENSONIQ_Synth,Description,,%ENSxxxx.InternalMIDI%
+HKR,Drivers\midi\ENSONIQ_Out,Description,,%ENSxxxx.ExternalMIDI%
+
+[sscncrt.AddReg]
+HKR,,Driver,,ctpci9x.vxd
+HKR,Drivers\wave\ctpci9x.drv,,,
+HKR,Drivers\wave\ctpci9x.drv,Driver,,ctpci9x.drv
+HKR,Drivers\mixer\ctpci9x.drv,,,
+HKR,Drivers\mixer\ctpci9x.drv,Driver,,ctpci9x.drv
+HKR,Drivers\aux\ctpci9x.drv,,,
+HKR,Drivers\aux\ctpci9x.drv,Driver,,ctpci9x.drv
+HKR,Drivers\midi\ENSONIQ_Synth,Driver,,ctpci9x.drv
+HKR,Drivers\midi\ENSONIQ_Synth,External,1,00,00,00,00
+HKR,Drivers\midi\ENSONIQ_Synth,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\ENSONIQ_Synth,Port,1,00,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,Driver,,ctpci9x.drv
+HKR,Drivers\midi\ENSONIQ_Out,External,1,01,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,Port,1,01,00,00,00
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,,EnumPropPages,,"ctpci9x.drv,DrvEnumPropPages"
+
+; this key tells the driver which product we are installing for
+HKLM,Software\"Creative Tech"\SBPCI,ProductInf,,"%InfFileName%"
+
+; adds keys for our wavesets
+HKLM,Software\"Creative Tech"\Waveset,current,1,00,00,00,00
+HKLM,Software\"Creative Tech"\Waveset\0000,Filename,,"%11%\eapci2m.ecw"
+HKLM,Software\"Creative Tech"\Waveset\0000,Title,,"2 MB General MIDI"
+
+;Things that run on startup
+HKLM, Software\Microsoft\Windows\CurrentVersion\Run, SystemTray, , "SysTray.ExE"
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+
+[SSC_Legacy_Device.AddReg]
+HKR,,DeviceDriver,,ctpci9x.vxd
+HKR,,DevLoader,,*CONFIGMG
+HKR,,SBEmu,1,01
+HKR,,EnumPropPages,,"ctpci9x.drv,DrvEnumLegacyPages"
+
+[A3D.AddReg]
+HKCR,A3D,,,"A3d Object"
+HKCR,A3D\CLSID,,,"{D8F1EEE0-F634-11CF-8700-00A0245D918B}"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B},,,"A3D Object"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InprocServer32,,,"A3D.DLL"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InprocServer32,"ThreadingModel", ,"Apartment"
+
+;---------------------------------------------------------------;
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[MSJSTICK.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%ENSJoy.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[MSJSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+;---------------------------------------------------------------;
+
+[DestinationDirs]
+DefaultDestDir           = 11            ; LDID_SYS
+sscncrt.SystemCopyList   = 11            ; LDID_SYS
+sscncrt.IosubsysCopyList = 12            ; LDID_IOS
+
+[SourceDisksNames]
+1=%DriverDisk1%,,
+
+[SourceDisksFiles]
+ctpci9x.vxd    =1
+ctpci9x.drv    =1
+ctpcir16.dll   =1
+ctpcihlp.dll   =1
+a3d.dll        =1
+ac3api.dll     =1
+ensqio.vxd     =1
+
+; wavesets
+eapci2m.ecw    =1
+
+;---------------------------------------------------------------;
+
+[Strings]
+Creative              ="Creative"
+MfgName               ="Creative"
+DEV_1371.DeviceDesc   ="Sound Blaster AudioPCI"
+SSC-Legacy.DeviceDesc ="Sound Blaster AudioPCI Legacy Device"
+ENSJoy.DeviceDesc     ="Creative Gameport Joystick"
+InfFileName           ="SbaPci9x.Inf"
+DriverDisk1           ="Sound Blaster AudioPCI Driver Disk"
+
+ENSxxxx.ExternalMIDI  ="SB AudioPCI External MIDI Port"
+ENSxxxx.InternalMIDI  ="SB AudioPCI Internal Synth"
+
+MediaClassName        ="Sound, video and game controllers"
+V_CLSWAVEFORM         ="Audio"
+V_CLSMIDI             ="MIDI"
+V_CLSMIXER            ="Mixer"
+V_CLSAUX              ="Auxiliary"
+V_GENERAL             ="General MIDI Instrument"

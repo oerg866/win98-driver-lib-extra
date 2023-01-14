@@ -1,0 +1,70 @@
+; Copyright (c) 1996 Aztech Labs, Inc.
+[version]
+signature="$CHICAGO$"
+Class=hdc
+provider=%AZTECH%
+LayoutFile=Layout.inf
+
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+HKR,,Icon,,-9
+
+[Manufacturer]
+%AZTMfgName%=AztechLabs
+
+[DestinationDirs]
+Register.Copy    = 17     ;LDID_INF
+
+[Register.Copy]
+WR96_IDE.inf,,
+WR96_AUD.inf,,
+
+[SourceDisksNames]
+1=" Disk 1",,0001
+
+[SourceDisksFiles]
+ide.inf=1
+audio.inf=1
+
+[AztechLabs]
+%*AZT0000.DeviceDesc%=AZT0000_Device, ISAPNP\AZT1023_DEV0000
+
+[*azt0000.det]          ;AZT2320 Logical Device 0 (IDE CDROM)
+AddReg = HDC_HW_REG
+
+[AZT0000_Device]
+AddReg = ESDI_AddReg
+CopyFiles=Register.Copy
+
+[AZT0000_Device.PosDup]
+*AZT0000
+
+[ESDI_AddReg]
+HKLM,Enum\ISAPNP\AZT1023_DEV0000\FFFFFFFF,ConfigFlags,1,00000000
+HKR,,DriverDesc,,"ESDI Port Driver"
+HKR,,DevLoader,,*IOS
+;--------------------------------------------------
+;  Note :
+;      On some system when 2320 ide was disable (Option 2), 
+;      it will have conflict with system's on board secondary 
+;      ide interface. For such cases, a ";" sign should be 
+;      placed infornt of the following line.
+;      However, if 2320 ide interface is connected to a cdrom, 
+;      drive, you need to remove the ";" sign from the line in 
+;      order for the interface to function properly.
+;      **  The default ide setting is Enable  **
+
+HKR,,PortDriver,,ESDI_506.pdr
+;---------------------------------------------------
+
+[HDC_HW_REG]
+HKR,,NoSetupUI,,1
+
+[Strings]
+AZTECH="Aztech"
+AZTMfgName="Aztech Labs"
+*AZT0000.DeviceDesc = "IDE Controller Device (AZT1023)"
+HDCClassName = "Hard disk controllers"

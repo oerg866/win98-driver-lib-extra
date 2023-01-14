@@ -1,0 +1,148 @@
+:Base pdeskspa.hlp>Main
+:Title Matrox PowerDesk
+
+1 Información general=IDH_OVERVIEW
+
+1 Uso de esta guía=IDH_CONVENTIONS
+
+1 Menú de Matrox QuickDesk
+2	Información general=IDH_QUICKDESK_OVERVIEW
+2	Elementos de menú
+3		Teclas de acceso rápido=IDH_HOT_KEYS
+3		Esquemas de escritorio=IDH_DESKTOP_SCHEMES
+3		Posiciones de la ventana=IDH_WINDOW_POSITIONS
+3		Iconos de escritorio=IDH_ICON_POSITIONS
+3		Ayuda=IDH_QUICKDESK_HELP
+3		Iniciar Matrox DeskNav=IDH_START_MATROX_DESKNAV
+3		Iniciar el protector de pantalla=IDH_START_SCREEN_SAVER
+3		Propiedades de pantalla=IDH_DISPLAY_PROPERTIES
+3		Cerrar Matrox QuickDesk=IDH_CLOSE_MATROX_QUICKDESK
+
+1 Hoja de propiedades Configuración del monitor
+2	Información general=IDH_MONITOR
+2	Controles
+3		Actualización presente=IDH_CURRENT_REFRESH
+3		Utilizar opciones personalizadas para la configuración del monitor de Windows=IDH_USE_CUSTOM_SETTINGS
+3		Ajustar el modo de pantalla actual=IDH_MODIFY_CURRENT_MODE
+3		Ajustar un modo de pantalla distinto=IDH_MODIFY_OTHER_MODE
+3		Seleccionar opciones personalizadas de la lista de Matrox=IDH_SELECT_PROFILE
+3		Cargar un archivo de opciones personalizadas=IDH_LOAD_CUSTOMIZATIONS
+3		Guardar un archivo de opciones personalizadas=IDH_SAVE_CUSTOMIZATIONS
+3		Eliminar todas las opciones personalizadas=IDH_DELETE_CUSTOMIZATIONS
+3		Utilizar controles del monitor simplificados=IDH_USE_SIMPLE_CONTROLS
+
+1 Hoja de propiedades Color
+2	Información general=IDH_COLOR_OVERVIEW
+
+1 Hoja de propiedades Opciones
+2	Información general=IDH_OPTIONS_OVERVIEW
+
+1 Hoja de propiedades Información
+2	Información general=IDH_INFORMATION_OVERVIEW
+2	Elementos
+3		Hardware de gráficos=IDH_INFORMATION_HARDWARE
+3		Modelo=IDH_MODEL
+3		Procesador de gráficos=IDH_GRAPHICS_CHIP
+3		Número de serie=IDH_SERIAL_NUMBER
+3		Tipo de memoria=IDH_MEMORY_TYPE
+3		Cantidad de memoria=IDH_MEMORY
+3		Velocidad máxima del RAMDAC=IDH_RAMDAC_SPEED
+3		Hardware adicional=IDH_EXTRA_HARDWARE
+3		Software de gráficos (versiones)=IDH_INFORMATION_SOFTWARE
+3		Paquete de controladores Matrox=IDH_MATROX_DRIVER_PACKAGE
+3		Controlador de pantalla=IDH_DISPLAY_DRIVER
+3		Mini VDD (Windows 95/98/Me)=IDH_VDD
+3		Controlador incorporado en el núcleo (Windows 2000)=IDH_KERNEL_DRIVER
+3		Controlador DirectDraw/Direct3D=IDH_DIRECTDRAW_DIRECT3D_DRIVER
+3		ICD OpenGL=IDH_OPENGL_ICD
+3		Controlador TurboGL=IDH_TURBOGL_DRIVER
+3		Matrox PowerDesk=IDH_MATROX_POWERDESK
+3		BIOS de gráficos=IDH_GRAPHICS_BIOS
+3		Microsoft DirectX=IDH_MICROSOFT_DIRECTX
+
+1 Hoja de propiedades DualHead
+2	Información general=IDH_DUALHEAD_OVERVIEW
+2	Características
+3		Múltiples pantallas DualHead
+4			Información general=IDH_DUALHEAD_MULTIDISPLAY
+4			Utilizar Múltiples pantallas DualHead=IDH_USE_DUALHEAD_MULTIDISPLAY
+4			Múltiples pantallas DualHead -- Limitaciones=IDH_DUALHEAD_MULTIDISPLAY_LIMITATIONS
+4			Modo de Múltiples pantallas DualHead (sólo Windows 2000)=IDH_DUALHEAD_MULTIDISPLAY_MODE
+3		Clon DualHead
+4			Información general=IDH_DUALHEAD_CLONE
+4			Permitir escalamiento=IDH_ALLOW_SCALING
+4			Calidad/Rendimiento=IDH_QUALITY_PERFORMANCE
+3		Zoom DualHead
+4			Información general=IDH_DUALHEAD_ZOOM
+4			Seguir puntero del ratón=IDH_FOLLOW_MOUSE_POINTER
+4			Centrar en el puntero del ratón=IDH_CENTER_ON_MOUSE_POINTER
+4			Área de zoom suavizada=IDH_SMOOTH_ZOOMED_AREA
+3		DVDMax DualHead
+4			Información general=IDH_DUALHEAD_DVDMAX
+4			Utilizar DVDMax DualHead=IDH_USE_DUALHEAD_DVDMAX
+4			Relación de aspecto=IDH_ASPECT_RATIO
+4			Poner siempre a escala de pantalla completa=IDH_SCALE_FULL_SCREEN
+4			Mantener la relación de aspecto=IDH_PRESERVE_ASPECT_RATIO
+4			Relación de aspecto de la TV=IDH_TV_ASPECT_RATIO
+4			Método de detección de la relación de aspecto=IDH_ASPECT_RATIO_DETECTION
+4			Configuración avanzada=IDH_DVDMAX_ADVANCED_SETTINGS
+4			Mantener cortes de origen=IDH_PRESERVE_SOURCE_CROPPING
+4			Escalar sólo en cambio de página=IDH_SCALE_ONLY_ON_PAGE_FLIP
+4			Utilizar escala basada en campos=IDH_USE_FIELD_BASED_SCALING
+2	Configuración avanzada
+3		Limitaciones del monitor secundario
+4			Información general=IDH_DUALHEAD_SECONDARY_MONITOR_LIMITS
+3		Capacidades de pantalla
+4			Información general=IDH_DUALHEAD_DISPLAY_CAPABILITIES
+4			Memoria gráfica máxima para pantalla secundaria=IDH_MAXIMUM_GRAPHICS_MEMORY
+4			Modos de pantalla aceptados=IDH_SUPPORTED_DISPLAY_MODES
+3		Memoria AGP
+4			Información general=IDH_DUALHEAD_AGP_MEMORY
+2	Salida de TV
+3		Ajustes de TV
+4			Información general=IDH_DUALHEAD_TV_ADJUSTMENTS
+2	Seleccionar salida secundaria
+3		Información general=IDH_DUALHEAD_SELECT_SECONDARY_OUTPUT
+3		Información general=IDH_TV_SETTINGS
+
+1 Hoja de propiedades Salida de TV
+2	Información general=IDH_TV_OUTPUT
+
+1 Matrox DeskNav
+2	Información general=IDH_DESKNAV_OVERVIEW
+2	Menús / elementos de menú
+3		Siempre visible=IDH_ALWAYS_ON_TOP
+3		Mostrar menú=IDH_SHOW_MENU
+3		Mostrar barra de herramientas=IDH_SHOW_TOOLBAR
+3		Mostrar presentación preliminar=IDH_SHOW_PREVIEW_AREA
+3		Actualizar presentación preliminar=IDH_DESKNAV_PREVIEW_REFRESH
+3		Tamaño proporcional=IDH_PROPORTIONAL_SIZING
+3		Preferencias=IDH_DESKNAV_PREFERENCES
+3		Ventana=IDH_DESKNAV_WINDOW
+2	Botones opcionales de la barra de herramientas
+3		Acercamiento=IDH_DESKNAV_ZOOMIN
+3		Alejamiento=IDH_DESKNAV_ZOOMOUT
+3		CenterWINDOW=IDH_DESKNAV_CENTERWINDOW
+2	Preferencias
+3		Ajustar a esquina=IDH_SNAP_TO_CORNER
+3		Mantener DeskNav en la pantalla del puntero del ratón=IDH_MOUSE_POINTER_DISPLAY
+3		Centrar el puntero del ratón al cambiar el área de visualización=IDH_CENTER_MOUSE_POINTER
+3		Tamaño proporcional=IDH_PROPORTIONAL_SIZING_PREFERENCE
+3		Mostrar menú=IDH_SHOW_MENU
+3		Mostrar barra de herramientas=IDH_SHOW_TOOLBAR
+3		Mostrar presentación preliminar=IDH_SHOW_PREVIEW_AREA
+3		Mostrar el fotograma del escritorio=IDH_SHOW_DESKTOP_SNAPSHOT
+3		Ocultar DeskNav en el fotograma del escritorio=IDH_HIDE_DESKNAV_SNAPSHOT
+3		Actualizar automáticamente el fotograma del escritorio=IDH_AUTOMATICALLY_UPDATE
+
+1 Más información
+2	Más información=IDH_MORE_INFORMATION
+2	Términos
+3		Paleta de colores=IDH_COLOR_PALETTE
+3		Área del escritorio=IDH_DESKTOP_AREA
+3		Área de visualización=IDH_DISPLAY_AREA
+3		Modo de pantalla=IDH_DISPLAY_MODE
+3		Resolución de pantalla=IDH_DISPLAY_RESOLUTION
+3		Escritorio de múltiples pantallas=IDH_MULTI_DISPLAY_DESKTOP
+3		Píxel=IDH_PIXEL
+3		Frecuencia de actualización=IDH_TERM_REFRESH_RATE

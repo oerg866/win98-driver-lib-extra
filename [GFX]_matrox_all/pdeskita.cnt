@@ -1,0 +1,148 @@
+:Base pdeskita.hlp>Main
+:Title Matrox PowerDesk
+
+1 Panoramica=IDH_OVERVIEW
+
+1 Utilizzo della guida=IDH_CONVENTIONS
+
+1 Menu Matrox QuickDesk
+2	Panoramica=IDH_QUICKDESK_OVERVIEW
+2	Voci di menu
+3		Tasti di scelta rapida=IDH_HOT_KEYS
+3		Schemi del desktop=IDH_DESKTOP_SCHEMES
+3		Posizioni delle finestre=IDH_WINDOW_POSITIONS
+3		Icone del desktop=IDH_ICON_POSITIONS
+3		Guida=IDH_QUICKDESK_HELP
+3		Avvia Matrox DeskNav=IDH_START_MATROX_DESKNAV
+3		Avvia lo screen saver=IDH_START_SCREEN_SAVER
+3		Proprietà schermo=IDH_DISPLAY_PROPERTIES
+3		Chiudi Matrox QuickDesk=IDH_CLOSE_MATROX_QUICKDESK
+
+1 Impostazioni del monitor, finestra delle proprietà
+2	Panoramica=IDH_MONITOR
+2	Controlli
+3		Aggiornamento corrente=IDH_CURRENT_REFRESH
+3		Utilizza impostazioni personalizzate del monitor di Windows=IDH_USE_CUSTOM_SETTINGS
+3		Regola la modalità dello schermo corrente=IDH_MODIFY_CURRENT_MODE
+3		Regola una modalità dello schermo differente=IDH_MODIFY_OTHER_MODE
+3		Seleziona le impostazioni personalizzate dall'elenco Matrox=IDH_SELECT_PROFILE
+3		Carica un file di impostazioni personalizzate=IDH_LOAD_CUSTOMIZATIONS
+3		Salva un file di impostazioni personalizzate=IDH_SAVE_CUSTOMIZATIONS
+3		Elimina tutte le impostazioni personalizzate=IDH_DELETE_CUSTOMIZATIONS
+3		Utilizza controlli semplificati del monitor=IDH_USE_SIMPLE_CONTROLS
+
+1 Colore, finestra delle proprietà
+2	Panoramica=IDH_COLOR_OVERVIEW
+
+1 Opzioni, finestra delle proprietà
+2	Panoramica=IDH_OPTIONS_OVERVIEW
+
+1 Informazione, finestra delle proprietà
+2	Panoramica=IDH_INFORMATION_OVERVIEW
+2	Elementi
+3		Hardware grafico=IDH_INFORMATION_HARDWARE
+3		Modello=IDH_MODEL
+3		Chip grafico=IDH_GRAPHICS_CHIP
+3		Numero di serie=IDH_SERIAL_NUMBER
+3		Tipo di memoria=IDH_MEMORY_TYPE
+3		Quantità di memoria=IDH_MEMORY
+3		Velocità RAMDAC massima=IDH_RAMDAC_SPEED
+3		Hardware aggiuntivo=IDH_EXTRA_HARDWARE
+3		Software scheda grafica (versioni)=IDH_INFORMATION_SOFTWARE
+3		Pacchetto driver Matrox=IDH_MATROX_DRIVER_PACKAGE
+3		Driver schermo=IDH_DISPLAY_DRIVER
+3		Mini VDD (Windows 95/98/Me)=IDH_VDD
+3		Driver del kernel (Windows 2000)=IDH_KERNEL_DRIVER
+3		Driver DirectDraw/Direct3D=IDH_DIRECTDRAW_DIRECT3D_DRIVER
+3		ICD OpenGL=IDH_OPENGL_ICD
+3		Driver TurboGL=IDH_TURBOGL_DRIVER
+3		Matrox PowerDesk=IDH_MATROX_POWERDESK
+3		BIOS grafica=IDH_GRAPHICS_BIOS
+3		Microsoft DirectX=IDH_MICROSOFT_DIRECTX
+
+1 Finestra delle proprietà DualHead
+2	Panoramica=IDH_DUALHEAD_OVERVIEW
+2	Caratteristiche
+3		DualHead a schermo multiplo
+4			Panoramica=IDH_DUALHEAD_MULTIDISPLAY
+4			Utilizza DualHead a schermo multiplo=IDH_USE_DUALHEAD_MULTIDISPLAY
+4			DualHead a schermo multiplo -- Limitazioni=IDH_DUALHEAD_MULTIDISPLAY_LIMITATIONS
+4			Modalità DualHead a schermo multiplo (solo Windows 2000)=IDH_DUALHEAD_MULTIDISPLAY_MODE
+3		Clone DualHead
+4			Panoramica=IDH_DUALHEAD_CLONE
+4			Consenti ridimensionamento=IDH_ALLOW_SCALING
+4			Qualità/Prestazioni=IDH_QUALITY_PERFORMANCE
+3		Zoom DualHead
+4			Panoramica=IDH_DUALHEAD_ZOOM
+4			Segui il puntatore del mouse=IDH_FOLLOW_MOUSE_POINTER
+4			Centra sul puntatore del mouse=IDH_CENTER_ON_MOUSE_POINTER
+4			Rendi uniforme l'area ingrandita=IDH_SMOOTH_ZOOMED_AREA
+3		DVDMax DualHead
+4			Panoramica=IDH_DUALHEAD_DVDMAX
+4			Utilizza DVDMax DualHead=IDH_USE_DUALHEAD_DVDMAX
+4			Proporzioni=IDH_ASPECT_RATIO
+4			Ridimensiona sempre a schermo intero=IDH_SCALE_FULL_SCREEN
+4			Mantieni le proporzioni=IDH_PRESERVE_ASPECT_RATIO
+4			Proporzioni TV=IDH_TV_ASPECT_RATIO
+4			Metodo di rilevamento delle proporzioni=IDH_ASPECT_RATIO_DETECTION
+4			Impostazioni avanzate=IDH_DVDMAX_ADVANCED_SETTINGS
+4			Mantieni il cropping del segnale di ingresso=IDH_PRESERVE_SOURCE_CROPPING
+4			Ridimensiona solo in corrispondenza di un cambio pagina=IDH_SCALE_ONLY_ON_PAGE_FLIP
+4			Utilizza il ridimensionamento basato sul campo=IDH_USE_FIELD_BASED_SCALING
+2	Impostazioni avanzate
+3		Limiti del monitor secondario
+4			Panoramica=IDH_DUALHEAD_SECONDARY_MONITOR_LIMITS
+3		Capacità dello schermo
+4			Panoramica=IDH_DUALHEAD_DISPLAY_CAPABILITIES
+4			Quantità massima di memoria grafica per schermo secondario=IDH_MAXIMUM_GRAPHICS_MEMORY
+4			Modalità dello schermo supportate=IDH_SUPPORTED_DISPLAY_MODES
+3		Memoria AGP
+4			Panoramica=IDH_DUALHEAD_AGP_MEMORY
+2	Uscita TV
+3		Panoramica=IDH_TV_SETTINGS
+3		Regolazioni TV
+4			Panoramica=IDH_DUALHEAD_TV_ADJUSTMENTS
+2	Seleziona uscita secondaria
+3		Panoramica=IDH_DUALHEAD_SELECT_SECONDARY_OUTPUT
+
+1 Uscita TV, finestra delle proprietà
+2	Panoramica=IDH_TV_OUTPUT
+
+1 Matrox DeskNav
+2	Panoramica=IDH_DESKNAV_OVERVIEW
+2	Menu / voci di menu
+3		Sempre in primo piano=IDH_ALWAYS_ON_TOP
+3		Mostra menu=IDH_SHOW_MENU
+3		Mostra barra strumenti=IDH_SHOW_TOOLBAR
+3		Mostra anteprima=IDH_SHOW_PREVIEW_AREA
+3		Aggiorna anteprima=IDH_DESKNAV_PREVIEW_REFRESH
+3		Ridimensionamento proporzionale=IDH_PROPORTIONAL_SIZING
+3		Preferenze=IDH_DESKNAV_PREFERENCES
+3		Finestra=IDH_DESKNAV_WINDOW
+2	Pulsanti della barra degli strumenti
+3		Zoom avanti=IDH_DESKNAV_ZOOMIN
+3		Zoom indietro=IDH_DESKNAV_ZOOMOUT
+3		CenterWINDOW=IDH_DESKNAV_CENTERWINDOW
+2	Preferenze
+3		Blocca all'angolo=IDH_SNAP_TO_CORNER
+3		Mantieni DeskNav nello schermo del puntatore del mouse=IDH_MOUSE_POINTER_DISPLAY
+3		Centra il puntatore del mouse al cambiamento dell'area di visualizzazione=IDH_CENTER_MOUSE_POINTER
+3		Ridimensionamento proporzionale=IDH_PROPORTIONAL_SIZING_PREFERENCE
+3		Mostra menu=IDH_SHOW_MENU
+3		Mostra barra strumenti=IDH_SHOW_TOOLBAR
+3		Mostra anteprima=IDH_SHOW_PREVIEW_AREA
+3		Mostra snapshot del desktop=IDH_SHOW_DESKTOP_SNAPSHOT
+3		Nascondi DeskNav nello snapshot del desktop=IDH_HIDE_DESKNAV_SNAPSHOT
+3		Aggiorna automaticamente snapshot del desktop=IDH_AUTOMATICALLY_UPDATE
+
+1 Ulteriori informazioni
+2	Ulteriori informazioni=IDH_MORE_INFORMATION
+2	Terminologia
+3		Tavolozza dei colori=IDH_COLOR_PALETTE
+3		Area del desktop=IDH_DESKTOP_AREA
+3		Area dello schermo=IDH_DISPLAY_AREA
+3		Modalità dello schermo=IDH_DISPLAY_MODE
+3		Risoluzione dello schermo=IDH_DISPLAY_RESOLUTION
+3		Desktop a schermo multiplo=IDH_MULTI_DISPLAY_DESKTOP
+3		Pixel=IDH_PIXEL
+3		Frequenza di aggiornamento=IDH_TERM_REFRESH_RATE

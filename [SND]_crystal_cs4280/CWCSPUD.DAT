@@ -1,0 +1,1470 @@
+##############################################################################
+#
+# CWCSPUD.DAT - Additional registry entries needed by cwcspud.vxd, but which
+#               blow out Microsoft's 64K INF file limit.
+#
+# Copyright (c) 1999 Crystal Semiconductor Corp.
+#
+##############################################################################
+
+[SPuD\Algorithms\3D]
+HRTF_44,,%10%\cwcdata\cwchrtf.44
+HRTF_22,,%10%\cwcdata\cwchrtf.22
+HRTF_44_VAD,,%10%\cwcdata\cwchrtf.v44
+HRTF_22_VAD,,%10%\cwcdata\cwchrtf.v22
+SpeakerVirtualization,1,00,00,00,00
+
+[SPuD\Algorithms\AEC]
+AECState,1,00,00,00,00
+AppList,,conf.exe
+
+[SPuD\Algorithms\Blaster]
+DosConfigurationFile,,%10%\cwcdata\cwcaudio.wcm
+
+[SPuD\Algorithms\WaveTable]
+SampleSet,,%10%\cwcdata\cwcdls8.cls
+
+#[SPuD\Algorithms\AC-3]
+#PcmScaleFactor,1,02,00,00,00
+
+[SPuD\DeviceConfig]
+0000,1,52,80,1e,84,a1,50,28,94,ca,e5,f2,f9,7c,be,5f,af
+0001,1,2c,b0,02,30,8d,46,a3,51,a8,d4,6a,35,9a,cd,66,33,98,4c,a6,d3, \
+       e9,f4,fa,fd,7e,bf,df,ef,f6,7b,3d,9e,ca,67,b3,d9,ed,76,bb,dd, \
+       e8,77,3b,9d,4e,a7,53,a9,54,2a,95,4a
+0002,1,de,90,dc,9c,e5,f3,79,3c,1e,8f,c7,63,b1,d8,6c,36
+0003,1,98,30,8c,90,e7,72,b9,dc,6e,37,9b,4d,26,93,49,24,90,c9,64,32, \
+       19,0c,06,03,81,c0,e0,70,b9,5c,2e,97,4e,25,12,89,c5,e2,71,38, \
+       1a,8e,47,23,11,08,04,02,01,80,40,a0,d1,68,34,1a,85,c6,e3,f1, \
+       79,bc,5e,2f,17,0b,85,c2,e0,f0,f8,fc,fd,ff,7f,3f,9f,4f,27,13, \
+       09,84,42,a1
+0004,1,72,50,96,b4,2d,16,8b,c5,60,31,98,cc,e6,73,39,9c,ce,e7,f3,79, \
+       3c,1e,8f,c7,62,b1,d8,6c,36,1b,0d,86,42,21,10,88,44,a2,d1,e8
+0005,1,6a,f0,1e,84,a1,50,28,94,cb,e5,f2,f9,7e,be,5f,af,56,ab,55,aa, \
+       d6,ea,75,3a,1c,0e,07,83,c1,60,30,18,89,46,a3,51,a8,d4,6a,35
+0006,1,56,f0,92,fd,bd,df,ef,f7,79,3d,9e,cf,67,b3,d9,ec,76,bb,dd,ee, \
+       77,3b,9d,4e,a6,53,a9,54,2a,95,4a,a5,53,29,14,8a,45,22,91,48
+0009,1,a4,90,1e,39,c7,e7,f3,79,3c,1e,8f,c7,63,b1,d8,6c,37,1b,0d,86, \
+       43,21,10,88,45,a2,d1,e8,76,ba,5d,ae,d2,eb,f5,7a,bd,de,6f,b7, \
+       da,ed,f6,fb,7b,3e,1f,0f,87,c3,61,b0,58,2c,96,cb
+0011,1,5d,80,38,3b,5f,a7,53,a9,54,2a,95,4a,a5,52,29,14,8b,45,22,91, \
+       48,a4,d2,69,b2,5a,2d,16,88,c5,62,31,9d,cc,e6,73,3b,9c,ce,e7, \
+       f9,79,3c,1e,8c,c7,63,b1,de,6c,36,1b,09,86,43,21,19,88,44,a2, \
+       db,e8,74,ba,45,ae,d7,eb,f0,7a,bd,de,77,b7,db,ed,ef,fb,7d,3e, \
+       1f,0f,87,c3,78,b0,58,2c,8c,cb,65,b2,5c,ac,d6,6b,af,da,6d,b6, \
+       40,ad,56,2b,15,0a,05,82,5a,20,90,c8,f8,72,b9,dc,6b,37,9b,4d, \
+       3a,93,49,24,8f,c9,64,32,1c,0c,06,03,9c,c0,e0,70,a6,5c,2e,97, \
+       4b,25,12,89,da,e2,71,38,03,8e,47,23,14,08,04,02,1e,80,40,a0, \
+       f0,68,34,1a,88,c6,e3,f1,58,bc,5e,2f,36,0b,85,c2,e4,f0,f8,fc, \
+       df,ff,7f,3f,9f,4f,27,13
+0019,1,47,e0,d6,4f,0a,09,84,42,a1,50,28,94,ca,e5,f2,f9,7e,be,5f,af, \
+       57,ab,55,aa,d4,ea,75,3a,1f,0e,07,83,c4,60,30,18,8c,46,a3,51, \
+       a9,d4,6a,35,9c,cd,66,33,99,4c,a6,d3,e9,f4,fa,fd,7f,bf,df,ef, \
+       f3,7b,3d,9e,cd,67,b3,d9,ed,76,bb,dd,e0,77,3b,9d,4f,a7,53,a9, \
+       57,2a,95,4a,a5,52,29,14,8a,45,22,91
+001B,1,f1,30,60,22,53,a4,d2,69,b4,5a,2d,16,8b,c5,62,31,9a,cc,e6,73, \
+       39,9c,ce,e7,f2,79,3c,1e,8d,c7,63,b1,dd,6c,36,1b,0d,86,43,21, \
+       11,88,44,a2,d7,e8,74,ba,5d,ae,d7,eb,f5,7a,bd,de,6e,b7,db,ed, \
+       f5,fb,7d,3e,1d,0f,87,c3,60,b0,58,2c,98,cb,65,b2,58,ac,d6,6b, \
+       b6,da,6d,b6,5b,ad,56,2b,15,0a,05,82
+0031,1,c4,10,c8,31,fd,e6,73,39,9c,ce,e7,f3,79,3c,1e,8f,c5,63,b1,d8, \
+       6c,36,1b,0d,86,43,21,10,89,44,a2,d1,ed,74,ba,5d,af,d7,eb,f5, \
+       7c,bd,de,6f,b7,db,ed,f6,fb,7d,3e,1f,0e,87,c3,61,b4,58,2c,96, \
+       c9,65,b2,59,ac,d6,6b,b5,db,6d,b6,5b,ac,56,2b,15,09,05,82,41, \
+       20,90,c8,e4,72,b9,dc,6e
+003B,1,b2,e0,b0,dd,4c,3b,9d,4e,a7,53,a9,54,2a,95,4a,a5,50,29,14,8a, \
+       45,22,91,48,a4,d2,69,b4,5b,2d,16,8b,c0,62,31,98,cd,e6,73,39, \
+       9a,ce,e7,f3,79,3c,1e,8f,c7,63,b1,d8,6d,36,1b,0d,85,43,21,10, \
+       8a,44,a2,d1,e8,74,ba,5d,af,d7,eb,f5,7b,bd,de,6f,b4,db,ed,f6, \
+       fb,7d,3e,1f,0f,87,c3,61
+
+[SPuD\DeviceMapping\6001-01-0-0]
+,,CS4610
+
+[SPuD\DeviceMapping\6001-01-0-1]
+,,CS4610
+
+[SPuD\DeviceMapping\6001-01-0-2]
+,,CS4610
+
+[SPuD\DeviceMapping\6003-01-0-0]
+,,CS4612
+
+[SPuD\DeviceMapping\6003-01-0-1]
+,,CS4612
+
+[SPuD\DeviceMapping\6003-01-0-2]
+,,CS4612
+
+[SPuD\DeviceMapping\6003-01-0-3]
+,,CS4612
+
+[SPuD\DeviceMapping\6003-01-0-4]
+,,CS4612
+
+[SPuD\DeviceMapping\6003-01-0-5]
+,,CS4612
+
+[SPuD\DeviceMapping\6007-01-0-0]
+,,CS4630
+
+[SPuD\DeviceMapping\6007-01-0-1]
+,,CS4630
+
+[SPuD\DeviceMapping\00-01-01]
+,,CS4297
+
+[SPuD\DeviceMapping\00-02-01]
+,,CS4297
+
+[SPuD\DeviceMapping\00-03-01]
+,,CS4297
+
+[SPuD\DeviceMapping\00-FF-FF]
+,,CS4297
+
+[SPuD\DeviceMapping\02-01-02]
+,,CS4298
+
+[SPuD\DeviceMapping\02-02-02]
+,,CS4298
+
+[SPuD\DeviceMapping\12-03-02]
+,,CS4298
+### BJD 7/28/99 Added above entry for new id information for CS294 Rev C 
+
+[SPuD\DeviceMapping\02-FF-FF]
+,,CS4298
+
+[SPuD\DeviceMapping\01-FF-FF]
+,,CS4297A
+
+[SPuD\DeviceMapping\03-FF-FF]
+,,CS4299
+
+[SPuD\Parts\CS4610]
+MaxClockRate,1,ad,c8,e3,db
+
+[SPuD\Parts\CS4610\SP]
+FileName,,%10%\cwcdata\cwc4610.osp
+DSPType,1,01,00,00,00
+NumStreams,1,60,00,00,00
+Resources,1,d4,e0,7e,e1,f8,fc,fe,ff,7f,27,9f,4f,26,13,09,84,42,d1,50,28, \
+            96,ca,e5,f2,f9,4c,be,5f,ac,57,ab,55,aa,ed,ea,75
+DefectFlags,1,00,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4612]
+MaxClockRate,1,6d,8a,f0,db
+
+[SPuD\Parts\CS4612\SP]
+FileName,,%10%\cwcdata\cwc4612.osp
+DSPType,1,01,00,00,00
+NumStreams,1,60,00,00,00
+Resources,1,d4,e0,7e,e1,f8,fc,fe,ff,7f,27,9f,4f,26,13,09,84,42,d1,50,28, \
+            96,ca,e5,f2,f9,4c,be,5f,ac,57,ab,55,aa,ed,ea,75
+DefectFlags,1,00,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4630]
+MaxClockRate,1,ed,fb,f5,d6
+
+[SPuD\Parts\CS4630\SP]
+FileName,,%10%\cwcdata\cwc4630.osp
+DSPType,1,01,00,00,00
+NumStreams,1,80,00,00,00
+Resources,1,20,f0,ca,08,02,01,80,40,a0,c8,68,34,1b,8d,c6,e3,f1,e8,bc,5e,2d,\
+  17,0b,85,c2,a9,f0,f8,ff,fe,ff,7f,3f,d7,4f,27
+DefectFlags,1,00,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4297]
+DefectFlags,1,00,00,00,00
+DeviceID,1,01,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4298]
+DefectFlags,1,00,00,00,00
+DeviceID,1,02,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4297A]
+DefectFlags,1,00,00,00,00
+DeviceID,1,04,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Parts\CS4299]
+DefectFlags,1,00,00,00,00
+DeviceID,1,05,00,00,00
+FeatureFlags,1,00,00,00,00
+
+[SPuD\Tasks\SP OS]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,29,60,92,0a,82,41,20,90,b9,e4,72,b9,de,6e,37,9b,0d,26,93,49, \
+            26,92,c9,64,72,19,0c,06,01,81,c0,e0,30,b9,5c,2e,94,4b,25,12, \
+            a9,c4,e2,71
+TaskID,1,00,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Foreground]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,FGTaskTreeHeaderCode
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,95,d0,9a,03,c2,e0,70,b8,88,2e,97,4b,27,12,89,c4,62,71,38,1c
+TaskID,1,01,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Middleground]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,TaskTreeHeaderCode
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,5f,c0,86,97,27,12,89,c4,36,71,38,1c,8c,47,23,11,48,04,02,01
+TaskID,1,14,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Background]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,TaskTreeHeaderCode
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,b0,90,e8,48,d0,69,b4,5a,f9,16,8b,c5,60,31,98,cc,c2,73,39,9c
+TaskID,1,02,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Timing Master]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,timingMaster
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,ad,f0,86,72,dc,6e,37,9b,60,26,93,49,26,92,c9,64,72,19,0c,06
+TaskID,1,03,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\CODEC Output]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_CODECoutputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,c9,80,92,bb,ee,77,3b,9d,1f,a7,53,a9,56,2a,95,4a,e5,52,29,14
+TaskID,1,04,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Master Mixer]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_Mix
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,b1,00,fe,5b,56,2b,15,0a,30,82,41,20,92,c8,e4,72,f9,dc,6e,37, \
+            98,4d,26,93,c9,24,92,c9
+TaskID,1,05,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Sample Rate Converter]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_upSRC
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,31,70,8a,2b,0a,05,82,41,f8,91,c8,e4,70,b9,dc,6e,77,9b,4d,26, \
+            90,49,24,92,e9,64,32,19,0f,06,03,81,40,e0,70,b8
+TaskID,1,06,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MP3 Rate Converter]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_upSRC
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,31,70,8a,2b,0a,05,82,41,f8,91,c8,e4,70,b9,dc,6e,77,9b,4d,26, \
+            90,49,24,92,e9,64,32,19,0f,06,03,81,40,e0,70,b8
+TaskID,1,16,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\PCM Reader]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,4f,f0,44,d6,b5,da,6d,b6,79,ad,56,2b,17,0a,05,82,01,20,90,c8, \
+            e7,72,b9,dc,ee,37,9b,4d,21,93,49,24,93,c9,64,32
+TaskID,1,07,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Write Back]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_Mix_To_OStream
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,01,00,00,00
+Resources,1,dd,50,32,e3,78,bc,5e,2f,2c,0b,85,c2,e3,f0,f8,fc,be,ff,7f,3f, \
+            9d,4f,27,13,01,84,42,a1,53,28,94,ca,e5,f3,f9,7c,b6,5f,af,57, \
+            aa,55,aa,d5
+TaskID,1,08,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\CODEC Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_CODECinputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,27,70,26,77,9d,4e,a7,53,e8,54,2a,95,48,a5,52,29,54,8a,45,22, \
+            92,48,a4,d2,e9,b4,5a,2d
+TaskID,1,09,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\PCM Serial Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,44,b0,68,a1,28,94,ca,e5,d8,f9,7c,be,5d,af,57,ab,15,aa,d5,ea
+TaskID,1,0a,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Main Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,60,80,12,f9,be,5f,af,57,81,55,aa,d5,e8,75,3a,1d,4e,07,83,c1, \
+            66,30,18,8c,47,a3,51,a8
+TaskID,1,0b,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Secondary Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,fe,d0,5c,c4,71,38,1c,8e,6d,23,11,08,06,02,01,80,00,a0,d0,68, \
+            32,1a,8d,c6,e2,f1,78,bc
+TaskID,1,0c,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Modem Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,fb,d0,a6,ce,f3,79,3c,1e,a5,c7,63,b1,da,6c,36,1b,4d,86,43,21, \
+            16,88,44,a2,d0,e8,74,ba
+TaskID,1,0d,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Variable Decimator]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,VariDecimate
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,cc,e0,10,d1,74,ba,5d,ae,23,ea,f5,7a,bf,de,6f,b7,9b,ed,f6,fb, \
+            7e,3e,1f,0f,a7,c3,61,b0,5b,2c,96,cb,65,b3,59,ac
+TaskID,1,0e,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Decimate by 2]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DecimateByPow2
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,1b,50,c0,7f,9f,4f,27,13,d0,84,42,a1,52,28,94,ca,a5,f2,f9,7c, \
+            bd,5f,af,57,2b,55,aa,d5,e9,75,3a,1d,0e,06,83,c1
+TaskID,1,0f,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Decimate by 4]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DecimateByPow2
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,5b,20,52,ff,3f,9f,4f,27,ca,09,84,42,a3,50,28,94,8a,e5,f2,f9, \
+            7f,be,5f,af,d7,ab,55,aa,d6,ea,75,3a,1d,0c,07,83
+TaskID,1,10,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Wave Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,89,d0,be,3b,4e,a7,53,a9,7e,2a,95,4a,a7,52,29,14,ca,45,22,91
+TaskID,1,11,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Reference Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,PCMserialInputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,0a,e0,b8,2d,8b,c5,62,31,b2,cc,e6,73,3b,9c,ce,e7,b3,79,3c,1e, \
+            89,c7,63,b1,d9,6c,36,1b
+TaskID,1,12,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Reference Snoop]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,ReferenceSnoop
+FileName,,%10%\cwcdata\cwcspkph.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,56,40,aa,e4,b9,dc,6e,37,a9,4d,26,93,4b,24,92,c9,24,32,19,0c, \
+            05,03,81,c0,60,70,b8,5c,28,97,4b,25,13,89,c4,e2
+TaskID,1,13,00,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,midiAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,9e,80,8e,b5,6d,b6,5b,ad,db,2a,15,0a,07,82,41,20,d0,c8,e4,72, \
+            bb,dc,6e,37,93,4d,26,93,4b,24,92,c9,64,33,19,0c,04,03,81,c0, \
+            60,70,b8,5c,2d,97,4b,25,92,89,c4,e2,72,38,1c,8e,47,21,11,08, \
+            02,02,01,80,41,a0,d0,68
+TaskID,1,00,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Voice]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,wtblAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,25,a0,fa,13,84,42,a1,50,1c,94,ca,e5,f0,f9,7c,be,1f,af,57,ab, \
+            57,aa,d5,ea,25,3a,1d,0e,04,83,c1,60,b0,18,8c,46,a5,51,a8,d4, \
+            6b,35,9a,cd
+TaskID,1,01,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Update]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,eb,70,52,ef,79,3d,9e,cf,27,b3,d9,ec,74,bb,dd,ee,57,3b,9d,4e, \
+            a1,53,a9,54,2b,95,4a,a5
+TaskID,1,02,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Mix]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,midiMix
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,e7,30,8e,87,61,b0,58,2c,e9,cb,65,b2,5b,ac,d6,6b,f5,da,6d,b6, \
+            59,ad,56,2b,25,0a,05,82,47,20,90,c8,e5,72,b9,dc
+TaskID,1,03,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Chorus]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,chorusAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,09,40,ec,5a,16,8b,c5,62,03,98,cc,e6,71,39,9c,ce,a7,f3,79,3c, \
+            1d,8f,c7,63,b1,dc,6c,36,1d,0d,86,43,20,10,88,44
+TaskID,1,04,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Reverb Allpass In]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,allPassAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,70,52,f2,7c,be,5f,af,71,ab,55,aa,d7,ea,75,3a,5d,0e,07,83, \
+            c2,60,30,18,0c,46,a3,51,ae,d4,6a,35,9b,cd,66,33
+TaskID,1,05,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Reverb Allpass Out]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,allPassAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,01,00,00,00
+Resources,1,7c,e0,7a,b0,2c,96,cb,65,94,59,ac,d6,69,b5,da,6d,f6,5b,ad,56, \
+            28,15,0a,05,02,41,20,90,ce,e4,72,b9,dd,6e,37,9b
+TaskID,1,06,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Reverb Comb In]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,combAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,e4,e0,9e,81,e0,70,b8,5c,1a,97,4b,25,10,89,c4,e2,31,38,1c,8e, \
+            44,23,11,08,84,02,01,80,46,a0,d0,68,35,1a,8d,c6
+TaskID,1,08,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Reverb Comb Out]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,combAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,01,00,00,00
+Resources,1,77,10,0a,a7,a9,54,2a,95,7e,a5,52,29,16,8a,45,22,d1,48,a4,d2, \
+            6a,b4,5a,2d,96,8b,c5,62,37,98,cc,e6,72,39,9c,ce
+TaskID,1,09,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MIDI Reverb Downmix Comb In]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,combAlgorithm
+FileName,,%10%\cwcdata\cwcwt.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,e5,70,2e,92,64,32,19,0c,32,03,81,c0,e2,70,b8,5c,6e,97,4b,25, \
+            11,89,c4,e2,f1,38,1c,8e,44,23,11,08,84,02,01,80
+TaskID,1,07,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\DLS Main]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DLS_Entry
+FileName,,%10%\cwcdata\cwcdls.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,fe,f0,be,74,5d,ae,d7,eb,c5,78,bd,de,6d,b7,db,ed,b6,fb,7d,3e,1d,\
+  0f,87,c3,69,b0,58,2c,94,cb,65,b2,99,ac,d6,6b,b7,da,6d,b6,db,ad,56,2b,16,0a,\
+  05,82,c1,20,90,c8,e7,72,b9,dc,6e,35,9b,4d,20,93,49,24,93,c9,64,32
+TaskID,1,20,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\DLS Mixer]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DLS_Voice_Mixer_Entry
+FileName,,%10%\cwcdata\cwcdls.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,3f,d0,2a,36,0d,86,43,21,80,88,44,a2,d3,e8,74,ba,1d,ae,d7,eb,f7,\
+  7a,bd,de,5f,b7,db,ed,f0,fb,7d,3e,1e,0f,87,c3
+TaskID,1,21,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\DLS Voice]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DLS_Voice_Core_Entry
+FileName,,%10%\cwcdata\cwcdls.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,37,50,14,36,0d,86,43,21,25,88,44,a2,d3,e8,74,ba,1d,ae,d7,eb,f7,\
+  7a,bd,de,0f,b7,db,ed,f5,fb,7d,3e,9f,0f,87,c3,67,b0,58,2c,97,cb,65,b2
+TaskID,1,22,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\DLS Reverb Send Snoop]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DLS_Reverb_Send_Entry
+FileName,,%10%\cwcdata\cwcdlsrs.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,b0,f2,83,60,30,18,8c,52,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,b4,fa,fd,7e
+TaskID,1,23,01,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\DLS Chorus Send Snoop]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DLS_Chorus_Send_Entry
+FileName,,%10%\cwcdata\cwcdlscs.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,90,40,83,60,30,18,8c,4f,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,b4,fa,fd,7e
+TaskID,1,24,01,00,00
+Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 CRC Checker]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,AC3crcchk
+#FileName,,%10%\cwcdata\cwcac3.osp
+#InputPorts,1,01,00,00,00
+#OutputPorts,1,00,00,00,00
+#Resources,1,fd,50,0a,a2,e8,74,ba,5d,8e,d7,eb,f5,78,bd,de,6f,f7,db,ed,f6, \
+#            f9,7d,3e,1f,4f,87,c3,61,b3,58,2c,96,cb,67,b2,59,a8,d6,6b,b5, \
+#            db,6d,b6,5b
+#TaskID,1,00,02,00,00
+#Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 Decoder]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,AC3bgTask
+#FileName,,%10%\cwcdata\cwcac3.osp
+#InputPorts,1,01,00,00,00
+#OutputPorts,1,00,00,00,00
+#Resources,1,14,60,58,01,40,a0,d0,68,ae,0a,8d,c6,e1,f1,78,bc,1e,2f,17,0b, \
+#            87,c2,e1,f0,98,fc,fe,ff,7d,3f,9f,4f,27,1a,09,84,40,a1,50,28, \
+#            94,ce,e5,f2,fb,7c,be,5f,af,53,ab,55,a8,d5,ea,75,5e,1e,0e,07, \
+#            81,c1,60,30,58,8c,46,a3,53,a8,d4,6a,09,9a,cd,66,31,99,4c,a6, \
+#            eb,e9,f4,fa,ff,7e,bf,df,cb,f7,7b,3d,9c,cf,67,b3,c1,ec,76,bb, \
+#            df,ee,77,3b,85,4e,a7,53,ab,54,2a,95,52,a5,52,29,16,8a,45,22, \
+#            9d,48,a4,d2,6a,b4,5a,2d,16,89,c5,62,32,98,cc,e6,73,3d,9c,ce, \
+#            e4,f3,79,3c,1e,8b,c7,63,b5,d8,6c,36,1a,0d,86,43
+#TaskID,1,01,02,00,00
+#Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 Delay In]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,NullAlgorithm
+#FileName,,
+#InputPorts,1,01,00,00,00
+#OutputPorts,1,00,00,00,00
+#Resources,1,18,70,aa,08,00,01,80,40,e0,d0,68,34,19,8d,c6,e3,f1,7a,bc,5e, \
+#            2b,17,0b,85,c3,e1,f0,f8
+#TaskID,1,02,02,00,00
+#Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 Delay Out]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,NullAlgorithm
+#FileName,,
+#InputPorts,1,00,00,00,00
+#OutputPorts,1,01,00,00,00
+#Resources,1,2c,50,06,60,1a,8c,46,a3,11,a8,d4,6a,36,9a,cd,66,33,9d,4c,a6, \
+#            d7,e9,f4,fa,fc,7e,bf,df
+#TaskID,1,03,02,00,00
+#Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 Raw Output]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,NullAlgorithm
+#FileName,,
+#InputPorts,1,00,00,00,00
+#OutputPorts,1,01,00,00,00
+#Resources,1,91,20,4c,1a,c4,e3,f1,78,fc,5e,2f,17,08,85,c2,e1,f0,fc,fc,fe, \
+#            fb,7f,3f,9f,4e,27,13,09
+#TaskID,1,04,02,00,00
+#Version,1,00,00,00,01
+
+#[SPuD\Tasks\AC3 Downmix Output]
+#CompatibleVersions,1,00,00,00,01
+#DSPType,1,01,00,00,00
+#EntryPointLabel,,NullAlgorithm
+#FileName,,
+#InputPorts,1,00,00,00,00
+#OutputPorts,1,01,00,00,00
+#Resources,1,d6,30,22,f4,ff,7e,bf,df,af,f7,7b,3d,9d,cf,67,b3,d9,e8,76,bb, \
+#            de,ee,77,3b,9d,4a,a7,53,aa,54,2a,95,4a,a1,52,29,10,8a,45,22, \
+#            90,48,a4,d2
+#TaskID,1,05,02,00,00
+#Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Output 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dOutputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,b5,40,ac,03,c0,e0,70,b8,ea,2f,97,4b,27,12,89,c4,a2,71,38,1c, \
+            8c,47,23,11,14,04,02,01,82,40,a0,d0,68,35,1a,8d,c5,e3,f1,78, \
+            3c,5e,2f,17,0d,85,c2,e1,f1,f8,fc,fe
+TaskID,1,00,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Output 44K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dOutputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,b5,40,ac,03,c0,e0,70,b8,ea,2f,97,4b,27,12,89,c4,a2,71,38,1c, \
+            8c,47,23,11,14,04,02,01,82,40,a0,d0,68,35,1a,8d,c5,e3,f1,78, \
+            3c,5e,2f,17,0d,85,c2,e1,f1,f8,fc,fe
+TaskID,1,00,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Mono Input 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dInputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,53,e0,3a,cf,b3,d9,ec,76,8a,dd,ee,77,39,9d,4e,a7,13,a9,54,2a, \
+            97,4a,a5,52,21,14,8a,45,21,91,48,a4,52,69,b4,5a,2e,16,8b,c5, \
+            62,30,98,cc,e0,73,39,9c,cf,e7,f3,79
+TaskID,1,01,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Mono Input 44K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dInputTask
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,53,e0,3a,cf,b3,d9,ec,76,8a,dd,ee,77,39,9d,4e,a7,13,a9,54,2a, \
+            97,4a,a5,52,21,14,8a,45,21,91,48,a4,52,69,b4,5a,2e,16,8b,c5, \
+            62,30,98,cc,e0,73,39,9c,cf,e7,f3,79
+TaskID,1,01,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Stereo Input 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dStereoInputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,a9,20,a8,3b,4e,a7,53,a9,69,2a,95,4a,a7,52,29,14,ca,45,22,91, \
+            4a,a4,d2,69,bc,5a,2d,16,88,c5,62,31,18,cc,e6,73,3a,9c,ce,e7, \
+            f3,78,3c,1e,89,c7,63,b1,d9,6c,36,1b
+TaskID,1,02,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Stereo Input 44K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dStereoInputTask
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,a9,20,a8,3b,4e,a7,53,a9,69,2a,95,4a,a7,52,29,14,ca,45,22,91, \
+            4a,a4,d2,69,bc,5a,2d,16,88,c5,62,31,18,cc,e6,73,3a,9c,ce,e7, \
+            f3,78,3c,1e,89,c7,63,b1,d9,6c,36,1b
+TaskID,1,02,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Morph Control 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,HRTF_Morph_Task
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,f5,60,30,63,d8,6c,36,1b,57,87,43,21,12,88,44,a2,91,e8,74,ba, \
+            5f,ae,d7,eb,d1,7a,bd,de,6d,b7,db,ed,b6,fb,7d,3e,1d,0f,87,c3, \
+            61,b1,58,2c,94,cb,65,b2,59,ad,d6,6b,b7,da,6d,b6,5b,ac,56,2b, \
+            13,0a,05,82,40,20,90,c8
+TaskID,1,03,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Morph Control 44K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,HRTF_Morph_Task
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,f5,60,30,63,d8,6c,36,1b,57,87,43,21,12,88,44,a2,91,e8,74,ba, \
+            5f,ae,d7,eb,d1,7a,bd,de,6d,b7,db,ed,b6,fb,7d,3e,1d,0f,87,c3, \
+            61,b1,58,2c,94,cb,65,b2,59,ad,d6,6b,b7,da,6d,b6,5b,ac,56,2b, \
+            13,0a,05,82,40,20,90,c8
+TaskID,1,03,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Cross Talk 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,xtalk
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,a4,70,dc,20,c8,e4,72,b9,64,6e,37,9b,4f,26,93,49,64,92,c9,64, \
+            30,19,0c,06,33,81,c0,e0,73,b8,5c,2e,d7,4b,25,12,8a,c4,e2,71, \
+            18,1c,8e,47,25,11,08,04,03,01,80,40
+TaskID,1,04,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Output 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dOutputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,12,40,8c,4d,93,49,24,92,55,64,32,19,0e,06,03,81,80,e0,70,b8, \
+            5e,2e,97,4b,39,12,89,c4,e0,71,38,1c,0e,47,23,11,0b,04,02,01, \
+            00,40,a0,d0,6e,34,1a,8d,c7,e3,f1,78
+TaskID,1,20,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Output 22K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dOutputTask
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,12,40,8c,4d,93,49,24,92,55,64,32,19,0e,06,03,81,80,e0,70,b8, \
+            5e,2e,97,4b,39,12,89,c4,e0,71,38,1c,0e,47,23,11,0b,04,02,01, \
+            00,40,a0,d0,6e,34,1a,8d,c7,e3,f1,78
+TaskID,1,20,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Mono Input 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dInputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,92,c0,f8,4c,d3,e9,f4,fa,de,7e,bf,df,ed,f7,7b,3d,de,cf,67,b3, \
+            db,ec,76,bb,d5,ee,77,3b,9e,4e,a7,53,29,54,2a,95,49,a5,52,29, \
+            94,8a,45,22,97,48,a4,d2,68,b4,5a,2d
+TaskID,1,21,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Mono Input 22K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dInputTask
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,92,c0,f8,4c,d3,e9,f4,fa,de,7e,bf,df,ed,f7,7b,3d,de,cf,67,b3, \
+            db,ec,76,bb,d5,ee,77,3b,9e,4e,a7,53,29,54,2a,95,49,a5,52,29, \
+            94,8a,45,22,97,48,a4,d2,68,b4,5a,2d
+TaskID,1,21,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Stereo Input 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dStereoInputTask
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,79,90,00,9b,26,93,49,24,b8,c9,64,32,1b,0c,06,03,c1,c0,e0,70, \
+            ba,5c,2e,97,43,25,12,89,c7,e2,71,38,9c,8e,47,23,12,08,04,02, \
+            81,80,40,a0,d6,68,34,1a,8c,c6,e3,f1
+TaskID,1,22,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Stereo Input 22K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,_3dStereoInputTask
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,79,90,00,9b,26,93,49,24,b8,c9,64,32,1b,0c,06,03,c1,c0,e0,70, \
+            ba,5c,2e,97,43,25,12,89,c7,e2,71,38,9c,8e,47,23,12,08,04,02, \
+            81,80,40,a0,d6,68,34,1a,8c,c6,e3,f1
+TaskID,1,22,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Morph Control 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,HRTF_Morph_Task
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,cb,10,48,1e,c7,63,b1,d8,36,37,1b,0d,84,43,21,10,c8,44,a2,d1, \
+            ea,74,ba,5d,8a,d7,eb,f5,78,bd,de,6f,f7,db,ed,f6,f9,7d,3e,1f, \
+            8f,87,c3,61,b2,58,2c,96,4b,65,b2,59,ae,d6,6b,b5,5a,6d,b6,5b, \
+            ab,56,2b,15,0b,05,82,41
+TaskID,1,23,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\3D Morph Control 22K ROM]
+CompatibleVersions,1,00,00,01,01,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,HRTF_Morph_Task
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,cb,10,48,1e,c7,63,b1,d8,36,37,1b,0d,84,43,21,10,c8,44,a2,d1, \
+            ea,74,ba,5d,8a,d7,eb,f5,78,bd,de,6f,f7,db,ed,f6,f9,7d,3e,1f, \
+            8f,87,c3,61,b2,58,2c,96,4b,65,b2,59,ae,d6,6b,b5,5a,6d,b6,5b, \
+            ab,56,2b,15,0b,05,82,41
+TaskID,1,23,03,00,00
+Version,1,00,00,01,01
+
+[SPuD\Tasks\3D Cross Talk 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,xtalk
+FileName,,%10%\cwcdata\cwc3d.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,c8,60,ae,f8,fe,ff,7f,3f,f4,4f,27,13,0b,84,42,a1,10,28,94,ca, \
+            e7,f2,f9,7c,8e,5f,af,57,a8,55,aa,d5,aa,75,3a,1d,0d,07,83,c1, \
+            40,30,18,8c,40,a3,51,a8,d5,6a,35,9a
+TaskID,1,24,03,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Crosstalk 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,A3DIxtalk
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,85,60,a4,72,dc,6e,37,9b,c0,26,93,49,26,92,c9,64,72,19,0c,06, \
+            01,81,c0,e0,50,b8,5c,2e,94,4b,25,12,c9,c4,e2,71,3b,1c,8e,47, \
+            63,11,08,04,01,01,80,40,e0,d0,68,34,1f,8d,c6,e3,f0,78,bc,5e
+TaskID,1,00,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Renderer 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,A3DIrenderer
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,de,c0,8c,c4,71,38,1c,8e,80,21,11,08,06,02,01,80,00,a0,d0,68, \
+            36,1a,8d,c6,03,f1,78,bc,5c,2f,17,0b,65,c2,e1,f0,fb,fc,fe,ff, \
+            3f,3f,9f,4f,24,13,09,84,42,a0,50,28,91,ca,e5,f2,f8,7c,be,5f
+TaskID,1,01,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI PCM Reader 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,42,90,64,bc,2d,17,0b,85,82,e1,f0,f8,ff,fe,ff,7f,3f,9d,4f,27, \
+            16,09,84,42,a0,50,28,94
+TaskID,1,02,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Stereo->Mono 44K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,stereo2mono
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,41,d0,70,cb,b2,59,ac,d6,21,b5,da,6d,b4,5b,ad,56,6b,15,0a,05, \
+            81,41,20,90,c8,e6,72,b9,d9,6e,37,9b,4c,26,93,49
+TaskID,1,03,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Crosstalk 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,A3DIxtalk
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,2a,80,c0,2d,8b,c5,62,31,cc,cc,e6,73,3b,9c,ce,e7,b3,79,3c,1e, \
+            8d,c7,63,b1,f8,6c,36,1b,0e,86,43,21,30,88,44,a2,d2,e8,74,ba, \
+            7d,ae,d7,eb,f6,7a,bd,de,4f,b7,db,ed,f3,fb,7d,3e,1e,0f,87,c3
+TaskID,1,10,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Renderer 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,A3DIrenderer
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,7d,80,7c,82,20,90,c8,e4,4a,b8,dc,6e,35,9b,4d,26,d3,49,24,92, \
+            cb,64,32,19,8c,06,03,81,c2,e0,70,b8,dc,2e,97,4b,26,12,89,c4, \
+            c2,71,38,1c,8d,47,23,11,88,04,02,01,85,40,a0,d0,69,34,1a,8d
+TaskID,1,11,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI PCM Reader 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,40,f0,30,b8,2c,97,4b,25,52,89,c4,e2,72,38,1c,8e,47,22,11,08, \
+            01,02,01,80,41,a0,d0,68
+TaskID,1,12,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\A3DI Stereo->Mono 22K]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,stereo2mono
+FileName,,%10%\cwcdata\cwca3di.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,58,20,56,f9,be,5f,af,57,90,55,aa,d5,e8,75,3a,1d,4e,07,83,c1, \
+            63,30,18,8c,46,a2,51,a8,d1,6a,35,9a,cc,66,33,99
+TaskID,1,13,06,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Speaker Phone]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SpkPhMain
+FileName,,%10%\cwcdata\cwcspkph.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,4e,80,d4,04,01,80,40,a0,d0,66,34,1a,8f,c6,e3,f1,38,bc,5e,2f, \
+            15,0b,85,c2,a1,f0,f8,fc,fc,ff,7f,3f,df,4f,27,13,0b,84,42,a1, \
+            50,20,94,ca,e6,f2,f9,7c,3e,5f,af,57,a8,55,aa,d5,ea,71,3a,1d, \
+            0d,07,83,c1,40,30,18,8c,40,a3,51,a8,d5,6a,35,9a
+TaskID,1,00,08,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Data Convert 16->32]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DC16to32
+FileName,,%10%\cwcdata\cwcdatac.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,79,50,c2,ba,ae,d7,eb,f5,1a,bd,de,6f,b5,db,ed,f6,bb,7d,3e,1f, \
+            0c,87,c3,61,30,58,2c,96,cd,65,b2,59,ad,d6,6b,b5
+TaskID,1,00,0A,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Data Convert 32->16]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,DC32to16
+FileName,,%10%\cwcdata\cwcdatac.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,39,60,e0,3a,0e,07,83,c1,00,30,18,8c,44,a3,51,a8,94,6a,35,9a, \
+            ce,66,33,99,cc,a6,d3,e9,f2,fa,fd,7e,be,df,ef,f7
+TaskID,1,01,0A,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Narsilization]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,Spatialize
+FileName,,%10%\cwcdata\cwcspat.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,3d,e0,ee,02,80,40,a0,d0,c3,34,1a,8d,c4,e3,f1,78,fc,5e,2f,17, \
+            09,85,c2,e1,e4,f8,fc,fe,fc,7f,3f,9f,cf,27,13,09,87,42,a1,50, \
+            38,94,ca,e5,f1,f9,7c,be,4f,af,57,ab,53,aa,d5,ea,74,3a,1d,0e
+TaskID,1,02,0A,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\FM Control]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,FMCtlEntryPoint
+FileName,,%10%\cwcdata\cwcfm.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,8b,a0,14,7e,df,ef,f7,7b,5d,9e,cf,67,b1,d9,ec,76,f3,dd,ee,77, \
+            39,9d,4e,a7,6b,a9,54,2a,97,4a,a5,52,11,10,8a,45,21,91,48,a4, \
+            d2,68,b4,5a,2e,16,8b,c5,e2,31,98,cc
+TaskID,1,00,0B,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\FM Synth]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,FMSynthEntryPoint
+FileName,,%10%\cwcdata\cwcfm.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,01,10,c8,7a,de,6f,b7,db,8d,f6,fb,7d,3c,1f,0f,87,8b,61,b0,58, \
+            2e,96,cb,65,86,58,ac,d6,69,b5,da,6d,46,58,ad,56,28,15,0a,05, \
+            02,41,20,90,cb,e4,72,b9,5c,6e,37,9b,4e,26,93,49,a4,92,c9,64, \
+            31,19,0c,06,83,81,c0,e0,73,b8,5c,2e,17,4b,25,12,8a,c4,e2,71, \
+            b8,1c,8e,47,20,11,08,04,82,01,80,40,a3,d0,68,34,9a,8d,c6,e3, \
+            f2,78,bc,5e,af,17,0b,85,c1,e1,f0,f8,7c,fe,ff,7f,3c,9f,4f,27, \
+            93,09,84,42,a2,50,28,94,4a,e5,f2,f9,7f,be,5f,af,d7,ab,55,aa, \
+            d6,ea,75,3a,9d,0e,07,83,c2,60,30,18,0c,46,a3,51,ab,d4,6a,35, \
+            1a,cd,66,33,9a,4c,a6,d3,69,f4,fa,fd,7d,bf,df,ef,77,7b,3d,9e, \
+            cc,67,b3,d9,6c,76,bb,dd
+TaskID,1,01,0B,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\IO Trap]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,IOTrapFifo
+FileName,,%10%\cwcdata\cwciotrp.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,c3,b0,62,1e,c7,63,b1,d8,dc,32,1b,0d,84,43,21,10,c8,44,a2,d1, \
+            ea,74,ba,5d,ca,d6,eb,f5,78,bd,de,6f,b7,d9,ed,f6,f9,7d,3e,1f, \
+            7b,85,c3,61,b2,58,2c,96,ab,65,b2,59,ae,d6,6b,b5,8e,6d,b6,5b, \
+            af,56,2b,15,0a,01,82,41,23,90,c8,e4,f2,b9,dc,6e
+TaskID,1,02,0B,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\SB FG]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SBFGTask
+FileName,,%10%\cwcdata\cwcsbfg.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,a9,00,ce,7a,de,6f,b7,db,dd,f6,fb,7d,3c,1f,0f,87,83,61,b0,58
+TaskID,1,03,0B,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Async FG Receive]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,AsynchFGRxCode
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,a9,30,92,7a,dc,6f,b7,db,ad,f6,fb,7d,3d,1f,0f,87,43,61,b0,58
+TaskID,1,00,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Async HF IO]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_AsyncCODECinputTask
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,90,54,91,a4,d2,69,b4,0f,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,79,3c,1e,8f
+TaskID,1,01,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\SP IO Write]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SPIOWrite
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,80,c4,91,a4,d2,69,b4,7f,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,f9,3c,1e,8f
+TaskID,1,02,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Async FG Transmit]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,AsynchFGTxCode
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,80,d6,91,a4,d2,69,b4,02,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,f9,3c,1e,8f
+TaskID,1,04,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\SPDIF HF Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SPDIFITask
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,50,b0,91,a4,d2,69,b4,6c,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,79,3c,1e,8f
+TaskID,1,07,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\SPDIF HF A Output]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SPDIFOTask
+FileName,,%10%\cwcdata\cwcasync.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,50,b0,91,a4,d2,69,b4,6c,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,79,3c,1e,8f
+TaskID,1,12,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\SPDIF HF Output]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,SPDIFOTask
+FileName,,%10%\cwcdata\cwcshfo.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,54,50,b0,91,a4,d2,69,b4,6c,2d,16,8b,c7,62,31,98,8c,e6,73,39, \
+            9f,ce,e7,f3,79,3c,1e,8f
+TaskID,1,08,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Sync FG Transmit]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,sfgtxEntryPnt
+FileName,,%10%\cwcdata\cwcsfgtx.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,20,e0,60,08,02,01,80,40,cc,d0,68,34,1b,8d,c6,e3,e7,78,bc,5e,2d, \
+  17,0b,85,82,e1,f0,f8,ff,fe,ff,7f,bf,9f,4f,27
+TaskID,1,10,0D,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D DMA/Doppler 22kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Ddd_Entry
+FileName,,%10%\cwcdata\cwcs3ddd.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,ed,d0,90,83,60,30,18,8c,6b,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4e,\
+  a6,d3,e9,f8,fa,fd,7e,bc,df,ef,f7,fb,3d,9e,cf,64,b3,d9,ec,76,ba,dd,ee
+TaskID,1,00,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D DMA/Doppler 44kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Ddd_Entry
+FileName,,%10%\cwcdata\cwcs3ddd.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,ed,c0,e4,83,60,30,18,8c,78,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4e,\
+  a6,d3,e9,f8,fa,fd,7e,bc,df,ef,f7,fb,3d,9e,cf,64,b3,d9,ec,76,ba,dd,ee
+TaskID,1,01,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Mixer/XT 22kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dmx_Entry
+FileName,,%10%\cwcdata\cwcs3dmx.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,c0,30,83,60,30,18,8c,7f,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,74,fa,fd,7e
+TaskID,1,04,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Mixer/XT 44kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dmx_Entry
+FileName,,%10%\cwcdata\cwcs3dmx.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,a0,d8,83,60,30,18,8c,27,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,74,fa,fd,7e
+TaskID,1,05,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Positional 22kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dps_Entry
+FileName,,%10%\cwcdata\cwcs3dps.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,e5,40,b4,83,60,30,18,8c,77,a2,51,a8,d6,6a,35,9a,8d,66,33,99,4e,\
+  a6,d3,e9,24,fa,fd,7e,bc,df,ef,f7,fb,3d,9e,cf
+TaskID,1,02,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Positional 44kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dps_Entry
+FileName,,%10%\cwcdata\cwcs3dps.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,e5,00,64,83,60,30,18,8c,a7,a2,51,a8,d6,6a,35,9a,8d,66,33,99,4e,\
+  a6,d3,e9,24,fa,fd,7e,bc,df,ef,f7,fb,3d,9e,cf
+TaskID,1,03,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Morph Control]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dmc_Entry
+FileName,,%10%\cwcdata\cwcs3dmc.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,df,40,7a,96,65,b2,59,ac,71,6a,b5,da,6f,b6,5b,ad,16,2b,15,0a
+TaskID,1,07,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Snoop]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dsn_Entry
+FileName,,%10%\cwcdata\cwcs3dsn.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,c0,d4,83,60,30,18,8c,74,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,74,fa,fd,7e
+TaskID,1,08,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Snoop 44kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dsn_Entry
+FileName,,%10%\cwcdata\cwcs3dsn.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,90,f0,83,60,30,18,8c,3f,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,74,fa,fd,7e
+TaskID,1,0b,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\S3D Snoop 22kHz]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S3Dsn_Entry
+FileName,,%10%\cwcdata\cwcs3dsn.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,dd,d0,fc,83,60,30,18,8c,0c,a3,51,a8,d6,6a,35,9a,8d,66,33,99,4f,\
+  a6,d3,e9,74,fa,fd,7e
+TaskID,1,0a,0f,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\EQ Graphic]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,EqEntryPoint
+FileName,,%10%\cwcdata\cwceq.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,ff,c0,66,87,61,b0,58,2c,13,cc,65,b2,5b,ac,d6,6b,f5,da,6d,b6,\
+  59,ad,56,2b,15,08,05,82,42,20,90,c8,64,72,b9,dc,6d,37,9b,4d,a6,93,49,24,\
+  91,c9,64,32,99,0c,06,03,82,c0,e0,70,b8,5e,2e,97
+TaskID,1,13,0a,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\ZV HF Mono Input]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,S16_ZV_Mono_Input_Task
+FileName,,%10%\cwcdata\cwczhfm.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,51,10,da,9b,26,93,49,24,ea,c8,64,32,1b,0c,06,03,c1,c0,e0,70,bb,\
+  5c,2e,97,4b,25,12,89
+TaskID,1,09,0d,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\ModemCtl]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,ModemCtlEntryPoint
+FileName,,%10%\cwcdata\cwcmdctl.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,d8,70,64,f8,fe,ff,7f,3f,ad,4f,27,13,08,84,42,a1,28,29,94,ca, \
+            e7,f2,f9,7c,fe,5f,af,57,a8,55,aa,d5,ea,75,3a,1d
+TaskID,1,10,0b,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\Snoop Direct]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,Snoop_Direct_Entry
+FileName,,%10%\cwcdata\cwcsndct.osp
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,fe,30,24,d5,75,3a,1d,0e,0b,83,c1,60,32,18,8c,46,e3,51,a8,d4
+TaskID,1,00,10,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MP3 Decoder]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,MP3Decoder_Main
+FileName,,%10%\cwcdata\cwcmp3.osp
+InputPorts,1,01,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,fe,80,26,24,c9,64,32,19,0c,07,03,81,c2,e0,70,b8,1c,2e,97,4b,\
+  27,12,89,c4,e2,73,38,1c,8c,47,23,11,08,16,02,01,82,40,a0,d0,30,3b,1a,8d,\
+  c4,e3,f1,78,9c,54,2f,17,09,85,c2,e1,ec,f9,fc,fe,fd,7f,3f,9f,8f,27,13,09,\
+  86,42,a1,50,68,94,ca,e5,f1,f9,7c,be,5f,bf,57,ab,56,aa,d5,ea,75,32,1d,0e,\
+  04,83,c1,60,b0,19,8c,46,a0,51,a8,d4,6a,3c,9a,cd
+TaskID,1,00,30,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MP3 Output]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,01,00,00,00
+Resources,1,92,20,d0,6d,5b,ad,56,2b,15,0b,05,82,40,20,90,c8,e4,71,b9,dc,6c,\
+  37,9b,4d,66,93,49,24,91,c9,64,32,19,0e,06,03
+TaskID,1,01,30,00,00
+Version,1,00,00,00,01
+
+[SPuD\Tasks\MP3 Reader]
+CompatibleVersions,1,00,00,00,01
+DSPType,1,01,00,00,00
+EntryPointLabel,,NullAlgorithm
+FileName,,
+InputPorts,1,00,00,00,00
+OutputPorts,1,00,00,00,00
+Resources,1,92,20,e6,6d,5b,ad,56,2b,15,0b,05,82,40,20,90,c8,e4,71,b9,dc,6c,\
+  37,9b,4d,66,93,49,24,91,c9,64,32,19,1c,06,03
+TaskID,1,02,30,00,00
+Version,1,00,00,00,01

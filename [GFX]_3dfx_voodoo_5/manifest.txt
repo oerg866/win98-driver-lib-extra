@@ -1,0 +1,19 @@
+FileSize Typ Name
+======== === =================================
+  444108 dat 3dfx16vs.drv
+ 1376768 dat 3dfx32vs.dll
+ 1102096 dat 3dfxOGL.dll
+ 1105408 dat 3dfxSpl2.dll
+ 1105408 dat 3dfxSpl3.dll
+     545 txt 3dfxdrv.ini
+     817 dat 3dfxvs.cat
+   39185 txt 3dfxvs.inf
+  313004 dat 3dfxvs.vxd
+   49152 bin Setup.exe
+   25106 dat Vgartd.vxd
+  253440 dat glide2x.dll
+  260128 dat glide2x.ovl
+  348160 dat glide3x.dll
+   61952 bin install.exe
+    5827 txt license.txt
+    3307 txt readme.txt

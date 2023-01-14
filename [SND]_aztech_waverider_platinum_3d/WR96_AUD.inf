@@ -1,0 +1,386 @@
+[Version]
+Signature="$Windows 95$"
+Class=MEDIA
+provider=%AZTECH%
+LayoutFile=layout.inf
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%AZTMfgName%=AztechLabs
+
+[AztechLabs]
+%*AZT0001.DeviceDesc%=AZT0001_Device, ISAPNP\AZT1023_DEV0001
+%*AZT0002.DeviceDesc%=AZT0002_Device, ISAPNP\AZT1023_DEV0002
+%*AZT0003.DeviceDesc%=AZT0003_Device, ISAPNP\AZT1023_DEV0003
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;---------------------------------------------------------------;
+
+[AZT0001_Device]
+LogConfig=AZT20.LC
+DelFiles=AZT20.DelList,Windows.CopyList
+CopyFiles=AZT20.CopyList,Windows.CopyList, AZT_WS.SysCopyList, URL.CopyList
+AddReg=WAVE.AddReg, MIXER.AddReg, AZT0001.AddReg, AZTCheck.AddReg
+UpdateInis=AZT20.UpdateInis, AZT_WS.UpdateInis
+
+[AZT0002_Device]
+LogConfig = AZT20.LC
+DelFiles=MPU401.DelList
+CopyFiles=MPU401.Copy.Sys
+AddReg=MIDI.AddReg, MPU401.AddReg,MPU401.AddRegDeviceDesc
+UpdateInis=MPU401.UpdateInis
+
+[AZT0003_Device]
+LogConfig = AZT20.LC
+CopyFiles=MSJSTICK.CopyList
+AddReg=JOYSTICK.AddReg, MSJSTICK.AddReg
+UpdateInis=MSJSTICK.UpdateInis
+
+;---------------------------------------------------------------;
+
+[AZT20.UpdateInis]
+system.ini,386Enh,"device=vsglx16.386"
+system.ini,drivers,"wave*=mm16c.drv",,1
+system.ini,drivers,"midi*=mm16c.drv",,1
+system.ini,drivers,"aux*=mm16c.drv",,1
+system.ini,drivers,"mixer*=mm16c.drv",,1
+system.ini,drivers,"wave*=mm16n.drv",,1
+system.ini,drivers,"midi*=mm16n.drv",,1
+system.ini,drivers,"aux*=mm16n.drv",,1
+system.ini,drivers,"mixer*=mm16n.drv",,1
+system.ini,drivers,"wave*=mm16w.drv",,1
+system.ini,drivers,"midi*=mm16w.drv",,1
+system.ini,drivers,"midi*=mmopl3.drv",,1
+system.ini,drivers,"midi*=sapi!opl.drv",,1
+system.ini,drivers,"aux*=mm16w.drv",,1
+system.ini,drivers,"mixer*=mm16w.drv",,1
+system.ini,drivers,"msacm.msadpcm.acm=msadpcm.acm",,
+system.ini,drivers,"midi*=aztmidi.drv",,1		;
+
+exthwctl.ini,CTRLPINS,,"SRS3D=20"			;ext control pin define
+exthwctl.ini,CTRLPINS,,"SpeakerOff=21"
+exthwctl.ini,SRS3D,,"On=0"
+exthwctl.ini,SRS3D,,"Off=1"
+exthwctl.ini,SpeakerOff,,"Mute=0"
+exthwctl.ini,SpeakerOff,,"Unmute=1"
+
+[MPU401.UpdateInis]
+system.ini,drivers,"midi*=mpu401.drv",,1
+system.ini,drivers,"midi*=rdmpu401.drv",,1
+system.ini,drivers,"midi*=mm16n.drv",,1
+system.ini,drivers,"midi*=mm16c.drv",,1
+system.ini,drivers,"midi*=mm16w.drv",,1
+
+;[AZT_WS.UpdateInis]					;remove jsfan
+;wstream.ini,"WaveStream",,"Warnings=0"			;remove jsfan
+
+[MSJSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+;---------------------------------------------------------------;
+
+[AZT20.LC]
+ConfigPriority=NORMAL
+
+;---------------------------------------------------------------;
+;
+; The .Det sections are added to the devnode at detection time
+; only.  The PreCopySection is simply setting the NoSetupUI
+; flag so that the critical pieces (such as logical 
+; configurations) are in place at the time the device is started 
+; during first boot.
+;
+;---------------------------------------------------------------;
+
+[*AZT0001.Det]
+AddReg=PreCopySection
+
+[*AZT0002.Det]
+AddReg=PreCopySection
+
+[*AZT0003.det]
+AddReg=PreCopySection
+
+;---------------------------------------------------------------;
+
+[AZT20.CopyList]
+aztaud.drv,,
+aztaudv.vxd,,
+aztmidi.drv,,
+msopl.drv,,
+
+[Windows.CopyList]
+aztext.dll,,
+aztext16.dll,,
+aztext32.dll,,
+pnpid.dat,,
+midiset.exe,,
+midiset.ini,,
+aztmdmap.exe,,
+Tbaricon.exe,,
+msvcrt.dll,,
+mfc42.dll,,
+
+[AZT_WS.SysCopyList]
+wstream.dll
+vwstream.vxd
+msgloop.exe
+wstream.bin
+genmidi.wsl
+
+[URL.CopyList]
+aztech.url
+
+[MPU401.Copy.Sys]
+aztmpu.drv,,
+aztmpuv.vxd,,
+
+[MSJSTICK.CopyList]
+vjoyd.vxd,,
+msjstick.drv,,
+
+;---------------------------------------------------------------;
+
+[AZT20.DelList]
+mm16c.drv,,,1
+mm16n.drv,,,1
+mm16w.drv,,,1
+sapi!opl.drv,,,1
+vsglx16.386,,,1
+nullwave.drv,,,1
+
+[MPU401.DelList]
+mpu401.drv,,,1
+rdmpu401.drv,,,1
+
+;---------------------------------------------------------------;
+
+[AZTCheck.AddReg]
+HKLM,%KEY_FIL%\fl.UpdateInis,wave.mm16c,,"system.ini,drivers,""wave*=mm16c.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,aux.mm16c,,"system.ini,drivers,""aux*=mm16c.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,midi.mm16c,,"system.ini,drivers,""mixer*=mm16c.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,mixer.mm16c,,"system.ini,drivers,""midi*=mm16c.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,midi.sapi!opl,,"system.ini,drivers,""midi*=sapi!opl.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,device.vsglx16,,"system.ini,386Enh,""device=vsglx16.386"",,"
+HKLM,%KEY_FIL%\fl.UpdateInis,wave.mm16w,,"system.ini,drivers,""wave*=mm16w.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,aux.mm16w,,"system.ini,drivers,""aux*=mm16w.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,midi.mm16w,,"system.ini,drivers,""mixer*=mm16w.drv"",,1"
+HKLM,%KEY_FIL%\fl.UpdateInis,mixer.mm16w,,"system.ini,drivers,""midi*=mm16w.drv"",,1"
+HKLM,%KEY_FIL%\PostInstall,UpdateIniFields,,"UpdateIniFields=fl.UpdateIniFields"
+HKLM,%KEY_FIL%\fl.UpdateIniFields,,,"1"
+HKLM,%KEY_FIL%\fl.UpdateIniFields,msmixmgr,,"system.ini,boot,drivers,msmixmgr.dll"
+
+[MIXER.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,SystemTray,,"SysTray.Exe"
+;HKLM,Software\Microsoft\Windows\CurrentVersion\Run,pnpchk,,"pnpchk.exe"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,Aztmdmap,,"Tbaricon.exe"
+HKLM,Software\Microsoft\Windows\CurrentVersion\RunOnce,midiset,,"midiset.exe"
+
+HKLM,%KEY_IOC%\Vol,,,
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+
+[AZT0001.AddReg]
+HKR,,Driver,,"aztaudv.vxd vwstream.vxd"
+HKR,,DriverDate,,"Nov 1, 1996"
+HKR,,DriverVersion,,"4.8.0"
+HKR,Drivers\wave\aztaud.drv,Description,,%*AZT0001.DeviceDesc%
+HKR,Drivers\wave\aztaud.drv,Driver,,aztaud.drv
+HKR,Drivers\mixer\aztaud.drv,Description,,%*AZT0001.DeviceDesc%
+HKR,Drivers\mixer\aztaud.drv,Driver,,aztaud.drv
+HKR,Drivers\aux\aztaud.drv,Description,,%*AZT0001.DeviceDesc%
+HKR,Drivers\aux\aztaud.drv,Driver,,aztaud.drv
+HKR,Drivers\midi\aztmidi.drv,Description,,%*AZTMIDIMAP.DeviceDesc%
+HKR,Drivers\midi\aztmidi.drv,Driver,,aztmidi.drv
+HKR,Drivers\midi\aztaud.drv,Description,,%*AZTSWT.DeviceDesc%
+HKR,Drivers\midi\aztaud.drv,Driver,,aztaud.drv
+HKR,Drivers\midi\msopl.drv,Description,,%V_INTERNAL%
+HKR,Drivers\midi\msopl.drv,Driver,,msopl.drv
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+;HKR,Config,OEM_ID,1,0
+HKR,Config,FullDuplex,1,0
+HKR,Config,WaveStreamEnabled,1,1
+HKR,Config,WaveStreamPresent,1,1
+HKR,Config,SRS3DPresent,1,1
+HKR,Config,SRS3DEnabled,1,1
+HKR,Config,MicMonitorPresent,1,0
+HKR,Config,MicMonitorEnabled,1,1
+HKR,Config,MonoMICVol,1,00,00,00,00
+HKR,Config,ModemMonitorEnabled,1,1
+HKR,Config,MIDIVolChannel,1,2
+HKR,Config,WaveStreamBufferSize,1,00,02
+HKR,Config,ActiveAPM,1,0
+HKR,Config,"Single Mode DMA",1,0
+;HKR,Config,WaveStreamDosGameEmulation,1,0
+HKR,,EnumPropPages,,"aztaud.drv,DrvEnumPropPages"
+HKR,Config,IdentityKey,1,EC,2D,E2,49,04,9B,A2,D3,14,A9,B3,9E,C5,4E,A5,B8
+HKLM, System\CurrentControlSet\Control\FDMA,PlaybackDisabled,1,1
+HKLM, System\CurrentControlSet\Control\FDMA,CaptureDisabled,1,1
+
+HKLM,Software\Aztech\AudioDriver,MPUDeviceName,,%*AZTMPUA.DeviceDesc% ;CBC
+HKLM,Software\Aztech\AudioDriver,MIDIMapDeviceName,,%*AZTMIDIMAPA.DeviceDesc% ;CBC
+HKLM,Software\Aztech\AudioDriver,SoftSynDeviceName,,%*AZTSWTA.DeviceDesc% ;CBC
+
+HKLM,Software\Aztech\WaveStream,WaveStreamEnabled,1,1
+;HKLM,Software\Aztech\WaveStream,WaveStreamDOSGameEmulation,1,0
+HKLM,Software\Aztech\AudioDriver,DriverVersion,,"4.8.0"
+HKLM,Software\Aztech\AudioDriver,Instrument0,1,00,00,02,02,fb,ff,10,c0,34,ff,02,3a,5f,65,08,ff
+HKLM,Software\Aztech\AudioDriver,Instrument1,1,ff,ff,fd,fd,04,00,ef,3f,cb,00,fd,c5,a0,9a,f7,00
+HKLM,Software\Aztech\AudioDriver,Instrument2,1,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00,00
+HKLM,Software\Aztech\AudioDriver,Percussion0,1,7f,ff,ff,ff,ff,ff
+HKLM,Software\Aztech\AudioDriver,Percussion1,1,00,00,00,00,00,00
+HKLM,Software\Aztech\AudioDriver,Percussion2,1,00,00,00,00,00,00
+
+;HKLM,Software\Aztech\AZTPNP,/A,,"ON"		; update SB environment is on
+;HKLM,Software\Aztech\AZTPNP,/DEFAULT,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/DMA10,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/IDE,,"ON"
+;HKLM,Software\Aztech\AZTPNP,/L,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/MDM2,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/S,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/D,,"C"
+;HKLM,Software\Aztech\AZTPNP,/PNP,,"ON"
+;HKLM,Software\Aztech\AZTPNP,/WIN31,,"OFF"
+;HKLM,Software\Aztech\AZTPNP,/CFG,,"ON"
+;HKLM,Software\Aztech\AZTPNP,/AUTOEXEC,,"ON"
+;HKLM,Software\Aztech\AZTPNP,/DOSSTART,,"ON"
+
+[MIDI.AddReg]
+HKR,,Devloader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+
+[MPU401.AddReg]
+HKR,,Driver,,aztmpuv.vxd
+HKR,Drivers\midi\aztmpu.drv,Driver,,aztmpu.drv
+HKR,Drivers\midi\aztmpu.drv,External,1,01,00,00,00
+;HKR,Drivers\midi\aztmpu.drv,Port,1,00
+;HKR,Drivers\midi\aztmpu.drv,Definition,,"%10%\config\general.idf"
+HKR,Drivers,SubClasses,,"midi"
+
+[MPU401.AddRegDeviceDesc]
+HKR,Drivers\midi\aztmpu.drv,Description,,%*AZTMPU.DeviceDesc%
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[MSJSTICK.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%*AZT0003.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+;---------------------------------------------------------------;
+
+[DestinationDirs]
+DefaultDestDir = 11     ; LDID_SYS
+;AZT_WS.CopyList = 30,WSTREAM
+Windows.CopyList = 10   ; Windows Directory
+URL.CopyList     = 10,"Favori~1"   ; Windows/Favorites
+
+[SourceDisksNames]
+1=" Disk 1",,0001
+2=" MIDI Music Workstation CD",,0001
+
+[SourceDisksFiles]
+;---------------------------------------------------------------;
+
+;
+; The following is a list of known drivers for the given devices.
+; Additionally, the safe driver list is a set of drivers that we
+; know only support specific devices.
+;
+; These lists will help us to determine when we will replace a 
+; driver with our "in-the-box" drivers.
+;
+; Files will be copied based in version number
+aztaud.drv=1
+aztaudv.vxd=1
+wstream.dll=2
+vwstream.vxd=2
+msgloop.exe=2
+wstream.bin=2
+genmidi.wsl=2
+aztext.dll=1
+aztmidi.drv=1
+aztext16.dll=1
+aztext32.dll=1
+midiset.exe=1
+midiset.ini=1
+pnpid.dat=1
+aztmpu.drv=1
+aztmpuv.vxd=1
+aztmdmap.exe=1
+Tbaricon.exe=2
+msvcrt.dll=2
+mfc42.dll=2
+aztech.url=1
+;aztpnp.exe=1
+;pnpchk.exe=1
+
+[*PNPB006.KnownDrivers]
+mpu401.drv
+rdmpu401.drv
+mm16n.drv
+mm16c.drv
+mm16w.drv
+
+[midi.SafeDrivers]
+*.drv
+mmsystem.dll
+mpu401.drv
+msadlib.drv
+fmsynth.drv
+es688win.drv            ; for Compaq Presario
+audmpio.drv             ; for Compaq Presario
+sapi!opl.drv
+
+;---------------------------------------------------------------;
+
+[Strings]
+;Non-localized strings
+KEY_WARNVER="SYSTEM\CurrentControlSet\Control\SessionManager\WarnVerDLLs"
+KEY_CHKVER="SYSTEM\CurrentControlSet\Control\SessionManager\CheckVerDLLs"
+
+KEY_FIL="SYSTEM\CurrentControlSet\Control\MediaResources\FilterList"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+
+;Localized strings
+AZTECH="Aztech"
+AZTMfgName="Aztech Labs"
+*AZT0001.DeviceDesc="Audio Device (AZT1023)"
+*AZT0002.DeviceDesc="MPU-401 Device (AZT1023)"
+*AZT0003.DeviceDesc="Gameport Joystick Device (AZT1023)"
+*AZTMIDIMAP.DeviceDesc="Aztech Compound Synthesis Engine (96 Voices)"
+*AZTSWT.DeviceDesc="Aztech S/w Synthesis Engine (Enhanced 64 Voices)"
+*AZTMPU.DeviceDesc="Aztech MPU-401 (H/w Basic Engine)"
+*AZTMIDIMAPA.DeviceDesc="Aztech Compound Syn. Engine"
+*AZTSWTA.DeviceDesc="Aztech Software Syn. Engine"
+*AZTMPUA.DeviceDesc="Aztech MPU-401 (HWT Engine)"
+MediaClassName="Sound, video and game controllers"
+V_INTERNAL="Internal OPL2/OPL3 FM Synthesis"
+V_CLSWAVEFORM="Audio"
+V_CLSMIDI="MIDI"
+V_CLSMIXER="Mixer"
+V_CLSAUX="Auxiliary"
+V_GENERAL="General MIDI Instrument"

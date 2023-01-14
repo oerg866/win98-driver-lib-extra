@@ -1,0 +1,61 @@
+; Windows95 Wave Device Setup File
+; Copyright (c) 1996 Aureal ISG inc.
+; Manufacturer: Aureal ISG
+;   %filespec: serwave.inf,0.2 %
+;   %created_by: mdunbar %
+;   %date_created: Wed Nov  5 17:28:30 1997 %
+
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+provider=%MANIFNAME%
+LayoutFile=layout.inf
+
+[ClassInstall]
+Addreg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%MfgName%=Aureal
+
+[Aureal]
+%AURL1.DeviceDesc%=AURL1, MODEMWAVE\Aureal_Software_Voice_Modem
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+MSSERWAVE.CopyList = 11 ; LDID_SYS
+
+[AURL1]
+AddReg=MSSERWAVE.AddReg, AURL1.AddReg
+
+[MSSERWAVE.CopyList]
+serwave.vxd,,
+serwvdrv.drv,,
+vmodctl.dll,,
+
+[AURL1.AddReg]
+HKR,Drivers\wave\serwvdrv.drv,Description,,%AURL1.DeviceDesc%
+HKR,Config,XformModule,  , "umdmxfrm.dll"
+HKR,Config,XformID,     1, 04, 00, 00, 00
+HKR,Config,WaveDevices,  1, 01, 00
+
+
+[MSSERWAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\wave,,,
+HKR,,Driver,,serwave.vxd
+HKR,Drivers\wave\serwvdrv.drv,Driver,,serwvdrv.drv
+HKR,Drivers,SubClasses,,"wave"
+
+[Strings]
+MANIFNAME="Aureal"
+MfgName="Aureal"
+MediaClassName="Sound, video and game controllers"
+AURL1.DeviceDesc="Aureal Software Modem Serial Wave Device"

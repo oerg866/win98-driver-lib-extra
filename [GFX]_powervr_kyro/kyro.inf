@@ -1,0 +1,434 @@
+; INF file for KYRO Win9X display drivers. 
+; Copyright 2003 Imagination Technologies.
+
+[Version] 
+signature="$CHICAGO$" 
+Provider=%Provider% 
+Class=Display
+DriverVer = 09/22/2004, 2.2.22.33
+Catalogfile.NT=ntfile.cat 
+ 
+[DestinationDirs] 
+DefaultDestDir=11 
+SGL_Files=11 
+PowerVR_CopyInf=17 ; for WinMe PnP
+PowerVR_CopyInfOther=17,Other ; for Win9x PnP
+PowerVR_CopySystem32Drivers=10,system32\drivers 
+PowerVR_CopyWindowsFiles=10 
+PowerVR_CopySystemFiles=11 
+PVRS3_CopySystemFiles=11 
+ 
+[SourceDisksNames] 
+1="PowerVR KYRO W9X Setup Disk",,1 
+ 
+[Manufacturer] 
+%Manufacturer%=Mfg 
+ 
+[Mfg] 
+"PowerVR KYRO 32MB/64MB"=KYRO,PCI\VEN_104A&DEV_0010&REV_01
+"PowerVR KYRO II 32MB/64MB"=KYROII,PCI\VEN_104A&DEV_0010&REV_05
+"PowerVR KYRO II 32MB/64MB"=KYROII,PCI\VEN_104A&DEV_0010&REV_07
+"PowerVR KYRO II 32MB/64MB"=KYROII,PCI\VEN_104A&DEV_0010&REV_0F
+"PowerVR KYRO II 32MB/64MB"=KYROII,PCI\VEN_104A&DEV_0010&REV_1F
+ 
+[KYRO] 
+CopyFiles=PowerVR_CopyWindowsFiles,PowerVR_CopySystemFiles,PVRS3_CopySystemFiles
+DelReg=KYRO_DelReg,PVRS3_DelReg 
+AddReg=KYRO_AddReg,KYRO_Modes_AddReg,PVRS3_Addreg
+UpdateInis=KYRO_UpdateInis
+ 
+[KYROII] 
+CopyFiles=PowerVR_CopyWindowsFiles,PowerVR_CopySystemFiles,PVRS3_CopySystemFiles
+DelReg=KYRO_DelReg,PVRS3_DelReg 
+AddReg=KYRO_AddReg,KYROII_Modes_AddReg,PVRS3_Addreg
+UpdateInis=KYRO_UpdateInis
+
+
+[PowerVR_CopySystemFiles] 
+pmx2.drv 
+pmx2ogl.dll 
+pmxmini.vxd 
+pmxmini2.vxd 
+pmxkern.vxd 
+pmxserv.vxd 
+pmxdxsrv.vxd 
+pmxdiag.dll 
+pmxsupp.exe 
+Pmxbmp.dll
+Pmxrcen_.dll
+Pmxrcde_.dll
+Pmxrces_.dll
+Pmxrcfr_.dll
+Pmxrcit_.dll
+Pmxrcja_.dll
+Pmxrcko_.dll
+Pmxrcpt_.dll
+Pmxrczhs.dll
+Pmxrczh_.dll
+pmxprop.dll 
+pmxpropx.exe 
+pmxapi.dll 
+pmxinit.exe 
+pmxinf.dll 
+pmxgenin.dll 
+pmxpnp.vxd 
+pmxfiles.exe 
+Pmxtlen_.chm
+Pmxtlde_.chm
+Pmxtles_.chm
+Pmxtlfr_.chm
+Pmxtlit_.chm
+Pmxtlja_.chm
+Pmxtlko_.chm
+Pmxtlpt_.chm
+Pmxtlzhs.chm
+Pmxtlzh_.chm
+
+[PowerVR_CopyWindowsFiles] 
+gamestng.reg 
+pmxreg.exe 
+sgl2.dll 
+pvr2os.dll 
+sglmid7b.dll
+
+
+[PVRS3_CopySystemFiles] 
+pmx2hal.dll 
+
+
+[SourceDisksFiles] 
+gamestng.reg=1 
+pmxreg.exe=1 
+pmx2.drv=1 
+pmx2hal.dll=1 
+vxdem.vxd=1 
+pmxmini.vxd=1 
+pmxmini2.vxd=1 
+pmxserv.vxd=1 
+pmxkern.vxd=1 
+pmxdxsrv.vxd=1 
+sgl2.dll=1 
+pvr2os.dll=1 
+sglmid7b.dll=1 
+pmx2ogl.dll=1 
+pmxdiag.dll=1 
+pmxsupp.exe=1 
+Pmxbmp.dll=1 
+Pmxrcen_.dll=1 
+Pmxrcde_.dll=1 
+Pmxrces_.dll=1 
+Pmxrcfr_.dll=1 
+Pmxrcit_.dll=1 
+Pmxrcja_.dll=1 
+Pmxrcko_.dll=1 
+Pmxrcpt_.dll=1 
+Pmxrczhs.dll=1 
+Pmxrczh_.dll=1 
+pmxprop.dll=1 
+pmxpropx.exe=1 
+pmxapi.dll=1 
+pmxinit.exe=1 
+pmxinf.dll=1 
+pmxgenin.dll=1 
+pmxpnp.vxd=1 
+pmxfiles.exe=1 
+Pmxtlen_.chm=1
+Pmxtlde_.chm=1
+Pmxtles_.chm=1
+Pmxtlfr_.chm=1
+Pmxtlit_.chm=1
+Pmxtlja_.chm=1
+Pmxtlko_.chm=1
+Pmxtlpt_.chm=1
+Pmxtlzhs.chm=1
+Pmxtlzh_.chm=1
+
+
+[KYRO_DelReg] 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run","SmartTools",, 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\SmartTools","CheckedByPVRTools",, 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\PMXScreenDisplayPage",,
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\PMX3DDisplayPage",,
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\PMXTVAndVideoDisplayPage",,
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\PMXLCDDisplayPage",,
+HKCR,"CLSID\{23D256ED-77E1-11D2-937E-08001708F544}"
+HKCR,"CLSID\{01F44061-E8EE-11d1-821F-00802964BD71}"
+HKCR,"CLSID\{01F44062-E8EE-11d1-821F-00802964BD71}"
+HKCR,PMXScreenDisplayPage
+HKCR,PMX3DDisplayPage
+HKCR,PMXTVAndVideoDisplayPage
+HKCR,PMXLCDDisplayPage
+ 							 
+[PVRS3_DelReg] 
+HKLM,%PVRS3settings%\Global
+HKLM,%PVRS3settings%\PVRS3HWSettings
+HKLM,%PVRS3settings%\PVRS3SWSettings
+HKLM,%PVRS3settings%\Install
+HKLM,%PVRS3settings%\PowerVRTools
+ 							 
+ 							 
+ 
+[KYRO_UpdateInis]
+system.ini,386Enh,,"EmmExclude=C000-CFFF"
+
+[KYRO_AddReg]
+;Up the General Heap 
+HKLM,"SOFTWARE\PowerVR\PMXKERN","Flags",,"0x00000004" 
+;Register the card
+HKR,Default,drv,,pmx2.drv 
+HKR,Default,drv2,,pmx2.drv 
+;Add OGL (ICDKIT)
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OpenGLdrivers",PMX000,,"pmx2ogl.dll" 
+;Run pmxreg to add App Hints (Game Settings) 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce", PowerVRGameSettings,,"pmxreg.exe -runonce -regfile "%10%\gamestng.reg 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", PowerVRGameSettings,,"pmxreg.exe -regfile "%10%\gamestng.reg 
+;Set up uninstall
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce", PowerVRUninstall,,"pmxreg.exe -setupUninstall -runonce"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", PowerVRUninstall,,"pmxreg.exe -setupUninstall"
+;SetUp PowerVR Tools
+HKLM,SOFTWARE\PowerVR\CardEnum\CardList\KYRO,DeviceID,,0010 
+HKLM,SOFTWARE\PowerVR\CardEnum\CardList\KYRO,VendorID,,104A 
+HKLM,SOFTWARE\PowerVR\CardEnum\CardList\KYRO,RevID,,01 
+;Property page uninstaller 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\PowerVR Tools",DisplayName,0,"PowerVR Tools" 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\PowerVR Tools",UninstallString,0,%11%"\pmxinit.exe -RemoveCPLPages" 
+;PowerVR Tools Property pages 
+HKCR,"CLSID\{01F44060-E8EE-11d1-821F-00802964BD71}",,0,"KYRO Properties Shell Extension"		 	
+HKCR,"CLSID\{01F44060-E8EE-11d1-821F-00802964BD71}\InProcServer32",,0,%11%"\pmxprop.dll" 
+HKCR,"CLSID\{01F44060-E8EE-11d1-821F-00802964BD71}\InProcServer32",ThreadingModel,0,Apartment 
+HKCR,KYROPropertyPages\CLSID,,0,{01F44060-E8EE-11d1-821F-00802964BD71} 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\KYROPropertyPages",,0,"{01F44060-E8EE-11d1-821F-00802964BD71}" 
+;Run PMX initialisation app 
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", PMXInit,,%11%"\pmxinit.exe" 
+
+[PVRS3_Addreg]
+HKR,Default,Hal32,,pmx2hal.dll 
+HKLM,%PVRS3HWSettings%\PMXKERN,"CorePLLFreq",,"115" 
+HKLM,%PVRS3HWSettings%\PMXKERN,"CorePLLFreq2",,"175" 
+;Non Card Specific Services Settings
+HKLM,%PVRS3HWSettings%\PMXDXSRV,"Flags",,"0x00000508" 
+HKLM,%PVRS3HWSettings%\PMXDXSRV,"TexQueuePhys",,"0x00100000" 
+HKLM,%PVRS3HWSettings%\PMXDXSRV,"SysMemBltBufSize",,"0x00080000" 
+HKLM,%PVRS3HWSettings%\PMXHAL,"Flags",,"0x000f2800" 
+HKLM,%PVRS3HWSettings%\PMXHAL,"Flags2",,"0x84004001" 
+HKLM,%PVRS3HWSettings%\PMXKERN,"Flags",,"0x08000002" 
+HKLM,%PVRS3HWSettings%\PMXKERN,"GeneralHeapSize",,"0x00900000" 
+HKLM,%PVRS3HWSettings%\PMXSERV,"Strips",,"0x20" 
+;If setup.exe is provided, DeviceDesc in setup.cfg should match that in the line below
+HKLM,%PVRS3settings%\Install,"DeviceDesc",,"KYRO"
+HKLM,%PVRS3settings%\Global\D3D,"DisableEnTnL",,"1" 
+HKLM,%PVRS3settings%\Install\D3D\Default,"DisableEnTnL",,1
+HKLM,%PVRS3settings%\Global\OpenGL,"EnableDXT1",,"1" 
+HKLM,%PVRS3settings%\Install\OpenGL\Troubleshooting,"EnableDXT1",,1
+HKLM,%PVRS3settings%\Install\OpenGL\Default,"EnableDXT1",,1
+;Register with PowerVR Tools the desired initial 3D options.
+HKLM,"Software\PowerVR\InstallType","InstallTypeD3D",,"Default" 
+HKLM,"Software\PowerVR\InstallType","InstallTypeOpenGL",,"Default" 
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","ComplexSceneMode",,1
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","DepthBufferlessHSR",,0
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","StencilBufferlessSB",,0
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","HonourDoubleBuffer",,1
+;The following two entries are for UI use only, and not written out to the registry for the Troubleshooting case
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","SynchronousDepthBuffer",,1
+HKLM,"%PVRS3settings%\Install\OpenGL\Troubleshooting","SynchronousStencilBuffer",,1
+;Enable help
+HKLM,"%PVRS3settings%\PowerVRTools\Prscrn\Layout",EnableHelp,,"1"
+HKLM,"%PVRS3settings%\PowerVRTools\Pr3d\Layout",EnableHelp,,"1"
+HKLM,"%PVRS3settings%\PowerVRTools\Prtv\Layout",EnableHelp,,"1"
+HKLM,"%PVRS3settings%\PowerVRTools\Prlcd\Layout",EnableHelp,,"1"
+;Turn off splash screen by default
+HKLM,"%PVRS3settings%\PowerVRTools\pmxinit","SplashDisable",,1
+HKLM,"%PVRS3settings%\LastApp",,,"" 
+;Set up min/max overclock adjustment values and slider tick frequency (Display page)
+HKLM,"%PVRS3settings%\PowerVRTools\Prscrn\Layout",NoOverclockSlider,,"0"
+HKLM,"%PVRS3settings%\PowerVRTools\Prscrn\Layout",PrscrnOverclockMin,,"-30"
+HKLM,"%PVRS3settings%\PowerVRTools\Prscrn\Layout",PrscrnOverclockMax,,"30"
+HKLM,"%PVRS3settings%\PowerVRTools\Prscrn\Layout",PrscrnOverclockTickFreq,,"10"
+
+
+[KYRO_Modes_AddReg] 
+;Setup the Display Driver and Mode Table/s
+HKR,,Ver,,4.0 
+HKR,,DevLoader,,*vdd 
+HKR,Default,Mode,,"16,640,480" 
+HKR,Default,vdd,,"*vdd,*vflatd" 
+HKR,Default,minivdd,,pmxmini.vxd 
+HKR,Default,minivdd2,,pmxmini2.vxd 
+HKR,Default,RefreshRate,,"-1" 
+HKR,Default,DDC,,"1" 
+HKR,Default,OGL32,,pmx000 
+HKR,%Modes%,Options,1,00,00,00,00,00,04,00,00,02,00,00,00,00 
+HKR,%Modes%"\8\640,480",OptimalRate,,"75"
+HKR,%Modes%"\16\640,480",OptimalRate,,"75"
+HKR,%Modes%"\32\640,480",OptimalRate,,"75"
+HKR,%Modes%"\8\800,600",OptimalRate,,"75"
+HKR,%Modes%"\16\800,600",OptimalRate,,"75"
+HKR,%Modes%"\32\800,600",OptimalRate,,"75"
+HKR,%Modes%"\8\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\16\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\32\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\8\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\16\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\32\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\8\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\16\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\32\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\8\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\16\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\32\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\8\1600,1200",OptimalRate,,"75"
+HKR,%Modes%"\16\1600,1200",OptimalRate,,"75"
+HKR,%Modes%"\32\1600,1200",OptimalRate,,"60"
+HKR,%Modes%"\8\1920,1440",OptimalRate,,"60"
+HKR,%Modes%"\16\1920,1440",OptimalRate,,"60"
+
+HKR,%Modes%"\8\640,480",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\16\640,480",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\32\640,480",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\8\800,600",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\16\800,600",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\32\800,600",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\8\1024,768",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\16\1024,768",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\32\1024,768",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\8\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\16\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\32\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\8\1280,960",,,"60,72,75,85,90,100"
+HKR,%Modes%"\16\1280,960",,,"60,72,75,85,90,100"
+HKR,%Modes%"\32\1280,960",,,"60,72,75,85,90,100"
+HKR,%Modes%"\8\1280,1024",,,"60,72,75,85,90"
+HKR,%Modes%"\16\1280,1024",,,"60,72,75,85,90"
+HKR,%Modes%"\32\1280,1024",,,"60,72,75,85,90"
+HKR,%Modes%"\8\1600,1200",,,"60,72,75"
+HKR,%Modes%"\16\1600,1200",,,"60,72,75"
+HKR,%Modes%"\32\1600,1200",,,"60"
+HKR,%Modes%"\8\1920,1440",,,"60"
+HKR,%Modes%"\16\1920,1440",,,"60"
+
+HKR,%RawModes%"\8\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\16\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\32\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\8\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\16\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\16\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\16\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\32\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\32\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\32\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,200",,,"60" 
+HKR,%RawModes%"\8\320,240",,,"60" 
+HKR,%RawModes%"\8\512,384",,,"60" 
+HKR,%RawModes%"\8\640,400",,,"60" 
+HKR,%RawModes%"\16\320,200",,,"60" 
+HKR,%RawModes%"\16\320,240",,,"60" 
+HKR,%RawModes%"\16\512,384",,,"60" 
+HKR,%RawModes%"\16\640,400",,,"60" 
+HKR,%RawModes%"\32\320,200",,,"60" 
+HKR,%RawModes%"\32\320,240",,,"60" 
+HKR,%RawModes%"\32\512,384",,,"60" 
+HKR,%RawModes%"\32\640,400",,,"60" 
+
+
+[KYROII_Modes_AddReg] 
+;Setup the Display Driver and Mode Table/s
+HKR,,Ver,,4.0 
+HKR,,DevLoader,,*vdd 
+HKR,Default,Mode,,"16,640,480" 
+HKR,Default,vdd,,"*vdd,*vflatd" 
+HKR,Default,minivdd,,pmxmini.vxd 
+HKR,Default,minivdd2,,pmxmini2.vxd 
+HKR,Default,RefreshRate,,"-1" 
+HKR,Default,DDC,,"1" 
+HKR,Default,OGL32,,pmx000 
+HKR,%Modes%,Options,1,00,00,00,00,00,04,00,00,02,00,00,00,00 
+HKR,%Modes%"\8\640,480",OptimalRate,,"75"
+HKR,%Modes%"\16\640,480",OptimalRate,,"75"
+HKR,%Modes%"\32\640,480",OptimalRate,,"75"
+HKR,%Modes%"\8\800,600",OptimalRate,,"75"
+HKR,%Modes%"\16\800,600",OptimalRate,,"75"
+HKR,%Modes%"\32\800,600",OptimalRate,,"75"
+HKR,%Modes%"\8\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\16\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\32\1024,768",OptimalRate,,"75"
+HKR,%Modes%"\8\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\16\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\32\1152,864",OptimalRate,,"75"
+HKR,%Modes%"\8\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\16\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\32\1280,960",OptimalRate,,"75"
+HKR,%Modes%"\8\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\16\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\32\1280,1024",OptimalRate,,"75"
+HKR,%Modes%"\8\1600,1200",OptimalRate,,"75"
+HKR,%Modes%"\16\1600,1200",OptimalRate,,"75"
+HKR,%Modes%"\32\1600,1200",OptimalRate,,"75"
+HKR,%Modes%"\8\1920,1440",OptimalRate,,"75"
+HKR,%Modes%"\16\1920,1440",OptimalRate,,"75"
+HKR,%Modes%"\32\1920,1440",OptimalRate,,"60"
+
+HKR,%Modes%"\8\640,480",,,"60,72,75,85,90,100,120,150,200,240"
+HKR,%Modes%"\16\640,480",,,"60,72,75,85,90,100,120,150,200,240"
+HKR,%Modes%"\32\640,480",,,"60,72,75,85,90,100,120,150,200,240"
+HKR,%Modes%"\8\800,600",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\16\800,600",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\32\800,600",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\8\1024,768",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\16\1024,768",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\32\1024,768",,,"60,72,75,85,90,100,120,150"
+HKR,%Modes%"\8\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\16\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\32\1152,864",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\8\1280,960",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\16\1280,960",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\32\1280,960",,,"60,72,75,85,90,100,120"
+HKR,%Modes%"\8\1280,1024",,,"60,72,75,85,90,100"
+HKR,%Modes%"\16\1280,1024",,,"60,72,75,85,90,100"
+HKR,%Modes%"\32\1280,1024",,,"60,72,75,85,90,100"
+HKR,%Modes%"\8\1600,1200",,,"60,72,75"
+HKR,%Modes%"\16\1600,1200",,,"60,72,75"
+HKR,%Modes%"\32\1600,1200",,,"60,72,75"
+HKR,%Modes%"\8\1920,1440",,,"60,72,75"
+HKR,%Modes%"\16\1920,1440",,,"60,72,75"
+HKR,%Modes%"\32\1920,1440",,,"60"
+
+HKR,%RawModes%"\8\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\16\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\32\640,400",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\8\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\16\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\16\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\16\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\32\320,200",OptimalRate,,"60" 
+HKR,%RawModes%"\32\320,240",OptimalRate,,"60" 
+HKR,%RawModes%"\32\512,384",OptimalRate,,"60" 
+HKR,%RawModes%"\8\320,200",,,"60" 
+HKR,%RawModes%"\8\320,240",,,"60" 
+HKR,%RawModes%"\8\512,384",,,"60" 
+HKR,%RawModes%"\8\640,400",,,"60" 
+HKR,%RawModes%"\16\320,200",,,"60" 
+HKR,%RawModes%"\16\320,240",,,"60" 
+HKR,%RawModes%"\16\512,384",,,"60" 
+HKR,%RawModes%"\16\640,400",,,"60" 
+HKR,%RawModes%"\32\320,200",,,"60" 
+HKR,%RawModes%"\32\320,240",,,"60" 
+HKR,%RawModes%"\32\512,384",,,"60" 
+HKR,%RawModes%"\32\640,400",,,"60" 
+
+[Strings] 
+REG_SZ = 0x00000000 
+REG_MULTI_SZ = 0x00010000 
+REG_EXPAND_SZ = 0x00020000 
+REG_BINARY = 0x00000001 
+REG_DWORD = 0x00010001 
+PVRS3settings = SOFTWARE\PowerVR\KYRO
+PVRS3HWSettings = SOFTWARE\PowerVR\KYRO\HWSettings
+PVRS3SWSettings = SOFTWARE\PowerVR\KYRO\SWSettings
+Provider = Imagination Technologies 
+Manufacturer = ST Microelectronics 
+Modes = Modes 
+RawModes = RawModes 

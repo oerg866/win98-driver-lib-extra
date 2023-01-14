@@ -1,0 +1,267 @@
+5465 Graphics Display Device Driver for Microsoft Windows 95
+_____________________________________________________________
+
+
+   Device Driver Version: 1.70a
+
+
+   Contents
+   ________
+
+           1.0  Changes in this release
+             1.1 Changes in previous releases
+           2.0  Installing the Device Drivers
+           3.0  Current Known Issues
+           4.0  Current Driver Limitation
+           5.0  Component Description
+
+
+
+  1.0 Changes in this release
+  _________________________________________
+
+  Version: 1.70a 
+  Release Date: 03/06/98
+  Internal#: fw170b07a
+  Default Setting: Graphics Bus Priority ON
+
+  Problems Resolved/New Features
+  ------------------------------
+  - Added code to help when debugging.
+  - Use new bitfield  mask when tweaking texture registers for mipmapping.
+  - Consolidated and cleaned mipmap choosing code into a single subroutine.
+  - Fixed bilinear filtering shift bias.
+  - Removed non-conformant code paths.
+  - Streamlined liner-texture setup code.
+
+  Bug Fixes
+  ---------
+  - Display corrupted on DOS windowed box when toggling DOS prompt after 
+    activating screen saver. PDR#10940.
+  - With ShowGDI4.EXE,with 8bpp/16bpp,MONOCKURO->VRAMs MERGECOPY,systems 
+    Hangs. PDR#11138.
+  - With 24bpp  Windows explorer  hangs, when moves/drag  though mouse. PDR#11059.
+  - System hang when scrolling text in Scrolling Marquee screen saver at
+    1024x768x24bpp. PDR#11200.
+  - When we enter Japanese character(Kanji conversion).When space is 
+    enter the previous character to space is corrupted. PDR#11135.
+  - The Bus Config property page appears on the Display Properties Page 
+    after driver/Win '98 upgrade. PDR#11148.
+  - Quickly Moving an the MPEG video Money around the Desktop causes the 
+    system to hang. PDR#11154.
+  - Microsoft Flight Simulator '98  1024x768 screen/D3D mode.  
+    Drawing/ReDrawing of cockpit control panel is slow. PDR#10846 
+  - TextureJet is enabled in 3D performance page with 2MB AGP system. PDR#11100.
+  - No texture shows up when running Direct3D Boids (& Direct3D Flipcube) 
+    in mode 800x600x32. PDR#11183.
+  - When Texture Jet is ON ,the Game GTA will  finished without  running 
+    properly. PDR#11087.
+  - On a fresh copy of Win '98, with Matrox Mellinium as primary and 5465 
+    as secondary, the system will hang when trying to start 5465. PDR#11144 
+  - Enabled font pre-realization in WinBench to improve WinBench performance.
+  - In CorelDraw 7, moving the KPT MetaToy f/x  Plug-in tool over a  24bpp 
+    bitmap causes random rectangles to be painted on the desktop. PDR#10817 
+  - Changing resolution  while  Running RealPlayer cause GPF. PDR#11134.
+  - With CR Rom performance software Chosoku 95  systems Hangs if CD Rom 
+    is removed from the CR ROM drive. PDR#11141.
+  - System hangs when D3D is selected in TrueSpace 3.0 or 3.1, 800x600 
+    16bpp after navigating scene.  (Display list on or off). PDR#10726 
+  - The bitmap on the "Display Properties" page on the "Screen Saver" tab 
+    is corrupt due to a problem with the Stretch Blt.  Occurs in 8bpp
+    modes. PDR#10820.
+  - WHQL Flight Sim 98:  Black box appears around steam textures on the 
+    Flight 1983 Kilavea. PDR#11020.
+  - Z-buffer related problem.  The polys at the far edge of the Z-buffer 
+    are wrapping to the front. A float to fix conversion problem. PDR#11075.
+  - Character corruption with Henry Explorer.640x480.  The polygons that 
+    make up the creatures are not fitting together; spaces in between. PDR#11064.
+  - Mouse cursor motion slows down when moving on a particular highlight 
+    area(map). PDR#11070.
+  - Circle is not drawn properly with Clipping/BS_SOLID,NOTXORPEN options. PDR#10972 
+  - Display Properties icon can NOT run after installing drivers. PDR#11099.
+  - Run Hanery Explorer two times, after the second time there is a GPF. 
+    System hangs. PDR#11093.
+ 
+
+
+  1.1 Changes in previous releases
+  _______________________________________
+
+  Version: 1.62 (USB_ON), 1.62a (USB_OFF)
+  Release Date: 12/22/97
+  QA  Version: fw162b14
+  Engineer Version: <none>
+
+  Problems Resolved/New Features
+  ------------------------------
+  - Removed reporting of 32bpp texture format support.
+  - Increased maximum texture height/width to 512.
+  - Fixed HostBasedTexture Display List (hyperblade bug) that caused blts to hang.
+  - Added DrawPrimitive callback prototypes.
+  - Added support for DirectX 5.0 to the D3D API.
+  - Enabled 3D conformant code to pass flutestress.
+  - Added initialization code to differentiate between AGP and PCI buses.
+  - Corrected issues for DDC/EDID handling and monitor display refresh.
+  - Added foreign language localization to utilities.
+  - Added new and improved bandwidth equation for video.
+  - Added more robust DDC/EDID handling.
+  - Enabled 3D Display List.
+  - Added MIP mapping for the conformant parameterization.
+  - Added four 2D performance improvements (MonoSafety=off, Prealloc, OpaqueText, UI_Object).
+  - VPM added DirectX 5.0 cooperation to avoid conflicts with video port.
+  - Added installation of DX5 runtime components.
+  - Added ACPI power management functionality.
+  - Multi-Monitor Phase 0. Make all global variables in the VxD local. Needed prior to the Phase 1 Multi-Monitor.
+
+  ____________________________________________________________
+  Version: 1.60 (AGP USB_ON), 1.60a (PCI), 1.60b (AGP USB_OFF)
+  Release Date: 10/15/97
+  QA  Version: bw160b12
+  Engineer Version: <none>
+
+  Problems Resolved/New Features
+  ------------------------------
+  - Control is added to select/unselect 3D Display List for Direct3D and DirectDraw CL-GD546x "3D Performance" display property page. 
+  - 3D Display List is currently disabled, so the Control panel is not present.
+  - PCI TextureJet capability is enabled and control was added to select the aggressiveness of the TextureJet use of memory for PCI systems.
+  - PCI TextureJet is available on PCI motherboards.  PCI texture Jet is not available on 440LX motherboards.
+  - Added a wide variety of performance optimizations.
+  - Added an improved memory manager.
+  - Fixed screen noise that appeared at higher screen resolutions.
+  - Fixed memory leak anomalies.  Acquired memory was not correctly released after a mode change.
+  - Fixed incorrect pen colors at 24 and 32 bits-per-pixel.
+  - Enabled hardware clipping for all text operations.
+  - Added physical-to-logical color translation for 16, 24, and 32 bits-per-pixel.
+  - Added functionality to save/restore CRTC registers in the miniVDD.
+  - Fixed issue that caused Taiwanese Windows to hang during a restart.
+  - Added full localization support to the Host Bus Configuration property page.
+  - Modified 3D Performance property page help file for Japanese Windows and fixed Japanese Windows related display anomalies.
+  - Multiple changes made to Monitor Refresh property page.  Localization added and notification message displayed when refresh rate changed for non-current Windows display mode.
+
+  ____________________
+  Version: 1.52, 1.52a
+  Release Date: 09/12/97
+  QA  Version: 
+  Engineer Version: <none>
+
+  Problems Resolved/New Features
+  ------------------------------
+  - Added support for 5465 AF Silicon.  Removed errant code that makes previous release specific to AD and earlier Silicon. 
+  - Vgartd.vxd upgraded to 1.0.16 - release candidate 4
+  - Maximum AGP heap size increased to 32Mb for production ROMs
+  - PCI Data Streaming support added ("USB fix") -- defaults to ON
+  - New Host Bus Configuration property sheet to support PCI Data Streaming select/deselect
+  - 3-D property sheet added to support Speed/Quality Control
+  - Fix 1280x1024 at 72Hz
+  - MiniVDD changes to correctly manage base VGA registers
+  - Function ResetVideoWindow added to reset VW0 for ReEnable
+  - DevToBackground does HostifyBitmaps if PreHiresToVGA hasn't been called
+  - DevToBackground no longer invokes PostCRTCmodeChange in miniVDD
+  - New int 2F function called from MiniVDD in PreHiresToVGA which does the HostifyBitmap
+  - Check if cursor needs excluding before checking if we need to translate brush and drawmodes
+  - CRTC VM data added in miniVDD for DOS fixups
+  - Next switch to Window's HiRes will now also do save for VESA modes
+  - Odd field in FlipOverlay() now uses the second buffer address
+  - FlipOverlay() attempts to use the field polarity from FlipVideoPort
+  - FlipOverlay() checks VideoPortID before checking FieldID
+  - VESA modeset sets fetch tiles per line
+  - Moved code from PostCRTCmodeChange to PostHiresToVGA for full-screen DOS session
+  - MiniVDD does minimum frame buffer save/restore for VESA modes
+  - No longer tell VESA apps we have only 1-Meg video memory so DUKE doesn't flicker after full-screen DOS switch
+  - Eliminate handling of BeginMessageMode in miniVDD
+  - Skip restore of DOS register state for MessageMode VMs
+  - Update_DTTR_TCR and InterleaveOFF moved to PostHiresToVGA from PostCRTCmodeChange since DEV_TO_BACKGROUND no longer does HostifyBitmap
+  - Skip saving of DOS VM register state and frame buffer for Pseudo VMs in PreVGAToHires.  VM Control Block doesn't have our extensions to store state info
+  - In PostCRTCmodeChange when going to full-screen DOS, skip restore of DOS VM's frame buffer when: (a) VM is Pseudo VM and doesn't have the data structure (GPFs), or (b) VM handle is from a dead VM (GPFs) 
+  - Disable DAC when going to full screen or exiting Windows
+  - Hook for apps that don't work correctly when the primary surface pitch does not equal the frame buffer pitch
+  - DWORD align potentially flipable surfaces when multibuffering is disabled
+  - Make sure the surface width is not bigger than 2K for VIP in CreateSurface()
+  - Fix issue in DestroySurface32 that caused lpSurfaceData not to be destroyed
+  - Create linear video port surfaces if screen width is greater than or equal to 2K
+  - Disable overlay in 640x480x32 at 85Hz by calling KillOverlay()
+  - ColorKeyBlt24() added
+
+
+
+  2.0 Installing the Device Drivers
+  _________________________________
+
+  1. Click Start, then Settings, then Control Panel.
+  2. Start the "Display" applet program. 
+  3. Select the "Settings" page, push the "Change Display Type" button.
+  4. Push the "Change" button in the "Adapter Type" area.
+  5. Push the "Have Disk" button and press "OK".
+  6. Specify the path to the new driver and press the <ENTER> key:
+
+          Example 1: Insert the drivers disk in the A: floppy drive,
+                     and enter A:\.
+
+          Example 2: Type in the name of the directory where you copied
+                     the drivers, either on your local hard drive or
+                     on a network share.
+
+          Example 3: If you're not sure exactly where the drivers are,
+                     choose the "Browse..." button are find them.
+
+  7. The "Select Device" dialog box will appear. Select the adapter that
+     corresponds to the one you installed in your machine and click OK.
+
+  8. Windows 95 will copy the display drivers to the proper directories
+     on your system.
+
+  9. Continue choosing Close until asked to restart your machine from the
+     "Systems Settings Change" dialog box.
+
+  10. After the system has restarted, you can go back into the Display
+      applet and select alternate screen resolutions and color depths.
+
+
+
+  3.0  Current Known Issues
+  _______________________________
+  <none>
+
+
+
+  4.0  Current Driver Limitation
+  _______________________________
+  <none>
+
+
+
+  5.0 Component Versions
+  _______________________________
+
+  FILE NAME         VERSION             COMPONENT DESCRIPTION
+  -----------       ------------        ---------------------
+  5465VPM.DLL       1.10.13.0000        VPM
+  546X.DRV          4.10.01.1701        Display Driver
+  546X.inf          N/A                 Setup Information
+  546X.VXD          4.10.01.1701        VDD
+  546X_HBC.DLL      1.00.0004           Host Bus Config
+  546X_HBC.HLP      N/A                 Host Bus Config Help Document
+  546X_HBC.TXT      N/A                 Host Bus Config Text Document
+  CL3D.DLL          1.00.00.0017        Direct 3D
+  CL3D.HLP          N/A                 Direct 3d Help Document
+  CL3D.TXT          N/A                 Direct 3d Text Document
+  CLGDD32.DLL       4.10.01.1701        Direct Draw
+  CLMERGE.EXE       1.00.00.0003        DX Merge Utility
+  CLREFRSH.DLL      1.10.00.0003        Performance Page Utility
+  CLREFRSH.HLP      N/A                 Performance Page Utility Help Document
+  CLREFRSH.TXT      N/A                 Performance Page Utility Text Document
+  CLVMD3D.DLL       4.10.01.1701        Direct 3D
+  LGM32THK.DLL      4.10.01.1701        Mode Switch
+  MODE65.BIN        NONE                Mode INI
+  MODESW16.DLL      4.10.01.1701        Mode Switch
+  MSVCIRT.DLL       4.20.00.6201        Microsoft (R) C++ Runtime Library
+  MSVCRT.DLL        4.20.00.6201        Microsoft (R) C Runtime Library
+  MSVCRT40.DLL      4.10.00.6038        Microsoft® C Runtime Library
+  PNP16VPM.DLL      1.10.01.0000        VPM
+  PNP32VPM.DLL      1.10.01.0000        VPM
+  SETUPDX5.1        4.71.1015.0000      DirectX 
+  SETUPDX5.2        4.71.1015.0000      DirectX 
+  VGARTD.VXD        1.00.16.0000        Host Bus Config
+  VPM16T.DLL        1.10.11.0000        VPM
+  VPM32T.DLL        1.10.14.0000        VPM
+  readme.1st        N/A			ASCII Text file

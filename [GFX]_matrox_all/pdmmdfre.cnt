@@ -1,0 +1,53 @@
+:Base pdmmdfre.hlp>Main
+:Title Matrox MultiDesk
+
+1 Vue d'ensemble=IDH_MATROX_MULTIDESK
+
+1 Utilisation de ce guide=IDH_CONVENTIONS
+
+1 Menu Matrox MultiDesk
+2	Vue d'ensemble=IDH_MATROX_MULTIDESK_MENU
+2	Éléments de menus
+3		Programmes=IDH_PROGRAMS
+3		Gestion des bureaux=IDH_MANAGE_DESKTOPS
+3		Aide=IDH_MMD_MENU_HELP
+3		Bureau suivant=IDH_NEXT_DESKTOP
+3		Fermer Matrox MultiDesk=IDH_CLOSE_MATROX_MULTIDESK
+
+1 Desktop manager
+2	Vue d'ensemble=IDH_DESKTOP_MANAGER
+2	Éléments de menus
+3		Bureau
+4			Vue d'ensemble=IDH_DESKTOP_MENU
+4			Afficher=IDH_DESKTOP_SHOW
+4			Nouveau=IDH_DESKTOP_NEW
+4			Renommer=IDH_DESKTOP_RENAME
+4			Supprimer=IDH_DESKTOP_DELETE
+4			Actualiser=IDH_DESKTOP_REFRESH
+4			Propriétés=IDH_DESKTOP_PROPERTIES
+3		Programme
+4			Vue d'ensemble=IDH_PROGRAM_MENU
+4			Afficher=IDH_PROGRAM_SHOW
+4			Couper=IDH_PROGRAM_CUT
+4			Coller=IDH_PROGRAM_PASTE
+4			Supprimer=IDH_PROGRAM_DELETE
+4			Afficher sur tous les bureaux=IDH_SHOW_ON_ALL_DESKTOPS
+4			Changer de bureau lors du démarrage du programme=IDH_SWITCH_DESKTOP
+3		Options
+4			Vue d'ensemble=IDH_OPTIONS_MENU
+4			Préférences=IDH_PREFERENCES
+3		Aide
+4			Vue d'ensemble=IDH_HELP_MENU
+4			Rendre tous les programmes accessibles=IDH_MAKE_ALL_PROGRAMS_ACCESSIBLE
+4			Aide sur MultiDesk=IDH_HELP_MULTIDESK_OVERVIEW
+4			À propos=IDH_HELP_ABOUT
+2	Boîtes de dialogue
+3 		Propriétés
+4			Changer d'icône=IDH_CHANGE_ICON
+4			Touche d'accès rapide=IDH_PROPERTIES_HOTKEY
+4			Apparence=IDH_APPEARANCE
+3 		Préférences
+4			Afficher l'icône dans la barre des tâches Windows=IDH_SHOW_ICON
+4			Action double-cliquer pour l'icône de la barre des tâches=IDH_DOUBLECLICK_ACTION
+4			Options=IDH_START_MULTIDESK_WITH_WINDOWS
+4			Touche d'accès rapide de la liste des bureaux=IDH_PREFERENCES_HOTKEY

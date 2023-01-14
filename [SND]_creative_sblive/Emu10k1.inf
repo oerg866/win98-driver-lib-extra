@@ -1,0 +1,770 @@
+; Creative Technology Ltd.
+;     Copyright (c) Creative Technology Ltd, 1994-1999.
+;
+; Description
+;  This inf file contains the following device for installation
+;  a. CT4620 - SBLive!              (PCI\VEN_1102&DEV_0002&SUBSYS_00211102)
+;  b. CT4670 - SBLive! Value        (PCI\VEN_1102&DEV_0002&SUBSYS_00201102)
+;  c. CT4760 - SBLive!              (PCI\VEN_1102&DEV_0002&SUBSYS_80401102)
+;  d. SBlive motherboard            (PCI\VEN_1102&DEV_0002&SUBSYS_002F1102)     
+;  e. CT4850 - SBlive! Value        (PCI\VEN_1102&DEV_0002&SUBSYS_80511102)     
+;
+; Date     : 26 August '99
+; Revision : 1.32.000
+
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+Provider=%String0%
+LayoutFile=layout.inf
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[DestinationDirs]
+DefaultDestDir=11
+INF.CopyList=17
+
+[Manufacturer]
+%String0%=Creative
+
+[Creative]
+%String2%=PCI8010_Device,PCI\VEN_1102&DEV_0002&SUBSYS_00211102
+%String2%=PCI8010M_Device,PCI\VEN_1102&DEV_0002&SUBSYS_002F1102
+%String4%=PCI8010V_Device,PCI\VEN_1102&DEV_0002&SUBSYS_00201102
+%String2%=PCI80102_Device,PCI\VEN_1102&DEV_0002&SUBSYS_80401102
+%String4%=PCI8010VN_Device,PCI\VEN_1102&DEV_0002&SUBSYS_80511102
+
+[PCI8010_Device]
+CopyFiles=PCI8010.CopyList,DEVCON32.CopyList,SFMAN32SYS.CopyList,CIFMANSYS.CopyList,INF.CopyList, CIFMANWIN.CopyList, MSJSTICK.CopyList
+AddReg=PCI8010.AddReg, A3D.AddReg, PCI8010MIX.AddReg
+
+[PCI80102_Device]
+CopyFiles=PCI8010.CopyList,DEVCON32.CopyList,SFMAN32SYS.CopyList,CIFMANSYS.CopyList,INF.CopyList, CIFMANWIN.CopyList, MSJSTICK.CopyList
+AddReg=PCI8010.AddReg, PCI80102.AddReg, A3D.AddReg, PCI8010MIX.AddReg
+
+[PCI8010M_Device]
+CopyFiles=PCI8010.CopyList,DEVCON32.CopyList,SFMAN32SYS.CopyList,CIFMANSYS.CopyList,INF.CopyList, CIFMANWIN.CopyList, MSJSTICK.CopyList
+AddReg=PCI8010.AddReg, PCI8010M.AddReg, A3D.AddReg, PCI8010MIX.AddReg
+
+[PCI8010V_Device]
+CopyFiles=PCI8010.CopyList,DEVCON32.CopyList,SFMAN32SYS.CopyList,CIFMANSYS.CopyList,INF.CopyList, CIFMANWIN.CopyList, MSJSTICK.CopyList
+AddReg=PCI8010.AddReg, PCI8010V.AddReg, A3D.AddReg
+
+[PCI8010VN_Device]
+CopyFiles=PCI8010.CopyList,DEVCON32.CopyList,SFMAN32SYS.CopyList,CIFMANSYS.CopyList,INF.CopyList, CIFMANWIN.CopyList, MSJSTICK.CopyList
+AddReg=PCI8010.AddReg, PCI8010VN.AddReg, A3D.AddReg
+
+;------------------------------------------------------------------;
+
+[PCI8010.CopyList]
+emu10k1.vxd
+ctmm16.drv
+ctwt16.drv
+sblfx.dll
+ctsyn.vxd
+ctsyn16.drv
+default.ecw
+a3d.dll
+2gmgsmt.sf2
+cspman.dll
+ac3api.dll
+
+[INF.CopyList]
+ctmisc.inf
+
+[DEVCON32.CopyList]
+devcon32.dll
+
+[SFMAN32SYS.CopyList]
+sfman.vxd
+sfman32.dll
+
+[CIFMANSYS.CopyList]
+cifman.vxd
+
+[CIFMANWIN.CopyList]
+cifman.dll
+cifman.crl
+
+[MSJSTICK.CopyList]
+vjoyd.vxd
+msjstick.drv
+
+;------------------------------------------------------------------;
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,,"0"
+HKR,,Installer,0,mmci.dll
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;------------------------------------------------------------------;
+
+[PCI8010.AddReg]
+
+
+
+HKLM,"SOFTWARE\Creative Tech\Devcon\Default",,,"%11%\2gmgsmt.sf2"
+HKLM,"SOFTWARE\Creative Tech\Devcon\Default","SFCacheSize",0,"2097152"
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,Drivers,MIGRATED,0,0
+HKR,Drivers\midi,,0,
+HKR,Drivers\wave,,0,
+HKR,Drivers\mixer,,0,
+HKR,,Driver,0,emu10k1.vxd
+HKR,Drivers\midi\ctmm16.drv,Driver,0,ctmm16.drv
+HKR,Drivers\wave\ctmm16.drv,Driver,0,ctmm16.drv
+HKR,Drivers\mixer\ctmm16.drv,Driver,0,ctmm16.drv
+HKR,Drivers\midi\ctwt16.drv,Driver,0,ctwt16.drv
+HKR,Drivers\midi\ctmm16.drv,Description,0,%*PCI8010.MidiDevice%
+HKR,Drivers\midi\ctsyn16.drv,Driver,0,ctsyn16.drv
+HKR,Drivers\midi\ctsyn16.drv,Description,0,%*PCI8010.SoftSynth%
+HKR,Drivers\wave\ctmm16.drv,Description,0,%*PCI8010.WaveDevice%
+HKR,Drivers\mixer\ctmm16.drv,Description,0,%*PCI8010.MixerDevice%
+HKR,Drivers\midi\ctwt16.drv,Description,0,%*PCI8010.MidiSynth%
+HKR,Drivers,SubClasses,0,wave
+
+HKLM,%*PCI8010.DeviceInfoKey%,%CardDevName%,,%*PCI8010.CardDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%MIDIOutDevName%,,%*PCI8010.MIDIOutDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%MIDIInDevName%,,%*PCI8010.MIDIInDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%MIDIWTSynthDevName%,,%*PCI8010.MIDIWTSynthDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%WaveInDevName%,,%*PCI8010.WaveInDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%WaveOutDevName%,,%*PCI8010.WaveOutDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%MixerDevName%,,%*PCI8010.MixerDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%DSOutDevName%,,%*PCI8010.DSOutDevName%
+HKLM,%*PCI8010.DeviceInfoKey%,%SPDIFWarn%,,%SPDIFCopyrightViolation%
+HKLM,%*PCI8010.DeviceInfoKey%,%WaveDS%,,%WaveDSDir%
+HKLM,%*PCI8010.DeviceInfoKey%,%NoFPU%,,%NoFPUwarn%
+HKLM,%*PCI8010.DeviceInfoKey%,%OldVMCP%,,%OldVMCPwarn%
+HKLM,%*PCI8010.DeviceInfoKey%,%HPhn%,,%HPhnLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Wave%,,%WaveLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Midi%,,%MidiLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%CD%,,%CDLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Line%,,%LineLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Mic%,,%MicLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%HMic%,,%HMicLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Video%,,%VideoLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%UHear%,,"""%UHearLong%"""
+HKLM,%*PCI8010.DeviceInfoKey%,%PSpk%,,%PSpkLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Aux%,,%AuxLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%MMix%,,%MMixLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%TAD%,,%TADLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Phn%,,%PhnLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%DVD%,,%DVDLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%I2SIn%,,%I2SInLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%SPDIF%,,%SPDIFLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%CDDIF%,,%CDDIFLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%LineIn%,,%LineInLong%
+
+HKLM,%*PCI8010.DeviceInfoKey%,%Play%,,%PlayLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Rec%,,%RecLong%
+
+HKLM,%*PCI8010.DeviceInfoKey%,%Vol%,,%VolLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Mute%,,%MuteLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Select%,,%SelectLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Treble%,,%TrebleLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Bass%,,%BassLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%3DSE%,,%3DSELong%
+HKLM,%*PCI8010.DeviceInfoKey%,%No3DSE%,,%No3DSELong%
+HKLM,%*PCI8010.DeviceInfoKey%,%BBoost%,,%BBoostLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%MicOnly%,,%MicOnlyLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Ctr%,,%CtrLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%Dep%,,%DepLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%MBoost%,,%MBoostLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%TrebleOff%,,%TrebleOffLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%BassOff%,,%BassOffLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%FrontRear%,,%FrontRearLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%DigitalOut%,,%DigitalOutLong% 
+
+HKLM,%*PCI8010.DeviceInfoKey%,%WaveSynth%,,%WaveSynthLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%WSVol%,,%WSVolLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%WSMute%,,%WSMuteLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%WSRvrbVol%,,%WSRvrbVolLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%WSRvrbMute%,,%WSRvrbMuteLong%
+
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxDefault%,,%EfxDefaultLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxReverb%,,%EfxReverbLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxRoom1%,,%EfxRoom1Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxRoom2%,,%EfxRoom2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxRoom3%,,%EfxRoom3Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxHall1%,,%EfxHall1Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxHall2%,,%EfxHall2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxPlate%,,%EfxPlateLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxDelay%,,%EfxDelayLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxPDelay%,,%EfxPDelayLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxNoReverb%,,%EfxNoReverbLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxChorus%,,%EfxChorusLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxChorus1%,,%EfxChorus1Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxChorus2%,,%EfxChorus2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxChorus3%,,%EfxChorus3Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxChorus4%,,%EfxChorus4Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxFBChorus%,,%EfxFBChorusLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxFlange%,,%EfxFlangeLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxSDelay%,,%EfxSDelayLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxSDelayFB%,,%EfxSDelayFBLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxNoChorus%,,%EfxNoChorusLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxBass%,,%EfxBassLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM12%,,%EfxM12Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM10%,,%EfxM10Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM8%,,%EfxM8Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM6%,,%EfxM6Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM4%,,%EfxM4Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxM2%,,%EfxM2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxFlat%,,%EfxFlatLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP2%,,%EfxP2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP4%,,%EfxP4Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP6%,,%EfxP6Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP8%,,%EfxP8Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP10%,,%EfxP10Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxP12%,,%EfxP12Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxTreble%,,%EfxTrebleLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxStereoEnh%,,%EfxStereoEnhLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxDisable%,,%EfxDisableLong%
+HKLM,%*PCI8010.DeviceInfoKey%,%EfxEnable%,,%EfxEnableLong%
+
+HKLM,%*PCI8010.DeviceInfoKey%,%I2SInLineIn2%,,%I2SInLineIn2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%LineIn2%,,%LineIn2Long%
+HKLM,%*PCI8010.DeviceInfoKey%,%EnbLineIn2%,,%EnbLineIn2Long%
+
+HKLM,%*DevCon%,%Reverb%,,%EfxReverbLong%
+HKLM,%*DevCon%,%Chorus%,,%EfxChorusLong%
+HKLM,%*DevCon%,%EfxOSound%,,%EfxOSoundLong%
+
+HKLM,System\CurrentControlSet\Control\SessionManager\KnownDLLs,DEVCON32,0,DEVCON32.DLL
+HKLM,System\CurrentControlSet\Control\SessionManager\KnownDLLs,SFMAN32,0,SFMAN32.DLL
+
+HKLM,%*Drivers%,0000,,"%11%\emu10k1.vxd"
+HKLM,%*Drivers%,0001,,"%11%\ctmm16.drv"
+HKLM,%*Drivers%,0002,,"%11%\ctwt16.drv"
+HKLM,%*Drivers%,0003,,"%11%\sfman.vxd"
+HKLM,%*Drivers%,0004,,"%11%\sfman32.dll"
+HKLM,%*Drivers%,0005,,"%11%\devcon32.dll"
+HKLM,%*Drivers%,0006,,"%11%\cifman.vxd"
+HKLM,%*Drivers%,0007,,"%11%\cifman.dll"
+HKLM,%*Drivers%,0008,,"%11%\cifman.crl"
+HKLM,%*Drivers%,0009,,"%11%\sblfx.dll"
+HKLM,%*Drivers%,000a,,"%11%\ctsyn.vxd"
+HKLM,%*Drivers%,000b,,"%11%\ctsyn16.drv"
+HKLM,%*Drivers%,000c,,"%11%\default.ecw"
+HKLM,%*Drivers%,000d,,"%11%\2gmgsmt.sf2"
+HKLM,%*Drivers%,000e,,"%11%\a3d.dll"
+HKLM,%*Drivers%,000f,,"%11%\cspman.dll"
+HKLM,%*Drivers%,0010,,"%11%\ac3api.dll"
+
+; Do Not localized -------------------------------------------------------;
+HKLM,%*PCI8010O.DefaultMixer%,"Mode",65537,40,00,00,00
+HKLM,%*PCI80102.DefaultMixer%,"Mode",65537,40,00,00,00
+HKLM,%*PCI8010M.DefaultMixer%,"Mode",65537,40,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%,"Mode",65537,40,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%,"Mode",65537,40,00,00,00
+
+
+[PCI8010MIX.AddReg]
+HKLM,%*PCI8010O.DefaultMixer%,"InitCount",65537,00,00,00,00
+HKLM,%*PCI8010O.DefaultMixer%\Play,"PlayVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010O.DefaultMixer%\Play,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Play,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Play,"MicVol",1,f0,7f,f0,7f
+HKLM,%*PCI8010O.DefaultMixer%\Play,"PSpkVol",1,f4,bf,f4,bf
+HKLM,%*PCI8010O.DefaultMixer%\Play,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Play,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Play,"I2SInVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010O.DefaultMixer%\Play,"WaveDSVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010O.DefaultMixer%\Play,"MIDIVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010O.DefaultMixer%\Play,"CDSPDIFVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010O.DefaultMixer%\Play,"GPSPDIFVol",1,e1,f7,e1,f7
+
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"MicVol",1,f9,37,f9,37
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"I2SInVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"WaveVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"MIDIVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"CDSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"GPSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010O.DefaultMixer%\Rec,"UHearVol",1,e8,bf,e8,bf
+
+
+[PCI8010M.AddReg] 
+; Do Not localized -------------------------------------------------------;
+HKLM,%*PCI8010M.DefaultMixer%,"PlaySources",65537,de,e8,06,00
+HKLM,%*PCI8010M.DefaultMixer%,"PlayVolumeCaps",65537,de,e8,06,00
+HKLM,%*PCI8010M.DefaultMixer%,"InitCount",65537,00,00,00,00
+HKLM,%*PCI8010M.DefaultMixer%\Play,"AuxMt",1,00,00,00,00 
+HKLM,%*PCI8010M.DefaultMixer%\Play,"PlayVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010M.DefaultMixer%\Play,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Play,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Play,"MicVol",1,f0,7f,f0,7f
+HKLM,%*PCI8010M.DefaultMixer%\Play,"PSpkVol",1,f4,bf,f4,bf
+HKLM,%*PCI8010M.DefaultMixer%\Play,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Play,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Play,"I2SInVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010M.DefaultMixer%\Play,"WaveDSVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010M.DefaultMixer%\Play,"MIDIVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010M.DefaultMixer%\Play,"CDSPDIFVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010M.DefaultMixer%\Play,"GPSPDIFVol",1,e1,f7,e1,f7
+
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"MicVol",1,f9,37,f9,37
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"I2SInVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"WaveVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"MIDIVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"CDSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"GPSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010M.DefaultMixer%\Rec,"UHearVol",1,e8,bf,e8,bf
+
+[PCI8010V.AddReg]
+; Do Not localized -------------------------------------------------------;
+HKLM,%*PCI8010V.DefaultMixer%,"PlaySources",65537,dc,c8,06,00
+HKLM,%*PCI8010V.DefaultMixer%,"PlayVolumeCaps",65537,dc,c8,06,00
+HKLM,%*PCI8010V.DefaultMixer%,"InitCount",65537,00,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%,"ACaps",65537,04,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%,"RecordSources",65537,9c,c8,0e,00
+HKLM,%*PCI8010V.DefaultMixer%,"RecordVolumeCaps",65537,9c,c8,0e,00
+
+
+HKLM,%*PCI8010V.DefaultMixer%\Play,"PlayVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"CDVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"LineVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"MicVol",1,ee,8f,ee,8f
+HKLM,%*PCI8010V.DefaultMixer%\Play,"PSpkVol",1,f2,df,f2,df
+HKLM,%*PCI8010V.DefaultMixer%\Play,"AuxVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"TADVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"I2SInVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"WaveDSVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"MIDIVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"CDSPDIFVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010V.DefaultMixer%\Play,"GPSPDIFVol",1,e1,f7,e1,f7
+
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"MicVol",1,f9,37,f9,37
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"I2SInVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"WaveVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"MIDIVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"CDSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"GPSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"UHearVol",1,e8,bf,e8,bf
+
+HKLM,%*PCI8010V.DefaultMixer%\Play,"PlayMt",1,00,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"FrontRear",1,00,80,00,80
+HKLM,%*PCI8010V.DefaultMixer%\Play,"Bass",1,00,80,00,80
+HKLM,%*PCI8010V.DefaultMixer%\Play,"Treble",1,00,80,00,80 
+HKLM,%*PCI8010V.DefaultMixer%\Play,"CDMt",1,00,00,00,00 
+HKLM,%*PCI8010V.DefaultMixer%\Play,"LineMt",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"MBoost",1,b2,26,d4,14 
+HKLM,%*PCI8010V.DefaultMixer%\Play,"MicMt",1,01,00,01,00 
+HKLM,%*PCI8010V.DefaultMixer%\Play,"PSpkMt",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"AuxMt",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"TADMt",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"WaveDSMt",1,00,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"MIDIMt",1,00,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"CDSPDIFMt",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"GPSPDIFMt",1,01,00,01,00
+
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"Select",1,20,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Rec,"MBoost",1,01,00,01,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"CD",65537,04,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"Line",65537,04,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"TAD",65537,04,00,00,00
+HKLM,%*PCI8010V.DefaultMixer%\Play,"Aux",65537,04,00,00,00
+
+[PCI80102.AddReg]
+; Do Not localized -------------------------------------------------------;
+HKLM,%*PCI80102.DefaultMixer%,"PlaySources",65537,dc,c8,06,00
+HKLM,%*PCI80102.DefaultMixer%,"PlayVolumeCaps",65537,dc,c8,06,00
+HKLM,%*PCI80102.DefaultMixer%,"InitCount",65537,00,00,00,00
+HKLM,%*PCI80102.DefaultMixer%,"ACaps",65537,04,00,00,00
+HKLM,%*PCI80102.DefaultMixer%,"RecordSources",65537,9c,c8,0e,00
+HKLM,%*PCI80102.DefaultMixer%,"RecordVolumeCaps",65537,9c,c8,0e,00
+HKLM,%*PCI80102.DefaultMixer%\Play,"PlayVol",1,e3,e7,e3,e7
+HKLM,%*PCI80102.DefaultMixer%\Play,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Play,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Play,"MicVol",1,f0,7f,f0,7f
+HKLM,%*PCI80102.DefaultMixer%\Play,"PSpkVol",1,f4,bf,f4,bf
+HKLM,%*PCI80102.DefaultMixer%\Play,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Play,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Play,"I2SInVol",1,e1,f7,e1,f7
+HKLM,%*PCI80102.DefaultMixer%\Play,"WaveDSVol",1,e1,f7,e1,f7
+HKLM,%*PCI80102.DefaultMixer%\Play,"MIDIVol",1,e1,f7,e1,f7
+HKLM,%*PCI80102.DefaultMixer%\Play,"CDSPDIFVol",1,e1,f7,e1,f7
+HKLM,%*PCI80102.DefaultMixer%\Play,"GPSPDIFVol",1,e1,f7,e1,f7
+
+HKLM,%*PCI80102.DefaultMixer%\Rec,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Rec,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Rec,"MicVol",1,f9,37,f9,37
+HKLM,%*PCI80102.DefaultMixer%\Rec,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Rec,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI80102.DefaultMixer%\Rec,"I2SInVol",1,ec,9f,ec,9f
+HKLM,%*PCI80102.DefaultMixer%\Rec,"WaveVol",1,ec,9f,ec,9f
+HKLM,%*PCI80102.DefaultMixer%\Rec,"MIDIVol",1,ec,9f,ec,9f
+HKLM,%*PCI80102.DefaultMixer%\Rec,"CDSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI80102.DefaultMixer%\Rec,"GPSPDIFVol",1,ec,9f,ec,9f
+HKLM,%*PCI80102.DefaultMixer%\Rec,"UHearVol",1,e8,bf,e8,bf
+
+[PCI8010VN.AddReg]
+; Do Not localized -------------------------------------------------------;
+HKLM,%*PCI8010VN.DefaultMixer%,"PlaySources",65537,dc,c8,00,00
+HKLM,%*PCI8010VN.DefaultMixer%,"PlayVolumeCaps",65537,dc,c8,00,00
+HKLM,%*PCI8010VN.DefaultMixer%,"InitCount",65537,00,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%,"ACaps",65537,04,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%,"RecordSources",65537,9c,c8,08,00
+HKLM,%*PCI8010VN.DefaultMixer%,"RecordVolumeCaps",65537,9c,c8,08,00
+
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"PlayVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"CDVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"LineVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"MicVol",1,ee,8f,ee,8f
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"PSpkVol",1,f2,df,f2,df
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"AuxVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"TADVol",1,e3,e7,e3,e7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"WaveDSVol",1,e1,f7,e1,f7
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"MIDIVol",1,e1,f7,e1,f7
+
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"CDVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"LineVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"MicVol",1,f9,37,f9,37
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"AuxVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"TADVol",1,e8,bf,e8,bf
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"WaveVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"MIDIVol",1,ec,9f,ec,9f
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"UHearVol",1,e8,bf,e8,bf
+
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"PlayMt",1,00,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"FrontRear",1,00,80,00,80
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"Bass",1,00,80,00,80
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"Treble",1,00,80,00,80 
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"CDMt",1,00,00,00,00 
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"LineMt",1,01,00,01,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"MBoost",1,b2,26,d4,14 
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"MicMt",1,01,00,01,00 
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"PSpkMt",1,01,00,01,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"AuxMt",1,01,00,01,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"TADMt",1,01,00,01,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"WaveDSMt",1,00,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"MIDIMt",1,00,00,00,00
+
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"Select",1,20,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Rec,"MBoost",1,01,00,01,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"CD",65537,04,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"Line",65537,04,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"TAD",65537,04,00,00,00
+HKLM,%*PCI8010VN.DefaultMixer%\Play,"Aux",65537,04,00,00,00
+
+[A3D.AddReg]
+HKCR,A3D,,,"A3d Object"
+HKCR,A3D\CLSID,,,"{D8F1EEE0-F634-11CF-8700-00A0245D918B}"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B},,,"A3D Object"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InprocServer32,,,"A3D.DLL"
+HKCR,CLSID\{D8F1EEE0-F634-11CF-8700-00A0245D918B}\InprocServer32,"ThreadingModel", ,"Apartment"
+
+;---------------------------------------------------------------;
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[MSJSTICK.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%*MSJSTICK.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[MSJSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+;---------------------------------------------------------------;
+
+[SourceDisksNames]
+1=%ID1%,,0000-0001
+
+[SourceDisksFiles]
+emu10k1.vxd=1
+ctmm16.drv=1
+ctwt16.drv=1
+devcon32.dll=1
+sfman.vxd=1
+sfman32.dll=1
+cifman.vxd=1
+cifman.dll=1
+cifman.crl=1
+sblfx.dll=1
+ctsyn.vxd=1
+ctsyn16.drv=1
+default.ecw=1
+2gmgsmt.sf2=1
+msjstick.drv=1,..\..\..\DIRECTX\DIRECTX\DRIVERS\ENG
+vjoyd.vxd=1,..\..\..\DIRECTX\DIRECTX\DRIVERS\ENG
+ctmisc.inf=1
+a3d.dll=1
+cspman.dll=1
+ac3api.dll=1
+
+;----------------------------------------------------------------;
+
+[Strings]
+; Do Not localized -------------------------------------------------------;
+CardDevName="CardDevName"
+MIDIOutDevName="MIDIOutDevName"
+MIDIInDevName="MIDIInDevName"
+MIDIWTSynthDevName="MIDIWTSynthDevName"
+WaveInDevName="WaveInDevName"
+WaveOutDevName="WaveOutDevName"
+MixerDevName="MixerDevName"
+SPDIFWarn="SPDIFWarn"
+WaveDS="WaveDS"
+DSOutDevName="DSOutDevName"
+NoFPU="NoFPU"
+OldVMCP="OldVMCP" 
+I2SInLineIn2="I2SIn-LineIn2" 
+LineIn2="LineIn2"
+EnbLineIn2="EnbLineIn2"
+
+*PCI8010.DeviceInfoKey="SOFTWARE\Creative Tech\DeviceInfo\PCI\VEN_1102&DEV_0002"
+*PCI8010O.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_00211102"
+*PCI80102.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_80401102"
+*PCI8010V.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_00201102"
+*PCI8010VN.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_80511102"
+*PCI8010D.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_80221102"
+*PCI8010M.DefaultMixer="SOFTWARE\Creative Tech\DriverDefaults\MixerSettings\PCI\VEN_1102&DEV_0002&SUBSYS_002F1102"
+*DevCon="SOFTWARE\Creative Tech\Devcon"
+
+
+*Drivers="SOFTWARE\Creative Tech\Drivers\AudioDevice\DevCon\00000002"
+
+Chorus="EfxChorus"
+Reverb="EfxReverb"
+
+HPhn="HPhn"
+Wave="Wave"
+Midi="MIDI"
+CD="CD"
+Line="Line"
+Mic="Mic"
+HMic="HMic"
+Video="Video"
+UHear="UHear"
+PSpk="PSpk"
+Aux="Aux"
+MMix="MMix"
+TAD="TAD"
+Phn="Phn"
+DVD="DVD"
+I2SIn="I2SIn"
+SPDIF="GPSPDIF"
+CDDIF="CDSPDIF"
+LineIn="Line-In"
+FrontRear="FrontRear"
+
+DigitalOut="DigitalOut"
+Play="Play"
+Rec="Rec"
+
+Vol="%sVol"
+Mute="%sMt"
+Select="Select"
+Treble="Treble"
+Bass="Bass"
+3DSE="3DSE"
+No3DSE="No3DSE"
+BBoost="BBoost"
+MicOnly="MicOnly"
+Ctr="Ctr"
+Dep="Dep"
+MBoost="MBoost"
+TrebleOff="TrebleOff"
+BassOff="BassOff"
+
+WaveSynth="WaveSynth"
+WSVol="WSVol"
+WSMute="WSMute"
+WSRvrbVol="WSRvrbVol"
+WSRvrbMute="WSRvrbMute"
+
+EfxDefault="EfxDefault"
+EfxReverb="EfxReverb"
+EfxRoom1="EfxRoom1"
+EfxRoom2="EfxRoom2"
+EfxRoom3="EfxRoom3"
+EfxHall1="EfxHall1"
+EfxHall2="EfxHall2"
+EfxPlate="EfxPlate"
+EfxDelay="EfxDelay"
+EfxPDelay="EfxPDelay"
+EfxNoReverb="EfxNoReverb"
+EfxChorus="EfxChorus"
+EfxChorus1="EfxChorus1"
+EfxChorus2="EfxChorus2"
+EfxChorus3="EfxChorus3"
+EfxChorus4="EfxChorus4"
+EfxFBChorus="EfxFBChorus"
+EfxFlange="EfxFlange"
+EfxSDelay="EfxSDelay"
+EfxSDelayFB="EfxSDelayFB"
+EfxNoChorus="EfxNoChorus"
+EfxBass="EfxBass"
+EfxM12="EfxM12"
+EfxM10="EfxM10"
+EfxM8="EfxM8"
+EfxM6="EfxM6"
+EfxM4="EfxM4"
+EfxM2="EfxM2"
+EfxFlat="EfxFlat"
+EfxP2="EfxP2"
+EfxP4="EfxP4"
+EfxP6="EfxP6"
+EfxP8="EfxP8"
+EfxP10="EfxP10"
+EfxP12="EfxP12"
+EfxTreble="EfxTreble"
+EfxStereoEnh="EfxStereoEnh"
+EfxDisable="EfxDisable"
+EfxEnable="EfxEnable"
+EfxOSound="Original Sound"
+
+; Effect names - Do not localize------------------------------------------;
+EfxRoom1Long="Room 1"
+EfxRoom2Long="Room 2"
+EfxRoom3Long="Room 3"
+EfxHall1Long="Hall 1"
+EfxHall2Long="Hall 2"
+EfxPlateLong="Plate"
+EfxDelayLong="Delay"
+EfxPDelayLong="Panning Delay"
+EfxChorus1Long="Chorus 1"
+EfxChorus2Long="Chorus 2"
+EfxChorus3Long="Chorus 3"
+EfxChorus4Long="Chorus 4"
+EfxFBChorusLong="FB Chorus"
+EfxFlangeLong="Flange"
+EfxSDelayLong="Short Delay"
+EfxSDelayFBLong="Short Delay FB"
+
+
+;Localized mixer long name------------------------------------------;
+
+; -- not more than 25 characters here --------------------------;
+
+*PCI8010.CardDevName="SB Live!"
+*PCI8010.MIDIWTSynthDevName="SB Live! MIDI Synth"
+*PCI8010.MIDIOutDevName="SB Live! MIDI Out"
+*PCI8010.MIDIInDevName="SB Live! MIDI In"
+*PCI8010.WaveInDevName="SB Live! Wave In"
+*PCI8010.WaveOutDevName="SB Live! Wave Out"
+*PCI8010.MixerDevName="SB Live! Mixer"
+*PCI8010.DSOutDevName="SB Live! DirectSound"
+
+; -- not more than 25 characters here --------------------------;
+HPhnLong="Headphone"
+WaveLong="Wave"
+MidiLong="MIDI"
+CDLong="CD Audio"
+LineLong="Line-In"
+MicLong="Microphone"
+HMicLong="Microphone2 (Headset)"
+VideoLong="Video"
+UHearLong="What U Hear"
+PSpkLong="PC Speaker"
+AuxLong="Auxiliary"
+MMixLong="Mono Mix"
+TADLong="TAD-In" 
+PhnLong="TAD-Out"
+DVDLong="DVD"
+I2SInLong="I2S-In (PC-DVD)"
+SPDIFLong="SPDIF-In"
+CDDIFLong="CD Digital"
+LineInLong="Line-In Digital"
+FrontRearLong="Front Rear Balance"
+DigitalOutLong="Digital Output Only"  
+PlayLong="Play Control"
+RecLong="Record Control"
+
+VolLong="%s Volume"
+MuteLong="%s Mute"
+SelectLong="Select"
+TrebleLong="Treble"
+BassLong="Bass"
+AGCLong="Automatic Gain Control"
+3DSELong="3D Stereo Enhancement"
+No3DSELong="Bypass 3D Stereo Enhancement"
+GainLong="Gain"
+BBoostLong="Bass Boost"
+MicOnlyLong="Transmit Microphone Sound Only"
+CtrLong="Center Control for 3DSE"
+DepLong="Depth Control for 3DSE"
+MBoostLong="Mic Boost (20dB)"
+TrebleOffLong="Treble Bypass"
+BassOffLong="Bass Bypass"
+
+WaveSynthLong="WaveSynth Synthesizer"
+WSVolLong="WaveSynth Volume"
+WSMuteLong="WaveSynth Mute"
+WSRvrbVolLong="WaveSynth Reverb Volume"
+WSRvrbMuteLong="WaveSynth Reverb Mute"
+
+EfxDefaultLong="Default Effect"
+EfxReverbLong="Reverb"
+EfxNoReverbLong="No Reverb"
+EfxChorusLong="Chorus"
+EfxNoChorusLong="No Chorus"
+EfxBassLong="Bass Level"
+EfxM12Long="-12dB"
+EfxM10Long="-10dB"
+EfxM8Long="-8dB"
+EfxM6Long="-6dB"
+EfxM4Long="-4dB"
+EfxM2Long="-2dB"
+EfxFlatLong="Flat"
+EfxP2Long="+2dB"
+EfxP4Long="+4dB"
+EfxP6Long="+6dB"
+EfxP8Long="+8dB"
+EfxP10Long="+10dB"
+EfxP12Long="+12dB"
+EfxTrebleLong="Treble Level"
+EfxStereoEnhLong="Stereo Enhancement"
+EfxDisableLong="Disable"
+EfxEnableLong="Enable"
+EfxOSoundLong="Original Sound"
+
+I2SInLineIn2Long="I2S-In/Line-In2" 
+LineIn2Long="Line-In2"
+EnbLineIn2Long="Enable Line-In2"
+
+
+
+
+
+;Localized strings------------------------------------------;
+*PCI8010.MidiDevice="Creative SB Live! MIDI UART"
+*PCI8010.WaveDevice="Creative SB Live! Wave Device"
+*PCI8010.MixerDevice="Creative SB Live! Mixer"
+*PCI8010.MidiSynth="Creative SB Live! MIDI Synth"
+*PCI8010.SoftSynth ="Creative Software Synth" 
+
+String0="Creative"
+String2="Creative SB Live!" 
+String4="Creative SB Live! Value" 
+MediaClassName="Sound, video and game controllers"
+ID1="Creative CD-ROM"
+WaveDSDir="Wave/DirectSound/MP3"
+SPDIFCopyrightViolation="Copyrighted SPDIF will be automatically muted during recording."
+NoFPUwarn="Math co-processor is not detected. EMU10K1.VXD cannot be loaded."
+OldVMCPwarn="Older version of VMCPD.VXD is detected. EMU10K1.VXD cannot be loaded. Please Restart your system for the new version to take effect."
+
+
+
+
+

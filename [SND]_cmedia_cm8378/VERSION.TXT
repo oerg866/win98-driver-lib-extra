@@ -1,0 +1,471 @@
+C-Media CM8738 driver(Version: 4.06.1096): John C.Chiang
+
+Rev 4.06.1096 21 Jun 2001 19:00
+1. VxD : release the limitation of digital share over S/PDIF input monitoring
+2. VxD : set the default XGPBIO to 0
+3. DRV : change the name "PC Speaker" to "Mono In"
+
+Rev 4.06.1095d 21 Jun 2001 19:00
+1. DRV, VxD : implement digital phone jack shared with analog on 039(or later)
+2. CMSYNTH: fix problems that SoftMIDI mute from S1 wakeup (only on 037 chip)
+
+Rev 4.06.1095c 21 May 2001 19:00
+1. Vxd: fix the problem of "crashed in shutdown in Win95". The cause is when free
+        memory of SoftMidi in dsTerminateDriver, some memory blocks are released
+        more than twice. In Win98, it is not a problem; however, in Win95, it will
+        cause system crashed.
+2. DRV: add Disabe SPDIF in Mixer
+
+Rev 4.06.1095b 12 April 2001 15:00
+1. DRV: ac3 stream fail if disable SPDIF
+2. VxD: don't touch AdcDacLen register bits
+
+Rev 4.06.1095a 21 March 2001 13:50
+1. Drv: 2 problems fixed
+      1). ADC2SPDIF is removed from drv
+      2). the SPDIF IN sampling rate 44k/48k select bit (18H, bit 24) is bad,
+          must reference SPDIF OUT sampling rate 44k/48k select bit (2 incorrect
+          places found in drv).
+2. Vxd: ADC2SPDIF is added to vxd
+3. Vxd: 3 problems fixed:
+      1). the category codes added in Construct_SPDIF_Frame are missed sometimes.
+      2). in 055 chip, when enable SPDIF OUT, we can't monitor SPDIF OUT, because
+          ADC2SPDIF is enabled incorrectly.
+      3). the SPDIF IN sampling rate 44k/48k select bit (18H, bit 24) is bad,
+          must reference SPDIF OUT sampling rate 44k/48k select bit (7 incorrect
+          places found in vxd).
+
+Rev 4.06.1095 23 Feb 2001 17:20
+1. drv: add 055 chip version judgement
+2. drv: lower master volume mechanism by registry (MasterVolAtten)
+3. drv, vxd: software encoded SPDIF support 44K/48K category code
+4. drv: support Adc to SPDIF mixer switch (Adc2SPDIF)
+5. drv, vxd: hardware spdif ac3 raw data for 37/39 chip
+6. Vxd: correct two bugs (in step4)
+      1). playing->enable SPDIFOUT->enable MDLP->disable SPDIFOUT->enable SPDIFOUT==>noise
+      2). enable SPDIFOUT->enable MDLP->play AudioRack MP3->press pause==>crash
+7. Vxd: support hardware/software SPDIFOUT in DirectSound, when the format is
+        48k, 16 bit, stereo (a kind of DS_DAC_NO_SECONDARY) (in step5)
+
+Rev 4.06.1094c 30 Dec 2000 11:30
+1. Vxd: fix some bugs in Soft Midi (the sequence of RPN-0-1-2 and DataEntry, and MaxPitch)
+2. drv: the default value of switch center/bass is set to FALSE
+3. drv: delete the function of switch center/bass in 6 channel mode
+
+Rev 4.06.1094b 23 Dec 2000 15:30
+1. drv: support the switching of center and bass in 6 channel mode
+2. Vxd: don't minitor SPDIF IN/OUT, when SPDIF AC3_RAW_DATA is played
+
+Rev 4.06.1094a 23 Nov 2000 15:30
+1. Vxd: support Microphone as Center/Bass
+2. Vxd: fix full-duplex of microphone's real-time record/playback
+3. Vxd: fix the Cyrix CPU problem in Audio WinBench 99 (Cyrix too slow)
+
+Rev 4.06.1094 10 Nov 2000 10:30
+1. Vxd: support software SPDIF 16 in Dsound, MCI, SoftMidi
+2. DRV: remove the SPDIF hardware settings
+3. DRV: fix mute PC speaker bug
+4. Vxd: fix SPDIF OUT muted at installing the driver for the first time
+5. Vxd: mute channel 0, when SPDIF AC3_RAW_DATA is played
+
+Rev 4.06.1093c 06 Oct 2000 14:30
+1. DRV: 033, 037, 039, 051 chip version check
+2. DRV: Get MixBass from mixer
+3. DRV: fix bug that 6 channel cannot pause
+4. DRV: some fixs on SPDIFOUT setup on 039 chip
+5. DRV: default mix Bass to front on 6 channel playback
+6. VxD: enable SPDIFOUT when secondary buffer playing
+7. DRV, VxD: 6 channel exclusive with other function
+8. VxD: add a filter to resolve Korean 8K problem
+
+Rev 4.06.1093b 19 Sep 2000 18:30
+1. VxD: 6 channel volume control
+2. DRV: new master volume control in 039 chip
+3. DRV: zv port enable/disable function
+4. VxD: add LINEINasBASS in registry to control line-in usage
+5. C3D: replace a3d.dll with Sensaura Version
+
+Rev 4.06.1093a 15 Sep 2000 16:20
+1. VxD: fix bug on Creative LAVA player
+2. VxD: fix bug on Imperium Galactica II
+3. CMMPUPCI: something wrong in previous release, just rebuild and fix the problem
+
+Rev 4.06.1093 05 Sep 2000 18:00
+1.VxD: speed control
+2.VxD: fix bug that BeachHead 2000 incurred
+2.DRV: mute controls if volume drop to zero
+3.DRV: some fixs that 039 chip doesn't compatible with old chip
+
+Rev 4.06.1092
+1.DRV, VxD: new structure driver
+
+Rev 4.06.1091c 30 Jun 2000 17:25
+1.DRV: disable STI in ISR_Stub
+
+Rev 4.06.1091b 27 Apr 2000 10:30
+1.DRV: test the VM interrupt mask each time start playback/recording
+2.DRV: some minor change on ISR
+3.VxD: recording mask check on ISR (25 May 2000)
+
+Rev 4.06.1091a 10 Apr 2000 12:15
+1.DRV: quad channel SPDIF out
+2.DRV: fix the bug that PCSPK mute and volume control
+3.DRV: disable the double sampling on AC3 SPDIF on 037 chip
+4.VxD: mask the interrupt during suspend mode
+
+Rev 4.06.1091 23 Feb 2000 17:30
+1.DRV, VxD: support KARAOKE auto singing
+2.VxD: fixed the bug that DirectSound looping buffer disable looping
+3.DRV: support chip subversion report
+
+Rev 4.06.1090 15 Jan 2000 09:30
+1. VxD: support continuous sampling rate (currently enable 8000 & 22254,
+        8000 for Carnivores2, 22254 for Dark Vengence)
+2. VxD: implement symmetric DS3D quad-chan mode
+3. DRV: expose SPDIF function to mixer(NOVAC version)
+
+Rev 4.06.1089 27 Dec 1999 11:00
+1. VxD: DuplicateSoundBuffer share TranslateBuffer memory
+2. VxD: In IDsDriverBuffer2_Stop, reset p2->TransPos for Half-Life
+3. DRV, VxD: KARLOK Reverbation(only enable for c-media mp3 player for the time being)
+4. DRV: enable two playback channel (DualWave: set 1, default 0)
+5. VxD: default disable DS suspend
+
+Rev 4.06.1088 08 Dec 1999 16:00
+1. VxD: implement multi-interrupt in DirectSound Buffer
+2. VxD: DS suspend by the registry setting: DisDsSuspend
+3. VxD: loose all the buffer size limitation about DS 2D buffer
+4. C3D: fix a bug that Trespasser crash
+5. DRV: use V1.87 cmpci95.drv
+
+Rev 4.06.1086 11 Nov 1999 15:30
+1.VxD: EAX support
+
+Rev 4.06.1085 19 Oct 1999 16:00
+1.VxD: MMX support
+
+Rev 4.06.1084 19 Oct 1999 14:20
+1.VxD: set the DMA buffer to 32K (for Comanche)
+2.VxD: disable the DS2D buffer without setfrequency. (for Unreal)
+3.VxD: twice the DS2D buffer length check (for KeeperII, It incurred from item 1)
+4.VxD: set a SetFormat limitation (for Prince of Persia 3D on win95)
+5.VxD: enable/disable the DOSMPU401 (DISDOSMPU: 1: disable, default: 0);
+6.VxD: DS2D 2nd buffer volume/panning control
+7.INF: audio3d.dll -> c3d.dll, in the meantime, copy to a3d.dll
+
+Rev 4.06.1083 05 Oct 1999 19:00
+1.VxD: correct the management of multi-listener
+
+Rev 4.06.1082 01 Oct 1999 19:00
+1. VxD: DirectSound SPDIF control (44K/48K 16-bit stereo disable 2nd interface)
+2. DRV: DirectSound SPDIF control
+3. VxD: correct bug on 2nd translated buffer length ( Minevra noise )
+
+Rev 4.06.1081 20 Sep 1999 17:00
+1. VxD: fix a bug that raw data alignment
+2. DRV: the consistent default setting between DRV and VxD (LINEINasREAR)
+3. DRV: SPDIF phase reverse can be restored
+
+Rev 4.06.1080 03 Sep 1999 17:10
+1. VxD: new structure DS/DS3D driver
+2. DRV: AC-3 SPDIF support
+3. DRV: MIC Gain Boost
+
+Rev 4.06.1073 10 Aug 1999 12:10
+1. VxD: implement the DOS IRQ anti-conflicting mechanism
+2. VxD: enable FLNKON at boot time
+3. DRV: fix a bug at mixer
+
+Rev 4.06.1072 23 Jul 1999 11:20
+1. DRV: add SPDIF signal reverse and SPDIF raw data to mixer
+
+Rev 4.06.1071 15 Jul 1999 19:40
+1. CMMPUPCI, VxD: implement system VM (Ring3) IRQ sharing for Legacy device
+2. VxD: change the DS\DS3D 4SPK copy mode enable/disable time
+
+Rev 4.06.1070 02 Jul 1999 19:10
+1. VxD: don't report the legacy IRQ to system
+2. DRV: implement property page
+
+Rev 4.06.1069 24 Jun 1999 18:30
+1. DRV: fix a bug that playing double DMA buffer
+2. VxD: fix a bug that playing double DMA buffer
+3. VxD: SB,FM resource change
+4. VxD: legacy device can ne disable by registry(DISLEGACY: 1 Disable)
+5. DRV: accept close sampling rate
+
+Rev 4.06.1068 05 Jun 1999 12:30
+1. DRV: fix the bugs that 48K SPDIFOUT
+2. DRV: fix the bugs that the four speaker panning
+
+Rev 4.06.1067 03 Jun 1999 13:30
+1. DRV: enable volume panning
+2. DRV: left/right channel switch
+3. DRV: enable stereo MIC recording
+
+Rev 4.06.1066 27 May 1999 16:00
+1. VxD: implement four speaker energy control for DS3D (STEP1)
+2. VxD: disable suspend fuction for DirectSound (STEP2)
+3. VxD: disable MPU401 properly after leaving UART mode (STEP2)
+
+Rev 4.06.1064 25 May 1999 10:20
+1. DRV: implement 24-bit cross segment playback (STEP1, STEP2)
+2. DRV: implement 24-bit cross segment recording (STEP3)
+3. DRV: fix the bug that clicking sound after loss IRQ (STEP4)
+4. DRV: change the wave open management way (STEP5)
+5. VxD: fix the bug that clicking sound after loss IRQ (STEP1)
+6. VxD: fix the problem that run low on "Populous 3 The Beginning" (STEP2)
+7. VxD: enable/disable MPU401 by registry (DISMPU: 1 Disable) (STEP3)
+
+Rev 4.06.1062 11 May 1999 14:20
+1. VxD:  change the VxD name
+2. VxD:  enable/disable JoyStick by registry (DISJSTK: 1 Disable)
+3. DRV:  remove the SPDIF function from mixer
+4. DRV:  24-bit SPDIF playback/recording suport
+5. DRV:  fix bugs on FALCON4
+6. CMPCIFM: change name from CM8338FM
+
+Rev 4.06.1061 07 May 1999 17:15
+1.VxD: fix the problems on CakeWalk
+2.DRV: Private SPDIF mixer control
+
+Rev 4.06.1059 30 Apr 1999 17:20
+1. VxD: registry to set SB mode
+2. DRV: mssndsys.inc updated
+
+Rev 4.06.1058 28 Apr 1999 15:15
+1. VxD: change the DS driver string
+2. DRV: Mixer source type correction
+3. DRV: some management change
+4. CMMPU: some change on mixer name
+
+Rev 4.06.1057 21 Apr 1999 10:45
+1. VxD: Joystick resource adjustment
+2. VxD: fix bugs for DOOM2, WARCRAFT2 and Duke3D
+3. DRV: mssndsys.inc updated
+4. VxD: fix bugs for Quake
+5. DRV: disable S/W interpolation
+
+Rev 4.06.1051 13 Apr 1999 12:30
+1. DRV, VxD: change the DS3D buffer management to V50(26D) way (STEP1)
+2. DRV, VxD: change Four Speaker management (STEP2)
+3. DRV, CM8338FM, CMMPUPCI: change the driver string (STEP2)
+4. A3D, CMSWMPU: WHQL version rule
+5. CMSMIDI: some change compatiable with DRV part
+
+Rev 4.10.00.0148 22 Mar 1999 15:20
+1. DRV: support MCI 4 speaker for AC3
+2. VxD: DS driver enable SPDIF OUT if correct format
+3. INF,VxD: enbale SoftMIDI & DOS MIDI
+
+Rev 4.10.00.0146 15 Mar 1999 10:10
+1. VxD: fix the bug on Half-Life
+2. VxD: Joystick resource change
+3. DRV: implement a Butterworth 3 order IIR filter for recording
+4. DRV: different management way for SPDIFOUT
+5. VxD: DS3D HRTF and panning switching dynamically
+6. VxD: set the CHAN_FMT to default for 8738
+7. All: internal version
+8. DRV: fix a problem on HWFourSpk
+
+Rev 4.10.00.0145 11 Feb 1999 10:20
+1. DRV, VxD: enable DirectSound\WaveIn fullduplex
+2. All: WHQL version naming convention
+
+Rev 4.10.00.0142 05 Feb 1999 14:20
+1. DRV: implement pulse estimator (From V1.38)
+
+Rev 4.10.00.0138 27 Jan 1999 09:30
+1. DRV, VxD: WHQL version for ACT4.0
+
+Rev 4.10.01.0137 11 Jan 1999 12:20:00
+1. DRV: disable all S/W control on FOURSPK mode
+        STEP1DRV: Rev 1.25 -> Rev 1.26 -> Rev1.29
+        STEP2DRV: Rev 1.29 -> Rev 1.32
+        PCIDRV:   Rev 1.32 -> Rev 1.36
+
+Rev 1.37 08 Jan 1999 16:20:00
+1. DRV: some ACT4.0 bug fixed in WAVE device
+
+Rev 1.36 07 Jan 1999 10:00:00
+1. DRV: Software emulation for Hardware bug that 8bit stereo
+        and 16bit mono cannot recording
+2. DRV: support low priority recording
+
+Rev 1.35 21 Dec 1998 18:00:00
+1. VxD: fix the bug AudioWinBench99
+2. VxD: 32 secondary DS3D buffer
+
+Rev 1.34 21 Dec 1998 18:00:00
+1. VxD: fix a bug that run AudioBench98 in Win98
+
+Rev 1.33 18 Dec 1998 16:00:00
+1. VxD: solve the problems DS3D game on Win98
+2. Audio3D: fix a problem from Win98/DX6 bug
+
+Rev 1.32 17 Dec 1998 17:20:00
+1. DRV: disable master and wave volume panning
+
+Rev 1.31 14 Dec 1998 18:20:00
+1. VxD: updated form Rev 1.29, add some safety check
+
+Rev 1.30 14 Dec 1998 18:20:00
+1. VxD, DRV: Win95 use only
+
+Rev 1.29 12 Dec 1998 18:20:00
+1. VxD: DirectSound and Wave open, setformat separately
+2. DRV: Wave volume mute forward to DirectSound
+
+Rev 1.28 10 Dec 1998 18:20:00
+1. DRV: master volume control to set all device in four speaker mode
+2. DRV: all playing format in 16 bit stereo
+3. DRV: four speaker software panning
+4. CM8338FM, CMPCI95: FM enable/disable notify
+
+Rev 1.27 09 Dec 1998 18:20:00
+1. DRV: all software volume control in four speaker mode
+
+Rev 1.26 08 Dec 1998 14:20:00
+1. DRV: four speaker support
+2. DRV: 16 bit playback format, (8 bit will change to 16 bit)
+3. DRV: take off the rear speaker control in mixer
+4. DRV: playback and recording volume control auto change
+5. VxD: disable SPDIF OUT in DS driver
+6. Inf: More multimedia applet installation
+
+Rev 1.25 02 Dec 1998 18:20:00
+1. VxD: Mute master volume during system suspension
+2. VxD: use MMDEVLDR as device loader for legacy device
+3. DRV: default master volume -3db decay
+
+Rev 1.24 01 Dec 1998 10:30:00
+1. VxD: fix the bug ReaLine Racer mute
+2. DRV: diable to set the subsystemID, it will have problem when
+        refresh the system in Device Manager
+3. VxD, DRV: restore the original buffer size to Rev 1.20 item 2
+4. CMMPU: load DLS file in boot phase will generate noise, changed this.
+
+Rev 1.23 20 Nov 1998 16:20:00
+1. VxD: Legacy IRQ shared
+2. VxD: prpobj.c modified from Tien
+
+
+Rev 1.22 16 Nov 1998 10:00:00
+1. VxD: resolve the problem that A3D demo and WinBench 99 noise problem
+2. DRV: default CD wave FM on
+3. DRV: default volume set to maximum
+4. DRV: "enable 3D" to "enable surround"
+5. DRV: remove surround, SPDIFIN source in Mixer
+6. DRV: add SPDIF IN/OUT to advanced control
+
+Rev 1.21 10 Nov 1998 08:30:00
+1. VxD: add 4 option resource for SB & FM I/O
+2. DRV: set PCI BIOS subsystem ID
+3. DRV: automatic switching for SPDIF OUT depends on wave format
+4. INF: add subsystem ID in hardware ID
+
+Rev 1.20  6 Nov 1998 15:30:00
+1. VxD: resolve the problem that conflict with INTEL 730 AGP card
+2. VxD, DRV: resolve the boot time discontinuity sound on SiS chip
+3. DRV: format check on SPDIF playing and recording
+4. DRV: automatic check on SPDIF device attaching for recording
+5. DRV: default installation mute all but wave and FM output
+6. CM8338FM: some brand name changed
+7. CMSMIDI, SMIDIPCI: add startplay failure check
+
+Rev 1.19  4 Nov 1998 18:00:00
+1. VxD: correct the bug that first installation FM and MPU401 not loaded
+2. VxD: correct the bug that WHQL Dynamic configuration test failed,
+        it was we forgot to deallocate some 8338 resource before
+3. INF: remove the SWMIDI device node, attached it to DOS MIDI
+4. INF: install volume control applet if needed
+5. DRV: set the default recording mixer to CD-IN
+6. CMMPUPCI: changed the CMMPU401.DRV to CMMPUPCI.DRV
+7. CMMPUPCI: changed the IRQ handling way to resolve WHQL MIDI IN problem
+
+Rev 1.18 20 Oct 1998 10:20:00
+1. VxD,DRV: enable play s/w MIDI and wave simultaneously
+2. VxD: disable hooking PCI io port to resolve ATI vga card problem
+3. CMSWMPU(V101): fix a bug for PCI DESCENT playing
+
+Rev 1.17 20 Oct 1998 10:20:00
+1. VxD: fix a bug that DS3D 2ndary buffer will broke when first play
+2. DRV: linear volume control
+3. DRV: bug fixed on Mixer LineIn, AuxIn
+
+Rev 1.16 17 Oct 1998 14:20:00
+1. VxD: add MIDI Dos mode emulator and sw midi device
+2. VxD: add 4 speaker disable/enable
+3. DRV: add s/w midi 16 bit driver (cmsmidi.drv)
+
+Rev 1.15 13 Oct 1998 14:20:00
+1. VxD: Rear Speaker Volume can changed by MIXER
+2. DRV: add Rear Speaker control in MIXER
+
+Rev 1.14 10 Oct 1998 12:00:00
+1. VxD: correct a bug for DOS Legacy program: diagnose.exe
+        to reflect the interrupt for MPU401 even the DOS VM is masked.
+2. VxD: changed the way of updating the DMA count
+3. VxD: fixed a bug in cmmpu401.asm
+
+
+Rev 1.13 9 Oct 1998 12:00:00
+1. VxD: 4 SPEAKER on 3D Sound with orientation fading
+
+Rev 1.12 8 Oct 1998 16:00:00
+1. VxD: 4 SPEAKER on 3D Sound with DMA fading
+   VXD: RCS: test version, simply mirror the forward sound to rear
+
+Rev 1.11 28 Sep 1998 15:10:12
+1. VxD: disable DuplicateSoundBuffer to fix the INCOMING bug
+2. VxD: add extra logical configuration to resolve the FM resource problem
+3. VxD: IRQ can share with other device(USB, VGA ...)
+4. VxD: 4 LogConfig for legacy device
+
+Rev 1.10 24 Sep 1998 16:00:00
+1. VxD: JoyStick Resource adjust to avoid conflict with MSGAME.VXD
+2. VxD: DS enable and add reset on IDsDriverBuffer_Stop
+3. VxD: call SBVIRT_Dspwrite in MSSNDSYS_IO_Default_Codec (SB IO hooking)
+4. VxD: FM enable on new version chip
+5. DRV: logarithm volume control
+6. DRV: peakmeter bug fixed
+7. DRV: add reset on CODEC_WaitForRunnung
+8. DRV: SPDIF mixer enable
+
+Rev 1.08 01 Sep 1998 13:32:00
+1. changed to MIXER recording(pass ACT98)
+
+Rev 1.07 20 Aug 1998 14:36:00
+1. pass the ACT98 wave, mixer test
+
+Rev 1.06 19 Aug 1998 10:45:00
+1. MPU401 playback and recording
+
+Rev 1.05 11 Aug 1998 16:00:00
+1. DOOM2 can play in Windows DOS box
+
+Rev 1.04 10 Aug 1998 10:30:00
+1. Windows 98 full compatiability
+2. the bug fixed that cannot play SB after playing DESCENT
+3. fix the bug that remove device will have a page fault in mixer
+
+Rev 1.03  03 Aug 1998 11:30:00
+1. More mixer control
+2. Peak Meter
+3. SPDIF IN bug fixed
+
+Rev 1.02   30 Jul 1998 15:45:12
+ 1. UART IO port data sheet error correction
+ 2. remove some Vxd initialization
+ 3. remove recording in DRV initailization phase
+
+Rev 1.01   28 Jul 1998 14:32:45
+ 1. SB16 E2 command emulation
+ 2. SB16 14 command bug fixed (use a D1 command) (cmtest.exe)
+ 3. SB16 90, 91 command emulation
+ 4. enable all sb16 VxD IO hooking
+
+Rev 1.00   13 Jul 1998 17:08:22
+ initial version
+
+

@@ -1,0 +1,2660 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D]
+
+; 2002 Fifa World Cup
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifawc.exe]
+"NoRendersTillFlip"="1"
+
+; 3D Studio MAX
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\3dsmax.exe]
+"EnableComplexSceneMode"="1"
+"ZLoad"="1"
+"ZStore"="1"
+"NoRendersTillFlip"="1"
+
+; A Bugs Life
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bugs.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Ace of AngelsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\aoaclient.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Actua Ice Hockey
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hockey.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+"DisableXSS"="1"
+
+; Agile Warrior F111x
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\aw.bin]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Air Raid - This Is No DrillDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\airraid_demo_v06.exe]
+"NoRendersTillFlip"="1"
+
+; Aliens vs Predator 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe950272]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+"DisableMidSceneRender"="1"
+
+; Aliens vs Predator 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe937984]
+"ReloadOnSubblt"="1"
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Anacondas: 3D Adventure GameDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\anaconda2.exe]
+"NoRendersTillFlip"="1"
+
+; Anarchy Online
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\clientr.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Antz Extreme Racing
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\antzextremeracing.exe]
+"NoRendersTillFlip"="1"
+
+; Apache AH-64 Air AssaultDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\apache.exe]
+"NoRendersTillFlip"="1"
+"ZBiasScale"="64"
+
+; AquaNox (AquaMark)Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\aquanox.exe]
+"DXTExposeCaps"="1"
+"DoNotDisableFastTLF"="1"
+
+; Arabian NightsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\_start.exe]
+"NoRendersTillFlip"="1"
+
+; Arthur's Knights: Tales of Chivalry
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\arthknia.exe]
+"ZLoad"="1"
+
+; Arx FatalisDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\arx.exe]
+"DisableEnTnL"="1"
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; B17-The Mighty Eighth
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe167936]
+"EnableTextureManagement"="1"
+
+; BallisticsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ballistics.exe]
+"DoNotDisableFastTLF"="1"
+
+; Bandits: Phoenix RisingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\banditsd.exe]
+"NoRendersTillFlip"="1"
+
+; Barrage
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\barrage.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Bass Masters Classic TEDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fishing.exe]
+"DisableCopyBlt3D"="1"
+
+; Batman: VengeanceDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\batman.exe]
+"RemoveZBiasCaps"="1"
+
+; Battle of Britain
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bob.exe]
+"Disable24Bit3DDevice"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\stubb.exe]
+"Disable24Bit3DDevice"="1"
+
+; Battlefield 1942
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bf1942.exe]
+"NoRendersTillFlip"="1"
+"DXTExposeCaps"="1"
+
+; Battlefield 1942 MultiplayerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bf1942demo.exe]
+"NoRendersTillFlip"="1"
+"DXTExposeCaps"="1"
+
+; Beach Head 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bh2.exe]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+"DisableMidSceneRender"="1"
+
+; Beetle Crazy CupDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\beetle.exe]
+"SysMemBltUsesSCore"="0"
+
+; Beyond Normandy: Assignment BerlinDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\assignmentberlin.exe]
+"EnableTextureManagement"="1"
+"ForceLargeTexToDXT1"="1"
+
+; BHunterDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bhunter.exe]
+"NoRendersTillFlip"="1"
+
+; Big Mutha TruckersDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bmtdemo.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; Bikez 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\bikez2.exe]
+"DisableRenderOnLock"="1"
+
+; Blair Witch Vol 2: The Legend of Coffin Rock
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\blairwitch2.exe]
+"DisablePixelFormatConversionBlit"="1"
+
+; BreedDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\breed.exe]
+"DXTExposeCaps"="1"
+"DisableEnTnL"="0"
+
+; Cabela's 4X4 Off-road Adventure
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\4x4 adventure.exe]
+"ZStore"="1"
+
+; Carmageddon 2 Carpocalypse Now
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\carma2_hw.icd]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Carnivores 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\carn2.exe]
+"NoRendersTillFlip"="1"
+
+; Casanova: The Duel of the Black Rose
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\casanova.exe]
+"ZLoad"="1"
+"ZStore"="1"
+
+; Casino Inc
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\casino.exe]
+"DisableMidSceneRender"="1"
+
+; Casino Inc Play Dirty
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\casinoexpansionpack.exe]
+"DisableMidSceneRender"="1"
+
+; CatechumenDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\catechumen.exe]
+"NoRendersTillFlip"="1"
+
+; Chaos LegionDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\chaoslegion.exe]
+"ZStore"="1"
+
+; Charlie's Angels: Angel XDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\charlie's angels angel x.exe]
+"PretendStencilBufferIs8Bit"="1"
+
+; Colin McRae Rally 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cmr2.exe]
+"DXTExposeCaps"="1"
+"DisableRenderOnLock"="1"
+"DisableEnTnL"="1"
+
+; Colin McRae Rally 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cmr2demo.exe]
+"DXTExposeCaps"="1"
+
+; Comanche 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\c4.exe]
+"UseRHW"="1"
+"DisableEnTnL"="1"
+
+; Combat Flight Simulator 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cfs2.icd]
+"DisableMipMapping"="1"
+
+; Combat Flight Simulator 3: The Battle for Europe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cfs3.exe]
+"DisableMidSceneRender"="1"
+
+; Combat MissionDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\combat mission beta demo.exe]
+"DisableCopyBlt3D"="1"
+
+; Combat Mission
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\combat mission.exe]
+"DisableCopyBlt3D"="1"
+
+; Combat Mission 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\combatmission2.exe]
+"DisableCopyBlt3D"="1"
+
+; Combat Mission 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cm2 demo.exe]
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\barbarossa to berlin demo.exe]
+"DisableCopyBlt3D"="1"
+
+; Command and Conquer: Generals
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.dat]
+"PretendStencilBufferIs8Bit"="1"
+"Expose2kTextures"="1"
+
+; Command and Conquer: Renegade
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\setup.exe221184]
+"DisableEnTnL"="1"
+
+; Commandos 3: Destination Berlin
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\commandos3.exe]
+"ReloadOnSubblt"="1"
+
+; Commandos 3: Destination BerlinDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\commandos3demo.exe]
+"ReloadOnSubblt"="1"
+
+; Crazy MachinesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crazymachines.exe]
+"PretendStencilBufferIs8Bit"="1"
+
+; Crazy Taxi
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crazy_taxi_pc.exe]
+"DisableEnTnL"="1"
+
+; Crimson SkiesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crimson.exe]
+"NoRendersTillFlip"="1"
+"OnlyUseLastFogColour"="1"
+
+; Crusaders of Might and MagicDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crusaders demo.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+"DisableMidSceneRender"="1"
+
+; Crusaders Of Might and Magic
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crusaders.icd]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+"DisableMidSceneRender"="1"
+
+; D3DStencilTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\stencil.exe]
+"NoRendersTillFlip"="1"
+
+; Dagoth Moor Zoological GardensTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xpro.exe]
+"ForceLargeTexToDXT1"="1"
+
+; Dark Age of Camelot
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.dll]
+"ForceLargeTexToDXT1"="1"
+
+; DarkStoneDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\darkstonedemo.exe]
+"DisableCopyBlt3D"="1"
+
+; Dead Man's Hand
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dmh.exe]
+"DXTExposeCaps"="1"
+
+; Deer Avenger 4Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\da4demo.exe]
+"NoRendersTillFlip"="1"
+
+; Deer Hunter 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\deer hunter 2 demo.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Deer Hunter 5Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\deer hunter 5 demo.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Deer Hunter 5
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\deer hunter 5.exe]
+"DisableCopyBlt3D"="1"
+"NoRendersTillFlip"="1"
+
+; Delta Force 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\df2dem.exe]
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Delta Force 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\df2.exe]
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Descent 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\main.exe1757184]
+"NoRendersTillFlip"="1"
+"DisableAlphaTest"="1"
+
+; Deus ExDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\deusex.exe]
+"ZBiasScale"="8"
+"EnableTextureManagement"="1"
+
+; Die Hard: Nakatomi PlazzaDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1105978]
+"ReloadOnSubblt"="1"
+
+; Dinosaur
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dinosaur.exe]
+"DisableStencil"="1"
+
+; Dirt Track Racing 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dtr2demo.exe]
+"NoRendersTillFlip"="1"
+
+; Downtown Run
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\main.pro]
+"DXTExposeCaps"="1"
+
+; Drake of the 99 DragonsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\drake.exe]
+"UseRHW"="1"
+
+; Dummy: gameexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe]
+"DuplicateAppName"="1"
+
+; Dummy: kartexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kart.exe]
+"DuplicateAppName"="1"
+
+; Dummy: lithtechexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe]
+"DuplicateAppName"="1"
+"Expose2kTextures"="1"
+
+; Dummy: mainexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\main.exe]
+"DuplicateAppName"="1"
+
+; Dummy: setupexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\setup.exe]
+"DuplicateAppName"="1"
+
+; Empires: Dawn of the Modern World
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\empires_dmw.exe]
+"ReloadOnSubblt"="1"
+
+; Enter The Matrix
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\matrix.exe]
+"DXTExposeCaps"="1"
+"DisableEnTnL"="0"
+"UnsupportedTexOps"="0x301"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\matrixoptions.exe]
+"DXTExposeCaps"="1"
+"DisableEnTnL"="0"
+"UnsupportedTexOps"="0x301"
+
+; eRacer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\eracerconfig.exe]
+"Disable24Bit3DDevice"="1"
+
+; Eurofighter Typhoon
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\config3dr2000.exe]
+"Disable24Bit3DDevice"="1"
+
+; Evil Twin - Cyprien's Chronicles
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\eviltwin.exe]
+"DoNotWaitOnLock"="1"
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; Evolva
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\evolva.exe]
+"NoRendersTillFlip"="1"
+
+; Extreme Sports
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pc.exe]
+"DisableEnTnL"="1"
+
+; F/A 18 Simulator
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f18.icd]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; F1 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1_2001.exe]
+"ZBiasScale"="8"
+
+; F1 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1_2002_demo.exe]
+"ZBiasScale"="64"
+"DisableEnTnL"="1"
+
+; F1 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1_2002.exe]
+"ZBiasScale"="8"
+
+; F1 Racing ChampionshipDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1rc.exe]
+"Disable24Bit3DDevice"="1"
+
+; F1 Racing Simulator
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1_d3dv5.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; F1 World Grand PrixDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f1wgp_demo.exe]
+"EnableBumpTextureFormats"="0"
+
+; Fame Academy
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe2903040]
+"DisableHardwareCursor"="1"
+
+; Far WestDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\farwest-demo.exe]
+"PretendStencilBufferIs8Bit"="1"
+
+; FIFA 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2002.exe]
+"NoRendersTillFlip"="1"
+
+; FIFA 2003
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2003.exe]
+"NoRendersTillFlip"="1"
+
+; FIFA 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2003demo.exe]
+"NoRendersTillFlip"="1"
+
+; Fifa 2004
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2004.exe]
+"NoRendersTillFlip"="1"
+
+; FIFA 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2004_demo.exe]
+"NoRendersTillFlip"="1"
+
+; FIFA 2005Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fifa2005_demo.exe]
+"NoRendersTillFlip"="1"
+"UnsupportedTexOps"="0x200304"
+
+; Final Fantasy 8Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ff8.exe]
+"NoRendersTillFlip"="1"
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"ColourKeyAllIfCKEnabled"="1"
+
+; Fish ScreensaverDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fish.scr]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Flanker 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\flanker.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Flying Heroes (Chinese)OEM Retail
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fh.pro]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Ford Racing
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fordrace.exe]
+"NoRendersTillFlip"="1"
+
+; Ford Racing 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fr2.exe]
+"NoRendersTillFlip"="1"
+"ZLoad"="1"
+"ZStore"="1"
+
+; Formula 1 97Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f197d3di.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Formula 1 97
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\f197d3d.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Frank Herbert's Dune
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dune.exe]
+"NoRendersTillFlip"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dune_0.exe]
+"NoRendersTillFlip"="1"
+
+; Freespace 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fs2demo.exe]
+"OnlyUseLastFogColour"="1"
+"NoRendersTillFlip"="1"
+
+; Freespace 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fs2.exe]
+"OnlyUseLastFogColour"="1"
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; From Dusk Till DawnDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fddmasterdemo.exe]
+"NoRendersTillFlip"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fdd.exe]
+"NoRendersTillFlip"="1"
+
+; GiantsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\giantsmeccdemo.exe]
+"UseRHW"="1"
+"ZBiasScale"="64"
+
+; GiantsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\giantsreaperdemo.exe]
+"UseRHW"="1"
+"ZBiasScale"="64"
+
+; Giants: Citizen Kabuto
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\giants.exe]
+"Disable24Bit3DDevice"="1"
+"UseRHW"="1"
+"ZBiasScale"="64"
+"NoRendersTillFlip"="1"
+
+; Gift
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\detect.exe]
+"Disable24Bit3DDevice"="1"
+
+; Gothic
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\gothic.exe]
+"RenderOnFogChange"="1"
+
+; Grand Prix 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\gp3.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"DisableVidMemVBuffers"="1"
+"DisableMidSceneRender"="1"
+
+; Grand Prix 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\gp3.icd]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"DisableVidMemVBuffers"="1"
+"DisableMidSceneRender"="1"
+
+; Grand Prix 3: 2000 Season
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\gp3_2000.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"DisableVidMemVBuffers"="1"
+"DisableMidSceneRender"="1"
+
+; Grand Prix Legends
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\gpl.exe]
+"DisableMidSceneRender"="1"
+
+; Grand Slam Hunting: North American 29
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\cabela3d.exe]
+"DoNotWaitOnLock"="1"
+
+; Grim Fandango
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\grimfandango.exe]
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Hangsim
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hangsim.exe]
+"Disable24Bit3DDevice"="1"
+"DisableCopyBlt3D"="1"
+"UseRHW"="1"
+
+; HarbingerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\harbingerdemo.exe]
+"NoRendersTillFlip"="1"
+
+; Harry Potter and the Chamber of SecretsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe339968]
+"UseRHW"="1"
+
+; Harry Potter and the Philosopher's Stone
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hp.exe]
+"EnableTextureManagement"="1"
+
+; Highland Warriors
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hw.exe]
+"DXTExposeCaps"="1"
+
+; Hitman 2: Silent AssassinDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hitman2.exe]
+"DisableEnTnL"="1"
+
+; Hostile Waters
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hostilesetup.exe]
+"Disable24Bit3DDevice"="1"
+
+; Hot Wheels CRASH!Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\crashdemo.exe]
+"NoRendersTillFlip"="1"
+
+; Hot Wired
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hotwired.exe]
+"EnableAutoMipMap"="1"
+
+; Hoyle Majestic ChessDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\majesticchess.exe]
+"ReloadOnSubblt"="1"
+
+; Hulk
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hulk.exe]
+"DXTExposeCaps"="1"
+
+; Hype: The Time Quest
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\maid3dvr_bleu.exe]
+"DisableDDPalette"="1"
+
+; I of the DragonDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dragon.exe]
+"DisableEnTnL"="1"
+"DisableRenderOnLock"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\theiofthedragon.exe]
+"DisableEnTnL"="1"
+"DisableRenderOnLock"="1"
+
+; IL-2 SturmovikDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\il2demo.exe]
+"DisableEnTnL"="1"
+
+; Impossible Creatures
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ic.exe]
+"DisableHardwareCursor"="1"
+
+; In the Line of Duty FireFighter
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ildfirefighter.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; Indiana Jones and the Emperor's Tomb
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\indy.exe]
+"DXTExposeCaps"="1"
+"DisableEnTnL"="0"
+
+; IndyCar Series
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\indycarseries.exe]
+"DisableEnTnL"="0"
+"ExposeCubeMapCaps"="1"
+
+; InsaneDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe955904]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; Insane
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe954368]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\insane.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; International Superstar Soccer 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\iss3.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Jane's World War 2 Fighters
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ww2.exe]
+"DisableDDPalette"="1"
+"NoRendersTillFlip"="1"
+
+; Jetfighter 4 - Fortress America
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\jf4sim.exe]
+"DisableRenderOnLock"="1"
+
+; Jetfighter 5: Homeland ProtectorDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe2048000]
+"DisableEnTnL"="0"
+"Expose2kTextures"="1"
+"OnlyUseLastFogColour"="1"
+"DisableRenderOnLock"="1"
+
+; Joan of ArcDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\joandemo.exe]
+"NoRendersTillFlip"="1"
+
+; Judge Dredd: Dredd vs DeathDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dredd.exe]
+"PretendStencilBufferIs8Bit"="1"
+"EnableTextureManagement"="1"
+
+; K911 ContactDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\k9contact.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; King of the Road
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\king.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"DisableCopyBlt3D"="1"
+
+; Knight Rider
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\knight rider.exe]
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+"DisableMidSceneRender"="1"
+
+; Knight RiderDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kr demo.exe]
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+"DisableMidSceneRender"="1"
+
+; Knights of the Temple: Infernal CrusadeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\templar.exe]
+"DXTExposeCaps"="1"
+
+; Lander
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lander.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Largo Winch
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\largowinch.exe]
+"ZLoad"="1"
+"ZStore"="1"
+
+; Laura's Happy Adventures
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\laura.exe]
+"DisableDDPalette"="1"
+"DisableMidSceneRender"="1"
+
+; Legends of Might and Magic
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1473880]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+"DisableMidSceneRender"="1"
+
+; Legends of Might and MagicDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe610304]
+"DisableCopyBlt3D"="1"
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe614400]
+"DisableCopyBlt3D"="1"
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Lemmings Revolution
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lemmings revolution.icd]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Links 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\linksmmi.exe]
+"ZLoad"="1"
+"ZStore"="1"
+"ZTranslate"="1"
+
+; Live BilliardsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\livebilliardsdemo.exe]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+"ZLoad"="1"
+"ZStore"="1"
+
+; Live Billiards
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\livebilliards.exe]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+"ZLoad"="1"
+"ZStore"="1"
+
+; Live for SpeedDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lfs.exe]
+"NoRendersTillFlip"="1"
+
+; Loco-CommotionDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\t3dgame.dll]
+"DXTExposeCaps"="1"
+
+; London Racer 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lrii.exe]
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+"ForceLargeTexToDXT1"="1"
+
+; Longbow 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lb2.exe]
+"ZStore"="1"
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Lords of EverQuestDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\loedemo.exe]
+"DXTExposeCaps"="1"
+"DisableHardwareCursor"="1"
+"DisableEnTnL"="0"
+
+; Machines
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\machines.exe]
+"DisableCopyBlt3D"="1"
+
+; Mall TycoonDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mall.exe]
+"NoRendersTillFlip"="1"
+
+; MechWarrior 4: MercenariesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mw4mercs.exe]
+"NoRendersTillFlip"="1"
+
+; Medieval Total WarDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\medieval_td.exe]
+"ZStore"="1"
+
+; MegaRace 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\megarace3_demo.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; MegaRace 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\megarace3.exe]
+"NoRendersTillFlip"="1"
+
+; Mercedes Benz: Truck Racing
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\truckrace.exe]
+"NoRendersTillFlip"="1"
+
+; Messiah
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\messiahd3d.exe]
+"IncreaseFBMappingOnLock"="1"
+
+; Michael Crichton's Timeline
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\timeline.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Michael Schumacher Racing World - Kart 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\startup.exe]
+"DisableEnTnL"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\msrw_cd.exe]
+"DisableEnTnL"="1"
+
+; Microsoft Baseball 3D 1998 EditionDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\baseball3d.exe]
+"EnableZBufferlessHSR"="1"
+
+; Midnight NowhereDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\midnowhere.exe]
+"ZLoad"="1"
+"ZStore"="1"
+"NoRendersTillFlip"="1"
+
+; Midtown Madness 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\midtown2.icd]
+"DisableCopyBlt3D"="1"
+"MIPMapThreshold"="3"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\midtown2.exe]
+"DisableCopyBlt3D"="1"
+"MIPMapThreshold"="3"
+
+; Midtown Madness 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mm2trial.exe]
+"DisableCopyBlt3D"="1"
+"MIPMapThreshold"="3"
+
+; Mig Alley
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mig.exe]
+"DisableMidSceneRender"="1"
+"DoNotWaitOnLock"="1"
+
+; Moon TycoonDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mt_demo.exe]
+"DisableMidSceneRender"="1"
+
+; Mortal Kombat 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mortal kombat 4.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Mortyr
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mortyr.exe]
+"DisableMipMapping"="1"
+
+; Moto GPDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\motogp.exe]
+"UseRHW"="1"
+"DisableAnisotropicFiltering"="1"
+
+; Motor City Online
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mcity.exe]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+"DisableRenderOnLock"="1"
+
+; Motoracer 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\mr3.exe]
+"DisableEnTnL"="1"
+
+; Nascar LegendsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar legends demo.exe]
+"DisableMidSceneRender"="1"
+
+; Nascar Legends
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar legends.exe]
+"DisableMidSceneRender"="1"
+
+; Nascar Racing 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar racing 3.exe]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Nascar Racing 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar racing 3 demo.exe]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Nascar Revolution
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar revolution.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; NASCAR Thunder 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar_thunder_2003_demo.exe]
+"NoRendersTillFlip"="1"
+
+; NASCAR Thunder 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nascar_thunder_2004_demo.exe]
+"DXTExposeCaps"="1"
+
+; NatureTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nature v2.0.exe]
+"DisableMipMapping"="1"
+"DoNotDisableFastTLF"="1"
+
+; NBA Live 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nbawin.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; NBA Live 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nba2003_demo.exe]
+"NoRendersTillFlip"="1"
+
+; N-BenchTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\n-bench.exe]
+"NoRendersTillFlip"="1"
+
+; Need for Speed 5
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\porsche.icd]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+
+; Need For Speed 5Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\porsche.exe]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+
+; Need for Speed Hot Pursuit 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nfshp2.exe]
+"DXTExposeCaps"="1"
+"NoRendersTillFlip"="1"
+
+; Need for Speed Hot Pursuit 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nfshp2demo.exe]
+"DXTExposeCaps"="1"
+"NoRendersTillFlip"="1"
+
+; Need For Speed UndergroundDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\speeddemo.exe]
+"PretendStencilBufferIs8Bit"="1"
+"DXTExposeCaps"="1"
+
+; NHL 2001Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2001demo.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2001.icd]
+"NoRendersTillFlip"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2001.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2002.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2002demo.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2003demo.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2004
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhl2004.exe]
+"NoRendersTillFlip"="1"
+
+; NHL 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nhldemo.exe]
+"NoRendersTillFlip"="1"
+
+; Nightstone
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nightstone.exe]
+"DisableCopyBlt3D"="1"
+
+; No Man's LandDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nml.exe]
+"NoRendersTillFlip"="1"
+
+; No One Lives Forever
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe782336]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; No One Lives Forever 2: A Spy in HARM's Way
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe2379215]
+"Expose2kTextures"="1"
+
+; No One Lives Forever 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1781760]
+"Expose2kTextures"="1"
+
+; No One Lives Forever 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1794048]
+"Expose2kTextures"="1"
+
+; No One Lives ForeverDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe790528]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Nocturne
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nocturne.icd]
+"DisablePixelFormatConversionBlit"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nocturne.exe]
+"DisablePixelFormatConversionBlit"="1"
+
+; Nosferatu: the Wrath of MalachiDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nosferatu.exe]
+"UseRHW"="1"
+
+; Odium
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\odium.exe]
+"ZLoad"="1"
+"ZStore"="1"
+
+; ODT
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\odt.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Odyssey: The Search for Ulysses
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\odyssey.exe]
+"ZLoad"="1"
+"ZBiasScale"="0"
+
+; Official Formula One Racing
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\of1r_hw3d.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Offroad
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\setup.exe385024]
+"Disable24Bit3DDevice"="1"
+
+; OffroadDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\setup.exe372736]
+"Disable24Bit3DDevice"="1"
+
+; Offroad: Redneck RacingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\setup.exe368640]
+"Disable24Bit3DDevice"="1"
+
+; Omikron: The Nomad Soul
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\runtime.icd]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\runtime.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"DisableCopyBlt3D"="1"
+
+; Omikron: The Nomad SoulDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nomad.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"DisableCopyBlt3D"="1"
+
+; Ominous HorizonsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ominous.exe]
+"NoRendersTillFlip"="1"
+
+; One Must Fall: BattlegroundsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\omfbg.exe]
+"ExposeCubeMapCaps"="1"
+"DisableEnTnL"="0"
+"UnsupportedTexOps"="0x307"
+
+; Open Kart
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kart.exe2330624]
+"DoNotWaitOnLock"="1"
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; Open KartDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kartdemo.exe]
+"DoNotWaitOnLock"="1"
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; Operation FlashpointDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\demo.bin]
+"UseRHW"="1"
+
+; Outwars
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\outwars.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Overboard!
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ob.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Pac Man - Adventures in Time
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pac-man.exe]
+"Disable24Bit3DDevice"="1"
+"UseRHW"="1"
+
+; Pacific WarriorsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pacific warriors demo.exe]
+"NoRendersTillFlip"="1"
+
+; Pacific Warriors
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pacific warriors.exe]
+"NoRendersTillFlip"="1"
+
+; Pacific Warriors 2: Dogfight!Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pw2 demo.exe]
+"OnlyUseLastFogColour"="1"
+
+; PainkillerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\paingame.exe]
+"DisableEnTnL"="0"
+"PretendStencilBufferIs8Bit"="1"
+
+; Panzer CommanderDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\panzer.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Panzer General 3D Assault
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pg3.icd]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Panzer General 3D AssaultDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pg3.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Phoenix
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\alternity.exe]
+"NoRendersTillFlip"="1"
+
+; Pirates of The Caribbean
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\engine.exe]
+"DisableEnTnL"="0"
+"DXTExposeCaps"="1"
+"PretendStencilBufferIs8Bit"="1"
+"ExposeCubeMapCaps"="1"
+"Expose2kTextures"="1"
+"NoRendersTillFlip"="1"
+
+; Planet of the Apes
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pota.exe]
+"NoRendersTillFlip"="1"
+
+; PlatoonDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\platoon.exe]
+"DisableRenderOnLock"="1"
+"ForceMidSceneRTRender"="1"
+
+; Port RoyaleDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\port royale demo.exe]
+"ReloadOnSubblt"="1"
+
+; Premier Manager 2002-2003
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pmpcwin.exe]
+"PretendStencilBufferIs8Bit"="1"
+
+; Pro Bass Fishing 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pro bass fishing demo.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+
+; Pro Rally 2001Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\prorally2001.exe]
+"NoRendersTillFlip"="1"
+"ZBiasScale"="8"
+
+; Pro Rally 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\prorally.exe]
+"ZBiasScale"="8"
+
+; Project ArcturusDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\arcexe.exe]
+"DisableMidSceneRender"="1"
+"NoRendersTillFlip"="1"
+
+; Project Eden
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\eden.exe]
+"DisableEnTnL"="1"
+
+; Project IGI
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\igi.exe]
+"DisableEnTnL"="1"
+
+; Project NomadsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nomads.exe]
+"PretendStencilBufferIs8Bit"="1"
+
+; PurgeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\purge.exe]
+"DisableMidSceneRender"="1"
+
+; Railroad PioneerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\railroad.exe]
+"PretendStencilBufferIs8Bit"="1"
+"DisableStencil"="1"
+"EnableTextureManagement"="1"
+
+; Railroad Tycoon 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rt3d.exe]
+"NoRendersTillFlip"="1"
+
+; Rallisport Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rallisportchallenge.exe]
+"DisableEnTnL"="0"
+"DXTExposeCaps"="1"
+
+; RalliSport ChallengeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rallisportchallengetrial.exe]
+"DisableEnTnL"="0"
+"DXTExposeCaps"="1"
+
+; realMYSTDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\realmyst.exe]
+"DXTExposeCaps"="1"
+
+; Red Faction
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rf.exe]
+"DisableEnTnL"="1"
+
+; Renegade RacersDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rrdemo.exe]
+"DisableStencil"="1"
+
+; Renegade Racers
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rr.exe]
+"DisableStencil"="1"
+
+; Requiem: Avenging Angel
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\d3d.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Resident Evil 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\leonp.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\clairep.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Restaurant EmpireDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\re.exe]
+"NoRendersTillFlip"="1"
+
+; Return to Krondor
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rtk.exe]
+"ZLoad"="1"
+"ZStore"="1"
+"EnableAutoMipMap"="1"
+"DAdjust"="4"
+
+; RevenantDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\revenant.exe]
+"ZLoad"="1"
+"ZStore"="1"
+"ZTranslate"="1"
+
+; Revenant
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\revenant.icd]
+"ZLoad"="1"
+"ZStore"="1"
+"ZTranslate"="1"
+
+; Rise of NationsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\nations.exe]
+"DisableHardwareCursor"="1"
+
+; River World
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xworld.exe]
+"ForceGouraudVertexFog"="1"
+
+; Road Trip 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\roadtrip2002.exe]
+"UseRHW"="1"
+
+; Road Wars
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\roadwars.exe]
+"DisableRenderOnLock"="1"
+
+; Robin Hood - Defender of the CrownDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\dotc.exe]
+"UseRHW"="1"
+
+; Robot Arena
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\robot arena.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Roland Garros 2001Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rg2001.exe]
+"ZLoad"="1"
+"ZStore"="1"
+
+; Roland Garros Paris
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rg99d3d.exe]
+"DisableMidSceneRender"="1"
+
+; Rollcage
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rollcage.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Rollcage Stage 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rollcage d3d.exe]
+"Disable24Bit3DDevice"="1"
+
+; Rome - Caesar's Will
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rome.exe]
+"ZLoad"="1"
+"ForceAGPTex"="1"
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+"EnableComplexSceneMode"="1"
+
+; Rugby 2001Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\r2001.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Rugby 2001
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\r2001.icd]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Rugby 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rugby2004demo.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; RuneDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rune.exe]
+"EnableTextureManagement"="1"
+
+; Sabre Ace
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sabreace.exe]
+"ForceGouraudVertexFog"="1"
+
+; SacredDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sacred.exe]
+"DisableEnTnL"="0"
+
+; Sail Simulator 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sail40.exe]
+"DisableCopyBlt3D"="1"
+
+; Sanity: Aiken's ArtifactDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\client.dll]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Search and Rescue 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sar2.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Search and Rescue 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sar3_demo.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Search and Rescue: Costal HeroesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sar4.exe]
+"NoRendersTillFlip"="1"
+"OnlyUseLastFogColour"="1"
+
+; Search and Rescue: Vietnam MedEvacDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vr.exe]
+"NoRendersTillFlip"="1"
+"OnlyUseLastFogColour"="1"
+
+; Sega Rally 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sega rally 2.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Severance: Blade of DarknessDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\winblade.exe]
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; Severance: Blade of Darkness
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\blade.exe]
+"NoRendersTillFlip"="1"
+"DisableRenderOnLock"="1"
+
+; Shogo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\client.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; Shogun: Total War
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\shogun.icd]
+"ZStore"="1"
+"ZTranslate"="1"
+"DisableMidSceneRender"="1"
+"UseShadowRenderSurfaceOnLock"="1"
+"DisableRenderOnLock"="1"
+"NoRendersTillFlip"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\shogun.exe]
+"ZStore"="1"
+"ZTranslate"="1"
+"DisableMidSceneRender"="1"
+"UseShadowRenderSurfaceOnLock"="1"
+"DisableRenderOnLock"="1"
+"NoRendersTillFlip"="1"
+
+; Silent Hill 2: Directors Cut
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sh2pc.exe]
+"DisableMidSceneRender"="1"
+
+; Silkolene Honda Motocross GP
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\shmgpd3d.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"EnableTextureQueue"="0"
+
+; Sim Coaster
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe7504054]
+"DisableMipMapping"="1"
+
+; SimCity 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\simcity 4.exe]
+"ZStore"="1"
+
+; Sinbad: Legend of the Seven SeasDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sinbad.exe]
+"DisableFastTLF"="1"
+
+; Sno-Cross ExtremeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snocrossdemo.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Snow WaveDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snowwave.exe]
+"NoRendersTillFlip"="1"
+
+; Soul Reaver
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kain2.icd]
+"IncreaseFBMappingOnLock"="1"
+
+; Soul ReaverDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\kain2.exe]
+"IncreaseFBMappingOnLock"="1"
+
+; SoulBringer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\soulbringevc.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; SpartanDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\spartan.exe]
+"NoRendersTillFlip"="1"
+
+; Spearhead
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\spearhead.exe]
+"ForceGouraudVertexFog"="1"
+
+; Speed ThiefDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\speedthief.exe]
+"EnableAutoMipMap"="1"
+
+; Spiderman The Movie
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\spiderman.exe]
+"UseRHW"="1"
+
+; Spirit of Speed 1937Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\spirit of speed demo.exe]
+"DisableRenderOnLock"="1"
+
+; Star Trek: Armada
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\armada.exe]
+"DisableVidMemVBuffers"="1"
+
+; Star Trek: Deep Space Nine: The Fallen
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ds9.exe]
+"EnableTextureManagement"="1"
+
+; Star Trek: Dominion Wars
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ds9dw.exe]
+"DisableMidSceneRender"="1"
+"DisableXSS"="1"
+"DisableYSS"="1"
+
+; Star Trek: Hidden Evil
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hiddenevil.exe]
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Star Trek: New WorldsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\stnwdemo.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Star Wars: Episode 1: Racer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\swep1rcr.exe]
+"NoRendersTillFlip"="1"
+
+; Star Wars: Episode 1: The Phantom MenaceDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wmain.exe]
+"DisableMidSceneRender"="1"
+
+; Star Wars: Shadows of the Empire
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\shadows.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; StarLancer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lancer.icd]
+"ZeroTextureMemory"="1"
+
+; StarLancerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lancer.exe]
+"ZeroTextureMemory"="1"
+
+; Startopia
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\startopia.exe]
+"EnableComplexSceneMode"="1"
+
+; SummonerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sumdemo.exe]
+"OverrideFogEnd"="0x404CB7D4"
+
+; Summoner
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\sum.exe]
+"OverrideFogEnd"="0x404CB7D4"
+
+; Super Taxi Driver
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\stdriver.exe]
+"DisableCopyBlt3D"="1"
+
+; Supercar Street Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\launchssc.exe]
+"NoRendersTillFlip"="1"
+"ZBiasScale"="64"
+
+; Tarzan Action Game
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tarzan.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Tellurian Defence
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe1570816]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Tetris WorldsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tetrisworlds.exe]
+"NoRendersTillFlip"="1"
+
+; The Dukes of Hazzard
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\frontend.exe]
+"DisableCopyBlt3D"="1"
+
+; The Elder Scrolls 3: Morrowind
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\morrowind.exe]
+"NoRendersTillFlip"="1"
+"UseRHW"="1"
+"DoNotWaitOnLock"="1"
+"DisableMidSceneRender"="1"
+"RenderOnFogChange"="1"
+
+; The Guardian of Darkness
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.d3d.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; The HulkDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\hulk_demo.exe]
+"DXTExposeCaps"="1"
+
+; The Italian Job
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\stg055.exe]
+"DisableEnTnL"="1"
+
+; The Italian JobDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tij.exe]
+"EnableTextureManagement"="1"
+
+; The Lord of the Rings - The Fellowship of the RingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fellowship.exe]
+"EnablePalettised"="1"
+
+; The Nations
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe9218179]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+"DuplicateAppName"="1"
+
+; The Nations Gold Edition
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe9984163]
+"NoRendersTillFlip"="1"
+"DoNotWaitOnLock"="1"
+"DuplicateAppName"="1"
+
+; The Simpsons Hit and Run
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\simpsons.exe]
+"DXTExposeCaps"="1"
+
+; The Sum of All Fears
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\soaf.exe]
+"DisableEnTnL"="1"
+
+; Theme Park Inc
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\game.exe7502887]
+"DisableMIPMapping"="1"
+
+; Theme Park World
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tp.icd]
+"DisableMipMapping"="1"
+
+; Thrust Twist'n TurnDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ttt.exe]
+"EnableAutoMipMap"="1"
+"ZLoad"="1"
+"ZTranslate"="1"
+
+; Tiger Woods PGA Tour 2003
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tw2003.exe]
+"NoRendersTillFlip"="1"
+
+; Tiger Woods PGA Tour Golf 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tiger 2002.exe]
+"DisableEnTnL"="1"
+"EnableComplexSceneMode"="1"
+
+; Tiger Woods PGA Tour Golf 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tw2002.exe]
+"EnableComplexSceneMode"="1"
+"DisableEnTnL"="1"
+
+; Tigger's Honey Hunt
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\thh.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Time Machine
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\timequake.exe]
+"ZLoad"="1"
+"ZBiasScale"="0"
+
+; TOCA 2 Touring Cars
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tc2.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Tonka Space Station
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\spacestation.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; Tony Hawk's Pro Skater 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\skate3.exe]
+"DisableEnTnL"="1"
+"NoRendersTillFlip"="1"
+"DisableVidMemVBuffers"="1"
+
+; Toon Car
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tooncar.exe]
+"DisableEnTnL"="1"
+
+; Top Gun Combat ZonesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\topgunmp.exe]
+"DXTExposeCaps"="1"
+"DisableEnTnL"="0"
+
+; Total Immersion Racing
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tir.exe]
+"NoRendersTillFlip"="1"
+
+; Total Immersion RacingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tirdemo.exe]
+"NoRendersTillFlip"="1"
+
+; Trespasser
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\trespass.exe]
+"ZStore"="1"
+"ZLoad"="1"
+
+; Tribes 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tribes2.exe]
+"ZBiasScale"="64"
+
+; Trickstyle
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ts_d3d.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+"DisableDXT1"="1"
+"NoRendersTillFlip"="1"
+
+; Triple Play BaseballDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\tp2002_w.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Tron 2·0
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe2992905]
+"DisableEnTnL"="0"
+
+; Tron 2·0Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1900544]
+"DisableEnTnL"="0"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\lithtech.exe1912832]
+"DisableEnTnL"="0"
+
+; UEFA Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\soccer4.exe]
+"Disable24Bit3DDevice"="1"
+
+; UEFA Champions League Season 1998/1999
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\uefa.exe]
+"NoRendersTillFlip"="1"
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; UEFA Euro 2000
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\euro2000.icd]
+"NoRendersTillFlip"="1"
+
+; UEFA Euro 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\euro2004_demo.exe]
+"NoRendersTillFlip"="1"
+"UnsupportedTexOps"="0x200304"
+
+; Ultimate Paintball Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\upc.exe]
+"DisableXSS"="1"
+"DisableYSS"="1"
+"DisableAnisotropicFiltering"="1"
+
+; Ultimate RideDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ultride.exe]
+"TAHalfOffset"="1"
+"ISPHalfOffset"="1"
+
+; Unreal
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\unreal.exe]
+"EnableTextureManagement"="1"
+
+; Unreal Tournament
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\unrealtournament.icd]
+"EnableTextureManagement"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\unrealtournament.exe]
+"EnableTextureManagement"="1"
+
+; Unreal Tournament 2003Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ut2003.exe]
+"DisableEnTnL"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\ut2003demo.exe]
+"DisableEnTnL"="1"
+
+; Urban ChaosDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fallen.exe]
+"NoRendersTillFlip"="1"
+
+; Urban Chaos
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\fallen.icd]
+"NoRendersTillFlip"="1"
+
+; Virtual Pool 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vp3preview.exe]
+"ReloadOnSubblt"="1"
+
+; Virtual Pool 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vp3.exe]
+"ReloadOnSubblt"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vp3.icd]
+"ReloadOnSubblt"="1"
+
+; Virtual Pool Hall
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vphall.exe]
+"NoRendersTillFlip"="1"
+"DisableMidSceneRender"="1"
+
+; V-Rally
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vrdirectx.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; V-Rally 2 Expert Edition
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vrally2.exe]
+"OverrideFogStart"="0x41000000"
+"OverrideFogEnd"="0x41700000"
+"DisableMipMapping"="1"
+
+; V-Rally 3Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vrally3demo.exe]
+"UnsupportedTexOps"="0x311"
+
+; War of the RingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\rings_demo.exe]
+"UnsupportedTexOps"="0x311"
+
+; War TimesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wartimes.exe]
+"PretendStencilBufferIs8Bit"="1"
+"DisableCopyBlt3D"="1"
+
+; Warlords 4: Heroes of EtheriaDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\warlords4.exe]
+"ReloadOnSubblt"="1"
+
+; Warm Up!
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\warm_up_!.exe]
+"Disable24Bit3DDevice"="1"
+
+; Warrior KingsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\warrior_kings.exe]
+"DisableFastTLF"="1"
+
+; Warzone 2100
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\warzone.icd]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\warzone.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Wheel of Time
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wot.exe]
+"EnableTextureManagement"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wot.icd]
+"EnableTextureManagement"="1"
+
+; Wild Wild WestDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\vrdmfc.exe]
+"ZLoad"="1"
+"ZStore"="1"
+"ZTranslate"="1"
+
+; Wing Commander Prophecy
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\prophecy.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; Winter Sports: Snow Wave 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snowbike.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snowingles.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snowbikeitaliano.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\snowbikeportugues.exe]
+"NoRendersTillFlip"="1"
+"DisableCopyBlt3D"="1"
+
+; World League Soccer '99
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wls.exe]
+"NoRendersTillFlip"="1"
+
+; World War 2: Pacific HeroesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\pacific.exe]
+" DXTExposeCaps"="1"
+"Expose2kTextures"="1"
+"DisableEnTnL"="0"
+"UseRHW"="1"
+"NoRendersTillFlip"="1"
+
+; WWE Raw
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wwe raw.exe]
+"ZStore"="1"
+"NoRendersTillFlip"="1"
+
+; WWE RawDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\raw.exe]
+"ZStore"="1"
+"NoRendersTillFlip"="1"
+
+; X - Beyond the Frontier
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\x.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xdx6demouk.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xdx6.exe]
+"ISPHalfOffset"="1"
+"TAHalfOffset"="1"
+
+; X-Com: Enforcer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xcom.exe]
+"UseRHW"="1"
+
+; XIIIDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\xiii.exe]
+"DXTExposeCaps"="1"
+
+; X-Men 2: Wolverine's Revenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\wolvie.exe]
+"DisableEnTnL"="0"
+"DXTExposeCaps"="1"
+
+; YagerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\yager.exe]
+"DisableEnTnL"="0"
+"DXTExposeCaps"="1"
+"DXTAlwaysUseTopMap"="1"
+"ExposeCubeMapCaps"="1"
+"Expose2kTextures"="1"
+
+; Z - Steel Soldiers
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\z2.exe]
+"DisableEnTnL"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\zsetup.exe]
+"DisableEnTnL"="1"
+
+; ZanzarahDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\D3D\main.exe3076096]
+"DisableCopyBlt3D"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL]
+
+; 3D Pipes (Win9x)
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\3d pipes.scr]
+"DepthBufferlessHSR"="0"
+
+; 3D Studio Max
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\3dsmax.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+"CheckForWindowChanges"="1"
+"LoadStoreOnVBuffFlush"="1"
+
+; AC3DDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ac3d.exe]
+"CheckForWindowChanges"="1"
+"LoadStoreOnVBuffFlush"="1"
+"StencilBufferlessSB"="0"
+
+; Alone in the Dark - The New NightmareDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\alone4.exe]
+"HonourDoubleBuffer"="1"
+
+; Baldur's Gate 2: Shadows of Amn
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\bgmain.exe]
+"HonourDoubleBuffer"="1"
+"LoadStoreOnTextureFull"="1"
+"AllowExclusiveMode"="0"
+"EnableGDISync"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\bggltest.exe]
+"HonourDoubleBuffer"="1"
+"LoadStoreOnTextureFull"="1"
+"AllowExclusiveMode"="0"
+"EnableGDISync"="1"
+
+; Blender
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\blender.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StrictLocks"="1"
+
+; Call of DutyDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\codsp.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+"HonourDoubleBuffer"="1"
+
+; DaikatanaDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\daikatana.exe]
+"ForceSingleBuffered"="1"
+"HonourDoubleBuffer"="0"
+
+; Descent 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\main.exe]
+"DisableAlphaTest"="1"
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"SlackARBExtensions"="1"
+
+; Drone ZTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\dronez.exe]
+"EnableFastColor"="1"
+"ForceSingleBuffered"="1"
+"IgnoreScissor"="1"
+
+; Earth 2150
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\earth2150.icd]
+"AllowExclusiveMode"="0"
+
+; GL ExcessTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glxs1.1a.exe]
+"HonourDoubleBuffer"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glexcess.exe]
+"HonourDoubleBuffer"="1"
+
+; GMAX
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\gmax.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+"CheckForWindowChanges"="1"
+"LoadStoreOnVBuffFlush"="1"
+
+; Gore: Ultimate Soldier
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\gore.exe]
+"EnableOptimisedTransforms"="0"
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+
+; Gunman Chronicles
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\gunman.exe]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+
+; Half-Life
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\hl.exe]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+"EnableMultitexture"="0"
+
+; Half-Life: Blue Shift
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\bshift.exe]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+"EnableMultitexture"="0"
+
+; Half-Life: Counterstrike
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\cstrike.exe]
+"HandleZTrick"="1"
+"EnableMultitexture"="0"
+"EnableFog"="0"
+
+; Half-Life: UplinkDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\hldemo.exe]
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+"IgnoreScissor"="1"
+
+; Heavy Metal FAKK2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\fakk2.exe]
+"PCIForceSingleBuffered"="1"
+"PCICompress1BitAlphaTextures"="1"
+"PCICompressRGBTextures"="1"
+"PCILoadStoreOnTextureFull"="1"
+
+; Hexen 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glh2.exe]
+"HandleZTrick"="1"
+
+; Home PlanetDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\core.exe]
+"HonourDoubleBuffer"="1"
+"CompressRGBTextures"="1"
+
+; Icewind Dale
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\idmain.exe]
+"AllowExclusiveMode"="0"
+"EnableGDISync"="1"
+"HonourDoubleBuffer"="1"
+"LoadStoreOnTextureFull"="1"
+
+; Indy3D Benchmark
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\indy3d.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+
+; KingPin
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\kingpin.exe]
+"EnableMultitexture"="0"
+
+; MayaDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\maya.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+"CheckForWindowChanges"="1"
+"AllowSoftRast"="32"
+"ForceClearOnResize"="0"
+
+; MDK 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\mdk2main.exe]
+"CompressRGBTextures"="1"
+"Compress1BitAlphaTextures"="1"
+"ForceSingleBuffered"="1"
+
+; Metal Fatigue
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\mfatigue.exe]
+"HonourDoubleBuffer"="1"
+"DepthBufferlessHSR"="0"
+"TexCache0Size"="400"
+"TexCache0MinTexels"="1024"
+"TexCache0MaxTexels"="1024"
+"TexCache0NonMipMap"="1"
+"TexCache0AllowRect"="0"
+
+; Myth 3 : The Wolf Age
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\myth3.exe]
+"ForceSingleBuffered"="1"
+
+; Neverwinter Nights
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\nwmain.exe]
+"HonourDoubleBuffer"="1"
+
+; OGLVillageMarkTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\oglvillagemark.exe]
+"ForceSingleBuffered"="1"
+
+; Oni
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\oni.exe]
+"DepthBufferlessHSR"="0"
+"EnableFog"="0"
+
+; Project EarthDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\projectearth.exe]
+"HonourDoubleBuffer"="1"
+
+; Quake 1
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glquake.exe]
+"HandleZTrick"="1"
+
+; Quake 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\quake2.exe]
+"ForceSingleBuffered"="1"
+
+; Quake 3 Arena
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\quake3.exe]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+
+; Return to Castle Wolfenstein
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wolfmp.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+"CompressLightMap"="0"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wolfsp.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+"CompressLightMap"="0"
+
+; Return to Castle Wolfenstein MPDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wolf.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+
+; Return to Castle Wolfenstein SPDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wolfspdemo.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+
+; Serious Sam
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\serioussam.exe]
+"DisableIndexedASM"="1"
+"DepthBufferlessHSR"="0"
+"SynchronousDepthBuffer"="0"
+"PCILoadStoreOnTextureFull"="1"
+"PCICompress1BitAlphaTextures"="1"
+"PCICompressRGBTextures"="1"
+
+; Silicon Graphics Flight SimulatorDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\flight.exe]
+"HonourDoubleBuffer"="1"
+"SceneAntiAliasX"="1"
+"SceneAntiAliasY"="1"
+
+; Soldier Of Fortune
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\sof.exe]
+"EnableMultitexture"="0"
+"EnableFog"="0"
+
+; Soldier of Fortune 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\sof2mp.exe]
+"CompressDXT35Textures"="1"
+"FogExpScale"="100"
+
+; Soldier of Fortune 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\sof2mp-test.exe]
+"CompressDXT35Textures"="1"
+"DisableAnisotropicTexFilter"="1"
+
+; Soldier of Fortune 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\sof2.exe]
+"CompressDXT35Textures"="1"
+
+; SPECglperf
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glperf.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+
+; SPECviewperf
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\viewperf.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+
+; Star Trek: Elite Force 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ef2.exe]
+"Compress1BitAlphaTextures"="1"
+"CompressRGBTextures"="1"
+"HonourDoubleBuffer"="1"
+
+; Star Trek: Voyager Elite Force
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\stvoy.icd]
+"DisableAnisotropicTexFilter"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\stvoy.exe]
+"DisableAnisotropicTexFilter"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\stvoyhm.exe]
+"DisableAnisotropicTexFilter"="1"
+
+; Star Wars: Jedi Knight 2: Jedi Outcast
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\jk2mp.exe]
+"CompressDXT35Textures"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\jk2sp.exe]
+"CompressDXT35Textures"="1"
+
+; Starry Night Pro 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\starrynight.exe]
+"StrictLocks"="1"
+
+; Super Huey 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\super huey iii.exe]
+"HonourDoubleBuffer"="1"
+"AllowExclusiveMode"="0"
+
+; Super Splash 3DDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\splash.exe]
+"EnableOptimisedTransforms"="0x6f"
+
+; The Moon ProjectDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\themoonproject.exe]
+"AllowExclusiveMode"="0"
+
+; TreemarkOEM Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\treemark.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+
+; Tribes 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\tribes2.exe]
+"ForceSingleBuffered"="1"
+"AllowExclusiveMode"="0"
+"EnableOptimisedTransforms"="0x6f"
+
+; TrueSpace
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ts3.exe]
+"CheckForWindowChanges"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ts4.exe]
+"CheckForWindowChanges"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ts5.exe]
+"CheckForWindowChanges"="1"
+
+; Ultimate SteroidsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\ultimate steroids.exe]
+"CheckForWindowChanges"="1"
+
+; Unreal
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\unreal.exe]
+"IgnoreScissor"="1"
+"HandleZTrick"="1"
+"EnableMaterials"="0"
+
+; Unreal Tournament
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\unrealtournament.icd]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\unrealtournament.exe]
+"IgnoreScissor"="1"
+"ForceSingleBuffered"="1"
+"HandleZTrick"="1"
+
+; Vulpine GLMarkTech Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\glmark.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+
+; Wheel of Time
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wot.icd]
+"HandleZTrick"="1"
+
+; WorldCraft
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\wc.exe]
+"EnableOptimisedTransforms"="0"
+
+; XSIDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\OpenGL\xsi.exe]
+"ComplexSceneMode"="1"
+"DepthBufferlessHSR"="0"
+"StencilBufferlessSB"="0"
+"CheckForWindowChanges"="1"
+"LoadStoreOnVBuffFlush"="1"
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw]
+
+; AquaNox (AquaMark)Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\aquanox.exe]
+
+; Arx FatalisDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\arx.exe]
+
+; Batman: VengeanceDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\batman.exe]
+
+; Battle of Britain
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\bob.exe]
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\stubb.exe]
+
+; Battlefield 1942
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\bf1942.exe]
+
+; Battlefield 1942 MultiplayerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\bf1942demo.exe]
+
+; BreedDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\breed.exe]
+
+; Charlie's Angels: Angel XDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\charlie's angels angel x.exe]
+
+; Colin McRae Rally 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\cmr2.exe]
+
+; Colin McRae Rally 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\cmr2demo.exe]
+
+; Comanche 4
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\c4.exe]
+
+; Command and Conquer: Generals
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\game.dat]
+
+; Crazy MachinesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\crazymachines.exe]
+
+; Dead Man's Hand
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\dmh.exe]
+
+; Downtown Run
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\main.pro]
+
+; Dummy: gameexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\game.exe]
+
+; Dummy: lithtechexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\lithtech.exe]
+
+; Dummy: mainexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\main.exe]
+
+; Dummy: setupexe
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\setup.exe]
+
+; Enter The Matrix
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\matrix.exe]
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\matrixoptions.exe]
+
+; eRacer
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\eracerconfig.exe]
+
+; Eurofighter Typhoon
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\config3dr2000.exe]
+
+; Extreme Sports
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\pc.exe]
+
+; F1 2002Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\f1_2002_demo.exe]
+
+; F1 Racing ChampionshipDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\f1rc.exe]
+
+; Far WestDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\farwest-demo.exe]
+
+; Giants: Citizen Kabuto
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\giants.exe]
+
+; Gift
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\detect.exe]
+
+; Hangsim
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\hangsim.exe]
+
+; Highland Warriors
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\hw.exe]
+
+; Hostile Waters
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\hostilesetup.exe]
+
+; Hulk
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\hulk.exe]
+
+; Hype: The Time Quest
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\maid3dvr_bleu.exe]
+
+; I of the DragonDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\dragon.exe]
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\theiofthedragon.exe]
+
+; Impossible Creatures
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\ic.exe]
+
+; Indiana Jones and the Emperor's Tomb
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\indy.exe]
+
+; IndyCar Series
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\indycarseries.exe]
+
+; Jane's World War 2 Fighters
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\ww2.exe]
+
+; Jetfighter 5: Homeland ProtectorDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\game.exe2048000]
+
+; Judge Dredd: Dredd vs DeathDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\dredd.exe]
+
+; Knights of the Temple: Infernal CrusadeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\templar.exe]
+
+; Laura's Happy Adventures
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\laura.exe]
+
+; Lords of EverQuestDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\loedemo.exe]
+
+; Microsoft Baseball 3D 1998 EditionDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\baseball3d.exe]
+
+; NASCAR Thunder 2004Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\nascar_thunder_2004_demo.exe]
+
+; Need for Speed Hot Pursuit 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\nfshp2.exe]
+
+; Need for Speed Hot Pursuit 2Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\nfshp2demo.exe]
+
+; Need For Speed UndergroundDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\speeddemo.exe]
+
+; One Must Fall: BattlegroundsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\omfbg.exe]
+
+; PainkillerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\paingame.exe]
+
+; Pirates of The Caribbean
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\engine.exe]
+
+; Premier Manager 2002-2003
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\pmpcwin.exe]
+
+; Project IGI
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\igi.exe]
+
+; Project NomadsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\nomads.exe]
+
+; Railroad PioneerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\railroad.exe]
+
+; Rallisport Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\rallisportchallenge.exe]
+
+; RalliSport ChallengeDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\rallisportchallengetrial.exe]
+
+; realMYSTDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\realmyst.exe]
+
+; Rise of NationsDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\nations.exe]
+
+; Rollcage Stage 2
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\rollcage d3d.exe]
+
+; SacredDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\sacred.exe]
+
+; The HulkDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\hulk_demo.exe]
+
+; The Lord of the Rings - The Fellowship of the RingDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\fellowship.exe]
+
+; The Simpsons Hit and Run
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\simpsons.exe]
+
+; Tiger Woods PGA Tour Golf 2002
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\tw2002.exe]
+
+; Tony Hawk's Pro Skater 3
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\skate3.exe]
+
+; Top Gun Combat ZonesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\topgunmp.exe]
+
+; Trickstyle
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\ts_d3d.exe]
+
+; Tron 2·0
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\lithtech.exe2992905]
+
+; Tron 2·0Demo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\lithtech.exe1900544]
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\lithtech.exe1912832]
+
+; UEFA Challenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\soccer4.exe]
+
+; War TimesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\wartimes.exe]
+
+; Warm Up!
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\warm_up_!.exe]
+
+; World War 2: Pacific HeroesDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\pacific.exe]
+
+; XIIIDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\xiii.exe]
+
+; X-Men 2: Wolverine's Revenge
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\wolvie.exe]
+
+; YagerDemo
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\yager.exe]
+
+; Z - Steel Soldiers
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\z2.exe]
+
+[HKEY_LOCAL_MACHINE\Software\PowerVR\KYRO\Game Settings\DDraw\zsetup.exe]
+

@@ -1,0 +1,1960 @@
+#######################################################################
+#
+#
+#
+# NOTE: Chinese is the only language we support that has two flavors.
+#       Therefore all four digits of the resource locale id numbers
+#       are included in braces. The first two digits are sublanguage,
+#       The second two digits are primary language. Any parsing routine
+#       using this file as a source should ONLY use the primary language
+#       ID for all languages but Chinese. That way we support all
+#       flavors of any particular language (eg Spanish, which has 16).
+#       If you use all four digits for ID on the non-Chinese languages you
+#       will not be able to support all the different flavors, which
+#       would be in error. The sublanguage IDs are included for
+#       convenience.
+#
+#
+#######################################################################
+
+#ChineseS
+[0804]
+# Destinations
+DstMasterLong,÷˜“Ù¡ø
+DstMasterShort,÷˜“Ù¡ø
+DstRecordLong,¬º÷∆
+DstRecordShort,¬º÷∆
+DstReverbLong,ªÏœÏ
+DstReverbShort,ªÏœÏ
+DstFrontLong,"«∞÷√"
+DstFrontShort,"«∞÷√"
+DstRearLong,"∫Û÷√"
+DstRearShort,"∫Û÷√"
+
+# Output sources
+SrcWaveLong,…˘≤®
+SrcWaveShort,…˘≤®
+SrcSynthLong,∫œ≥…
+SrcSynthShort,Synth
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,∂˙ª˙
+SrcHeadphoneShort,∂˙ª˙
+SrcMonoOutLong,µ•…˘µ¿ ‰≥ˆ
+SrcMonoOutShort,µ•…˘µ¿ ‰≥ˆ
+SrcPhoneLong,µÁª∞
+SrcPhoneShort,µÁª∞
+SrcAuxLong,∏®÷˙
+SrcAuxShort,∏®÷˙
+SrcCDLong,CD
+SrcCDShort,CD
+SrcLineInLong,œﬂ¬∑ ‰»Î
+SrcLineInShort,œﬂ¬∑ ‰»Î
+SrcVideoLong, ”∆µ
+SrcVideoShort, ”∆µ
+SrcMicLong,¬ÛøÀ∑Á
+SrcMicShort,¬ÛøÀ∑Á
+SrcMonoInLong,µ•…˘µ¿ ‰»Î
+SrcMonoInShort,µ•…˘µ¿ ‰»Î
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,…˘≤®“Ù¡ø
+CtrlWaveOutVolumeShort,…˘≤®“Ù¡ø
+CtrlWaveOutMuteLong,…˘≤®æ≤“Ù
+CtrlWaveOutMuteShort,…˘≤®æ≤“Ù
+CtrlSynthOutVolumeLong,∫œ≥…“Ù¡ø
+CtrlSynthOutVolumeShort,∫œ≥…
+CtrlSynthOutMuteLong,∫œ≥…æ≤“Ù
+CtrlSynthOutMuteShort,∫œ≥…
+CtrlDSOutVolumeLong,DirectSound“Ù¡ø
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSoundæ≤“Ù
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,∂˙ª˙“Ù¡ø
+CtrlHeadphoneVolumeShort,∂˙ª˙
+CtrlHeadphoneMuteLong,∂˙ª˙æ≤“Ù
+CtrlHeadphoneMuteShort,∂˙ª˙æ≤“Ù
+CtrlMonoOutVolumeLong,µ•…˘µ¿ ‰≥ˆ“Ù¡ø
+CtrlMonoOutVolumeShort,µ•…˘µ¿ ‰≥ˆ“Ù¡ø
+CtrlMonoOutMuteLong,µ•…˘µ¿ ‰≥ˆæ≤“Ù
+CtrlMonoOutMuteShort,µ•…˘µ¿ ‰≥ˆæ≤“Ù
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,µÁª∞“Ù¡ø
+CtrlPhoneVolumeShort,µÁª∞
+CtrlPhoneMuteLong,µÁª∞æ≤“Ù
+CtrlPhoneMuteShort,µÁª∞
+CtrlAuxVolumeLong,∏®÷˙“Ù¡ø
+CtrlAuxVolumeShort,∏®÷˙“Ù¡ø
+CtrlAuxMuteLong,∏®÷˙æ≤“Ù
+CtrlAuxMuteShort,∏®÷˙æ≤“Ù
+CtrlCDVolumeLong,CD“Ù¡ø
+CtrlCDVolumeShort,CD“Ù¡ø
+CtrlCDMuteLong,CDæ≤“Ù
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,œﬂ¬∑ ‰»Î“Ù¡ø
+CtrlLineInVolumeShort,œﬂ¬∑ ‰»Î“Ù¡ø
+CtrlLineInMuteLong,œﬂ¬∑ ‰»Îæ≤“Ù
+CtrlLineInMuteShort,œﬂ¬∑ ‰»Îæ≤“Ù
+CtrlVideoVolumeLong, ”∆µ“Ù¡ø
+CtrlVideoVolumeShort, ”∆µ“Ù¡ø
+CtrlVideoMuteLong, ”∆µæ≤“Ù
+CtrlVideoMuteShort, ”∆µæ≤“Ù
+CtrlMicVolumeLong,¬ÛøÀ∑Á“Ù¡ø
+CtrlMicVolumeShort,¬ÛøÀ∑Á
+CtrlMicMuteLong,¬ÛøÀ∑Áæ≤“Ù
+CtrlMicMuteShort,¬ÛøÀ∑Á
+CtrlMicBoostLong,¬ÛøÀ∑Á“Ù¡ø‘ˆ«ø
+CtrlMicBoostShort,‘ˆ«ø
+CtrlMicSelectLong,±∏”√¬ÛøÀ∑Á
+CtrlMicSelectShort,¬ÛøÀ∑Á2
+CtrlMonoInVolumeLong,µ•…˘µ¿ ‰»Î“Ù¡ø
+CtrlMonoInVolumeShort,µ•…˘µ¿ ‰»Î
+CtrlMonoInMuteLong,µ•…˘µ¿ ‰»Îæ≤“Ù
+CtrlMonoInMuteShort,µ•…˘µ¿ ‰»Î
+CtrlZVVolumeLong,ZV“Ù¡ø
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZVæ≤“Ù
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,µÁª∞
+SrcRecPhoneShort,µÁª∞
+SrcRecAuxLong,∏®÷˙
+SrcRecAuxShort,∏®÷˙
+SrcRecCDLong,CD
+SrcRecCDShort,CD
+SrcRecLineInLong,œﬂ¬∑ ‰»Î
+SrcRecLineInShort,œﬂ¬∑ ‰»Î
+SrcRecVideoLong, ”∆µ
+SrcRecVideoShort, ”∆µ
+SrcRecMicLong,¬ÛøÀ∑Á
+SrcRecMicShort,¬ÛøÀ∑Á
+SrcRecLoopLong,—≠ª∑ªÿÀÕ
+SrcRecLoopShort,—≠ª∑ªÿÀÕ
+
+# Input mixer controls
+CtrlRecMuxLong,¬º÷∆Mux
+CtrlRecMuxShort,¬º÷∆Mux
+CtrlRecPhoneLong,µÁª∞“Ù¡ø
+CtrlRecPhoneShort,µÁª∞
+CtrlRecAuxLong,∏®÷˙“Ù¡ø
+CtrlRecAuxShort,∏®÷˙“Ù¡ø
+CtrlRecCDLong,CD“Ù¡ø
+CtrlRecCDShort,CD
+CtrlRecVideoLong, ”∆µ“Ù¡ø
+CtrlRecVideoShort, ”∆µ“Ù¡ø
+CtrlRecMicLong,¬ÛøÀ∑Á“Ù¡ø
+CtrlRecMicShort,¬ÛøÀ∑Á“Ù¡ø
+CtrlRecLineInLong,œﬂ¬∑ ‰»Î“Ù¡ø
+CtrlRecLineInShort,œﬂ¬∑ ‰»Î“Ù¡ø
+CtrlRecLoopLong,—≠ª∑ªÿÀÕ“Ù¡ø
+CtrlRecLoopShort,—≠ª∑ªÿÀÕ“Ù¡ø
+
+
+
+
+#ChineseT
+[0404]
+# Destinations
+DstMasterLong,•D≠µ∂q
+DstMasterShort,•D≠µ∂q
+DstRecordLong,ø˝ªs
+DstRecordShort,ø˝ªs
+DstReverbLong,≤V≈T
+DstReverbShort,≤V≈T
+DstFrontLong,´e∏m
+DstFrontShort,´e∏m
+DstRearLong,´·∏m
+DstRearShort,´·∏m
+
+# Output sources
+SrcWaveLong,¡n™i
+SrcWaveShort,¡n™i
+SrcSynthLong,¶X¶®
+SrcSynthShort,¶X¶®
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,¶’æ˜
+SrcHeadphoneShort,¶’æ˜
+SrcMonoOutLong,≥Ê≠µøÈ•X
+SrcMonoOutShort,≥Ê≠µøÈ•X
+SrcPhoneLong,πq∏‹
+SrcPhoneShort,πq∏‹
+SrcAuxLong,ª≤ßU
+SrcAuxShort,ª≤ßU
+SrcCDLong,CD
+SrcCDShort,CD
+SrcLineInLong,Ωu∏ÙøÈ§J
+SrcLineInShort,Ωu∏ÙøÈ§J
+SrcVideoLong,µ¯∞T
+SrcVideoShort,µ¯∞T
+SrcMicLong,≥¡ßJ≠∑
+SrcMicShort,≥¡ßJ≠∑
+SrcMonoInLong,≥Ê≠µøÈ§J
+SrcMonoInShort,≥Ê≠µøÈ§J
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,¡n™i≠µ∂q
+CtrlWaveOutVolumeShort,¡n™i≠µ∂q
+CtrlWaveOutMuteLong,¡n™i¿R≠µ
+CtrlWaveOutMuteShort,¡n™i¿R≠µ
+CtrlSynthOutVolumeLong,¶X¶®≠µ∂q
+CtrlSynthOutVolumeShort,¶X¶®≠µ∂q
+CtrlSynthOutMuteLong,¶X¶®¿R≠µ
+CtrlSynthOutMuteShort,¶X¶®¿R≠µ
+CtrlDSOutVolumeLong,DirectSound ≠µ∂q
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound ¿R≠µ
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,¶’æ˜≠µ∂q
+CtrlHeadphoneVolumeShort,¶’æ˜≠µ∂q
+CtrlHeadphoneMuteLong,¶’æ˜¿R≠µ
+CtrlHeadphoneMuteShort,¶’æ˜¿R≠µ
+CtrlMonoOutVolumeLong,≥Ê≠µøÈ•X≠µ∂q
+CtrlMonoOutVolumeShort,≥Ê≠µøÈ•X≠µ∂q
+CtrlMonoOutMuteLong,≥Ê≠µøÈ•X¿R≠µ
+CtrlMonoOutMuteShort,≥Ê≠µøÈ•X¿R≠µ
+CtrlPhoneVolumeLong,πq∏‹≠µ∂q
+CtrlPhoneVolumeShort,πq∏‹
+CtrlPhoneMuteLong,πq∏‹¿R≠µ
+CtrlPhoneMuteShort,πq∏‹¿R≠µ
+CtrlMonoOutSelectLong,Mono Out
+CtrlMonoOutSelectShort,Mono Out
+CtrlAuxVolumeLong,ª≤ßU≠µ∂q
+CtrlAuxVolumeShort,ª≤ßU≠µ∂q
+CtrlAuxMuteLong,ª≤ßU¿R≠µ
+CtrlAuxMuteShort,ª≤ßU¿R≠µ
+CtrlCDVolumeLong,CD ≠µ∂q
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,CD ¿R≠µ
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Ωu∏ÙøÈ§J≠µ∂q
+CtrlLineInVolumeShort,Ωu∏ÙøÈ§J≠µ∂q
+CtrlLineInMuteLong,Ωu∏ÙøÈ§J¿R≠µ
+CtrlLineInMuteShort,Ωu∏ÙøÈ§J¿R≠µ
+CtrlVideoVolumeLong,µ¯∞T≠µ∂q
+CtrlVideoVolumeShort,µ¯∞T≠µ∂q
+CtrlVideoMuteLong,µ¯∞T¿R≠µ
+CtrlVideoMuteShort,µ¯∞T¿R≠µ
+CtrlMicVolumeLong,≥¡ßJ≠∑≠µ∂q
+CtrlMicVolumeShort,≥¡ßJ≠∑≠µ∂q
+CtrlMicMuteLong,≥¡ßJ≠∑¿R≠µ
+CtrlMicMuteShort,≥¡ßJ≠∑¿R≠µ
+CtrlMicBoostLong,≥¡ßJ≠∑±j≠µ
+CtrlMicBoostShort,≥¡ßJ≠∑±j≠µ
+CtrlMicSelectLong,∆•Œ≥¡ßJ≠∑
+CtrlMicSelectShort,∆•Œ≥¡ßJ≠∑
+CtrlMonoInVolumeLong,≥Ê≠µøÈ§J≠µ∂q
+CtrlMonoInVolumeShort,≥Ê≠µøÈ§J≠µ∂q
+CtrlMonoInMuteLong,≥Ê≠µøÈ§J¿R≠µ
+CtrlMonoInMuteShort,≥Ê≠µøÈ§J¿R≠µ
+CtrlZVVolumeLong,ZV≠µ∂q
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV¿R≠µ
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,πq∏‹
+SrcRecPhoneShort,πq∏‹
+SrcRecAuxLong,ª≤ßU
+SrcRecAuxShort,ª≤ßU
+SrcRecCDLong,CD
+SrcRecCDShort,CD
+SrcRecLineInLong,Ωu∏ÙøÈ§J
+SrcRecLineInShort,Ωu∏ÙøÈ§J
+SrcRecVideoLong,µ¯∞T
+SrcRecVideoShort,µ¯∞T
+SrcRecMicLong,≥¡ßJ≠∑
+SrcRecMicShort,≥¡ßJ≠∑
+SrcRecLoopLong,¿Ù∞j
+SrcRecLoopShort,¿Ù∞j
+
+# Input mixer controls
+CtrlRecMuxLong,ø˝ªs Mux
+CtrlRecMuxShort,ø˝ªs Mux
+CtrlRecPhoneLong,πq∏‹≠µ∂q
+CtrlRecPhoneShort,πq∏‹≠µ∂q
+CtrlRecAuxLong,ª≤ßU≠µ∂q
+CtrlRecAuxShort,ª≤ßU≠µ∂q
+CtrlRecCDLong,CD ≠µ∂q
+CtrlRecCDShort,CD
+CtrlRecVideoLong,µ¯∞T≠µ∂q
+CtrlRecVideoShort,µ¯∞T≠µ∂q
+CtrlRecMicLong,≥¡ßJ≠∑≠µ∂q
+CtrlRecMicShort,≥¡ßJ≠∑≠µ∂q
+CtrlRecLineInLong,Ωu∏ÙøÈ§J≠µ∂q
+CtrlRecLineInShort,Ωu∏ÙøÈ§J≠µ∂q
+CtrlRecLoopLong,¿Ù∞j≠µ∂q
+CtrlRecLoopShort,¿Ù∞j≠µ∂q
+
+
+
+
+
+#Danish
+[0406]
+# Destinations
+DstMasterLong,Master
+DstMasterShort,Master
+DstRecordLong,Indspil
+DstRecordShort,Indspil
+DstReverbLong,Genlyd
+DstReverbShort,Genlyd
+DstFrontLong,For
+DstFrontShort,For
+DstRearLong,Bag
+DstRearShort,Bag
+
+# Output sources
+SrcWaveLong,Wave
+SrcWaveShort,Wave
+SrcSynthLong,Syntese
+SrcSynthShort,Synt
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Hovedtelefon
+SrcHeadphoneShort,Hovedtelefon
+SrcMonoOutLong,MonoUd
+SrcMonoOutShort,MonoUd
+SrcPhoneLong,Telefon
+SrcPhoneShort,Telefon
+SrcAuxLong,Auxillary
+SrcAuxShort,Aux
+SrcCDLong,Compact Disc
+SrcCDShort,CD
+SrcLineInLong,Linie ind
+SrcLineInShort,Linie ind
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Mikrofon
+SrcMicShort,Mik
+SrcMonoInLong,Mono ind
+SrcMonoInShort,Mono ind
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Wave lydstyrke
+CtrlWaveOutVolumeShort,Wave
+CtrlWaveOutMuteLong,Wave dÊmp
+CtrlWaveOutMuteShort,Wave
+CtrlSynthOutVolumeLong,Syntese lydstyrke
+CtrlSynthOutVolumeShort,Synt
+CtrlSynthOutMuteLong,Syntese dÊmp
+CtrlSynthOutMuteShort,Synt
+CtrlDSOutVolumeLong,DirectSound lydstyrke
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound lyddÊmpning
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Hovedtelefonlydstyrke
+CtrlHeadphoneVolumeShort,Hovedtelefon
+CtrlHeadphoneMuteLong,Hovedtelefon dÊmp
+CtrlHeadphoneMuteShort,Hovedtelefon
+CtrlMonoOutVolumeLong,Mono ud lydstyrke
+CtrlMonoOutVolumeShort,Mono ud
+CtrlMonoOutMuteLong,Mono ud dÊmp
+CtrlMonoOutMuteShort,Mono ud
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Telefonlydstyrke
+CtrlPhoneVolumeShort,Telefon
+CtrlPhoneMuteLong,Telefon dÊmp
+CtrlPhoneMuteShort,Telefon
+CtrlAuxVolumeLong,Auxillary lydstyrke
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Auxillary dÊmp
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Compact disc lydstyrke
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Compact disc dÊmp
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Linie ind lydstyrke
+CtrlLineInVolumeShort,Linie ind
+CtrlLineInMuteLong,Linie ind dÊmp
+CtrlLineInMuteShort,Linie ind
+CtrlVideoVolumeLong,Videolydstyrke
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Video dÊmp
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Mikrofonlydstyrke
+CtrlMicVolumeShort,Mik
+CtrlMicMuteLong,Mikrofon dÊmp
+CtrlMicMuteShort,Mik
+CtrlMicBoostLong,Mikrofon forstÊrk
+CtrlMicBoostShort,ForstÊrk
+CtrlMicSelectLong,Alternativ mikrofon
+CtrlMicSelectShort,Mik2
+CtrlMonoInVolumeLong,Mono ind lydstyrke
+CtrlMonoInVolumeShort,Mono ind
+CtrlMonoInMuteLong,Mono ind dÊmp
+CtrlMonoInMuteShort,Mono ind
+CtrlZVVolumeLong,ZV lydstyrke
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV dÊmp
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefon
+SrcRecPhoneShort,Telefon
+SrcRecAuxLong,Auxillary
+SrcRecAuxShort,Aux
+SrcRecCDLong,Compact Disc
+SrcRecCDShort,CD
+SrcRecLineInLong,Linie ind
+SrcRecLineInShort,Linie ind
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Mikrofon
+SrcRecMicShort,Mik
+SrcRecLoopLong,L¯kke tilbage
+SrcRecLoopShort,L¯kke
+
+# Input mixer controls
+CtrlRecMuxLong,Indspil mux
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Telefonlydstyrke
+CtrlRecPhoneShort,Telefon
+CtrlRecAuxLong,Auxillary lydstyrke
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Compact disc lydstyrke
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Videolydstyrke
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Mikrofonlydstyrke
+CtrlRecMicShort,Mik
+CtrlRecLineInLong,Linie ind lydstyrke
+CtrlRecLineInShort,Linie ind
+CtrlRecLoopLong,L¯kke tilbage lydstyrke
+CtrlRecLoopShort,L¯kke
+
+
+
+
+
+#Dutch
+[0413]
+# Destinations
+DstMasterLong,Master
+DstMasterShort,Master
+DstRecordLong,Opnemen
+DstRecordShort,Opnemen
+DstReverbLong,Reverb
+DstReverbShort,Reverb
+DstFrontLong,Vooraan
+DstFrontShort,Vooraan
+DstRearLong,Achteraan
+DstRearShort,Achteraan
+
+# Output sources
+SrcWaveLong,Wave
+SrcWaveShort,Wave
+SrcSynthLong,Synthese
+SrcSynthShort,Synth
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Hoofdtelefoon
+SrcHeadphoneShort,Hoofdtelefoon
+SrcMonoOutLong,Mono uit
+SrcMonoOutShort,Mono uit
+SrcPhoneLong,Telefoon
+SrcPhoneShort,Telefoon
+SrcAuxLong,Hulp
+SrcAuxShort,Hulp
+SrcCDLong,Compact Disc
+SrcCDShort,CD
+SrcLineInLong,Lijn in
+SrcLineInShort,Lijn in
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Microfoon
+SrcMicShort,Mic
+SrcMonoInLong,Mono in
+SrcMonoInShort,Mono in
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Wave Volume
+CtrlWaveOutVolumeShort,Wave
+CtrlWaveOutMuteLong,Wave dempen
+CtrlWaveOutMuteShort,Wave
+CtrlSynthOutVolumeLong,Synthesevolume
+CtrlSynthOutVolumeShort,Synth
+CtrlSynthOutMuteLong,Synthese gedempt
+CtrlSynthOutMuteShort,Synth
+CtrlDSOutVolumeLong,Direct Sound volume
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound gedempt
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Hoofdtelefoonvolume
+CtrlHeadphoneVolumeShort,Hoofdtelefoon
+CtrlHeadphoneMuteLong,Hoofdtelefoon gedempt
+CtrlHeadphoneMuteShort,Hoofdtelefoon
+CtrlMonoOutVolumeLong,Mono uit volume
+CtrlMonoOutVolumeShort,Mono uit
+CtrlMonoOutMuteLong,Mono uit gedempt
+CtrlMonoOutMuteShort,Mono uit
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Telefoonvolume
+CtrlPhoneVolumeShort,Telefoon
+CtrlPhoneMuteLong,Telefoon gedempt
+CtrlPhoneMuteShort,Telefoon
+CtrlAuxVolumeLong,Hulpvolume
+CtrlAuxVolumeShort,Hulp
+CtrlAuxMuteLong,Hulp gedempt
+CtrlAuxMuteShort,Hulp
+CtrlCDVolumeLong,Compact Disc Volume
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Compact Disc gedempt
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Lijn In Volume
+CtrlLineInVolumeShort,Lijn in
+CtrlLineInMuteLong,Lijn In gedempt
+CtrlLineInMuteShort,Lijn in
+CtrlVideoVolumeLong,Video Volume
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Video gedempt
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Microfoonvolume
+CtrlMicVolumeShort,Mic
+CtrlMicMuteLong,Microfoon gedempt
+CtrlMicMuteShort,Mic
+CtrlMicBoostLong,Microfoonversterker
+CtrlMicBoostShort,Versterken
+CtrlMicSelectLong,Andere microfoon
+CtrlMicSelectShort,Mic2
+CtrlMonoInVolumeLong,Mono In Volume
+CtrlMonoInVolumeShort,Mono in
+CtrlMonoInMuteLong,Mono In gedempt
+CtrlMonoInMuteShort,Mono in
+CtrlZVVolumeLong,ZV Volume
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV gedempt
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefoon
+SrcRecPhoneShort,Telefoon
+SrcRecAuxLong,Hulp
+SrcRecAuxShort,Hulp
+SrcRecCDLong,Compact Disc
+SrcRecCDShort,CD
+SrcRecLineInLong,Lijn in
+SrcRecLineInShort,Lijn in
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Microfoon
+SrcRecMicShort,Mic
+SrcRecLoopLong,Lus
+SrcRecLoopShort,Kring
+
+# Input mixer controls
+CtrlRecMuxLong,Opnemen Mux
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Telefoonvolume
+CtrlRecPhoneShort,Telefoon
+CtrlRecAuxLong,Hulpvolume
+CtrlRecAuxShort,Hulp
+CtrlRecCDLong,Compact Disc Volume
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Videovolume
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Microfoonvolume
+CtrlRecMicShort,Mic
+CtrlRecLineInLong,Line in Volume
+CtrlRecLineInShort,Lijn in
+CtrlRecLoopLong,Kringloopvolume
+CtrlRecLoopShort,Kring
+
+
+
+
+
+#Finnish
+[040B]
+# Destinations
+DstMasterLong,Keskusohjaus
+DstMasterShort,Keskusohjaus
+DstRecordLong,Nauhoita
+DstRecordShort,Nauhoita
+DstReverbLong,Kaiku
+DstReverbShort,Kaiku
+DstFrontLong,Etu
+DstFrontShort,Etu
+DstRearLong,Taka
+DstRearShort,Taka
+
+# Output sources
+SrcWaveLong,Aalto
+SrcWaveShort,Aalto
+SrcSynthLong,Synteesi
+SrcSynthShort,Synt
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Kuuloke
+SrcHeadphoneShort,Kuuloke
+SrcMonoOutLong,Mono Out
+SrcMonoOutShort,MonoOut
+SrcPhoneLong,Puhelin
+SrcPhoneShort,Puh
+SrcAuxLong,Aux-tulo
+SrcAuxShort,Aux-tulo
+SrcCDLong,CD-levy
+SrcCDShort,CD
+SrcLineInLong,Linjatulo
+SrcLineInShort,Linjatulo
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Mikrofoni
+SrcMicShort,Mikki
+SrcMonoInLong,Mono In
+SrcMonoInShort,Mono In
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Aallon ‰‰nenvoimakkuus
+CtrlWaveOutVolumeShort,Aalto
+CtrlWaveOutMuteLong,Aalto: vaimenna
+CtrlWaveOutMuteShort,Aalto
+CtrlSynthOutVolumeLong,Synteesin ‰‰nenvoimakkuus
+CtrlSynthOutVolumeShort,Synt
+CtrlSynthOutMuteLong,Synteesi: vaimenna
+CtrlSynthOutMuteShort,Synt
+CtrlDSOutVolumeLong,DirectSound -‰‰nenvoimakkuus
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound: vaimenna
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Kuulokkeen ‰‰nenvoimakkuus
+CtrlHeadphoneVolumeShort,Kuuloke
+CtrlHeadphoneMuteLong,Kuuloke: vaimenna
+CtrlHeadphoneMuteShort,Kuuloke
+CtrlMonoOutVolumeLong,MonoOut -‰‰nenvoimakkuus
+CtrlMonoOutVolumeShort,Mono Out
+CtrlMonoOutMuteLong,MonoOut: vaimenna
+CtrlMonoOutMuteShort,Mono Out
+CtrlMonoOutSelectLong,Mikrofoni Mono Out -liit‰nt‰‰n
+CtrlMonoOutSelectShort,Mik-Mono
+CtrlPhoneVolumeLong,Puhelimen ‰‰nenvoimakkuus
+CtrlPhoneVolumeShort,Puh
+CtrlPhoneMuteLong,Puhelin: vaimenna
+CtrlPhoneMuteShort,Puh
+CtrlAuxVolumeLong,Aux:n ‰‰nenvoimakkuus
+CtrlAuxVolumeShort,Aux-tulo
+CtrlAuxMuteLong,Aux: vaimenna
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,CD-levyn ‰‰nenvoimakkuus
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,CD-levy: vaimenna
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Linjatulo ‰‰nenvoimakkuus
+CtrlLineInVolumeShort,Linjatulo
+CtrlLineInMuteLong,Linjatulo: vaimenna
+CtrlLineInMuteShort,Linjatulo
+CtrlVideoVolumeLong,Videon ‰‰nenvoimakkuus
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Video: vaimenna
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Mikrofonin
+CtrlMicVolumeShort,Mikki
+CtrlMicMuteLong,Mikki
+CtrlMicMuteShort,Mikki
+CtrlMicBoostLong,Mikrofonin tehostus
+CtrlMicBoostShort,Tehostus
+CtrlMicSelectLong,Toinen mikrofoni
+CtrlMicSelectShort,Mikki2
+CtrlMonoInVolumeLong,MonoIn -‰‰nenvoimakkuus
+CtrlMonoInVolumeShort,Mono In
+CtrlMonoInMuteLong,MonoIn: vaimenna
+CtrlMonoInMuteShort,Mono In
+CtrlZVVolumeLong,ZV-levyn ‰‰nenvoimakkuus
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV-levy: vaimenna
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Puhelin
+SrcRecPhoneShort,Puh
+SrcRecAuxLong,Aux-tulo
+SrcRecAuxShort,Aux-tulo
+SrcRecCDLong,CD-levy
+SrcRecCDShort,CD
+SrcRecLineInLong,Linjatulo
+SrcRecLineInShort,Linjatulo
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Mikrofoni
+SrcRecMicShort,Mikki
+SrcRecLoopLong,Audiosignaali
+SrcRecLoopShort,Audiosignaali
+
+# Input mixer controls
+CtrlRecMuxLong,Nauhoittamisen limitin
+CtrlRecMuxShort,Limitin
+CtrlRecPhoneLong,Puhelimen ‰‰nenvoimakkuus
+CtrlRecPhoneShort,Puh
+CtrlRecAuxLong,Aux-‰‰nenvoimakkuus
+CtrlRecAuxShort,Aux-tulo
+CtrlRecCDLong,CD-‰‰nenvoimakkuus
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Videon ‰‰nenvoimakkuus
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Microfonin
+CtrlRecMicShort,Mikki
+CtrlRecLineInLong,Linjatulon ‰‰nenvoimakkuus
+CtrlRecLineInShort,Linjatulo
+CtrlRecLoopLong,Kaiun ‰‰nenvoimakkuus
+CtrlRecLoopShort,Kaiku
+
+
+
+
+#French
+[040C]
+# Destinations
+DstMasterLong,MaÓtre
+DstMasterShort,MaÓtre
+DstRecordLong,Enregistrement
+DstRecordShort,Enregistrement
+DstReverbLong,RÈverbÈration
+DstReverbShort,RÈverbÈration
+DstFrontLong,Avant
+DstFrontShort,Avant
+DstRearLong,ArriËre
+DstRearShort,ArriËre
+
+# Output sources
+SrcWaveLong,Onde
+SrcWaveShort,Onde
+SrcSynthLong,SynthËse
+SrcSynthShort,Synth
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Ecouteurs
+SrcHeadphoneShort,Ecouteurs
+SrcMonoOutLong,MonoSortie
+SrcMonoOutShort,MonoSortie
+SrcPhoneLong,TÈlÈphone
+SrcPhoneShort,TÈlÈphone
+SrcAuxLong,Auxiliaire
+SrcAuxShort,Aux
+SrcCDLong,Disque compact
+SrcCDShort,CD
+SrcLineInLong,Ligne d'entrÈe
+SrcLineInShort,Ligne d'entrÈe
+SrcVideoLong,VidÈo
+SrcVideoShort,VidÈo
+SrcMicLong,Microphone
+SrcMicShort,Mic
+SrcMonoInLong,Mono d'entrÈe
+SrcMonoInShort,Mono d'entrÈe
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Volume onde
+CtrlWaveOutVolumeShort,Onde
+CtrlWaveOutMuteLong,Muet onde
+CtrlWaveOutMuteShort,Onde
+CtrlSynthOutVolumeLong,Volume synthËse
+CtrlSynthOutVolumeShort,Synth
+CtrlSynthOutMuteLong,Muet synthËse
+CtrlSynthOutMuteShort,Synth
+CtrlDSOutVolumeLong,Direct Sound Volume
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Muet Direct Sound
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Volume Ècouteurs
+CtrlHeadphoneVolumeShort,Ecouteurs
+CtrlHeadphoneMuteLong,Muet Ècouteurs
+CtrlHeadphoneMuteShort,Ecouteurs
+CtrlMonoOutVolumeLong,Volume mono de sortie
+CtrlMonoOutVolumeShort,Mono de sortie
+CtrlMonoOutMuteLong,Muet mono de sortie
+CtrlMonoOutMuteShort,Mono de sortie
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Volume tÈlÈphone
+CtrlPhoneVolumeShort,TÈlÈphone
+CtrlPhoneMuteLong,Muet tÈlÈphone
+CtrlPhoneMuteShort,TÈlÈphone
+CtrlAuxVolumeLong,Volume auxiliaire
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Muet auxiliaire
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Volume disque compact
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Muet disque compact
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Volume ligne d'entrÈe
+CtrlLineInVolumeShort,ligne d'entrÈe
+CtrlLineInMuteLong,Muet ligne d'entrÈe
+CtrlLineInMuteShort,Ligne d'entrÈe
+CtrlVideoVolumeLong,Volume vidÈo
+CtrlVideoVolumeShort,VidÈo
+CtrlVideoMuteLong,Video Mute
+CtrlVideoMuteShort,VidÈo
+CtrlMicVolumeLong,Volume microphone
+CtrlMicVolumeShort,Mic
+CtrlMicMuteLong,Muet microphone
+CtrlMicMuteShort,Mic
+CtrlMicBoostLong,Amplification microphone
+CtrlMicBoostShort,Amplification
+CtrlMicSelectLong,Microphone alternatif
+CtrlMicSelectShort,Mic2
+CtrlMonoInVolumeLong,Volume mono d'entrÈe
+CtrlMonoInVolumeShort,Mono In
+CtrlMonoInMuteLong,Muet mono d'entrÈe
+CtrlMonoInMuteShort,Mono d'entrÈe
+CtrlZVVolumeLong,Volume ZV
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,Muet ZV
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,TÈlÈphone
+SrcRecPhoneShort,TÈlÈphone
+SrcRecAuxLong,Auxiliaire
+SrcRecAuxShort,Aux
+SrcRecCDLong,Disque compact
+SrcRecCDShort,CD
+SrcRecLineInLong,Ligne d'entrÈe
+SrcRecLineInShort,Ligne d'entrÈe
+SrcRecVideoLong,VidÈo
+SrcRecVideoShort,VidÈo
+SrcRecMicLong,Microphone
+SrcRecMicShort,Mic
+SrcRecLoopLong,ItÈration par retour
+SrcRecLoopShort,ItÈration
+
+# Input mixer controls
+CtrlRecMuxLong,Multiplexeur d'enregistrement
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Volume tÈlÈphone
+CtrlRecPhoneShort,TÈlÈphone
+CtrlRecAuxLong,Volume auxiliaire
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Volume disque compact
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Volume vidÈo
+CtrlRecVideoShort,VidÈo
+CtrlRecMicLong,Volume microphone
+CtrlRecMicShort,Mic
+CtrlRecLineInLong,Volume ligne d'entrÈe
+CtrlRecLineInShort,Ligne d'entrÈe
+CtrlRecLoopLong,Volume d'itÈration par retour
+CtrlRecLoopShort,ItÈration
+
+
+
+#German
+[0407]
+# Destinations
+DstMasterLong,Master
+DstMasterShort,Master
+DstRecordLong,Aufnahme
+DstRecordShort,Aufnahme
+DstReverbLong,Widerhall
+DstReverbShort,Widerhall
+DstFrontLong,Vorne
+DstFrontShort,Vorne
+DstRearLong,Hinten
+DstRearShort,Hinten
+
+# Output sources
+SrcWaveLong,Wave
+SrcWaveShort,Wave
+SrcSynthLong,Synthese
+SrcSynthShort,Synth
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Kopfhˆrer
+SrcHeadphoneShort,Kopfhˆrer
+SrcMonoOutLong,Mono Ausgang
+SrcMonoOutShort,Mono Ausgang
+SrcPhoneLong,Telefon
+SrcPhoneShort,Tel.
+SrcAuxLong,Zusatzger‰t
+SrcAuxShort,Aux
+SrcCDLong,Compact Disc
+SrcCDShort,CD
+SrcLineInLong,Leitung Eingang
+SrcLineInShort,Leitung Eingang
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Mikrofon
+SrcMicShort,Mik
+SrcMonoInLong,Mono Eingang
+SrcMonoInShort,Mono Eingang
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Wave-Lautst‰rke
+CtrlWaveOutVolumeShort,Wave
+CtrlWaveOutMuteLong,Wave Mute
+CtrlWaveOutMuteShort,Wave
+CtrlSynthOutVolumeLong,Synthesenlautst‰rke
+CtrlSynthOutVolumeShort,Synth
+CtrlSynthOutMuteLong,Synthese Mute
+CtrlSynthOutMuteShort,Synth
+CtrlDSOutVolumeLong,Direct Sound Lautst‰rke
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Direct Sound Mute
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Kopfhˆrerlautst‰rke
+CtrlHeadphoneVolumeShort,Kopfhˆrer
+CtrlHeadphoneMuteLong,Kopfhˆrer Mute
+CtrlHeadphoneMuteShort,Kopfhˆrer
+CtrlMonoOutVolumeLong,Mono Ausgang Lautst‰rke
+CtrlMonoOutVolumeShort,Mono Ausgang
+CtrlMonoOutMuteLong,Mono Ausgang Mute
+CtrlMonoOutMuteShort,Mono Ausgang
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Telefonlautst‰rke
+CtrlPhoneVolumeShort,Tel.
+CtrlPhoneMuteLong,Telefon Mute
+CtrlPhoneMuteShort,Tel.
+CtrlAuxVolumeLong,Zusatzger‰te-Lautst‰rke
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Zusatzger‰t Mute
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Compact Disc Lautst‰rke
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Compact Disc Mute
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Leitung Eingang Lautst‰rke
+CtrlLineInVolumeShort,Leitung Eingang
+CtrlLineInMuteLong,Leitung Eingang Mute
+CtrlLineInMuteShort,Leitung Eingang
+CtrlVideoVolumeLong,Videolautst‰rke
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Video Mute
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Mikrofonlautst‰rke
+CtrlMicVolumeShort,Mik
+CtrlMicMuteLong,Mikrofon Mute
+CtrlMicMuteShort,Mik
+CtrlMicBoostLong,Mikrofonverst‰rkung
+CtrlMicBoostShort,Verst‰rkung
+CtrlMicSelectLong,Zweitmikrofon
+CtrlMicSelectShort,Mik2
+CtrlMonoInVolumeLong,Mono Eingang Lautst‰rke
+CtrlMonoInVolumeShort,Mono Eingang
+CtrlMonoInMuteLong,Mono Eingang Mute
+CtrlMonoInMuteShort,Mono Eingang
+CtrlZVVolumeLong,ZV Lautst‰rke
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV Mute
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefon
+SrcRecPhoneShort,Tel.
+SrcRecAuxLong,Zusatzger‰t
+SrcRecAuxShort,Aux
+SrcRecCDLong,Compact Disc
+SrcRecCDShort,CD
+SrcRecLineInLong,Leitung Eingang
+SrcRecLineInShort,Leitung Eingang
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Mikrofon
+SrcRecMicShort,Mik
+SrcRecLoopLong,Wiederverwendung
+SrcRecLoopShort,Wiederverwendung
+
+# Input mixer controls
+CtrlRecMuxLong,Aufnahme-Multiplexer
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Telefonlautst‰rke
+CtrlRecPhoneShort,Tel.
+CtrlRecAuxLong,Zusatzger‰te-Lautst‰rke
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Compact Disc Lautst‰rke
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Videolautst‰rke
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Mikrofonlautst‰rke
+CtrlRecMicShort,Mik
+CtrlRecLineInLong,Leitung Eingang Lautst‰rke
+CtrlRecLineInShort,Leitung Eingang
+CtrlRecLoopLong,Wiederverwendung Lautst‰rke
+CtrlRecLoopShort,Wiederverwendung
+
+
+
+#Italian
+[0410]
+# Destinations
+DstMasterLong,Principale
+DstMasterShort,Principale
+DstRecordLong,Registrazione
+DstRecordShort,Registrazione
+DstReverbLong,Riverbero
+DstReverbShort,Riverbero
+DstFrontLong,Anteriori
+DstFrontShort,Anteriori
+DstRearLong,Posteriori
+DstRearShort,Posteriori
+
+# Output sources
+SrcWaveLong,Onda
+SrcWaveShort,Onda
+SrcSynthLong,Sintetizzatore
+SrcSynthShort,Sint.
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Cuffie
+SrcHeadphoneShort,Cuffie
+SrcMonoOutLong,Uscita mono
+SrcMonoOutShort,Uscita mono
+SrcPhoneLong,Telefono
+SrcPhoneShort,Telefono
+SrcAuxLong,Ausiliario
+SrcAuxShort,Aux
+SrcCDLong,Compact Disc
+SrcCDShort,CD
+SrcLineInLong,Ingresso linea
+SrcLineInShort,Ingresso linea
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Microfono
+SrcMicShort,Mic
+SrcMonoInLong,Ingresso mono
+SrcMonoInShort,Ingresso mono
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Volume onda
+CtrlWaveOutVolumeShort,Onda
+CtrlWaveOutMuteLong,Disattiva onda
+CtrlWaveOutMuteShort,Onda
+CtrlSynthOutVolumeLong,Volume sintetizzatore
+CtrlSynthOutVolumeShort,Sint.
+CtrlSynthOutMuteLong,Disattiva sintetizzatore
+CtrlSynthOutMuteShort,Sint.
+CtrlDSOutVolumeLong,Volume DirectSound
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Disattiva DirectSound
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Volume cuffie
+CtrlHeadphoneVolumeShort,Cuffie
+CtrlHeadphoneMuteLong,Disattiva cuffie
+CtrlHeadphoneMuteShort,Cuffie
+CtrlMonoOutVolumeLong,Volume uscita mono
+CtrlMonoOutVolumeShort,Uscita mono
+CtrlMonoOutMuteLong,Disattiva uscita mono
+CtrlMonoOutMuteShort,Uscita mono
+CtrlMonoOutSelectLong,mic. su mono
+CtrlMonoOutSelectShort,MicSuMono
+CtrlPhoneVolumeLong,Volume telefono
+CtrlPhoneVolumeShort,Telefono
+CtrlPhoneMuteLong,Disattiva telefono
+CtrlPhoneMuteShort,Telefono
+CtrlAuxVolumeLong,Volume ausiliario
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Disattiva ausiliario
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Volume compact disc
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Disattiva compact disc
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Volume ingresso linea
+CtrlLineInVolumeShort,Ingresso linea
+CtrlLineInMuteLong,Disattiva ingresso linea
+CtrlLineInMuteShort,Ingresso linea
+CtrlVideoVolumeLong,Volume video
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Disattiva video
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Volume microfono
+CtrlMicVolumeShort,Mic
+CtrlMicMuteLong,Disattiva microfono
+CtrlMicMuteShort,Mic
+CtrlMicBoostLong,Amplifica microfono
+CtrlMicBoostShort,Ampl.
+CtrlMicSelectLong,Microfono secondario
+CtrlMicSelectShort,Mic2
+CtrlMonoInVolumeLong,Volume ingresso mono
+CtrlMonoInVolumeShort,Ingresso mono
+CtrlMonoInMuteLong,Disattiva ingresso mono
+CtrlMonoInMuteShort,Ingresso mono
+CtrlZVVolumeLong,Volume ZV
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,Disattiva ZV
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefono
+SrcRecPhoneShort,Telefono
+SrcRecAuxLong,Ausiliario
+SrcRecAuxShort,Aux
+SrcRecCDLong,Compact Disc
+SrcRecCDShort,CD
+SrcRecLineInLong,Ingresso linea
+SrcRecLineInShort,Ingresso linea
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Microfono
+SrcRecMicShort,Mic
+SrcRecLoopLong,Ciclo continuo
+SrcRecLoopShort,Ciclo
+
+# Input mixer controls
+CtrlRecMuxLong,Mux registrazione
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Volume telefono
+CtrlRecPhoneShort,Telefono
+CtrlRecAuxLong,Volume ausiliario
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Volume compact disc
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Volume video
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Volume microfono
+CtrlRecMicShort,Mic
+CtrlRecLineInLong,Volume ingresso linea
+CtrlRecLineInShort,Ingresso linea
+CtrlRecLoopLong,Volume ciclo continuo
+CtrlRecLoopShort,Ciclo
+
+
+
+#Japanese
+[0411]
+# Destinations
+DstMasterLong,èoóÕœΩ¿∞
+DstMasterShort,œΩ¿∞
+DstRecordLong,ò^âπœΩ¿∞
+DstRecordShort,ò^âπ
+DstReverbLong,ÿ ﬁ∞Ãﬁ
+DstReverbShort,ÿ ﬁ∞Ãﬁ
+DstFrontLong,Ã€›ƒ
+DstFrontShort,Ã€›ƒ
+DstRearLong,ÿ±
+DstRearShort,ÿ±
+
+# Output sources
+SrcWaveLong,Wave
+SrcWaveShort,Wave
+SrcSynthLong,º›æª≤ªﬁ
+SrcSynthShort,º›æ
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,ÕØƒﬁÃ´›
+SrcHeadphoneShort,ÕØƒﬁÃ´›
+SrcMonoOutLong,”…èoóÕ
+SrcMonoOutShort,”…èoóÕ
+SrcPhoneLong,ìdòb
+SrcPhoneShort,ìdòb
+SrcAuxLong,Aux
+SrcAuxShort,Aux
+SrcCDLong,CD
+SrcCDShort,CD
+SrcLineInLong,◊≤›ì¸óÕ
+SrcLineInShort,◊≤›
+SrcVideoLong,Àﬁ√ﬁµ
+SrcVideoShort,Àﬁ√ﬁµ
+SrcMicLong,œ≤∏€Ã´›
+SrcMicShort,œ≤∏
+SrcMonoInLong,”…ì¸óÕ
+SrcMonoInShort,”…ì¸óÕ
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Wave
+CtrlWaveOutVolumeShort,Wave
+CtrlWaveOutMuteLong,Wave –≠∞ƒ
+CtrlWaveOutMuteShort,Wave
+CtrlSynthOutVolumeLong,º›æª≤ªﬁ
+CtrlSynthOutVolumeShort,º›æ
+CtrlSynthOutMuteLong,º›æª≤ªﬁ –≠∞ƒ
+CtrlSynthOutMuteShort,º›æ
+CtrlDSOutVolumeLong,Direct Sound
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Direct Sound –≠∞ƒ
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,ÕØƒﬁÃ´›
+CtrlHeadphoneVolumeShort,ÕØƒﬁÃ´›
+CtrlHeadphoneMuteLong,ÕØƒﬁÃ´› –≠∞ƒ
+CtrlHeadphoneMuteShort,ÕØƒﬁÃ´›
+CtrlMonoOutVolumeLong,”…◊ŸèoóÕ
+CtrlMonoOutVolumeShort,”…◊ŸèoóÕ
+CtrlMonoOutMuteLong,”…◊ŸèoóÕ–≠∞ƒ
+CtrlMonoOutMuteShort,”…èoóÕ
+CtrlMonoOutSelectLong,œ≤∏->”…◊Ÿ
+CtrlMonoOutSelectShort,œ≤∏->”…
+CtrlPhoneVolumeLong,ìdòbâπê∫
+CtrlPhoneVolumeShort,ìdòb
+CtrlPhoneMuteLong,ìdòbâπê∫–≠∞ƒ
+CtrlPhoneMuteShort,ìdòb
+CtrlAuxVolumeLong,AUX
+CtrlAuxVolumeShort,AUX
+CtrlAuxMuteLong,AUX–≠∞ƒ
+CtrlAuxMuteShort,AUX
+CtrlCDVolumeLong,CDµ∞√ﬁ®µ
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,CDµ∞√ﬁ®µ –≠∞ƒ
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,◊≤›ì¸óÕ
+CtrlLineInVolumeShort,◊≤›
+CtrlLineInMuteLong,◊≤›ì¸óÕ–≠∞ƒ
+CtrlLineInMuteShort,◊≤›
+CtrlVideoVolumeLong,Àﬁ√ﬁµ
+CtrlVideoVolumeShort,Àﬁ√ﬁµ
+CtrlVideoMuteLong,Àﬁ√ﬁµ –≠∞ƒ
+CtrlVideoMuteShort,Àﬁ√ﬁµ
+CtrlMicVolumeLong,œ≤∏€Ã´›
+CtrlMicVolumeShort,œ≤∏
+CtrlMicMuteLong,œ≤∏€Ã´› –≠∞ƒ
+CtrlMicMuteShort,œ≤∏
+CtrlMicBoostLong,œ≤∏€Ã´› Ãﬁ∞Ωƒ
+CtrlMicBoostShort,Ãﬁ∞Ωƒ
+CtrlMicSelectLong,ë„ë÷œ≤∏€Ã´›
+CtrlMicSelectShort,œ≤∏2
+CtrlMonoInVolumeLong,”…◊Ÿì¸óÕ
+CtrlMonoInVolumeShort,”…ì¸óÕ
+CtrlMonoInMuteLong,”…◊Ÿì¸óÕ–≠∞ƒ
+CtrlMonoInMuteShort,”…ì¸óÕ
+CtrlZVVolumeLong,ZVµ∞√ﬁ®µ
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZVµ∞√ﬁ®µ –≠∞ƒ
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,ìdòb
+SrcRecPhoneShort,ìdòb
+SrcRecAuxLong,Aux
+SrcRecAuxShort,Aux
+SrcRecCDLong,CD
+SrcRecCDShort,CD
+SrcRecLineInLong,◊≤›ì¸óÕ
+SrcRecLineInShort,◊≤›ì¸óÕ
+SrcRecVideoLong,Àﬁ√ﬁµ
+SrcRecVideoShort,Àﬁ√ﬁµ
+SrcRecMicLong,œ≤∏€Ã´›
+SrcRecMicShort,œ≤∏
+SrcRecLoopLong,Ÿ∞Ãﬂ ﬁØ∏
+SrcRecLoopShort,Ÿ∞Ãﬂ
+
+# Input mixer controls
+CtrlRecMuxLong,ò^âπëIë
+CtrlRecMuxShort,ëIë
+CtrlRecPhoneLong,ìdòbâπê∫
+CtrlRecPhoneShort,ìdòb
+CtrlRecAuxLong,Aux
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,CD
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Àﬁ√ﬁµ
+CtrlRecVideoShort,Àﬁ√ﬁµ
+CtrlRecMicLong,œ≤∏€Ã´›
+CtrlRecMicShort,œ≤∏
+CtrlRecLineInLong,◊≤›ì¸óÕ
+CtrlRecLineInShort,◊≤›
+CtrlRecLoopLong,Ÿ∞Ãﬂ ﬁØ∏
+CtrlRecLoopShort,Ÿ∞Ãﬂ
+
+
+
+#Korean
+[0412]
+# Destinations
+DstMasterLong,∏∂Ω∫≈Õ
+DstMasterShort,∏∂Ω∫≈Õ
+DstRecordLong,∑πƒ⁄µÂ
+DstRecordShort,∑πƒ⁄µÂ
+DstReverbLong,π›«‚
+DstReverbShort,π›«‚
+DstFrontLong,¿¸πÊ
+DstFrontShort,¿¸πÊ
+DstRearLong,»ƒπÊ
+DstRearShort,»ƒπÊ
+
+# Output sources
+SrcWaveLong,ø˛¿Ã∫Í
+SrcWaveShort,ø˛¿Ã∫Í
+SrcSynthLong,«’º∫
+SrcSynthShort,«’º∫
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,«ÏµÂ∆˘
+SrcHeadphoneShort,«ÏµÂ∆˘
+SrcMonoOutLong,∏≥Î √‚∑¬
+SrcMonoOutShort,∏≥Î √‚∑¬
+SrcPhoneLong,¿¸»≠
+SrcPhoneShort,¿¸»≠
+SrcAuxLong,∫∏¡∂
+SrcAuxShort,∫∏¡∂
+SrcCDLong,ƒƒ∆—∆Æ µΩ∫≈©
+SrcCDShort,CD
+SrcLineInLong,∂Û¿Œ ¿‘∑¬
+SrcLineInShort,∂Û¿Œ ¿‘∑¬
+SrcVideoLong,∫Òµø¿
+SrcVideoShort,∫Òµø¿
+SrcMicLong,∏∂¿Ã≈©
+SrcMicShort,∏∂¿Ã≈©
+SrcMonoInLong,∏≥Î ¿‘∑¬
+SrcMonoInShort,∏≥Î ¿‘∑¬
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,ø˛¿Ã∫Í ∫º∑˝
+CtrlWaveOutVolumeShort,ø˛¿Ã∫Í ∫º∑˝
+CtrlWaveOutMuteLong,ø˛¿Ã∫Í ¿Ωº“∞≈
+CtrlWaveOutMuteShort,ø˛¿Ã∫Í ¿Ωº“∞≈
+CtrlSynthOutVolumeLong,«’º∫ ∫º∑˝
+CtrlSynthOutVolumeShort,«’º∫ ∫º∑˝
+CtrlSynthOutMuteLong,Ω≈µΩ√Ω∫ ¿Ωº“∞≈
+CtrlSynthOutMuteShort,Ω≈µΩ√Ω∫ ¿Ωº“∞≈
+CtrlDSOutVolumeLong,DirectSound ∫º∑˝
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound ¿Ωº“∞≈
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,«ÏµÂ∆˘ ∫º∑˝
+CtrlHeadphoneVolumeShort,«ÏµÂ∆˘ ∫º∑˝
+CtrlHeadphoneMuteLong,«ÏµÂ∆˘ ¿Ωº“∞≈
+CtrlHeadphoneMuteShort,«ÏµÂ∆˘ ¿Ωº“∞≈
+CtrlMonoOutVolumeLong,∏≥Î √‚∑¬ ∫º∑˝
+CtrlMonoOutVolumeShort,∏≥Î √‚∑¬ ∫º∑˝
+CtrlMonoOutMuteLong,∏≥Î √‚∑¬ ¿Ωº“∞≈
+CtrlMonoOutMuteShort,∏≥Î √‚∑¬ ¿Ωº“∞≈
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,¿¸»≠ ∫º∑˝
+CtrlPhoneVolumeShort,¿¸»≠ ∫º∑˝
+CtrlPhoneMuteLong,¿¸»≠ ¿Ωº“∞≈
+CtrlPhoneMuteShort,¿¸»≠ ¿Ωº“∞≈
+CtrlAuxVolumeLong,∫∏¡∂ ∫º∑˝
+CtrlAuxVolumeShort,∫∏¡∂ ∫º∑˝
+CtrlAuxMuteLong,∫∏¡∂ ¿Ωº“∞≈
+CtrlAuxMuteShort,∫∏¡∂ ¿Ωº“∞≈
+CtrlCDVolumeLong,ƒƒ∆—∆Æ µΩ∫≈© ∫º∑˝
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,ƒƒ∆—∆Æ µΩ∫≈© ¿Ωº“∞≈
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,∂Û¿Œ ¿‘∑¬ ∫º∑˝
+CtrlLineInVolumeShort,∂Û¿Œ ¿‘∑¬ ∫º∑˝
+CtrlLineInMuteLong,∂Û¿Œ ¿‘∑¬ ¿Ωº“∞≈
+CtrlLineInMuteShort,∂Û¿Œ ¿‘∑¬ ¿Ωº“∞≈
+CtrlVideoVolumeLong,∫Òµø¿ ∫º∑˝
+CtrlVideoVolumeShort,∫Òµø¿ ∫º∑˝
+CtrlVideoMuteLong,∫Òµø¿ ¿Ωº“∞≈
+CtrlVideoMuteShort,∫Òµø¿ ¿Ωº“∞≈
+CtrlMicVolumeLong,M∏∂¿Ã≈© ∫º∑˝
+CtrlMicVolumeShort,M∏∂¿Ã≈© ∫º∑˝
+CtrlMicMuteLong,∏∂¿Ã≈© ¿Ωº“∞≈
+CtrlMicMuteShort,∏∂¿Ã≈© ¿Ωº“∞≈
+CtrlMicBoostLong,∏∂¿Ã≈© ¡ı∆¯
+CtrlMicBoostShort,∏∂¿Ã≈© ¡ı∆¯
+CtrlMicSelectLong,¥Î√º ∏∂¿Ã≈©
+CtrlMicSelectShort,¥Î√º ∏∂¿Ã≈©
+CtrlMonoInVolumeLong,∏≥Î ¿Œ ∫º∑˝
+CtrlMonoInVolumeShort,∏≥Î ¿Œ ∫º∑˝
+CtrlMonoInMuteLong,∏≥Î ¿Œ ¿Ωº“∞≈
+CtrlMonoInMuteShort,∏≥Î ¿Œ ¿Ωº“∞≈
+CtrlZVVolumeLong,ZV ∫º∑˝
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV ¿Ωº“∞≈
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,¿¸»≠
+SrcRecPhoneShort,¿¸»≠
+SrcRecAuxLong,∫∏¡∂
+SrcRecAuxShort,∫∏¡∂
+SrcRecCDLong,ƒƒ∆—∆Æ µΩ∫≈©
+SrcRecCDShort,CD
+SrcRecLineInLong,∂Û¿Œ ¿‘∑¬
+SrcRecLineInShort,∂Û¿Œ ¿‘∑¬
+SrcRecVideoLong,∫Òµø¿
+SrcRecVideoShort,∫Òµø¿
+SrcRecMicLong,∏∂¿Ã≈©
+SrcRecMicShort,∏∂¿Ã≈©
+SrcRecLoopLong,∑Á«¡ πÈ
+SrcRecLoopShort,∑Á«¡ πÈ
+
+# Input mixer controls
+CtrlRecMuxLong,∑πƒ⁄µÂ Mux
+CtrlRecMuxShort,∑πƒ⁄µÂ Mux
+CtrlRecPhoneLong,¿¸»≠ ∫º∑˝
+CtrlRecPhoneShort,¿¸»≠ ∫º∑˝
+CtrlRecAuxLong,∫∏¡∂ ∫º∑˝
+CtrlRecAuxShort,∫∏¡∂ ∫º∑˝
+CtrlRecCDLong,ƒƒ∆—∆Æ µΩ∫≈© ∫º∑˝
+CtrlRecCDShort,CD
+CtrlRecVideoLong,∫Òµø¿ ∫º∑˝
+CtrlRecVideoShort,∫Òµø¿ ∫º∑˝
+CtrlRecMicLong,∏∂¿Ã≈© ∫º∑˝
+CtrlRecMicShort,∏∂¿Ã≈© ∫º∑˝
+CtrlRecLineInLong,∂Û¿Œ ¿‘∑¬ ∫º∑˝
+CtrlRecLineInShort,∂Û¿Œ ¿‘∑¬ ∫º∑˝
+CtrlRecLoopLong,∑Á«¡ πÈ ∫º∑˝
+CtrlRecLoopShort,∑Á«¡ πÈ ∫º∑˝
+
+
+
+
+#Norwegian
+[0414]
+# Destinations
+DstMasterLong,Hovedkontroll
+DstMasterShort,Hovedkontroll
+DstRecordLong,Opptak
+DstRecordShort,Opptak
+DstReverbLong,Resonans
+DstReverbShort,Resonans
+DstFrontLong,Foran
+DstFrontShort,Foran
+DstRearLong,Bak
+DstRearShort,Bak
+
+# Output sources
+SrcWaveLong,Digitallyd
+SrcWaveShort,Digitallyd
+SrcSynthLong,Synthesizer
+SrcSynthShort,Synth
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Hodetelefoner
+SrcHeadphoneShort,Hodetelefoner
+SrcMonoOutLong,Mono ut
+SrcMonoOutShort,Mono ut
+SrcPhoneLong,Telefon
+SrcPhoneShort,Telefon
+SrcAuxLong,Aux
+SrcAuxShort,Aux
+SrcCDLong,CD
+SrcCDShort,CD
+SrcLineInLong,Linje inn
+SrcLineInShort,Linje inn
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Mikrofon
+SrcMicShort,Mik
+SrcMonoInLong,Mono inn
+SrcMonoInShort,Mono inn
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Volum for digitallyd
+CtrlWaveOutVolumeShort,Digitallyd
+CtrlWaveOutMuteLong,Demper for digitallyd
+CtrlWaveOutMuteShort,Digitallyd
+CtrlSynthOutVolumeLong,Volum for synthesizer
+CtrlSynthOutVolumeShort,Synthesizer
+CtrlSynthOutMuteLong,Demper for synthesizer
+CtrlSynthOutMuteShort,Synthesizer
+CtrlDSOutVolumeLong,Volum for DirectSound
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Demper for DirectSound
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Volum for hodetelefonere
+CtrlHeadphoneVolumeShort,Hodetelefoner
+CtrlHeadphoneMuteLong,Demper for hodetelefoner
+CtrlHeadphoneMuteShort,Hodetelefoner
+CtrlMonoOutVolumeLong,Volum for mono ut
+CtrlMonoOutVolumeShort,Mono ut
+CtrlMonoOutMuteLong,Demper for mono ut
+CtrlMonoOutMuteShort,Mono ut
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Volum for telefon
+CtrlPhoneVolumeShort,Telefon
+CtrlPhoneMuteLong,Demper for telefon
+CtrlPhoneMuteShort,Telefon
+CtrlAuxVolumeLong,Volum for Aux
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Demper for Aux
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Volum for CD
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Demper for CD
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Volum for Linje inn
+CtrlLineInVolumeShort,Linje inn
+CtrlLineInMuteLong,Demper for Linje inn
+CtrlLineInMuteShort,Linje inn
+CtrlVideoVolumeLong,Volum for video
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Demper for video
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Volum for mikrofon
+CtrlMicVolumeShort,Mik
+CtrlMicMuteLong,Demper for mikrofon
+CtrlMicMuteShort,Mik
+CtrlMicBoostLong,Mikrofonforsterker
+CtrlMicBoostShort,Forsterker
+CtrlMicSelectLong,Alternativ mikrofon
+CtrlMicSelectShort,Mik2
+CtrlMonoInVolumeLong,Volum for mono inn
+CtrlMonoInVolumeShort,Mono inn
+CtrlMonoInMuteLong,Demper for mono inn
+CtrlMonoInMuteShort,Mono inn
+CtrlZVVolumeLong,Volum for ZV
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,Demper for ZV
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefon
+SrcRecPhoneShort,Telefon
+SrcRecAuxLong,Aux
+SrcRecAuxShort,Aux
+SrcRecCDLong,CD
+SrcRecCDShort,CD
+SrcRecLineInLong,Linje inn
+SrcRecLineInShort,Linje inn
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Mikrofon
+SrcRecMicShort,Mik
+SrcRecLoopLong,Tilbakekobling
+SrcRecLoopShort,Sl¯yfe
+
+# Input mixer controls
+CtrlRecMuxLong,Ta opp muks
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Volum for telefon
+CtrlRecPhoneShort,Telefon
+CtrlRecAuxLong,Volum for Aux
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Volum for CD
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Volum for video
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Volum for mikrofon
+CtrlRecMicShort,Mik
+CtrlRecLineInLong,Volum for Linje inn
+CtrlRecLineInShort,Linje inn
+CtrlRecLoopLong,Volum for tilbakekobling
+CtrlRecLoopShort,Sl¯yfe
+
+
+
+#Portuguese
+[0416]
+# Destinations
+DstMasterLong,Mestre
+DstMasterShort,Mestre
+DstRecordLong,Gravar
+DstRecordShort,Gravar
+DstReverbLong,Reverberar
+DstReverbShort,Reverberar
+DstFrontLong,Dianteiros
+DstFrontShort,Dianteiros
+DstRearLong,Traseiros
+DstRearShort,Traseiros
+
+# Output sources
+SrcWaveLong,Onda
+SrcWaveShort,Onda
+SrcSynthLong,SÌntese
+SrcSynthShort,SÌntese
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Auscultadores
+SrcHeadphoneShort,Auscultadores
+SrcMonoOutLong,Mono Out
+SrcMonoOutShort,MonoOut
+SrcPhoneLong,Telefone
+SrcPhoneShort,Telefone
+SrcAuxLong,Auxiliar
+SrcAuxShort,Aux
+SrcCDLong,Compact Disc
+SrcCDShort,CD
+SrcLineInLong,Line In
+SrcLineInShort,Line In
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Microfone
+SrcMicShort,Mic
+SrcMonoInLong,Mono In
+SrcMonoInShort,Mono In
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Volume da Onda
+CtrlWaveOutVolumeShort,Onda
+CtrlWaveOutMuteLong,Onda Muda
+CtrlWaveOutMuteShort,Onda
+CtrlSynthOutVolumeLong,Volume da SÌntese
+CtrlSynthOutVolumeShort,SÌnt
+CtrlSynthOutMuteLong,SÌntese Muda
+CtrlSynthOutMuteShort,SÌnt
+CtrlDSOutVolumeLong,Volume de DirectSound
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound Mudo
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Volume do Auscultadores
+CtrlHeadphoneVolumeShort,Auscultadores
+CtrlHeadphoneMuteLong,Auscultadores Mudo
+CtrlHeadphoneMuteShort,Auscultadores
+CtrlMonoOutVolumeLong,Volume de Mono Out
+CtrlMonoOutVolumeShort,Mono Out
+CtrlMonoOutMuteLong,Mono Out Mudo
+CtrlMonoOutMuteShort,Mono Out
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Volume de Telefone
+CtrlPhoneVolumeShort,Fone
+CtrlPhoneMuteLong,Telefone Mudo
+CtrlPhoneMuteShort,Fone
+CtrlAuxVolumeLong,Volume Auxiliar
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Auxiliar Mudo
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Volume de Compact Disc
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Compact Disc Mudo
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Volume de Linha In
+CtrlLineInVolumeShort,Linha In
+CtrlLineInMuteLong,Linha In Muda
+CtrlLineInMuteShort,Linha In
+CtrlVideoVolumeLong,Volume de VÌdeo
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,VÌdeo Mudo
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Microfone
+CtrlMicVolumeShort,Mic
+CtrlMicMuteLong,Microfone Mudo
+CtrlMicMuteShort,Mic
+CtrlMicBoostLong,ReforÁo de Microfone
+CtrlMicBoostShort,ReforÁo
+CtrlMicSelectLong,Microfone Alternado
+CtrlMicSelectShort,Mic2
+CtrlMonoInVolumeLong,Volume de Mono In
+CtrlMonoInVolumeShort,Mono In
+CtrlMonoInMuteLong,Mono In Mudo
+CtrlMonoInMuteShort,Mono In
+CtrlZVVolumeLong,Volume de ZV
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV Mudo
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefone
+SrcRecPhoneShort,Fone
+SrcRecAuxLong,Auxiliar
+SrcRecAuxShort,Aux
+SrcRecCDLong,Compact Disc
+SrcRecCDShort,CD
+SrcRecLineInLong,Linha In
+SrcRecLineInShort,Linha In
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Microfone
+SrcRecMicShort,Mic
+SrcRecLoopLong,ReutilizaÁ„o
+SrcRecLoopShort,ReutilizaÁ„o
+
+# Input mixer controls
+CtrlRecMuxLong,Gravar Mux
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Volume do Telefone
+CtrlRecPhoneShort,Fone
+CtrlRecAuxLong,Volume Auxiliar
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Volume do Compact Disc
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Volume do VÌdeo
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Microfone
+CtrlRecMicShort,Mic
+CtrlRecLineInLong,Volume de Linha In
+CtrlRecLineInShort,Linha In
+CtrlRecLoopLong,Volume de Loop Back
+CtrlRecLoopShort,Loop
+
+
+
+#Spanish
+[040A]
+# Destinations
+DstMasterLong,Maestro
+DstMasterShort,Maestro
+DstRecordLong,Grabar
+DstRecordShort,Grabar
+DstReverbLong,Eco
+DstReverbShort,Eco
+DstFrontLong,Frente
+DstFrontShort,Frente
+DstRearLong,Posterior
+DstRearShort,Posterior
+
+# Output sources
+SrcWaveLong,Onda
+SrcWaveShort,Onda
+SrcSynthLong,SÌntesis
+SrcSynthShort,SÌnt.
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,AudÌfono
+SrcHeadphoneShort,AudÌfono
+SrcMonoOutLong,SalidaMono
+SrcMonoOutShort,SalidaMono
+SrcPhoneLong,TelÈfono
+SrcPhoneShort,TelÈfono
+SrcAuxLong,Auxiliar
+SrcAuxShort,Aux
+SrcCDLong,Disco compacto
+SrcCDShort,CD
+SrcLineInLong,LÌnea de entrada
+SrcLineInShort,LÌnea ent.
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,MicrÛfono
+SrcMicShort,Mic
+SrcMonoInLong,Entrada mono
+SrcMonoInShort,Ent. mono
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,Volumen de onda
+CtrlWaveOutVolumeShort,Onda
+CtrlWaveOutMuteLong,Silenciar onda
+CtrlWaveOutMuteShort,Onda
+CtrlSynthOutVolumeLong,Volumen de sÌntesis
+CtrlSynthOutVolumeShort,SÌnt.
+CtrlSynthOutMuteLong,Silenciar sÌntesis
+CtrlSynthOutMuteShort,SÌnt.
+CtrlDSOutVolumeLong,Volumen de DirectSound
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,Silenciar DirectSound
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Volumen de audÌfono
+CtrlHeadphoneVolumeShort,AudÌfono
+CtrlHeadphoneMuteLong,Silenciar audÌfono
+CtrlHeadphoneMuteShort,AudÌfono
+CtrlMonoOutVolumeLong,Volumen de salida mono
+CtrlMonoOutVolumeShort,Salida mono
+CtrlMonoOutMuteLong,Silenciar salida mono
+CtrlMonoOutMuteShort,Salida mono
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Volumen de telÈfono
+CtrlPhoneVolumeShort,TelÈfono
+CtrlPhoneMuteLong,Silenciar telÈfono
+CtrlPhoneMuteShort,TelÈfono
+CtrlAuxVolumeLong,Volumen auxiliar
+CtrlAuxVolumeShort,Aux
+CtrlAuxMuteLong,Silenciar auxiliar
+CtrlAuxMuteShort,Aux
+CtrlCDVolumeLong,Volumen de disco compacto
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,Silenciar disco compacto
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Volumen de lÌnea de entrada
+CtrlLineInVolumeShort,LÌnea de entrada
+CtrlLineInMuteLong,Silenciar lÌnea de entrada
+CtrlLineInMuteShort,LÌnea de entrada
+CtrlVideoVolumeLong,Volumen de video
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Silenciar video
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,MicrÛfono
+CtrlMicVolumeShort,Mic
+CtrlMicMuteLong,Silenciar micrÛfono
+CtrlMicMuteShort,Mic
+CtrlMicBoostLong,AmplificaciÛn de micrÛfono
+CtrlMicBoostShort,AmplificaciÛn
+CtrlMicSelectLong,MicrÛfono alternativo
+CtrlMicSelectShort,Mic2
+CtrlMonoInVolumeLong,Volumen de entrada mono
+CtrlMonoInVolumeShort,Entrada mono
+CtrlMonoInMuteLong,Silenciar entrada mono
+CtrlMonoInMuteShort,Entrada mono
+CtrlZVVolumeLong,Volumen de ZV
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,Silenciar ZV
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,TelÈfono
+SrcRecPhoneShort,TelÈfono
+SrcRecAuxLong,Auxiliar
+SrcRecAuxShort,Aux
+SrcRecCDLong,Disco compacto
+SrcRecCDShort,CD
+SrcRecLineInLong,LÌnea de entrada
+SrcRecLineInShort,LÌnea ent.
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,MicrÛfono
+SrcRecMicShort,Mic
+SrcRecLoopLong,RetroalimentaciÛn
+SrcRecLoopShort,Ciclo
+
+# Input mixer controls
+CtrlRecMuxLong,Mux de grabaciÛn
+CtrlRecMuxShort,Mux
+CtrlRecPhoneLong,Volumen de telÈfono
+CtrlRecPhoneShort,TelÈfono
+CtrlRecAuxLong,Volumen auxiliar
+CtrlRecAuxShort,Aux
+CtrlRecCDLong,Volumen de disco compacto
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Volumen de video
+CtrlRecVideoShort,Video
+CtrlRecMicLong,MicrÛfono
+CtrlRecMicShort,Mic
+CtrlRecLineInLong,Volumen de lÌnea de entrada
+CtrlRecLineInShort,LÌnea de entrada
+CtrlRecLoopLong,Volumen de retroalimentaciÛn
+CtrlRecLoopShort,Ciclo
+
+
+
+#Swedish
+[041D]
+# Destinations
+DstMasterLong,Huvud
+DstMasterShort,Huvud
+DstRecordLong,Spela in
+DstRecordShort,Spela in
+DstReverbLong,Eko
+DstReverbShort,Eko
+DstFrontLong,Fr‰mre
+DstFrontShort,Fr‰mre
+DstRearLong,Bakre
+DstRearShort,Bakre
+
+# Output sources
+SrcWaveLong,VÂg
+SrcWaveShort,VÂg
+SrcSynthLong,Syntes
+SrcSynthShort,Syntes
+SrcDSLong,DirectSound
+SrcDSShort,DS
+SrcHeadphoneLong,Hˆrlurar
+SrcHeadphoneShort,Hˆrlurar
+SrcMonoOutLong,Mono ut
+SrcMonoOutShort,Mono ut
+SrcPhoneLong,Telefon
+SrcPhoneShort,Telefon
+SrcAuxLong,Hj‰lp
+SrcAuxShort,Hj‰lp
+SrcCDLong,CD
+SrcCDShort,CD
+SrcLineInLong,Linje in
+SrcLineInShort,Linje in
+SrcVideoLong,Video
+SrcVideoShort,Video
+SrcMicLong,Mikrofon
+SrcMicShort,Mik
+SrcMonoInLong,Mono In
+SrcMonoInShort,Mono In
+SrcZVLong,ZV
+SrcZVShort,ZV
+
+
+# Output mixer controls
+CtrlWaveOutVolumeLong,VÂgvolym
+CtrlWaveOutVolumeShort,VÂg
+CtrlWaveOutMuteLong,VÂgd‰mpning
+CtrlWaveOutMuteShort,VÂg
+CtrlSynthOutVolumeLong,Syntesvolym
+CtrlSynthOutVolumeShort,Synt
+CtrlSynthOutMuteLong,Syntesd‰mpning
+CtrlSynthOutMuteShort,Synt
+CtrlDSOutVolumeLong,DirectSound volym
+CtrlDSOutVolumeShort,DS
+CtrlDSOutMuteLong,DirectSound d‰mpning
+CtrlDSOutMuteShort,DS
+CtrlHeadphoneVolumeLong,Hˆrlursvolym
+CtrlHeadphoneVolumeShort,Hˆrlurar
+CtrlHeadphoneMuteLong,Hˆrlursd‰mpning
+CtrlHeadphoneMuteShort,Hˆrlurar
+CtrlMonoOutVolumeLong,Mono ut volym
+CtrlMonoOutVolumeShort,Mono ut
+CtrlMonoOutMuteLong,Mono ut ljudd‰mpning
+CtrlMonoOutMuteShort,Mono ut
+CtrlMonoOutSelectLong,Mic To Mono
+CtrlMonoOutSelectShort,MicToMono
+CtrlPhoneVolumeLong,Telefonvolym
+CtrlPhoneVolumeShort,Telefon
+CtrlPhoneMuteLong,Telefond‰mpning
+CtrlPhoneMuteShort,Telefon
+CtrlAuxVolumeLong,Hj‰lpvolym
+CtrlAuxVolumeShort,Hj‰lp
+CtrlAuxMuteLong,Hj‰lp-ljudd‰mpning
+CtrlAuxMuteShort,Hj‰lp
+CtrlCDVolumeLong,CD-volym
+CtrlCDVolumeShort,CD
+CtrlCDMuteLong,CD-ljudd‰mpning
+CtrlCDMuteShort,CD
+CtrlLineInVolumeLong,Linje in volym
+CtrlLineInVolumeShort,Linje in
+CtrlLineInMuteLong,Linje in ljudd‰mpning
+CtrlLineInMuteShort,Linje in
+CtrlVideoVolumeLong,Video-volym
+CtrlVideoVolumeShort,Video
+CtrlVideoMuteLong,Video-ljudd‰mpning
+CtrlVideoMuteShort,Video
+CtrlMicVolumeLong,Mikrofonvolym
+CtrlMicVolumeShort,Mik
+CtrlMicMuteLong,Mikrofonljudd‰mpning
+CtrlMicMuteShort,Mik
+CtrlMicBoostLong,Mikrofonfˆrst‰rkning
+CtrlMicBoostShort,Fˆrst‰rkning
+CtrlMicSelectLong,Alternativ mikrofon
+CtrlMicSelectShort,Mik2
+CtrlMonoInVolumeLong,Mono in volym
+CtrlMonoInVolumeShort,Mono In
+CtrlMonoInMuteLong,Mono in ljudd‰mpning
+CtrlMonoInMuteShort,Mono In
+CtrlZVVolumeLong,ZV-volym
+CtrlZVVolumeShort,ZV
+CtrlZVMuteLong,ZV-ljudd‰mpning
+CtrlZVMuteShort,ZV
+
+# Input sources
+SrcRecPhoneLong,Telefon
+SrcRecPhoneShort,Telefon
+SrcRecAuxLong,Hj‰lp
+SrcRecAuxShort,Hj‰lp
+SrcRecCDLong,CD
+SrcRecCDShort,CD
+SrcRecLineInLong,Linje In
+SrcRecLineInShort,Linje In
+SrcRecVideoLong,Video
+SrcRecVideoShort,Video
+SrcRecMicLong,Mikrofon
+SrcRecMicShort,Mik
+SrcRecLoopLong,Loop Back
+SrcRecLoopShort,Loop
+
+# Input mixer controls
+CtrlRecMuxLong,Inspelningsmultiplexering
+CtrlRecMuxShort,Multiplexering
+CtrlRecPhoneLong,Telefonvolym
+CtrlRecPhoneShort,Telefon
+CtrlRecAuxLong,Hj‰lp-volym
+CtrlRecAuxShort,Hj‰lp
+CtrlRecCDLong,CD-volym
+CtrlRecCDShort,CD
+CtrlRecVideoLong,Videovolym
+CtrlRecVideoShort,Video
+CtrlRecMicLong,Mikrofonvolym
+CtrlRecMicShort,Mik
+CtrlRecLineInLong,Linje in volym
+CtrlRecLineInShort,Linje in
+CtrlRecLoopLong,Tillbakaspolningsvolym
+CtrlRecLoopShort,Loop
+
+

@@ -1,0 +1,518 @@
+;
+; PCI Audio Adapter INF file
+; for CMI8738
+;
+; 04/12/99  basic
+; 04/20/99  Add DOS initial program
+; 04/21/99  merge 8738/8338-031/OEM vendor ID into one INF file
+; 04/22/99  merge all of PCI audio chip drivers into one folder
+; 05/12/99  change cm8338fm.drv to cmpcifm.drv & cm8338.vxd to cmaudio.vxd
+; 06/30/99  remove DOS initial program
+; 07/02/99  Add property setup page to legacy device
+; 09/03/99  Remove drivers sub folder & run APs setup after installation
+; 09/20/99  Set default config value
+; 10/20/99  Rename audio3d to c3d
+; 11/09/99  Move APs setup to last device
+; 12/09/99  Add default master volume and four speakers status setting
+; 01/12/00  Add config setting & remove apsetup
+; 01/14/00  add copy mixer restore default value setting file
+; 01/25/00  Modify legacy device name for auto setup
+; 06/15/00  Add ASIO driver and new softMIDI driver
+; 08/02/00  Set 8738's mixer as default mixer
+; 09/06/00  Add OEMID
+; 09/20/00  Add LINEINasBASS
+; 09/25/00  Add OEMID
+; 11/24/00  Add MICasBASS
+; 06/14/01  Add DigitalShared
+;
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+provider="C-Media"
+LayoutFile=layout.inf
+DriverVer=07/25/2001,4.06.1096
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,1
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%MfgName%=CMEDIA
+
+[CMEDIA]
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_011113F6    ;8738
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09431019    ;OEMID
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09501019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09541019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09561019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09571019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09581019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09641019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09671019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09681019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09691019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09701019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09721019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09731019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09741019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09821019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09901019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_01121019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_01651019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_01661019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_05221019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_05281019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_05411019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_05721019
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_2102270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_2103270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_2501270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7140270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7144270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7145270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7161270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7166270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7167270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7440270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7540270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7560270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_7562270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_A371270F
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0755165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0756165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0757165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0758165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0581165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0586165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0741165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0748165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_1748165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0749165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0599165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0598165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0571165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0765165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0769165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_1768165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0766165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0770165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0771165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0773165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0768165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0726165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0727165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0583165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0587165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0754165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0800165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0802165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0585165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_8810165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_8630165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_8598165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_9598165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_8004165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_8811165D
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80351043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80371043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_14731043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_14831043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E01043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E11043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E21043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E31043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E41043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E51043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E61043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E71043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E81043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80E91043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80EA1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80EB1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80EC1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80ED1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80EE1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80EF1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F01043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F11043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F21043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F31043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F41043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F51043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F61043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F71043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F81043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80F91043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FA1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FB1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FC1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FD1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FE1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_80FF1043
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000115D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000215D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000315D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000415D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000515D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000615D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000715D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000815D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000915D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_000A15D4
+%DEV_0111.DeviceDesc%=DEV0111-1.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_54901483
+
+%DEV_0111.DeviceDesc%=DEV0111-2.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09621019
+%DEV_0111.DeviceDesc%=DEV0111-2.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09751019
+%DEV_0111.DeviceDesc%=DEV0111-2.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_09831019
+%DEV_0111.DeviceDesc%=DEV0111-2.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_0A521019
+
+%DEV_0111.DeviceDesc%=DEV0111-3.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_39901462
+%DEV_0111.DeviceDesc%=DEV0111-3.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_50501462
+%DEV_0111.DeviceDesc%=DEV0111-3.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_51301462
+
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_39201462
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_39801462
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_50701462
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_52801462
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_53201462
+%DEV_0111.DeviceDesc%=DEV0111-4.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_53401462
+
+%DEV_0111.DeviceDesc%=DEV0111-5.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_52701462
+
+%DEV_0111.DeviceDesc%=DEV0111-6.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_399A1462
+%DEV_0111.DeviceDesc%=DEV0111-6.Device,PCI\VEN_13F6&DEV_0111&SUBSYS_505A1462
+
+%SSC-Legacy.DeviceDesc%=SSC_Legacy_Device, VIRTUAL\SSC-SBEmu
+%SSC-DOSEmu.DeviceDesc%=SSC_DOSEmu, VIRTUAL\SSC-DOSEmu
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;---------------------------------------------------------------;
+[DEV0111-1.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG1.AddReg
+
+[DEV0111-2.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG2.AddReg
+
+[DEV0111-3.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG3.AddReg
+
+[DEV0111-4.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG4.AddReg
+
+[DEV0111-5.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG5.AddReg
+
+[DEV0111-6.Device]
+CopyFiles=audiodev.SystemCopyList,Audio3D.CopyList,ASIO.CopyList,SWMIDI.CopyList,Mixer.CopyList
+AddReg=WAVE.AddReg,MIXER.AddReg,audiodrv.AddReg,audiodev.AddReg,Audio3D.AddReg,ASIO.AddReg,CONFIG6.AddReg
+
+[SSC_Legacy_Device]
+AddReg=SSC_Legacy_Device.AddReg, HW_MIDI.AddReg
+
+[SSC_Legacy_Joystk]
+CopyFiles=CM8738_Joystk.CopyList
+AddReg=JOYSTICK.AddReg,CM8738_Joystk.AddReg
+UpdateInis=CM8738_JSTICK.UpdateInis
+
+[SSC_DOSEmu]
+;CopyFiles=DOSEmu.CopyList, apsetup.copylist
+CopyFiles=DOSEmu.CopyList
+AddReg=DOSEmu.AddReg
+
+;---------------------------------------------------------------;
+
+[audiodev.SystemCopyList]
+cmaudio.vxd,,
+cmpci95.drv,,
+cmsynth.drv,,
+cmmpupci.drv,,
+
+[Mixer.CopyList]
+mixerdef.ini,,,4
+mixer.exe,,,0x0000000C
+cmedia.dll,,,4
+cmuninst.exe,,,4
+
+[Audio3D.CopyList]
+C3D.dll,,,4
+a3d.dll,C3D.dll,,4
+
+[CM8738_Joystk.CopyList]
+vjoyd.vxd,,
+msjstick.drv,,
+
+[ASIO.CopyList]
+asio8738.dll,,
+
+[DOSEmu.CopyList]
+cmswmpu.vxd,,
+
+[SWMIDI.CopyList]
+parsedls.exe,,
+
+;---------------------------------------------------------------;
+
+[audiodrv.AddReg]
+HKR,Drivers\wave\cmpci95.drv,Description,,%DEV_0111.DeviceDesc%
+HKR,Drivers\mixer\cmpci95.drv,Description,,%DEV_0111.DeviceDesc%
+HKR,Drivers\aux\cmpci95.drv,Description,,%DEV_0111.DeviceDesc%
+
+[audiodev.AddReg]
+HKR,,Driver,,cmaudio.vxd
+HKR,Drivers\wave\cmpci95.drv,,,
+HKR,Drivers\wave\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers\mixer\cmpci95.drv,,,
+HKR,Drivers\mixer\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers\aux\cmpci95.drv,,,
+HKR,Drivers\aux\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers,SubClasses,,"wave,aux,mixer"
+;;HKR,,EnumPropPages,,"cmpci95.drv,DrvEnumPropPages"
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+HKR,Config,enable_lib,1,1
+; 0 for enable legacy device
+HKR,Config,DISLEGACY,1,0
+; enable DOS mode MPU-401 MIDI emulator or not (0=enable, 1=disable)
+HKR,Config,DISDOSMPU,1,0
+; set drivers default master volume
+HKR,Config,LeftMasterVol,1,00,e0,00,00
+HKR,Config,RightMasterVol,1,00,e0,00,00
+; set audio rack mixer restore default master volume
+HKR,Config,DefMasterVol,1,00,e0,00,00
+; enable or disable two playback wave channels (0=disable, 1=enable)
+HKR,Config,DualWave,1,0
+; enter or reject suspend mode during DSound wave playing (0=enter, 1=reject)
+HKR,Config,DisDsSuspend,1,1
+; set drivers default PC Speaker (Mono In) volume
+HKR,Config,PCSpeakerVol,1,00,00,00,00
+; set drivers default selected recording control
+HKR,Config,WaveADCSource,1,00,00,00,00,00,00,00,00,01,00,00,00,01,00,00,00,00,00,00,00,00,00,00,00
+
+[CONFIG1.AddReg]
+; 1 for 3/4 phonejack (Line-in share same jack with rear)
+HKR,Config,LINEINasREAR,1,0
+; 1 for 4 phonejack (Line-in share same jack with Center/Subwoofer)
+HKR,Config,LINEINasBASS,1,0
+; 1 for 3 phonejack (Microphone share same jack with Subwoofer)
+HKR,Config,MICasBASS,1,0
+; 0 for enable MIDI device
+HKR,Config,DISMPU,1,0
+; 0 for enable joystick device
+HKR,Config,DISJSTK,1,0
+; set drivers default four speakers status (1=mute,0=on)
+HKR,Config,FourSpkMute,1,0
+; set audio rack mixer restore default four speakers status (1=mute,0=on)
+HKR,Config,DefFourSpk,1,0
+; set line out and SPDIF out share with same jack, 0 for not sharing, 1 for sharing
+HKR,Config,DigitalShared,1,0
+HKR,Config,SPDIFValid,1,0
+HKR,Config,SPDIFCopyRight,1,0
+HKR,Config,SPDIFInSel2,1,1
+
+[CONFIG2.AddReg]
+HKR,Config,LINEINasREAR,1,1
+HKR,Config,LINEINasBASS,1,0
+HKR,Config,MICasBASS,1,1
+HKR,Config,DISMPU,1,1
+HKR,Config,DISJSTK,1,1
+HKR,Config,FourSpkMute,1,0
+HKR,Config,DefFourSpk,1,0
+HKR,Config,DigitalShared,1,0
+HKR,Config,SPDIFValid,1,0
+HKR,Config,SPDIFCopyRight,1,0
+HKR,Config,SPDIFInSel2,1,1
+
+[CONFIG3.AddReg]
+HKR,Config,LINEINasREAR,1,0
+HKR,Config,LINEINasBASS,1,0
+HKR,Config,MICasBASS,1,0
+HKR,Config,DISJSTK,1,1
+HKR,Config,DISMPU,1,1
+HKR,Config,FourSpkMute,1,1
+HKR,Config,DefFourSpk,1,1
+HKR,Config,DigitalShared,1,0
+HKR,Config,SPDIFValid,1,1
+HKR,Config,SPDIFCopyRight,1,1
+HKR,Config,SPDIFInSel2,1,0
+
+[CONFIG4.AddReg]
+HKR,Config,LINEINasREAR,1,1
+HKR,Config,LINEINasBASS,1,0
+HKR,Config,MICasBASS,1,1
+HKR,Config,DISJSTK,1,1
+HKR,Config,DISMPU,1,1
+HKR,Config,FourSpkMute,1,1
+HKR,Config,DefFourSpk,1,1
+HKR,Config,DigitalShared,1,1
+HKR,Config,SPDIFValid,1,1
+HKR,Config,SPDIFCopyRight,1,1
+HKR,Config,SPDIFInSel2,1,0
+
+[CONFIG5.AddReg]
+HKR,Config,LINEINasREAR,1,1
+HKR,Config,LINEINasBASS,1,0
+HKR,Config,MICasBASS,1,1
+HKR,Config,DISMPU,1,0
+HKR,Config,DISJSTK,1,0
+HKR,Config,FourSpkMute,1,1
+HKR,Config,DefFourSpk,1,1
+HKR,Config,DigitalShared,1,1
+HKR,Config,SPDIFValid,1,1
+HKR,Config,SPDIFCopyRight,1,1
+HKR,Config,SPDIFInSel2,1,0
+
+[CONFIG6.AddReg]
+HKR,Config,LINEINasREAR,1,0
+HKR,Config,LINEINasBASS,1,0
+HKR,Config,MICasBASS,1,0
+HKR,Config,DISMPU,1,1
+HKR,Config,DISJSTK,1,1
+HKR,Config,FourSpkMute,1,1
+HKR,Config,DefFourSpk,1,1
+HKR,Config,DigitalShared,1,0
+HKR,Config,SPDIFValid,1,1
+HKR,Config,SPDIFCopyRight,1,1
+HKR,Config,SPDIFInSel2,1,0
+
+[MIXER.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,"C-Media Mixer",0,"%Mixerparam%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\PCI Audio Driver","DisplayName",0,"%UninstallDisplayName%"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\PCI Audio Driver","UninstallString",0,"%UninstallString%"
+
+[SSC_Legacy_Device.AddReg]
+HKR,,Devloader,,mmdevldr.vxd
+HKR,,Driver,,cmaudio.vxd
+HKR,,SBEmu,1,01
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+HKR,,EnumPropPages,,"cmpci95.drv,DrvEnumPropPages"
+
+[HW_MIDI.AddReg]
+HKR,Drivers\midi\cmsynth.drv,,,
+HKR,Drivers\midi\cmsynth.drv,Driver,,cmsynth.drv
+HKR,Drivers\midi\cmmpupci.drv,,,
+HKR,Drivers\midi\cmmpupci.drv,Driver,,cmmpupci.drv
+HKR,Drivers\midi\cmmpupci.drv,External,1,01,00,00,00
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers\midi\cmsynth.drv,Description,,%CM8738.InternalMIDI%
+HKR,Drivers\midi\cmmpupci.drv,Description,,%CM8738.ExternalMIDI%
+
+[Audio3D.AddReg]
+HKCR,Audio3D,,0,Audio3DObject
+HKCR,Audio3D\CLSID,,0,%Audio3D_CLSID%
+HKCR,CLSID\%Audio3D_CLSID%,,0,Audio3DObject
+HKCR,CLSID\%Audio3D_CLSID%\InProcServer32,,0,C3D.dll
+HKCR,CLSID\%Audio3D_CLSID%\InProcServer32,ThreadingModel,0,Apartment
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[CM8738_Joystk.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%SSC-Joystk.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[DOSEmu.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cmswmpu.vxd
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers,MIGRATED,,0
+
+[ASIO.AddReg]
+HKLM,SOFTWARE\ASIO,,,
+HKLM,SOFTWARE\ASIO\%ASIO_NAME%,,,
+HKLM,SOFTWARE\ASIO\%ASIO_NAME%,CLSID,0,%ASIO_CLSID%
+HKCR,CLSID\%ASIO_CLSID%,,0,%ASIO_NAME%
+HKCR,CLSID\%ASIO_CLSID%\InProcServer32,,0,asio8738.dll
+HKCR,CLSID\%ASIO_CLSID%\InProcServer32,ThreadingModel,0,Apartment
+
+;---------------------------------------------------------------;
+
+[CM8738_JSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+[DOSInit.Update]
+PreFixPath=11
+;CmdAdd=setaudio,"%DOSinitparam%"
+CmdDelete=set8338
+CmdDelete=setaudio
+
+;---------------------------------------------------------------;
+
+
+
+[DestinationDirs]
+DefaultDestDir             =    11  ; Windows system folder
+audiodev.SystemCopyList      =    11
+audiodev.WinDirCopyList      =    10
+audiodev.HelpDirCopyList     =   18
+;apsetup.copylist = 30
+Mixer.CopyList = 10 ; Windows folder
+
+[SourceDisksNames]
+1="CMI8738/C3DX PCI Audio Driver Disk",,0000-0000
+
+[SourceDisksFiles]
+cmaudio.vxd=1,.,
+cmpci95.drv=1,.,
+cmsynth.drv=1,.,
+cmmpupci.drv=1,.,
+vjoyd.vxd=1,.,
+msjstick.drv=1,.,
+c3d.dll=1,.,
+;sndvol32.exe=1,.,
+;sndvol32.cnt=1,.,
+;sndvol32.hlp=1,.,
+;setaudio.com=1,.,
+asio8738.dll=1,.,
+parsedls.exe=1,.,
+cmswmpu.vxd=1,.,
+mixerdef.ini=1,.,
+mixer.exe=1,.,
+cmedia.dll=1,.,
+cmuninst.exe=1,.,
+
+;---------------------------------------------------------------;
+
+[Strings]
+MfgName="C-MEDIA"
+DEV_0111.DeviceDesc="CMI8738/C3DX PCI Audio Device"
+SSC-Legacy.DeviceDesc="C-Media PCI Audio Legacy Device"
+SSC-Joystk.DeviceDesc="C-Media PCI Audio Joystick Device"
+SSC-DOSEmu.DeviceDesc="DOS Mode MPU-401 Emulator"
+CM8738.ExternalMIDI="C-Media PCI Audio External MIDI Port"
+CM8738.InternalMIDI="C-Media PCI Audio MIDI Synthesizer"
+MediaClassName="Sound, video and game controllers"
+V_CLSWAVEFORM="Audio"
+V_CLSMIDI="MIDI"
+V_CLSMIXER="Mixer"
+V_CLSAUX="Auxiliary"
+V_GENERAL="General MIDI Instrument"
+ASIO_NAME="ASIO C-Media 8738"
+ASIO_CLSID="{188135E1-D565-11d2-854F-00A0C99F5D19}"
+Audio3D_CLSID="{D8F1EEE0-F634-11CF-8700-00A0245D918B}"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+DOSinitparam="/S"
+Mixerparam="Mixer.exe /startup"
+UninstallDisplayName="PCI Audio Driver"
+UninstallString="cmuninst.exe"

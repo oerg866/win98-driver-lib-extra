@@ -1,0 +1,93 @@
+[App]
+;Application global information
+AppName=WaveRider Platinum 3D
+DefDir=C:\WAVRIDER
+SpaceNeeded=525095
+DOSSpaceNeeded=525095
+GroupTitle=WaveRider Platinum 3D
+GroupFile=WRP.GRP
+WinDrvSect=MM16.DRV
+CompanyName=Copyright (c) 1996, AZI Labs.  All rights reserved.
+Model=washington
+
+[PNPVendorID]
+1=AZT1023
+
+;[AddFileString]
+;1=ADDDOS
+;2=ADDAUTO
+
+[ADDAUTO]
+winversion=WIN95
+pnpstatus=ALL
+filename=ROOT\AUTOEXEC.BAT
+file=USER\AZTPNP.EXE
+parameters=/A:ON
+location=0
+
+[ADDDOS]
+winversion=WIN95
+pnpstatus=ALL
+filename=WIN\DOSSTART.BAT
+file=USER\AZTPNP.EXE
+parameters=/A:ON
+location=0
+
+[DeleteFileString]
+1=ROOT\AUTOEXEC.BAT,AZTPNP.EXE
+2=WIN\DOSSTART.BAT,AZTPNP.EXE
+
+[FilesRemove]  
+;remove statement in files even w/o deinstall
+1=c:\AUTOEXEC.BAT|AZTPNP.EXE
+2=c:\AUTOEXEC.BAT|BLASTER
+3=c:\AUTOEXEC.BAT|GALAXY
+
+[Packages]
+PNP=2
+Fix Directory=1
+NOGUI=2
+RESTART=0
+README=1
+
+[Languages]
+English =1, English.azt, English, English.txt
+password=aztech
+default=english
+
+[Disks]
+;List of diskettes needed to install product and the name of each diskette
+1=Disk1: WaveRider Platinum 3D Disk 1
+
+[DstDirs]
+1=.
+2=demo       
+3=dosmode
+
+[Setup APP Files]
+;These files will be copied to the root destination directory
+1=readme.txt
+2=doseng.azt
+3=disk1
+
+[Files.english]
+;identifier,disk,archive,subdirectory,shared,uncompressed size
+1=1:README.TXT, 1, DOS, 8393
+2=1:SONGS.AZT,  2, DOS, 108880
+3=1:AZTPNP.AZT, 1, DOS, 66490
+4=1:SETUP.EXE,  1, DOS, 325920
+5=1:DOSMODE.AZT, 3, DOS, 986
+6=1:SETUP.BMP,  1, DOS, 14426
+
+[MoveSrc2Dst]
+1=USER\AZTPNP.ORG,USER\DOSMODE\AZTPNP.CFG
+2=USER\setup.exe,USER\DOSMODE\dosmode.exe
+3=USER\setup.bmp,USER\DOSMODE\setup.bmp
+4=USER\doseng.azt,USER\DOSMODE\english.azt
+5=USER\disk1,USER\DOSMODE\disk1
+
+[PM Info]
+
+[DeleteFiles]
+
+[End]

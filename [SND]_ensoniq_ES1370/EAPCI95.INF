@@ -1,0 +1,178 @@
+;
+; ENSONIQ Pci Audio Card INF file
+;
+; Created : 9/15/96  jjc
+; Todo    :
+;
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+provider="ENSONIQ"
+
+;[ControlFlags]
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,1
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%MfgName%=ENSONIQ
+
+[ENSONIQ]
+%DEV_3031.DeviceDesc%=DEV3031.Device,PCI\VEN_5145&DEV_3031   ; Concert PCI board
+%DEV_3031.DeviceDesc%=DEV3031.Device,PCI\VEN_1274&DEV_5000   ; Concert PCI board
+%SSC-Legacy.DeviceDesc%=SSC_Legacy_Device, VIRTUAL\SSC-Legacy
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[Det.DevINFs]
+*pnpb02f=joystick.inf
+
+;---------------------------------------------------------------;
+[DEV3031.Device]
+CopyFiles=sscncrt.SystemCopyList,sscncrt.WinDirCopyList,sscncrt.HelpDirCopyList
+AddReg=WAVE.AddReg, MIXER.AddReg, E4080.AddReg, sscncrt.AddReg
+UpdateInis=Soundscape.UpdateInis
+UpdateAutoBat=Soundscape.UpdateAutoBat
+DelFiles=Soundscape.DeleteList
+
+[SSC_Legacy_Device]
+AddReg=SSC_Legacy_Device.AddReg
+
+[Soundscape.UpdateAutoBat]
+CmdDelete=SSINIT.EXE
+UnSet=BLASTER
+UnSet=SNDSCAPE
+;---------------------------------------------------------------;
+
+[Soundscape.DeleteList]
+sndscape.drv,,
+vsndscp.386,,
+sscape.cpl,,
+sndscape.hlp,,
+concert.vxd,,
+
+[sscncrt.SystemCopyList]
+eapci.vxd,,
+eapci95.drv,,
+eapci2m.ecw,,
+default.ecw,eapci2m.ecw,
+eapci4m.ecw,,
+
+[sscncrt.WinDirCopyList]
+ensmix32.exe,,
+starter.exe,,
+mixres32.dll,,
+sndscape.ini,eapci_ss.ini,
+eapci_ss.ini,,
+
+[sscncrt.HelpDirCopyList]
+eapci95.hlp,,
+
+;---------------------------------------------------------------;
+
+[E4080.AddReg]
+HKR,Drivers\wave\eapci95.drv,Description,,%DEV_3031.DeviceDesc%
+HKR,Drivers\mixer\eapci95.drv,Description,,%DEV_3031.DeviceDesc%
+HKR,Drivers\aux\eapci95.drv,Description,,%DEV_3031.DeviceDesc%
+HKR,Drivers\midi\ENSONIQ_Synth,Description,,%ENSxxxx.InternalMIDI%
+HKR,Drivers\midi\ENSONIQ_Out,Description,,%ENSxxxx.ExternalMIDI%
+
+[sscncrt.AddReg]
+HKR,,Driver,,eapci.vxd
+HKR,Drivers\wave\eapci95.drv,,,
+HKR,Drivers\wave\eapci95.drv,Driver,,eapci95.drv
+HKR,Drivers\mixer\eapci95.drv,,,
+HKR,Drivers\mixer\eapci95.drv,Driver,,eapci95.drv
+HKR,Drivers\aux\eapci95.drv,,,
+HKR,Drivers\aux\eapci95.drv,Driver,,eapci95.drv
+HKR,Drivers\midi\ENSONIQ_Synth,Driver,,eapci95.drv
+HKR,Drivers\midi\ENSONIQ_Synth,External,1,00,00,00,00
+HKR,Drivers\midi\ENSONIQ_Synth,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\ENSONIQ_Synth,Port,1,00,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,Driver,,eapci95.drv
+HKR,Drivers\midi\ENSONIQ_Out,External,1,01,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\ENSONIQ_Out,Port,1,01,00,00,00
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,,EnumPropPages,,"eapci95.drv,DrvEnumPropPages"
+HKLM,Software\ENSONIQ\EAPCI,URL,,%URL%
+HKLM,Software\ENSONIQ\Waveset,current,,0
+HKLM,Software\ENSONIQ\Waveset\0000,Filename,,"%11%\eapci2m.ecw"
+HKLM,Software\ENSONIQ\Waveset\0000,Title,,"2 Megabyte General MIDI"
+HKLM,Software\ENSONIQ\Waveset\0001,Filename,,"%11%\eapci4m.ecw"
+HKLM,Software\ENSONIQ\Waveset\0001,Title,,"4 Megabyte General MIDI"
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+
+[SSC_Legacy_Device.AddReg]
+HKR,,DeviceDriver,,eapci.vxd
+HKR,,DevLoader,,*CONFIGMG
+HKR,,SBEmu,1,01
+HKR,,EnumPropPages,,"eapci95.drv,DrvEnumLegacyPages"
+
+;---------------------------------------------------------------;
+
+[DestinationDirs]
+DefaultDestDir 	     	   = 	11  ; LDID_SYS
+sscncrt.SystemCopyList      =    11
+sscncrt.WinDirCopyList      =    10
+sscncrt.HelpDirCopyList     = 	18
+
+
+[SourceDisksNames]
+1="ENSONIQ AudioPCI Card Driver Disk",,0000-0000
+
+[SourceDisksFiles]
+eapci95.drv=1,.,
+eapci.vxd=1,.,
+eapci2m.ecw=1,.,
+eapci4m.ecw=1,.,
+ensmix32.exe=1,.,
+starter.exe=1,.,
+mixres32.dll=1,.,
+eapci95.hlp=1,.,
+eapci_ss.ini=1,.,
+
+;---------------------------------------------------------------;
+
+[Strings]
+ENSONIQ="ENSONIQ"
+MfgName="ENSONIQ"
+DEV_3031.DeviceDesc="ENSONIQ AudioPCI"
+SSC-Legacy.DeviceDesc="ENSONIQ AudioPCI Legacy Device"
+
+ENSxxxx.ExternalMIDI="ENSONIQ AudioPCI External MIDI Port"
+ENSxxxx.InternalMIDI="ENSONIQ AudioPCI Internal Synth"
+
+MediaClassName="Sound, video and game controllers"
+V_CLSWAVEFORM="Audio"
+V_CLSMIDI="MIDI"
+V_CLSMIXER="Mixer"
+V_CLSAUX="Auxiliary"
+V_GENERAL="General MIDI Instrument"
+URL="http://www.ensoniq.com/mmd/eapci.htm"
+
+
+
+
+
+
+
+
+
+
+
+

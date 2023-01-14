@@ -1,0 +1,17 @@
+FileSize Typ Name
+======== === =================================
+  402964 dat 3dfx16vb.drv
+  407552 dat 3dfx32vb.dll
+ 1298432 dat 3dfxOGL.dll
+ 1105408 dat 3dfxSpl2.dll
+ 1105408 dat 3dfxSpl3.dll
+  658944 dat 3dfxVBps.dll
+   10598 dat 3dfxVBps.hlp
+  597504 dat 3dfxVBtv.dll
+  209855 dat 3dfxvb.vxd
+   25106 dat Vgartd.vxd
+  199680 dat glide2x.dll
+  207984 dat glide2x.ovl
+  287744 dat glide3x.dll
+    5827 txt license.txt
+  266293 dat msvcrt.dll

@@ -1,0 +1,1080 @@
+;*****************************************************************************
+;
+; CWCAUDIO.INF - Device description file for Windows 95 Plug-N-Play
+;                installation of the CS461x driver files.
+;
+; Copyright (c) 1996-1999 Crystal Semiconductor Corp.
+;
+;*****************************************************************************
+
+[Version]
+Signature="$CHICAGO$"
+CatalogFile=PV2885.cat
+Class=MEDIA
+provider=Crystal
+LayoutFile=layout.inf
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%CSMfgName%=Crystal
+
+[Crystal]
+%CS4610.DeviceDesc%=CS4610_Device, PCI\VEN_1013&DEV_6001
+%CS4610.DeviceDesc%=CS4610_Device, PCI\VEN_1013&DEV_6003
+%CS4610.DeviceDesc%=CS4610_Device, PCI\VEN_1013&DEV_6003&SUBSYS_00031013  
+%CS4610VirtualMPU401%=Virtual401_Device, CS4610\VIRTUAL_401
+%CS4610Joystick%=Joystick_Device, CS4610\JOYSTICK
+%CS4610Blaster%=Blaster_Device, CS4610\BLASTER
+
+[CS4610_Device]
+CopyFiles=CS4610SP.CopyList,CS4610.CopyList
+AddReg=CS4610.AddReg,Mixer.AddReg
+UpdateAutoBat=CS4610.UpdateAutoBat
+
+[Virtual401_Device]
+AddReg=CS4610Virtual401.AddReg
+
+[Joystick_Device]
+CopyFiles=CS4610Joystick.CopyList
+AddReg=CS4610Joystick.AddReg
+
+[Blaster_Device]
+CopyFiles=CS4610Blaster.CopyList
+AddReg=CS4610Blaster.AddReg
+DelFiles=CS4610Blaster.DelList
+UpdateInis=CS4610Blaster.UpdateInis
+
+[CS4610.CopyList]
+cwcecho.vxd
+cwclang.dll
+cwcpass.vxd
+cwcoproc.vxd
+cwcspud3.vxd
+cwcprops.cpl
+cwcmmsys.drv
+cwcmmsys.vxd
+cwcssynt.vxd
+cwchfx.vxd
+cwchmix.vxd
+cwcdsnd.vxd
+cwgmsg.vxd
+cwcenum.vxd
+cwcproxy.vxd
+cwcspud.vxd
+cwcfm.drv
+cwcjoy.vxd
+crlds3d.dll
+crlds3d.vxd
+cwchwcrl.vxd
+cwcac3df.ax
+cwcmp3.ax
+
+[CS4610SP.CopyList]
+cwcdls.osp
+cwcdlsrs.osp
+cwcdlscs.osp
+cwchrtf.v22
+cwchrtf.22
+cwchrtf.v44
+cwchrtf.44
+cwcspat.osp
+cwcdatac.osp
+cwcspkph.osp
+cwcdgame.osp
+cwc3d.osp
+cwc4612.osp
+cwc4610.osp
+cwcdos.exe
+cwclang.dat
+cwcspud.dat
+cwcsbfg.osp
+cwciotrp.osp
+cwcfm.osp
+cwcddma.osp
+cwcpcpci.osp
+cwcasync.osp
+cwcs3ddd.osp
+cwcs3dmc.osp
+cwcs3dmx.osp
+cwcs3dps.osp
+cwcs3dsn.osp
+cwcsndct.osp
+cwceq.osp
+cwczhfm.osp
+cwcsfgtx.osp
+cwcshfo.osp
+cwcdls8.cls
+cwc4630.osp
+cwcmp3.osp
+
+[CS4610Joystick.CopyList]
+msjstick.drv,,
+vjoyd.vxd,,
+
+[CS4610Blaster.CopyList]
+cwcsbpro.vxd
+cwcfm.drv
+
+[CS4610.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,,Enumerator,,cwcenum.vxd
+HKR,,Driver,,"cwcspud.vxd cwcdsnd.vxd cwcecho.vxd cwcpass.vxd cwcoproc.vxd"
+HKR,Drivers\wave,,,
+HKR,Drivers\wave\cwcmmsys.drv,Driver,,cwcmmsys.drv
+HKR,Drivers\wave\cwcmmsys.drv,Description,,%CS461xWave.DeviceDesc%
+HKR,Drivers\midi,,,
+HKLM,%KEY_RUNONCE%,cwcac3df.ax,,"%11%\regsvr32 /s %11%\cwcac3df.ax"
+HKLM,%KEY_RUNONCE%,cwcmp3.ax,,"%11%\regsvr32 /s %11%\cwcmp3.ax"
+
+;4280 support:
+; remove next 6 entries to eliminate soundfusion midi from multimedia
+HKR,Drivers\midi\synth,Driver,,cwcmmsys.drv
+HKR,Drivers\midi\synth,Description,,%CS461xMIDI.DeviceDesc%
+HKR,Drivers\midi\synth,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\synth,Port,1,00,00,00,00
+HKR,Drivers\midi\mpu401,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\mpu401,Port,1,01,00,00,00
+
+HKR,Drivers\midi\mpu401,Driver,,cwcmmsys.drv
+HKR,Drivers\midi\mpu401,Description,,%CS461xMPU401.DeviceDesc%
+HKR,Drivers\midi\mpu401,External,1,01,00,00,00
+HKR,Drivers\mixer,,,
+HKR,Drivers\mixer\cwcmmsys.drv,Driver,,cwcmmsys.drv
+HKR,Drivers\mixer\cwcmmsys.drv,Description,,%CS461xMixer.DeviceDesc%
+HKR,Drivers,SubClasses,,"wave,midi,mixer"
+HKLM,%KEY_MSDOS%\CS4610,,,%MSDOSConfig%
+;HKLM,%KEY_MSDOS%\CS4610,Autoexec.Bat,,"%%WINDIR%%\cwcdata\cwcdos.exe /T cwcwtdos.osp /S cwcwtsmp.dat /G cwcdgame.osp"
+HKLM,%KEY_MSDOS%\CS4610,Autoexec.Bat,,"%%WINDIR%%\cwcdata\cwcdos.exe"
+HKLM,%KEY_MSDOS%\CS4610,Flags,1,07,00,00,00
+HKLM,%KEY_MSDOS%\CS4610,Order,1,00,00,00,19
+HKLM,%KEY_MSDOS%\CS4610,TipText,,%MSDOSTipText%
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+HKLM,%KEY_IOC%\Vol,,,
+HKLM,%KEY_RUN%,SystemTray,,systray.exe
+HKR,,SetupPreferredAudioDevices,3,01,00,00,00
+HKCU,%KEY_SOUNDMAPPER%,Playback,,%CS461xWave.DeviceDesc%
+
+;HKLM,%KEY_BASE%\Algorithms\Blaster,Enabled,1,01,00,00,00
+;HKLM,%KEY_BASE%\Algorithms\Blaster,Resources,1,00,00,a0,06
+;HKLM,%KEY_BASE%\Algorithms\Joystick,Enabled,1,01,00,00,00
+;HKLM,%KEY_BASE%\Algorithms\ExternalMIDI,Enabled,1,01,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Power,ClkRunMode,1,00,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Narsilization,Enabled,1,00,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,SoftVoices,1,20,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,staticimage,1,01,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,dlsallocate,1,00,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,Samplesetid,1,01,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,UseDefaultSet,1,01,00,00,00
+HKLM,%KEY_BASE%\Algorithms\WaveTable,VoiceAllocationMethod,1,00,00,00,00
+
+HKLM,%KEY_BASE%\Limits\3D_44K,Maximum,1,08,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_44K,Minimum,1,01,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_44K,TaskType,1,00,03,00,00
+HKLM,%KEY_BASE%\Limits\3D_44K,Version,1,00,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_32K,Maximum,1,08,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_32K,Minimum,1,01,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_32K,TaskType,1,10,03,00,00
+HKLM,%KEY_BASE%\Limits\3D_32K,Version,1,00,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_22K,Maximum,1,08,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_22K,Minimum,1,01,00,00,00
+HKLM,%KEY_BASE%\Limits\3D_22K,TaskType,1,20,03,00,00
+HKLM,%KEY_BASE%\Limits\3D_22K,Version,1,00,00,00,00
+
+HKLM,%KEY_BASE%\Limits\DLSVoices,Maximum,1,20,00,00,00
+HKLM,%KEY_BASE%\Limits\DLSVoices,Minimum,1,10,00,00,00
+HKLM,%KEY_BASE%\Limits\DLSVoices,TaskType,1,22,01,00,00
+HKLM,%KEY_BASE%\Limits\DLSVoices,Version,1,00,00,00,00
+HKLM,%KEY_BASE%\Limits\PCM,Maximum,1,5E,00,00,00
+HKLM,%KEY_BASE%\Limits\PCM,Minimum,1,01,00,00,00
+HKLM,%KEY_BASE%\Limits\PCM,TaskType,1,07,00,00,00
+HKLM,%KEY_BASE%\Limits\PCM,Version,1,00,00,00,00
+HKLM,%KEY_BASE%\Inst,WinDir,,%10%
+HKLM,%KEY_BASE%\Inst,File0,,%10%\cwcdata\cwcspud.dat
+HKLM,%KEY_BASE%\Strings,DirectSound,,%CS461xHAL.DeviceDesc%
+HKLM,%KEY_BASE%\Strings,MIDI,,%CS461xMIDI.DeviceDesc%
+HKLM,%KEY_BASE%\Strings,Mixer,,%CS461xMixer.DeviceDesc%
+HKLM,%KEY_BASE%\Strings,Wave,,%CS461xWave.DeviceDesc%
+HKLM,%KEY_BASE%\Strings,MPU401,,%CS461xMPU401.DeviceDesc%
+
+
+HKLM,%KEY_RUN%,SoundFusion,,"RunDll32 cwcprops.cpl,CrystalControlWnd"
+
+HKLM,%KEY_BASE%\Pass,ArmingZV,1,00,00,00,00
+HKLM,%KEY_BASE%\Pass,MonoZV,1,00,00,00,00
+HKLM,%KEY_BASE%\ControlPanel\DSound,EnableSensaura,1,03,00,00,00
+
+;*****************************************************************************
+;
+; Equalization Settings
+;
+;*****************************************************************************
+HKLM,%KEY_BASE%\Algorithms\Equalization,Armed,1,01,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization,Enabled,1,00,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000,CurrentNoOfBands,1,0a,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000,NumberOfBands,1,0a,00,00,00
+
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands,CurrentProfile,,"Crystal"
+;*****************************************************************************
+; Equalization Preset
+;*****************************************************************************
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency0,1,14,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency1,1,4b,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency2,1,87,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency3,1,fa,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency4,1,f4,01,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency5,1,e8,03,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency6,1,d0,07,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency7,1,a0,0f,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency8,1,40,1f,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Frequency9,1,98,3a,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth0,1,38,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth1,1,46,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth2,1,84,00,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth3,1,2c,01,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth4,1,58,02,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth5,1,b0,04,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth6,1,60,09,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth7,1,68,10,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth8,1,90,1f,00,00
+HKLM,%KEY_BASE%\Algorithms\Equalization\48000\10-Bands\Crystal,Bandwidth9,1,10,27,00,00
+
+;*****************************************************************************
+;
+; Control panel applet control
+;
+; Value 0 : Icon not shown on TaskBar
+; Value 1 : Icon shown on TaskBar
+; Value 2 : SoundFusion applet is not accessible (neither from TaskBar nor
+;             control panel)
+;
+;*****************************************************************************
+HKLM,%KEY_BASE%\ControlPanel,ShowStatus,1,01,00,00,00
+HKLM,%KEY_BASE%\ControlPanel,EQ,1,01,00,00,00
+HKLM,%KEY_BASE%\ControlPanel,AdvancedEQ,1,00,00,00,00
+HKLM,%KEY_BASE%\ControlPanel,SPDIFON,1,00,00,00,00
+HKLM,%KEY_BASE%\ControlPanel,HardwareMasterVolumeUsed,,"0"
+HKLM,%KEY_BASE%\ControlPanel,Effects,1,00,00,00,00
+
+[CS4610Virtual401.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cwcmmsys.vxd
+HKR,,DriverDesc,,%CS4610VirtualMPU401%
+
+[CS4610Joystick.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,,Driver,,"vjoyd.vxd cwcjoy.vxd"
+HKR,,DriverDesc,,%CS4610Joystick%
+HKR,Drivers,SubClasses,,joystick
+HKR,Drivers\joystick,,,
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers\joystick\msjstick.drv,Description,,%CS4610Joystick%
+HKLM,%KEY_JOYOEM%\cwcjoy,OEMCallout,,cwcjoy.vxd
+HKLM,%KEY_JOYOEM%\cwcjoy,OEMData,1,00,00,00,0c,00,00,00,00
+HKLM,%KEY_JOYOEM%\cwcjoy,OEMName,,%CS4610Joystick%
+
+[CS4610Blaster.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cwcsbpro.vxd
+HKR,,DriverDesc,,%CS4610Blaster%
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers\midi,,,
+;HKR,Drivers\midi\cwcfm.drv,Driver,,cwcfm.drv
+;HKR,Drivers\midi\cwcfm.drv,Description,,%FMSYNTH.DeviceDesc%
+;HKR,Drivers\midi\cwcfm.drv,External,1,00,00,00,00
+
+[CS4610Blaster.DelList]
+vadlibd.386,,,1
+msadlib.drv,,,1
+fmsynth.drv,,,1
+sapi!opl.drv,,,1
+
+[CS4610Blaster.UpdateInis]
+system.ini,386Enh,"device=vadlibd.386"
+system.ini,drivers,"midi*=msadlib.drv",,1
+system.ini,drivers,"midi*=fmsynth.drv",,1
+
+[Mixer.AddReg]
+HKLM,%KEY_BASE%\Strings,DstMasterLong,,%DstLongMaster%
+HKLM,%KEY_BASE%\Strings,DstMasterShort,,%DstShortMaster%
+HKLM,%KEY_BASE%\Strings,DstRecordLong,,%DstLongRecord%
+HKLM,%KEY_BASE%\Strings,DstRecordShort,,%DstShortRecord%
+HKLM,%KEY_BASE%\Strings,DstReverbLong,,%DstReverbLong%
+HKLM,%KEY_BASE%\Strings,DstReverbShort,,%DstReverbShort%
+HKLM,%KEY_BASE%\Strings,DstFrontLong,,%DstFrontLong%
+HKLM,%KEY_BASE%\Strings,DstFrontShort,,%DstFrontShort%
+HKLM,%KEY_BASE%\Strings,DstRearLong,,%DstRearLong%
+HKLM,%KEY_BASE%\Strings,DstRearShort,,%DstRearShort%
+HKLM,%KEY_BASE%\Strings,SrcWaveLong,,%SrcLongWave%
+HKLM,%KEY_BASE%\Strings,SrcWaveShort,,%SrcShortWave%
+HKLM,%KEY_BASE%\Strings,SrcSynthLong,,%SrcLongSynth%
+HKLM,%KEY_BASE%\Strings,SrcSynthShort,,%SrcShortSynth%
+HKLM,%KEY_BASE%\Strings,SrcDSLong,,%SrcLongDS%
+HKLM,%KEY_BASE%\Strings,SrcDSShort,,%SrcShortDS%
+HKLM,%KEY_BASE%\Strings,SrcHeadphoneLong,,%SrcLongHeadphone%
+HKLM,%KEY_BASE%\Strings,SrcHeadphoneShort,,%SrcShortHeadphone%
+HKLM,%KEY_BASE%\Strings,SrcMonoOutLong,,%SrcLongMonoOut%
+HKLM,%KEY_BASE%\Strings,SrcMonoOutShort,,%SrcShortMonoOut%
+HKLM,%KEY_BASE%\Strings,SrcPhoneLong,,%SrcLongPhone%
+HKLM,%KEY_BASE%\Strings,SrcPhoneShort,,%SrcShortPhone%
+HKLM,%KEY_BASE%\Strings,SrcAuxLong,,%SrcLongAux%
+HKLM,%KEY_BASE%\Strings,SrcAuxShort,,%SrcShortAux%
+HKLM,%KEY_BASE%\Strings,SrcCDLong,,%SrcLongCD%
+HKLM,%KEY_BASE%\Strings,SrcCDShort,,%SrcShortCD%
+HKLM,%KEY_BASE%\Strings,SrcLineInLong,,%SrcLongLineIn%
+HKLM,%KEY_BASE%\Strings,SrcLineInShort,,%SrcShortLineIn%
+HKLM,%KEY_BASE%\Strings,SrcVideoLong,,%SrcLongVideo%
+HKLM,%KEY_BASE%\Strings,SrcVideoShort,,%SrcShortVideo%
+HKLM,%KEY_BASE%\Strings,SrcMicLong,,%SrcLongMic%
+HKLM,%KEY_BASE%\Strings,SrcMicShort,,%SrcShortMic%
+HKLM,%KEY_BASE%\Strings,SrcMonoInLong,,%SrcLongMonoIn%
+HKLM,%KEY_BASE%\Strings,SrcMonoInShort,,%SrcShortMonoIn%
+HKLM,%KEY_BASE%\Strings,SrcZVLong,,%SrcLongZV%
+HKLM,%KEY_BASE%\Strings,SrcZVShort,,%SrcShortZV%
+HKLM,%KEY_BASE%\Strings,SrcRearWaveLong,,%SrcRearWaveLong%
+HKLM,%KEY_BASE%\Strings,SrcRearWaveShort,,%SrcRearWaveShort%
+HKLM,%KEY_BASE%\Strings,SrcRearSynthLong,,%SrcRearSynthLong%
+HKLM,%KEY_BASE%\Strings,SrcRearSynthShort,,%SrcRearSynthShort%
+HKLM,%KEY_BASE%\Strings,SrcRearDSLong,,%SrcRearDSLong%
+HKLM,%KEY_BASE%\Strings,SrcRearDSShort,,%SrcRearDSShort%
+HKLM,%KEY_BASE%\Strings,SrcRearMonoOutLong,,%SrcRearMonoOutLong%
+HKLM,%KEY_BASE%\Strings,SrcRearMonoOutShort,,%SrcRearMonoOutShort%
+HKLM,%KEY_BASE%\Strings,SrcRearPhoneLong,,%SrcRearPhoneLong%
+HKLM,%KEY_BASE%\Strings,SrcRearPhoneShort,,%SrcRearPhoneShort%
+HKLM,%KEY_BASE%\Strings,SrcRearAuxLong,,%SrcRearAuxLong%
+HKLM,%KEY_BASE%\Strings,SrcRearAuxShort,,%SrcRearAuxShort%
+HKLM,%KEY_BASE%\Strings,SrcRearCDLong,,%SrcRearCDLong%
+HKLM,%KEY_BASE%\Strings,SrcRearCDShort,,%SrcRearCDShort%
+HKLM,%KEY_BASE%\Strings,SrcRearLineInLong,,%SrcRearLineInLong%
+HKLM,%KEY_BASE%\Strings,SrcRearLineInShort,,%SrcRearLineInShort%
+HKLM,%KEY_BASE%\Strings,SrcRearVideoLong,,%SrcRearVideoLong%
+HKLM,%KEY_BASE%\Strings,SrcRearVideoShort,,%SrcRearVideoShort%
+HKLM,%KEY_BASE%\Strings,SrcRearMicLong,,%SrcRearMicLong%
+HKLM,%KEY_BASE%\Strings,SrcRearMicShort,,%SrcRearMicShort%
+HKLM,%KEY_BASE%\Strings,SrcRearMonoInLong,,%SrcRearMonoInLong%
+HKLM,%KEY_BASE%\Strings,SrcRearMonoInShort,,%SrcRearMonoInShort%
+HKLM,%KEY_BASE%\Strings,SrcRecPhoneLong,,%SrcRecLongPhone%
+HKLM,%KEY_BASE%\Strings,SrcRecPhoneShort,,%SrcRecShortPhone%
+HKLM,%KEY_BASE%\Strings,SrcRecAuxLong,,%SrcRecLongAux%
+HKLM,%KEY_BASE%\Strings,SrcRecAuxShort,,%SrcRecShortAux%
+HKLM,%KEY_BASE%\Strings,SrcRecCDLong,,%SrcRecLongCD%
+HKLM,%KEY_BASE%\Strings,SrcRecCDShort,,%SrcRecShortCD%
+HKLM,%KEY_BASE%\Strings,SrcRecLineInLong,,%SrcRecLongLineIn%
+HKLM,%KEY_BASE%\Strings,SrcRecLineInShort,,%SrcRecShortLineIn%
+HKLM,%KEY_BASE%\Strings,SrcRecVideoLong,,%SrcRecLongVideo%
+HKLM,%KEY_BASE%\Strings,SrcRecVideoShort,,%SrcRecShortVideo%
+HKLM,%KEY_BASE%\Strings,SrcRecMicLong,,%SrcRecLongMic%
+HKLM,%KEY_BASE%\Strings,SrcRecMicShort,,%SrcRecShortMic%
+HKLM,%KEY_BASE%\Strings,SrcRecLoopLong,,%SrcRecLongLoop%
+HKLM,%KEY_BASE%\Strings,SrcRecLoopShort,,%SrcRecShortLoop%
+HKLM,%KEY_BASE%\Strings,CtrlWaveOutVolumeLong,,%CtrlLongWaveOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlWaveOutVolumeShort,,%CtrlShortWaveOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlWaveOutMuteLong,,%CtrlLongWaveOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlWaveOutMuteShort,,%CtrlShortWaveOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlSynthOutVolumeLong,,%CtrlLongSynthOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlSynthOutVolumeShort,,%CtrlShortSynthOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlSynthOutMuteLong,,%CtrlLongSynthOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlSynthOutMuteShort,,%CtrlShortSynthOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlDSOutVolumeLong,,%CtrlLongDSOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlDSOutVolumeShort,,%CtrlShortDSOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlDSOutMuteLong,,%CtrlLongDSOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlDSOutMuteShort,,%CtrlShortDSOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlHeadphoneVolumeLong,,%CtrlLongHeadphoneVolume%
+HKLM,%KEY_BASE%\Strings,CtrlHeadphoneVolumeShort,,%CtrlShortHeadphoneVolume%
+HKLM,%KEY_BASE%\Strings,CtrlHeadphoneMuteLong,,%CtrlLongHeadphoneMute%
+HKLM,%KEY_BASE%\Strings,CtrlHeadphoneMuteShort,,%CtrlShortHeadphoneMute%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutVolumeLong,,%CtrlLongMonoOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutVolumeShort,,%CtrlShortMonoOutVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutMuteLong,,%CtrlLongMonoOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutMuteShort,,%CtrlShortMonoOutMute%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutSelectLong,,%CtrlLongMonoOutSelect%
+HKLM,%KEY_BASE%\Strings,CtrlMonoOutSelectShort,,%CtrlShortMonoOutSelect%
+HKLM,%KEY_BASE%\Strings,CtrlPhoneVolumeLong,,%CtrlLongPhoneVolume%
+HKLM,%KEY_BASE%\Strings,CtrlPhoneVolumeShort,,%CtrlShortPhoneVolume%
+HKLM,%KEY_BASE%\Strings,CtrlPhoneMuteLong,,%CtrlLongPhoneMute%
+HKLM,%KEY_BASE%\Strings,CtrlPhoneMuteShort,,%CtrlShortPhoneMute%
+HKLM,%KEY_BASE%\Strings,CtrlAuxVolumeLong,,%CtrlLongAuxVolume%
+HKLM,%KEY_BASE%\Strings,CtrlAuxVolumeShort,,%CtrlShortAuxVolume%
+HKLM,%KEY_BASE%\Strings,CtrlAuxMuteLong,,%CtrlLongAuxMute%
+HKLM,%KEY_BASE%\Strings,CtrlAuxMuteShort,,%CtrlShortAuxMute%
+HKLM,%KEY_BASE%\Strings,CtrlCDVolumeLong,,%CtrlLongCDVolume%
+HKLM,%KEY_BASE%\Strings,CtrlCDVolumeShort,,%CtrlShortCDVolume%
+HKLM,%KEY_BASE%\Strings,CtrlCDMuteLong,,%CtrlLongCDMute%
+HKLM,%KEY_BASE%\Strings,CtrlCDMuteShort,,%CtrlShortCDMute%
+HKLM,%KEY_BASE%\Strings,CtrlLineInVolumeLong,,%CtrlLongLineInVolume%
+HKLM,%KEY_BASE%\Strings,CtrlLineInVolumeShort,,%CtrlShortLineInVolume%
+HKLM,%KEY_BASE%\Strings,CtrlLineInMuteLong,,%CtrlLongLineInMute%
+HKLM,%KEY_BASE%\Strings,CtrlLineInMuteShort,,%CtrlShortLineInMute%
+HKLM,%KEY_BASE%\Strings,CtrlVideoVolumeLong,,%CtrlLongVideoVolume%
+HKLM,%KEY_BASE%\Strings,CtrlVideoVolumeShort,,%CtrlShortVideoVolume%
+HKLM,%KEY_BASE%\Strings,CtrlVideoMuteLong,,%CtrlLongVideoMute%
+HKLM,%KEY_BASE%\Strings,CtrlVideoMuteShort,,%CtrlShortVideoMute%
+HKLM,%KEY_BASE%\Strings,CtrlMicVolumeLong,,%CtrlLongMicVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMicVolumeShort,,%CtrlShortMicVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMicMuteLong,,%CtrlLongMicMute%
+HKLM,%KEY_BASE%\Strings,CtrlMicMuteShort,,%CtrlShortMicMute%
+HKLM,%KEY_BASE%\Strings,CtrlMicBoostLong,,%CtrlMicBoostLong%
+HKLM,%KEY_BASE%\Strings,CtrlMicBoostShort,,%CtrlMicBoostShort%
+HKLM,%KEY_BASE%\Strings,CtrlMicSelectLong,,%CtrlMicSelectLong%
+HKLM,%KEY_BASE%\Strings,CtrlMicSelectShort,,%CtrlMicSelectShort%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInVolumeLong,,%CtrlLongMonoInVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInVolumeShort,,%CtrlShortMonoInVolume%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInMuteLong,,%CtrlLongMonoInMute%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInMuteShort,,%CtrlShortMonoInMute%
+HKLM,%KEY_BASE%\Strings,CtrlZVVolumeLong,,%CtrlLongZVVolume%
+HKLM,%KEY_BASE%\Strings,CtrlZVVolumeShort,,%CtrlShortZVVolume%
+HKLM,%KEY_BASE%\Strings,CtrlZVMuteLong,,%CtrlLongZVMute%
+HKLM,%KEY_BASE%\Strings,CtrlZVMuteShort,,%CtrlShortZVMute%
+HKLM,%KEY_BASE%\Strings,CtrlRecMuxLong,,%CtrlRecLongMux%
+HKLM,%KEY_BASE%\Strings,CtrlRecMuxShort,,%CtrlRecShortMux%
+HKLM,%KEY_BASE%\Strings,CtrlRecPhoneLong,,%CtrlRecLongPhone%
+HKLM,%KEY_BASE%\Strings,CtrlRecPhoneShort,,%CtrlRecShortPhone%
+HKLM,%KEY_BASE%\Strings,CtrlRecAuxLong,,%CtrlRecLongAux%
+HKLM,%KEY_BASE%\Strings,CtrlRecAuxShort,,%CtrlRecShortAux%
+HKLM,%KEY_BASE%\Strings,CtrlRecCDLong,,%CtrlRecLongCD%
+HKLM,%KEY_BASE%\Strings,CtrlRecCDShort,,%CtrlRecShortCD%
+HKLM,%KEY_BASE%\Strings,CtrlRecVideoLong,,%CtrlRecLongVideo%
+HKLM,%KEY_BASE%\Strings,CtrlRecVideoShort,,%CtrlRecShortVideo%
+HKLM,%KEY_BASE%\Strings,CtrlRecMicLong,,%CtrlRecLongMic%
+HKLM,%KEY_BASE%\Strings,CtrlRecMicShort,,%CtrlRecShortMic%
+HKLM,%KEY_BASE%\Strings,CtrlRecLineInLong,,%CtrlRecLongLineIn%
+HKLM,%KEY_BASE%\Strings,CtrlRecLineInShort,,%CtrlRecShortLineIn%
+HKLM,%KEY_BASE%\Strings,CtrlRecLoopLong,,%CtrlRecLongLoop%
+HKLM,%KEY_BASE%\Strings,CtrlRecLoopShort,,%CtrlRecShortLoop%
+HKLM,%KEY_BASE%\Strings,CtrlReverbLevelLong,,%CtrlLongReverbLevel%
+HKLM,%KEY_BASE%\Strings,CtrlReverbLevelShort,,%CtrlShortReverbLevel%
+HKLM,%KEY_BASE%\Strings,CtrlReverbMuteLong,,%CtrlLongReverbMute%
+HKLM,%KEY_BASE%\Strings,CtrlReverbMuteShort,,%CtrlShortReverbMute%
+HKLM,%KEY_BASE%\Strings,CtrlSurroundVolumeLong,,%CtrlLongSurroundVolume%
+HKLM,%KEY_BASE%\Strings,CtrlSurroundVolumeShort,,%CtrlShortSurroundVolume%
+HKLM,%KEY_BASE%\Strings,CtrlSurroundMuteLong,,%CtrlLongSurroundMute%
+HKLM,%KEY_BASE%\Strings,CtrlSurroundMuteShort,,%CtrlShortSurroundMute%
+HKLM,%KEY_BASE%\Strings,CtrlCenterVolumeLong,,%CtrlCenterVolumeLong%
+HKLM,%KEY_BASE%\Strings,CtrlCenterVolumeShort,,%CtrlCenterVolumeShort%
+HKLM,%KEY_BASE%\Strings,CtrlCenterMuteLong,,%CtrlCenterMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlCenterMuteShort,,%CtrlCenterMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlLFEVolumeLong,,%CtrlLFEVolumeLong%
+HKLM,%KEY_BASE%\Strings,CtrlLFEVolumeShort,,%CtrlLFEVolumeShort%
+HKLM,%KEY_BASE%\Strings,CtrlLFEMuteLong,,%CtrlLFEMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlLFEMuteShort,,%CtrlLFEMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlCH4VolumeLon,,%CtrlCH4VolumeLong%
+HKLM,%KEY_BASE%\Strings,CtrlCH4VolumeShort,,%CtrlCH4VolumeShort%
+HKLM,%KEY_BASE%\Strings,CtrlCH4MuteLong,,%CtrlCH4MuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlCH4MuteShort,,%CtrlCH4MuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlCDReverbMuteLong,,%CtrlCDReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlCDReverbMuteShort,,%CtrlCDReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlWaveReverbMuteLong,,%CtrlWaveReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlWaveReverbMuteShort,,%CtrlWaveReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlDSReverbMuteLong,,%CtrlDSReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlDSReverbMuteShort,,%CtrlDSReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlSynthReverbMuteLong,,%CtrlSynthReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlSynthReverbMuteShort,,%CtrlSynthReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlAuxReverbMuteLong,,%CtrlAuxReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlAuxReverbMuteShort,,%CtrlAuxReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlLineInReverbMuteLong,,%CtrlLineInReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlLineInReverbMuteShort,,%CtrlLineInReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlVideoReverbMuteLong,,%CtrlVideoReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlVideoReverbMuteShort,,%CtrlVideoReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInReverbMuteLong,,%CtrlMonoInReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInReverbMuteShort,,%CtrlMonoInReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlMicReverbMuteLong,,%CtrlMicReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlMicReverbMuteShort,,%CtrlMicReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlTelephoneReverbMuteLong,,%CtrlTelephoneReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlTelephoneReverbMuteShort,,%CtrlTelephoneReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlZVReverbMuteLong,,%CtrlZVReverbMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlZVReverbMuteShort,,%CtrlZVReverbMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlMasterFaderLong,,%CtrlMasterFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlMasterFaderShort,,%CtrlMasterFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlWaveFaderLong,,%CtrlWaveFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlWaveFaderShort,,%CtrlWaveFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlDSFaderLong,,%CtrlDSFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlDSFaderShort,,%CtrlDSFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlSynthFaderLong,,%CtrlSynthFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlSynthFaderShort,,%CtrlSynthFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlCDFaderLong,,%CtrlCDFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlCDFaderShort,,%CtrlCDFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlAuxFaderLong,,%CtrlAuxFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlAuxFaderShort,,%CtrlAuxFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlLineInFaderLong,,%CtrlLineInFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlLineInFaderShort,,%CtrlLineInFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlVideoFaderLong,,%CtrlVideoFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlVideoFaderShort,,%CtrlVideoFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInFaderLong,,%CtrlMonoInFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlMonoInFaderShort,,%CtrlMonoInFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlMicFaderLong,,%CtrlMicFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlMicFaderShort,,%CtrlMicFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlTelephoneFaderLong,,%CtrlTelephoneFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlTelephoneFaderShort,,%CtrlTelephoneFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlZVFaderLong,,%CtrlZVFaderLong%
+HKLM,%KEY_BASE%\Strings,CtrlZVFaderShort,,%CtrlZVFaderShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicVolumeLong,,%CtrlLongMicVolume%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicVolumeShort,,%CtrlShortMicVolume%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicMuteLong,,%CtrlLongMicMute%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicMuteShort,,%CtrlShortMicMute%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicBoostLong,,%CtrlMicBoostLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicBoostShort,,%CtrlMicBoostShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicSelectLong,,%CtrlMicSelectLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicSelectShort,,%CtrlMicSelectShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearMasterMuteLong,,%CtrlRearMasterMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearMasterMuteShort,,%CtrlRearMasterMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearCDMuteLong,,%CtrlRearCDMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearCDMuteShort,,%CtrlRearCDMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearAuxMuteLong,,%CtrlRearAuxMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearAuxMuteShort,,%CtrlRearAuxMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearLineInMuteLong,,%CtrlRearLineInMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearLineInMuteShort,,%CtrlRearLineInMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearVideoMuteLong,,%CtrlRearVideoMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearVideoMuteShort,,%CtrlRearVideoMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearMonoInMuteLong,,%CtrlRearMonoInMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearMonoInMuteShort,,%CtrlRearMonoInMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicMuteLong,,%CtrlRearMicMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearMicMuteShort,,%CtrlRearMicMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearTelephoneMuteLong,,%CtrlRearTelephoneMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearTelephoneMuteShort,,%CtrlRearTelephoneMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearZVMuteLong,,%CtrlRearZVMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearZVMuteShort,,%CtrlRearZVMuteShort%
+HKLM,%KEY_BASE%\Strings,CtrlRearDSMuteLong,,%CtrlRearDSMuteLong%
+HKLM,%KEY_BASE%\Strings,CtrlRearDSMuteShort,,%CtrlRearDSMuteShort%
+HKR,Config\Mixer,MasterVolumeLeft,,"44975"
+HKR,Config\Mixer,MasterVolumeRight,,"44975"
+HKR,Config\Mixer,MasterMute,,"0"
+HKR,Config\Mixer,HeadphoneVolumeLeft,,"44975"
+HKR,Config\Mixer,HeadphoneVolumeRight,,"44975"
+HKR,Config\Mixer,HeadphoneMute,,"0"
+HKR,Config\Mixer,MonoOutVolume,,"44975"
+HKR,Config\Mixer,MonoOutMute,,"0"
+HKR,Config\Mixer,MonoOutSelect,,"0"
+HKR,Config\Mixer,WaveOutVolumeLeft,,"44975"
+HKR,Config\Mixer,WaveOutVolumeRight,,"44975"
+HKR,Config\Mixer,WaveOutMute,,"0"
+HKR,Config\Mixer,SynthVolumeLeft,,"44975"
+HKR,Config\Mixer,SynthVolumeRight,,"44975"
+HKR,Config\Mixer,SynthMute,,"0"
+HKR,Config\Mixer,PhoneVolume,,"44975"
+HKR,Config\Mixer,PhoneMute,,"1"
+HKR,Config\Mixer,AuxVolumeLeft,,"44975"
+HKR,Config\Mixer,AuxVolumeRight,,"44975"
+HKR,Config\Mixer,AuxMute,,"1"
+HKR,Config\Mixer,CDVolumeLeft,,"44975"
+HKR,Config\Mixer,CDVolumeRight,,"44975"
+HKR,Config\Mixer,CDMute,,"0"
+HKR,Config\Mixer,LineInVolumeLeft,,"44975"
+HKR,Config\Mixer,LineInVolumeRight,,"44975"
+HKR,Config\Mixer,LineInMute,,"1"
+HKR,Config\Mixer,VideoVolumeLeft,,"44975"
+HKR,Config\Mixer,VideoVolumeRight,,"44975"
+HKR,Config\Mixer,VideoMute,,"1"
+HKR,Config\Mixer,MicVolume,,"44975"
+HKR,Config\Mixer,MicMute,,"1"
+HKR,Config\Mixer,MicBoost,,"0"
+HKR,Config\Mixer,MicSelect,,"0"
+HKR,Config\Mixer,MonoInVolume,,"44975"
+HKR,Config\Mixer,MonoInMute,,"1"
+HKR,Config\Mixer,ZVVolumeLeft,,"44975"
+HKR,Config\Mixer,ZVVolumeRight,,"44975"
+HKR,Config\Mixer,ZVMute,,"1"
+HKR,Config\Mixer,SurroundVolumeLeft,,"44975"
+HKR,Config\Mixer,SurroundVolumeRight,,"44975"
+HKR,Config\Mixer,SurroundMute,,"0"
+HKR,Config\Mixer,CenterVolume,,"44975"
+HKR,Config\Mixer,CenterMute,,"0"
+HKR,Config\Mixer,LFEVolume,,"44975"
+HKR,Config\Mixer,LFEMute,,"0"
+HKR,Config\Mixer,CH4VolumeLeft,,"44975"
+HKR,Config\Mixer,CH4VolumeRight,,"44975"
+HKR,Config\Mixer,CH4Mute,,"0"
+HKR,Config\Mixer,ReverbLevel,,"44975"
+HKR,Config\Mixer,ReverbMute,,"0"
+HKR,Config\Mixer,CDReverbMute,,"0"
+HKR,Config\Mixer,WaveReverbMute,,"0"
+HKR,Config\Mixer,DSReverbMute,,"0"
+HKR,Config\Mixer,SynthReverbMute,,"0"
+HKR,Config\Mixer,AuxReverbMute,,"0"
+HKR,Config\Mixer,LineInReverbMute,,"0"
+HKR,Config\Mixer,VideoReverbMute,,"0"
+HKR,Config\Mixer,MonoInReverbMute,,"0"
+HKR,Config\Mixer,MicReverbMute,,"0"
+HKR,Config\Mixer,TelephoneReverbMute,,"0"
+HKR,Config\Mixer,ZVReverbMute,,"0"
+HKR,Config\Mixer,MasterFader,,"32767"
+HKR,Config\Mixer,WaveFader,,"32767"
+HKR,Config\Mixer,DSFader,,"32767"
+HKR,Config\Mixer,SynthFader,,"32767"
+HKR,Config\Mixer,CDFader,,"32767"
+HKR,Config\Mixer,AuxFader,,"32767"
+HKR,Config\Mixer,LineInFader,,"32767"
+HKR,Config\Mixer,VideoFader,,"32767"
+HKR,Config\Mixer,ZVFader,,"32767"
+HKR,Config\Mixer,MicFader,,"32767"
+HKR,Config\Mixer,TelephoneFader,,"32767"
+HKR,Config\Mixer,MonoInFader,,"32767"
+HKR,Config\Mixer,RearMasterMute,,"0"
+HKR,Config\Mixer,RearMicVolume,,"44975"
+HKR,Config\Mixer,RearMicMute,,"1"
+HKR,Config\Mixer,RearMicBoost,,"0"
+HKR,Config\Mixer,RearMicSelect,,"0"
+HKR,Config\Mixer,RearCDMute,,"1"
+HKR,Config\Mixer,RearAuxMute,,"1"
+HKR,Config\Mixer,RearLineInMute,,"1"
+HKR,Config\Mixer,RearVideoMute,,"1"
+HKR,Config\Mixer,RearMonoInMute,,"1"
+HKR,Config\Mixer,RearMicMute,,"1"
+HKR,Config\Mixer,RearTelephoneMute,,"1"
+HKR,Config\Mixer,RearZVMute,,"1"
+HKR,Config\Mixer,RearDSMute,,"1"
+;*****************************************************************************
+;
+; Mux Value:
+;
+; 0 - Microphone  1 - CD          2 - Video       3 - Aux
+; 4 - Line        5 - LoopBack    7 - Phone
+;
+;*****************************************************************************
+HKR,Config\Mixer,RecMuxValue,,"0"
+HKR,Config\Mixer,RecPhoneVolumeLeft,,"44975"
+HKR,Config\Mixer,RecPhoneVolumeRight,,"44975"
+HKR,Config\Mixer,RecAuxVolumeLeft,,"44975"
+HKR,Config\Mixer,RecAuxVolumeRight,,"44975"
+HKR,Config\Mixer,RecCDVolumeLeft,,"44975"
+HKR,Config\Mixer,RecCDVolumeRight,,"44975"
+HKR,Config\Mixer,RecLineInVolumeLeft,,"44975"
+HKR,Config\Mixer,RecLineInVolumeRight,,"44975"
+HKR,Config\Mixer,RecMicVolumeLeft,,"44975"
+HKR,Config\Mixer,RecMicVolumeRight,,"44975"
+HKR,Config\Mixer,RecLoopVolumeLeft,,"44975"
+HKR,Config\Mixer,RecLoopVolumeRight,,"44975"
+HKR,Config\Mixer,RecVideoVolumeLeft,,"44975"
+HKR,Config\Mixer,RecVideoVolumeRight,,"44975"
+;*****************************************************************************
+; "AC97SourcesUsed"    |   "AC97RearSourcesUsed"
+;Value: "1111111111"   |    Value: "1111111111"
+;     Headphone :1;    |       (unused)  :1;
+;     MonoOut   :1;    |       (unused)  :1;
+;     Phone     :1;    |       Phone     :1;
+;     Mic       :1;    |       Mic       :1;
+;     Aux       :1;    |       Aux       :1;
+;     CD        :1;    |       CD        :1;
+;     LineIn    :1;    |       LineIn    :1;
+;     Video     :1;    |       Video     :1;
+;     MonoIn    :1;    |       MonoIn    :1;
+;     ZV        :1;    |       ZV        :1;
+;*****************************************************************************
+HKR,Config\Mixer,AC97SourcesUsed,,"0001111000"          ; Changed *Ricky
+;*****************************************************************************
+HKR,Config\Mixer,"AC97RearSourcesUsed","1111111110"
+;*****************************************************************************
+;
+; Table Driven Volumes
+;
+; The tables may have up to 64 entries, which are interpreted as decimal
+; values.  If these tables are missing, the default tables are used.  The
+; interpretation of the table entries are as follows:
+;
+; Sources: Wave, Synth, ZV Port
+;
+;     65535  ==    0.0 dB
+;         0  ==  -90.0 dB
+;
+; Destinations: Master, Headphone, Mono Out
+;
+;         0  ==    0.0 dB
+;        63  ==  -94.5 dB
+;
+; Sources: Phone, Aux, CD, Line In, Mic, Video
+;
+;         0  ==  +12.0 dB
+;         8  ==    0.0 dB
+;        31  ==  -34.5 dB
+;
+; Source: Mono In
+;
+;         0  ==    0.0 dB
+;        15  ==  -45.0 dB
+;
+;*****************************************************************************
+HKR,Config\Mixer,WaveVolumeTable,,"0,6143,10239,13311,16383,19455,22527,25599,28671,30719,32767,34815,36863,38911,40959,43007,45055,46079,47103,47615,48127,48639,49151,49663,50175,50687,51199,51711,52223,52735,53247,53759,54271,54783,55295,55807,56319,56663,57003,57343,57687,58027,58367,58711,59051,59391,59735,60075,60415,60759,61099,61439,61783,62123,62463,62807,63147,63487,63831,64171,64511,64855,65195,65535"
+HKR,Config\Mixer,SynthVolumeTable,,"0,6143,10239,13311,16383,19455,22527,25599,28671,30719,32767,34815,36863,38911,40959,43007,45055,46079,47103,47615,48127,48639,49151,49663,50175,50687,51199,51711,52223,52735,53247,53759,54271,54783,55295,55807,56319,56663,57003,57343,57687,58027,58367,58711,59051,59391,59735,60075,60415,60759,61099,61439,61783,62123,62463,62807,63147,63487,63831,64171,64511,64855,65195,65535"
+;(Whatever the line is for ZV)
+HKR,Config\Mixer,MasterVolumeTable,,"63,58,54,51,48,45,42,39,36,34,32,30,28,26,24,22,20,19,18,17,17,16,16,15,15,14,14,13,13,12,12,11,11,10,10,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+HKR,Config\Mixer,HeadphoneVolumeTable,,"63,58,54,51,48,45,42,39,36,34,32,30,28,26,24,22,20,19,18,17,17,16,16,15,15,14,14,13,13,12,12,11,11,10,10,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+HKR,Config\Mixer,MonoOutVolumeTable,,"63,58,54,51,48,45,42,39,36,34,32,30,28,26,24,22,20,19,18,17,17,16,16,15,15,14,14,13,13,12,12,11,11,10,10,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+HKR,Config\Mixer,PhoneVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,AuxVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,CDVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,LineInVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,MicVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,VideoVolumeTable,,"31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8"
+HKR,Config\Mixer,MonoInVolumeTable,,"15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0"
+HKR,Config\Mixer,SurroundVolumeTable,,"63,58,54,51,48,45,42,39,36,34,32,30,28,26,24,22,20,19,18,17,17,16,16,15,15,14,14,13,13,12,12,11,11,10,10,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+HKR,Config\Mixer,CLFEVolumeTable,,"63,58,54,51,48,45,42,39,36,34,32,30,28,26,24,22,20,19,18,17,17,16,16,15,15,14,14,13,13,12,12,11,11,10,10,9,9,8,8,8,7,7,7,6,6,6,5,5,5,4,4,4,3,3,3,2,2,2,1,1,1,0,0,0"
+
+[CS4610.UpdateAutoBat]
+;CmdAdd=cwcdos.exe,"/G cwcdgame.osp"
+CmdAdd=cwcdos.exe
+
+[DestinationDirs]
+CS4610SP.CopyList = 10,cwcdata
+DefaultDestDir = 11
+
+[SourceDisksNames]
+1=%Disk1Name%,,0001
+73170=WHQL,"",73170
+
+[SourceDisksFiles]
+cwchmix.vxd=1
+cwchfx.vxd=1
+cwchrsnd.osp=1
+cwcrvsnd.osp=1
+cwcdls.osp=1
+cwc3d.osp=1
+cwc4610.osp=1
+cwc4612.osp=1
+cwc4630.osp=1
+cwcasync.osp=1
+cwceq.osp=1
+cwcdatac.osp=1
+cwcddma.osp=1
+cwcdgame.osp=1
+cwcdos.exe=1
+cwcdsnd.vxd=1
+cwchwcrl.vxd=1
+cwcecho.vxd=1
+cwcenum.vxd=1
+cwcfm.drv=1
+cwcfm.osp=1
+cwchrtf.22=1
+cwchrtf.44=1
+cwchrtf.v22=1
+cwchrtf.v44=1
+cwciotrp.osp=1
+cwcjoy.vxd=1
+cwclang.dll=1
+cwclang.dat=1
+cwcmmsys.drv=1
+cwcmmsys.vxd=1
+cwcoproc.vxd=1
+cwcpass.vxd=1
+cwcpcpci.osp=1
+cwcprops.cpl=1
+cwcproxy.vxd=1
+cwcsbfg.osp=1
+cwcsbpro.vxd=1
+cwcspat.osp=1
+cwcspkph.osp=1
+cwcspud.dat=1
+cwcspud.vxd=1
+cwcspud3.vxd=1
+cwgmsg.vxd=1
+crlds3d.vxd=1
+cwcac3df.ax=1
+cwcsfgtx.osp=1
+cwcdls8.cls=1
+cwcs3dsn.osp=1
+cwcshfo.osp=1
+cwcmp3.ax=1
+cwcmp3.osp=1
+PV2885.cat=73170
+
+[Strings]
+;Non-localized strings
+KEY_MSDOS="SOFTWARE\Microsoft\Windows\CurrentVersion\MS-DOSOptions"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+KEY_RUN="SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+KEY_RUNONCE="SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
+KEY_BASE="SOFTWARE\Crystal Semiconductor\CS461x"
+KEY_MEDIA="SYSTEM\CurrentControlSet\Services\Class\MEDIA"
+KEY_SOUNDMAPPER="Software\Microsoft\Multimedia\Sound Mapper"
+KEY_JOYOEM="SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+
+;Localized strings
+FMSYNTH.DeviceDesc="Crystal SoundFusion(tm) FM"
+MediaClassName="Sound, video and game controllers"
+CSMfgName="Crystal Semiconductor Corporation"
+Disk1Name="Crystal SoundFusion(tm) Driver Disk 1"
+Disk2Name="Crystal SoundFusion(tm) Driver Disk 2"
+CS4610.DeviceDesc="Crystal SoundFusion(tm) PCI Audio Accelerator"
+CS461xWave.DeviceDesc="Crystal SoundFusion(tm)"
+CS461xMIDI.DeviceDesc="Crystal SoundFusion(tm)"
+CS461xMPU401.DeviceDesc="SoundFusion(tm) External MIDI"
+CS461xMixer.DeviceDesc="Crystal SoundFusion(tm)"
+CS461xHAL.DeviceDesc="Crystal SoundFusion(tm)"
+CS4610VirtualMPU401="Crystal SoundFusion(tm) Virtual MPU-401"
+MSDOSConfig="Crystal SoundFusion(tm) Configuration"
+MSDOSTipText="Configures the Crystal SoundFusion(tm) for wavetable synthesis in DOS."
+CS4610Joystick="Crystal SoundFusion(tm) Joystick"
+CS4610Blaster="Crystal SoundFusion(tm) Game Device"
+
+;*****************************************************************************
+;
+; Mixer controls.  Long names have a max length of 16 characters, and short
+; names have a max length of 64 characters.
+;
+;*****************************************************************************
+
+; Destinations
+DstLongMaster="Master"
+DstShortMaster="Master"
+DstLongRecord="Record"
+DstShortRecord="Record"
+DstReverbLong="Reverb"
+DstReverbShort="Reverb"
+DstFrontLong="Front"
+DstFrontShort="Front"
+DstRearLong="Rear"
+DstRearShort="Rear"
+
+
+; Output sources
+SrcLongWave="Wave"
+SrcShortWave="Wave"
+SrcLongSynth="Synthesis"
+SrcShortSynth="Synth"
+SrcLongDS="DirectSound"
+SrcShortDS="DS"
+SrcLongHeadphone="Headphone"
+SrcShortHeadphone="Headphone"
+SrcLongMonoOut="Mono Out"
+SrcShortMonoOut="Mono Out"
+SrcLongPhone="Telephone"
+SrcShortPhone="Phone"
+SrcLongAux="Auxiliary"
+SrcShortAux="Aux"
+SrcLongCD="Compact Disc"
+SrcShortCD="CD"
+SrcLongLineIn="Line In"
+SrcShortLineIn="Line In"
+SrcLongVideo="Video"
+SrcShortVideo="Video"
+SrcLongMic="Microphone"
+SrcShortMic="Mic"
+SrcLongMonoIn="Mono In"
+SrcShortMonoIn="Mono In"
+
+; Output mixer controls
+CtrlLongWaveOutVolume="Wave Volume"
+CtrlShortWaveOutVolume="Wave"
+CtrlLongWaveOutMute="Wave Mute"
+CtrlShortWaveOutMute="Wave"
+CtrlLongSynthOutVolume="Synthesis Volume"
+CtrlShortSynthOutVolume="Synth"
+CtrlLongSynthOutMute="Synthesis Mute"
+CtrlShortSynthOutMute="Synth"
+CtrlLongDSOutVolume="Direct Sound Volume"
+CtrlShortDSOutVolume="DS"
+CtrlLongDSOutMute="Direct Sound Mute"
+CtrlShortDSOutMute="DS"
+CtrlLongHeadphoneVolume="Headphone Volume"
+CtrlShortHeadphoneVolume="Headphone"
+CtrlLongHeadphoneMute="Headphone Mute"
+CtrlShortHeadphoneMute="Headphone"
+CtrlLongMonoOutVolume="Mono Out Volume"
+CtrlShortMonoOutVolume="Mono Out"
+CtrlLongMonoOutMute="Mono Out Mute"
+CtrlShortMonoOutMute="Mono Out"
+CtrlLongMonoOutSelect="Mic To Mono"
+CtrlShortMonoOutSelect="MicToMono"
+CtrlLongPhoneVolume="Telephone Volume"
+CtrlShortPhoneVolume="Phone"
+CtrlLongPhoneMute="Telephone Mute"
+CtrlShortPhoneMute="Phone"
+CtrlLongAuxVolume="Auxiliary Volume"
+CtrlShortAuxVolume="Aux"
+CtrlLongAuxMute="Auxiliary Mute"
+CtrlShortAuxMute="Aux"
+CtrlLongCDVolume="Compact Disc Volume"
+CtrlShortCDVolume="CD"
+CtrlLongCDMute="Compact Disc Mute"
+CtrlShortCDMute="CD"
+CtrlLongLineInVolume="Line In Volume"
+CtrlShortLineInVolume="Line In"
+CtrlLongLineInMute="Line In Mute"
+CtrlShortLineInMute="Line In"
+CtrlLongVideoVolume="Video Volume"
+CtrlShortVideoVolume="Video
+CtrlLongVideoMute="Video Mute"
+CtrlShortVideoMute="Video"
+CtrlLongMicVolume="Microphone Volume"
+CtrlShortMicVolume="Mic"
+CtrlLongMicMute="Microphone Mute"
+CtrlShortMicMute="Mic"
+CtrlMicBoostLong="Microphone Boost"
+CtrlMicBoostShort="Boost"
+CtrlMicSelectLong="Alternate Microphone"
+CtrlMicSelectShort="Mic2"
+CtrlLongMonoInVolume="Mono In Volume"
+CtrlShortMonoInVolume="Mono In"
+CtrlLongMonoInMute="Mono In Mute"
+CtrlShortMonoInMute="Mono In"
+
+; Rear sources
+SrcRearWaveLong="Wave"
+SrcRearWaveShort="Wave"
+SrcRearSynthLong="Synthesis"
+SrcRearSynthShort="Synth"
+SrcRearDSLong="DirectSound"
+SrcRearDSShort="DS"
+SrcRearMonoOutLong="Mono Out"
+SrcRearMonoOutShort="Mono Out"
+SrcRearPhoneLong="Telephone"
+SrcRearPhoneShort="Phone"
+SrcRearAuxLong="Auxiliary"
+SrcRearAuxShort="Aux"
+SrcRearCDLong="Compact Disc"
+SrcRearCDShort="CD"
+SrcRearLineInLong="Line In"
+SrcRearLineInShort="Line In"
+SrcRearVideoLong="Video"
+SrcRearVideoShort="Video"
+SrcRearMicLong="Microphone"
+SrcRearMicShort="Mic"
+SrcRearMonoInLong="Mono In"
+SrcRearMonoInShort="Mono In"
+
+; Multichannel mixer controls
+CtrlLongSurroundVolume="Rear Volume"
+CtrlShortSurroundVolume="Rear"
+CtrlLongSurroundMute="Rear Mute"
+CtrlShortSurroundMute="Rear"
+CtrlLongReverbLevel="Reverb Level"
+CtrlShortReverbLevel="Reverb"
+CtrlLongReverbMute="Reverb Mute"
+CtrlShortReverbMute="Reverb"
+CtrlCenterVolumeLong="Center Volume"
+CtrlCenterVolumeShort="Center"
+CtrlCenterMuteLong="Center Mute"
+CtrlCenterMuteShort="Center"
+CtrlLFEVolumeLong="LFE Volume"
+CtrlLFEVolumeShort="LFE"
+CtrlLFEMuteLong="LFE Mute"
+CtrlLFEMuteShort="LFE"
+CtrlCH4VolumeLong="Ch. 7 & 8 Volume"
+CtrlCH4VolumeShort="Ch. 7&8"
+CtrlCH4MuteLong="Ch. 7 & 8 Mute"
+CtrlCH4MuteShort="Ch. 7&8"
+
+; Reverb mute contols
+CtrlCDReverbMuteLong="CD Reverb Mute"
+CtrlCDReverbMuteShort="CD"
+CtrlWaveReverbMuteLong="Wave Reverb Mute"
+CtrlWaveReverbMuteShort="Wave"
+CtrlDSReverbMuteLong="Direct Sound Reverb Mute"
+CtrlDSReverbMuteShort="DS"
+CtrlSynthReverbMuteLong="Synth Reverb Mute"
+CtrlSynthReverbMuteShort="Synth"
+CtrlAuxReverbMuteLong="Aux Reverb Mute"
+CtrlAuxReverbMuteShort="Aux"
+CtrlLineInReverbMuteLong="Line In Reverb Mute"
+CtrlLineInReverbMuteShort="Line In"
+CtrlVideoReverbMuteLong="Video Reverb Mute"
+CtrlVideoReverbMuteShort="Video"
+CtrlMonoInReverbMuteLong="Mono In Reverb Mute"
+CtrlMonoInReverbMuteShort="Mono In"
+CtrlMicReverbMuteLong="Mic Reverb Mute"
+CtrlMicReverbMuteShort="Mic"
+CtrlTelephoneReverbMuteLong="Telephone Reverb Mute"
+CtrlTelephoneReverbMuteShort="Phone"
+CtrlZVReverbMuteLong="ZV Reverb Mute"
+CtrlZVReverbMuteShort="ZV"
+
+; Front/Rear Faders
+CtrlMasterFaderLong="Master Fader"
+CtrlMasterFaderShort="Master"
+CtrlWaveFaderLong="Wave Fader"
+CtrlWaveFaderShort="Wave"
+CtrlDSFaderLong="Direct Sound"
+CtrlDSFaderShort="DS"
+CtrlSynthFaderLong="Synth Fader"
+CtrlSynthFaderShort="Synth"
+CtrlCDFaderLong="CD Fader"
+CtrlCDFaderShort="CD"
+CtrlAuxFaderLong="Aux Fader"
+CtrlAuxFaderShort="Aux"
+CtrlLineInFaderLong="Line In Fader"
+CtrlLineInFaderShort="Line In"
+CtrlVideoFaderLong="Video Fader"
+CtrlVideoFaderShort="Video"
+CtrlMonoInFaderLong="Mono In Fader"
+CtrlMonoInFaderShort="Mono In"
+CtrlMicFaderLong="Mic Fader"
+CtrlMicFaderShort="Mic"
+CtrlTelephoneFaderLong="Telephone Fader"
+CtrlTelephoneFaderShort="Phone"
+CtrlZVFaderLong="ZV Fader"
+CtrlZVFaderShort="ZV"
+
+; Rear controls
+CtrlRearMasterMuteLong="Rear Master Mute"
+CtrlRearMasterMuteShort="Rear"
+CtrlRearMicVolumeLong="Microphone Volume"
+CtrlRearMicVolumeShort="Mic"
+CtrlRearMicMuteLong="Microphone Mute"
+CtrlRearMicMuteShort="Mic"
+CtrlRearMicBoostLong="Microphone Boost"
+CtrlRearMicBoostShort="Boost"
+CtrlRearMicSelectLong="Alternate Microphone"
+CtrlRearMicSelectShort="Mic2"
+CtrlRearCDMuteLong="Compact Disk Mute"
+CtrlRearCDMuteShort="CD"
+CtrlRearAuxMuteLong="Auxiliary Mute"
+CtrlRearAuxMuteShort="Aux"
+CtrlRearLineInMuteLong="Line In Mute"
+CtrlRearLineInMuteShort="LineIn"
+CtrlRearVideoMuteLong="Video Mute"
+CtrlRearVideoMuteShort="Video"
+CtrlRearMonoInMuteLong="Mono In Mute"
+CtrlRearMonoInMuteShort="Mono In"
+CtrlRearMicMuteLong="Microphone Mute"
+CtrlRearMicMuteShort="Mic"
+CtrlRearTelephoneMuteLong="Telephone Mute"
+CtrlRearTelephoneMuteShort="Phone"
+CtrlRearZVMuteLong="ZV Port Mute"
+CtrlRearZVMuteShort="ZV"
+CtrlRearDSMuteLong="Direct Sound Mute"
+CtrlRearDSMuteShort="DS"
+
+
+; Input sources
+SrcRecLongPhone="Telephone"
+SrcRecShortPhone="Phone"
+SrcRecLongAux="Auxiliary"
+SrcRecShortAux="Aux"
+SrcRecLongCD="Compact Disc"
+SrcRecShortCD="CD"
+SrcRecLongLineIn="Line In"
+SrcRecShortLineIn="Line In"
+SrcRecLongVideo="Video"
+SrcRecShortVideo="Video"
+SrcRecLongMic="Microphone"
+SrcRecShortMic="Mic"
+SrcRecLongLoop="Loopback"
+SrcRecShortLoop="Loop"
+
+; Input mixer controls
+CtrlRecLongMux="Record Mux"
+CtrlRecShortMux="Mux"
+CtrlRecLongPhone="Telephone Volume"
+CtrlRecShortPhone="Phone"
+CtrlRecLongAux="Auxiliary Volume"
+CtrlRecShortAux="Aux"
+CtrlRecLongCD="Compact Disc Volume"
+CtrlRecShortCD="CD"
+CtrlRecLongVideo="Video Volume"
+CtrlRecShortVideo="Video"
+CtrlRecLongMic="Microphone Volume"
+CtrlRecShortMic="Mic"
+CtrlRecLongLineIn="Line In Volume"
+CtrlRecShortLineIn="Line In"
+CtrlRecLongLoop="Loopback Volume"
+CtrlRecShortLoop="Loop"
+

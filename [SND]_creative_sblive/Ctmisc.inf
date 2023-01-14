@@ -1,0 +1,129 @@
+; Creative Technology Ltd.
+;     Copyright (c) Creative Technology Ltd, 1994-1998.
+;
+; Description
+;  This inf file contains the following device for installation
+;  a. Sb16 Emulation 
+;  b. Gameport Joystick - CTL7009
+;  b. Gameport Joystick - CTL7010
+;  c. Gameport Joystick - PCI\VEN_1102&DEV_7002&SUBSYS_00201102
+;  d. SBlive! Sb16 Emulation
+;
+; Date     : 5 Oct'99
+; Revision : 1.16.000
+
+
+[Version]
+Signature=$CHICAGO$
+Class=CTMISC
+Provider=%String0%
+LayoutFile=layout.inf
+;CatalogFile=ctmisc.cat
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Manufacturer]
+%String0%=Creative
+
+[DestinationDirs]
+DefaultDestDir=11
+
+[Creative]
+%String3%=SB16_Virtual_Device,VIRTUAL\SB16Emulation
+%String4%=SBLIVE_Virtual_Device,VIRTUAL\SBLIVE_SB16Emulation
+%*CTL7009.DeviceDesc%=CTL7009_Device,VIRTUAL\*CTL7009
+%*PCIJOY.DeviceDesc%=PCI8010J_Device,PCI\VEN_1102&DEV_7002&SUBSYS_00201102 
+%*MSJSTICK.DeviceDesc%=CTL7010_Device,VIRTUAL\*CTL7010
+
+[PCI8010J_Device]
+AddReg=PCI8010J.AddReg
+
+[SB16_Virtual_Device]
+AddReg=SB16_Virtual_Device.AddReg
+
+[SBLIVE_Virtual_Device]
+AddReg=SBLIVE_Virtual_Device.AddReg
+
+[CTL7010_Device]
+AddReg=JOYSTICK.AddReg, MSJSTICK.AddReg
+UpdateInis=MSJSTICK.UpdateInis
+CopyFiles=MSJSTICK.CopyList
+
+[MSJSTICK_Device]
+AddReg=JOYSTICK.AddReg, MSJSTICK.AddReg
+UpdateInis=MSJSTICK.UpdateInis
+
+;---------------------------------------------------------------;
+
+[Class.AddReg]
+HKR,,,0,%MediaClassName%
+HKR,,Icon,,"0"
+HKR,,Installer,0,mmci.dll
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;---------------------------------------------------------------;
+
+[SB16_Virtual_Device.AddReg]
+HKR,,Driver,0,emu8008.vxd
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,Drivers,MIGRATED,0,0
+
+;---------------------------------------------------------------;
+
+[SBLIVE_Virtual_Device.AddReg]
+HKR,,Driver,0,ctsyn.vxd
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,Drivers,MIGRATED,0,0
+
+;---------------------------------------------------------------;
+
+[PCI8010J.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,,Driver,,emu10k1.vxd
+
+;---------------------------------------------------------------;
+
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[MSJSTICK.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%*CTL7009.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[MSJSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+[MSJSTICK.CopyList]
+vjoyd.vxd
+msjstick.drv
+
+;---------------------------------------------------------------;
+
+[SourceDisksNames]
+1=%ID1%,,0000-0001
+
+[SourceDisksFiles]
+;ctmisc.cat
+
+;---------------------------------------------------------------;
+
+[Strings]
+String0="Creative"
+String3="Creative SB16 Emulation"
+String4="Creative SB16 Emulation"
+*CTL7009.DeviceDesc="Creative Gameport Joystick"
+MediaClassName="Creative Miscellaneous Devices"
+ID1="Creative CD-ROM"
+ID2="Windows CD-ROM"
+*PCIJOY.DeviceDesc="Creative MultiMedia Interface"
+*MSJSTICK.DeviceDesc="Creative Gameport Joystick"
+

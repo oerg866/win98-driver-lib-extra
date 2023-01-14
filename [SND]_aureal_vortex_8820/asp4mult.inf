@@ -1,0 +1,247 @@
+;*---------------------------------------------------------------------------
+;*
+;* $Workfile: asp4mult.inf $
+;*
+;*---------------------------------------------------------------------------
+;*
+;* $Revision: 49 $  $Date: 4/20/99 1:19p $  
+;*				
+;*---------------------------------------------------------------------------
+;*
+;* Vortex inf file for multifunction device support
+;*
+;*---------------------------------------------------------------------------
+;* 
+;* Copyright (c) 1997 Aureal Semiconductor, Inc. - All rights reserved. 
+;*
+;* This is UNPUBLISHED PROPRIETARY SOURCE CODE of Aureal Semiconductor;
+;* the contents of this file may not be disclosed to third parties, copied or
+;* duplicated in any form, in whole or in part, without the prior written
+;* permission of Aureal Semiconductor.
+;*
+;* RESTRICTED RIGHTS LEGEND:
+;* Use, duplication or disclosure by the Government is subject to restrictions
+;* as set forth in subdivision (c)(1)(ii) of the Rights in Technical Data
+;* and Computer Software clause at DFARS 252.227-7013, and/or in similar or
+;* successor clauses in the FAR, DOD or NASA FAR Supplement. Unpublished  -
+;* rights reserved under the Copyright Laws of the United States.
+;*
+;*---------------------------------------------------------------------------
+;*$NoKeywords: $
+
+[Version]
+LayoutFile=layout.inf
+Signature="$CHICAGO$"
+Class=MultiFunction
+Provider=%Mfg%
+Verinfo=%ProductVersion%
+           
+[ClassInstall]
+Addreg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MFClassName%
+
+[Manufacturer]
+%Mfg%=AurealSemiconductor
+
+[AurealSemiconductor]
+%PCI\VEN_12EB&DEV_0001.DeviceDesc%=ASPEN_PARENT_DEVICE, PCI\VEN_12EB&DEV_0001
+
+[ASPEN_PARENT_DEVICE]
+AddReg=AspenParent.AddReg,AspenIniFile.AddReg,AspenCustomization.Addreg,A3DAPI.AddReg
+CopyFiles=AspenINF.CopyList,AspenParent.CopyList,AspenSetup.CopyList
+UpdateInis=Aspen.UpdateInis
+
+[ASPEN_PARENT_DEVICE.HW]
+AddReg=AspenParent.RegHW
+
+[AspenParent.AddReg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,01,00,00,00		; CM_REGISTER_DEVICE_DRIVER_DISABLEABLE
+HKR,,DeviceDriver,,asp4init.vxd
+;Motherboard implementations only
+HKR,Config,EnableCMMON,1,1
+HKLM,"Software\Aureal\CM Monitor","SearchSSID",00,%SearchString%
+HKLM,"Software\Aureal\CM Monitor","TargetSSID",00,%TargetString%
+
+
+[AspenIniFile.AddReg]
+HKLM,Software,,,
+HKLM,Software\Aureal,,,
+HKLM,Software\Aureal\Modem,,,
+HKLM,Software\Aureal\Vortex,,,
+HKLM,Software\Aureal\Vortex\IniFile,,,
+HKLM,Software\Aureal\Vortex\IniFile,VortexIniFilename,,"VORTEX.INI"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni00,,"[ASP4DOS.COM]"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni01,,"MPU401External=0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni02,,"ModemBase=0x000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni03,,"ModemIRQ=0x0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni04,,"JoystickBase=0x000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni05,,"MPU401Base=0x000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni06,,"SBFMBase=0x000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni07,,"FMBase=0x000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni08,,"SBFMDMA=0x0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni09,,"SBFMDMA2=0x0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni10,,"SBFMIRQ=0x0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni11,,"PCIIRQ=0x0"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni12,,"CPUSpeed=0x0000"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni13,,"Reserved2=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni14,,"Reserved1=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni15,,"mixer_master=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni16,,"mixer_phone=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni17,,"mixer_mic=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni18,,"mixer_line=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni19,,"mixer_cd=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni20,,"mixer_aux=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni21,,"Reserved4=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni22,,"Reserved3=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni23,,"Reserved2=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni24,,"Reserved1=0x00"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni25,,"string_prod=Vortex PCI Multifunction Platform"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni26,,"string_ven1=Aureal Semiconductor"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni27,,"string_ven2=(c)1997 Aureal Semiconductor, Inc. Fremont, CA"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni28,,"string_err1=Error: Run Windows 95 to set configuration"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni29,,"string_err2=Error: Could not find a PCI BIOS"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni30,,"string_err3=Error: Could not locate Vortex device"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni31,,"string_err4=Error: Could not enable Vortex system"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni32,,"string_err5=Error: An unexpected error has occurred"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni33,,"string_msg1=Sound Blaster support is enabled at port"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni34,,"string_msg2=Sound Blaster support is disabled"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni35,,"string_msg3=Joystick enabled at port"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni36,,"string_msg4=Joystick support is disabled"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni37,,"string_msg5=MPU401 MIDI system enabled at port"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni38,,"string_msg6=MPU401 MIDI system is disabled"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni39,,"string_msg7=Modem enabled at port"
+HKLM,Software\Aureal\Vortex\IniFile,VortexIni40,,"string_msg8=Modem is disabled"
+
+[A3DAPI.AddReg]
+HKCR,"CLSID\{92FA2C24-253C-11d2-90FB-006008A1F441}","",,"A3dApi Object"
+HKCR,"CLSID\{92FA2C24-253C-11d2-90FB-006008A1F441}","AppID",,"{92FA2C24-253C-11D2-90FB-006008A1F441}"
+HKCR,"CLSID\{92FA2C24-253C-11d2-90FB-006008A1F441}\InprocServer32","",,"A3dapi.dll"
+HKCR,"CLSID\{92FA2C24-253C-11d2-90FB-006008A1F441}\InprocServer32","ThreadingModel",,"Apartment"
+HKCR,"CLSID\{442D12A1-2641-11d2-90FB-006008A1F441}","",,"A3dDAL Object"
+HKCR,"CLSID\{442D12A1-2641-11d2-90FB-006008A1F441}","AppID",,"{442D12A1-2641-11D2-90FB-006008A1F441}"
+HKCR,"CLSID\{442D12A1-2641-11d2-90FB-006008A1F441}\InprocServer32","",,"a3d.dll"
+HKCR,"CLSID\{442D12A1-2641-11d2-90FB-006008A1F441}\InprocServer32","ThreadingModel",,"Apartment"
+HKCR,"CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}","",,"A3d Object"
+HKCR,"CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32","",,"a3d.dll"
+HKCR,"CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32","ThreadingModel",,"Apartment"
+HKCR,"A3dDAL","",,"A3dDAL Object"
+HKCR,"A3dDAL\CLSID","",,"{442D12A1-2641-11d2-90FB-006008A1F441}"
+HKCR,"A3dApi","",,"A3dApi Object"
+HKCR,"A3dApi\CLSID","",,"{92FA2C24-253C-11d2-90FB-006008A1F441}"
+HKCR,"A3d","",,"A3d Object"
+HKCR,"A3d\CLSID","",,"{d8f1eee0-f634-11cf-8700-00a0245d918b}"
+
+[AspenParent.RegHW]
+;HKR,Child0000,HardwareID,,MF\PCI_VEN_12EB&DEV_0001_AUDIO
+;HKR,Child0000,ResourceMap,1,00,01,02,03 ; IRQ, IO0, IO1, IO2
+;HKR,Child0000,MFFlags,1,0C,00,00,00     ; MF_FLAGS_FILL_IN_UNKNOWN_RESOURCE | MF_FLAGS_CREATE_BUT_NO_SHOW_DISABLED
+
+[AspenCustomization.Addreg]
+;; This setction contaions all registry keys used to disable the Vortex driver related features
+;; or customize the functions provided by Vortex drivers/apps.
+
+; DX5 install
+;HKLM,"Software\Aureal\Vortex\Customization","DisableDX5Install",0x00010001,1,0,0,0		;set DWORD value to "1" to disable prompting for DirectX5
+
+[AspenINF.CopyList]
+asp4mult.inf,,
+asp4mmed.inf,,
+asp4comm.inf,,
+asp4port.inf,,
+
+[Aspen.UpdateInis]
+; Setting to prevent Matrox Millineum driver from hogging the PCI bus
+system.ini,mga.drv,,"PCIChipSet=1",0
+
+[AspenParent.CopyList]
+;Motherboard implementations only
+cmmon.vxd,,
+asp4init.vxd,,
+aum42loc.dll,,			; copy Aum42loc.dll to System directory
+ASYCFILT.DLL,,,0x20		;2.30.4261
+MSVCRT.DLL,,,0x20		;6.00.8168.0
+OLEAUT32.DLL,,,0x20		;2.30.4261	register
+OLEPRO32.DLL,,,0x20		;5.0.4261	register
+STDOLE2.TLB,,,0x20		;2.30.4261
+
+[AspenSetup.CopyList]
+asp4setp.exe,,
+
+
+[A3DDemos.CopyList]
+;_inst32i.ex_,,
+;_isdel.exe,,
+;_setup.dll,,
+;_sys1.cab,,
+;_user1.cab,,
+;Data.tag,,
+;data1.cab,,
+;lang.dat,,
+;layout.bin,,
+;os.dat,,
+;Setup.exe,,
+;Setup.ini,,
+;setup.ins,,
+;setup.iss,,
+;setup.lid,,
+
+[SourceDisksFiles]
+cmmon.vxd=42
+asp4init.vxd=42
+asp4mult.inf=42
+asp4mmed.inf=42
+asp4comm.inf=42
+asp4port.inf=42
+asp4setp.exe=42
+aum42loc.dll=42
+;_inst32i.ex_=42,"..\..\A3DDemos"
+;_isdel.exe=42,"..\..\A3DDemos"
+;_setup.dll=42,"..\..\A3DDemos"
+;_sys1.cab=42,"..\..\A3DDemos"
+;_user1.cab=42,"..\..\A3DDemos"
+;Data.tag=42,"..\..\A3DDemos"
+;data1.cab=42,"..\..\A3DDemos"
+;lang.dat=42,"..\..\A3DDemos"
+;layout.bin=42,"..\..\A3DDemos"
+;os.dat=42,"..\..\A3DDemos"
+;Setup.exe=42,"..\..\A3DDemos"
+;Setup.ini=42,"..\..\A3DDemos"
+;setup.ins=42,"..\..\A3DDemos"
+;setup.iss=42,"..\..\A3DDemos"
+;setup.lid=42,"..\..\A3DDemos"
+ASYCFILT.DLL=42
+MSVCRT.DLL=42
+OLEAUT32.DLL=42
+OLEPRO32.DLL=42
+STDOLE2.TLB=42
+
+[SourceDisksNames]
+42=%DiskName%,,0000-0000
+
+[DestinationDirs]
+DefaultDestDir = 11
+AspenINF.CopyList = 17
+AspenSetup.CopyList = 10
+A3DDemos.CopyList = 30,xyzA3Dde
+
+[Strings]
+;Localized strings - standard Microsoft value
+MFClassName="Multi-function adapters"
+
+;Non-localized strings - device-specific
+ProductVersion="0.01.00.0001"
+
+;Localized strings - device-specific
+Mfg="Aureal Semiconductor"
+DiskName="Vortex Installation & Driver Disk"
+PCI\VEN_12EB&DEV_0001.DeviceDesc="Vortex Multifunction PCI Platform"
+KEY_RUNONCE="Software\Microsoft\Windows\CurrentVersion\RunOnce"
+KEY_OPT_COMPONENTS="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+;Motherboard implementations only
+SearchString="VEN_12EB&DEV_0001&SUBSYS_00000000"
+TargetString="VEN_12EB&DEV_0001&SUBSYS_8036104D"
+

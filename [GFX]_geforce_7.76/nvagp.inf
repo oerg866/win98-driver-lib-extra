@@ -1,0 +1,735 @@
+;INF file for NVIDIA Compatible Windows 95/Windows 98/Windows ME Display and DirectX Drivers
+;Copyright 1998-2001 NVIDIA Corporation
+;Version 3.0
+
+[version]
+DriverVer = 03/19/2001, 7.7.6
+LayoutFile=layout.inf
+Class=DISPLAY
+signature="$CHICAGO$"
+Provider=%Mfg%
+
+[DestinationDirs]
+DefaultDestDir = 11
+NV.Copy.Hlp = 18
+NV.Copy.Hlp.Localized = 18
+NV.Copy.Inf = 17
+NV.Copy.DriverFiles = 11
+NV.Copy.TweakFiles = 11
+NV.Copy.TweakFiles.Localized = 11
+NV.Copy.VGARTD = 11
+NV.Copy.AGARTD = 11
+NV.Delete.Hlp =18
+NV.Delete.Inf = 17
+NV.Delete.DriverFiles = 11
+NV.Delete.TweakFiles = 11
+
+[SourceDisksNames]
+1=%Disk1Name%,,0
+2=%Disk2Name%,,0
+3=%Disk3Name%,,0
+4=%Disk4Name%,,0
+5=%Disk5Name%,,0
+6=%Disk6Name%,,0
+7=%Disk7Name%,,0
+
+[SourceDisksFiles]
+nvagp.inf=1
+nvdisp.drv=1
+nvmode.dll=1
+nvinst32.dll=1
+nvcore.vxd=1
+nvarch16.dll=1
+nvarch32.dll=1
+nvdd32.dll=2
+nvmini.vxd=2
+nvmini2.vxd=2
+nvopengl.dll=3
+nvcpl.dll=4
+nvcpl.hlp=4
+nvqtwk.dll=4
+nvdesk32.dll=4
+nvdmcpl.dll=4
+nvrsar.dll=5
+nvcpar.hlp=5
+nvrsda.dll=5
+nvcpda.hlp=5
+nvrsde.dll=5
+nvcpde.hlp=5
+nvrseng.dll=5
+nvcpeng.hlp=5
+nvrses.dll=5
+nvcpes.hlp=5
+nvrsfi.dll=5
+nvcpfi.hlp=5
+nvrsfr.dll=5
+nvcpfr.hlp=5
+nvrsit.dll=5
+nvcpit.hlp=5
+nvrsja.dll=5
+nvcpja.hlp=5
+nvrsko.dll=5
+nvcpko.hlp=5
+nvrsnl.dll=5
+nvcpnl.hlp=5
+nvrsno.dll=5
+nvcpno.hlp=5
+nvrsptb.dll=5
+nvcpptb.hlp=5
+nvrsru.dll=5
+nvcpru.hlp=5
+nvrssv.dll=5
+nvcpsv.hlp=5
+nvcpth.hlp=5
+nvrszhc.dll=5
+nvcpzhc.hlp=5
+nvrszht.dll=5
+nvcpzht.hlp=5
+vgartd.vxd=6
+agartd.vxd=6
+alipcimp.pci=6
+nvada.inf=1
+nvade.inf=1
+nvaen.inf=1
+nvaeng.inf=1
+nvaes.inf=1
+nvaesm.inf=1
+nvafi.inf=1
+nv4ada.inf=1
+nv4ade.inf=1
+nv4aen.inf=1
+nv4aeng.inf=1
+nv4aes.inf=1
+nv4aesm.inf=1
+nv4afi.inf=1
+nv4agp.inf=1
+nv4disp.inf=1
+nv4disp.drv=1
+nv4dd32.dll=1
+nv4ogl.dll=1
+nv4cpl.dll=1
+nv4cpl.hlp=1
+nv4qtwk.dll=1
+
+[Manufacturer]
+%Mfg%=Mfg
+
+[Mfg]
+%NVIDIA&DEV_0020.DeviceDesc% = NV4,,  PCI\VEN_10DE&DEV_0020
+%NVIDIA&DEV_0028.DeviceDesc% = NV5,,  PCI\VEN_10DE&DEV_0028
+%NVIDIA&DEV_002C.DeviceDesc% = NVVANTA,,  PCI\VEN_10DE&DEV_002C
+%NVIDIA&DEV_002D.DeviceDesc% = NVM64,,	PCI\VEN_10DE&DEV_002D
+%NVIDIA&DEV_0029.DeviceDesc% = NVULTRA,,  PCI\VEN_10DE&DEV_0029
+%NVIDIA&DEV_00A0.DeviceDesc% = NVA0,,  PCI\VEN_10DE&DEV_00A0
+%NVIDIA&DEV_0100.DeviceDesc% = NV10,,  PCI\VEN_10DE&DEV_0100
+%NVIDIA&DEV_0101.DeviceDesc% = NV10DDR,,  PCI\VEN_10DE&DEV_0101
+%NVIDIA&DEV_0103.DeviceDesc% = NV10GL,,  PCI\VEN_10DE&DEV_0103
+%NVIDIA&DEV_0110.DeviceDesc% = NV11,,  PCI\VEN_10DE&DEV_0110
+%NVIDIA&DEV_0111.DeviceDesc% = NV11DDR,,  PCI\VEN_10DE&DEV_0111
+%NVIDIA&DEV_0113.DeviceDesc% = NV11GL,,  PCI\VEN_10DE&DEV_0113
+%NVIDIA&DEV_0150.DeviceDesc% = NV15,,  PCI\VEN_10DE&DEV_0150
+%NVIDIA&DEV_0151.DeviceDesc% = NV15DDR,,  PCI\VEN_10DE&DEV_0151
+%NVIDIA&DEV_0152.DeviceDesc% = NV15BR,,  PCI\VEN_10DE&DEV_0152
+%NVIDIA&DEV_0153.DeviceDesc% = NV15GL,,  PCI\VEN_10DE&DEV_0153
+%NVIDIA&DEV_0200.DeviceDesc% = NV20,,  PCI\VEN_10DE&DEV_0200
+%NVIDIA&DEV_0200.DeviceDesc% = NV20_1, PCI\VEN_10DE&DEV_0201
+%NVIDIA&DEV_0200.DeviceDesc% = NV20_2, PCI\VEN_10DE&DEV_0202
+%NVIDIA&DEV_0200.DeviceDesc% = NV20DCC,  PCI\VEN_10DE&DEV_0203
+
+[NV4]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV4.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV4Modes.AddReg, NV4.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV5]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV5.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV5Modes.AddReg, NV5.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NVVANTA]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NVVANTA.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV4Modes.AddReg, NVVANTA.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NVM64]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NVM64.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV5Modes.AddReg, NVM64.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NVULTRA]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NVULTRA.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV5Modes.AddReg, NVULTRA.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NVA0]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.AGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NVA0.DelReg
+AddReg=NV.AddReg, AGARTD.AddReg, NV5Modes.AddReg, NVA0.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV10]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV10.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV10.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV10DDR]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV10DDR.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV10DDR.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV10GL]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV10GL.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV10GL.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV11]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV11.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV11.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV11DDR]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV11DDR.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV11DDR.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV11GL]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV11GL.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV11GL.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV15]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV15.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV15.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV15DDR]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV15DDR.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV15DDR.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV15BR]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV15BR.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV15BR.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV15GL]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV15GL.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV15GL.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV20]
+CopyFiles=NV.Copy.Inf, NV.Copy.DriverFiles, NV.Copy.Hlp, NV.Copy.TweakFiles, NV.Copy.Hlp.Localized, NV.Copy.TweakFiles.Localized, NV.Copy.VGARTD
+DelReg=Prev.DelReg, Prev.DynReg, NV20.DelReg
+AddReg=NV.AddReg, VGARTD.AddReg, NV10Modes.AddReg, NV20.AddReg, NVTweak.AddReg
+DelFiles=NV.Delete.Inf, NV.Delete.DriverFiles, NV.Delete.Hlp, NV.Delete.TweakFiles
+UpdateIniFields=NV.Update.SystemINI
+
+[NV.Copy.Inf]
+nvagp.inf
+
+[NV.Copy.DriverFiles]
+nvdisp.drv
+nvmode.dll
+nvinst32.dll
+nvcore.vxd
+nvarch16.dll
+nvarch32.dll
+nvdd32.dll
+nvmini.vxd
+nvmini2.vxd
+nvopengl.dll
+
+[NV.Copy.Hlp]
+nvcpl.hlp
+
+[NV.Copy.TweakFiles]
+nvcpl.dll
+nvqtwk.dll
+nvdesk32.dll
+nvdmcpl.dll
+
+[NV.Copy.Hlp.Localized]
+nvcpar.hlp
+nvcpda.hlp
+nvcpde.hlp
+nvcpeng.hlp
+nvcpes.hlp
+nvcpfi.hlp
+nvcpfr.hlp
+nvcpit.hlp
+nvcpja.hlp
+nvcpko.hlp
+nvcpnl.hlp
+nvcpno.hlp
+nvcpptb.hlp
+nvcpru.hlp
+nvcpsv.hlp
+nvcpth.hlp
+nvcpzhc.hlp
+nvcpzht.hlp
+
+[NV.Copy.TweakFiles.Localized]
+nvrsar.dll
+nvrsda.dll
+nvrsde.dll
+nvrseng.dll
+nvrses.dll
+nvrsfi.dll
+nvrsfr.dll
+nvrsit.dll
+nvrsja.dll
+nvrsko.dll
+nvrsnl.dll
+nvrsno.dll
+nvrsptb.dll
+nvrsru.dll
+nvrssv.dll
+nvrszhc.dll
+nvrszht.dll
+
+[NV.Copy.VGARTD]
+vgartd.vxd
+
+[NV.Copy.AGARTD]
+agartd.vxd
+alipcimp.pci
+
+[NV.Delete.Inf]
+nv4agp.inf,,,1
+nv4disp.inf,,,1
+nvada.inf,,,1
+nvade.inf,,,1
+nvaen.inf,,,1
+nvaeng.inf,,,1
+nvaes.inf,,,1
+nvaesm.inf,,,1
+nvafi.inf,,,1
+nv4ada.inf,,,1
+nv4ade.inf,,,1
+nv4aen.inf,,,1
+nv4aeng.inf,,,1
+nv4aes.inf,,,1
+nv4aesm.inf,,,1
+nv4afi.inf,,,1
+
+[NV.Delete.DriverFiles]
+nv4disp.drv,,,1
+nv4dd32.dll,,,1
+nv4ogl.dll,,,1
+
+[NV.Delete.Hlp]
+nv4cpl.hlp,,,1
+
+[NV.Delete.TweakFiles]
+nv4cpl.dll,,,1
+nv4qtwk.dll,,,1
+
+[Prev.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,,InfPath
+HKR,,InfSection
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKR,NVIDIA\OpenGL,EnableFSAA
+HKR,NVIDIA\OpenGL,DefaultSwapInterval
+HKR,NVIDIA\OpenGL,TexMemorySpaceEnables
+HKR,NVIDIA\OpenGL,TexStagingBufferSize
+HKR,NVIDIA\OpenGL,TexStagingBufferMultSize
+HKR,NVIDIA\OpenGL,DLStagingBufferSizeWords
+HKLM,System\CurrentControlSet\Services\VxD\NVCORE
+HKLM,Software\Microsoft\Windows\CurrentVersion\OpenGLdrivers,RIVATNT
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\NV4Tweak
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\"NVIDIA RIVA TNT Family Windows 95/98 Display Drivers"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\"NVIDIA Compatible Windows 95/98 Display Drivers"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\"NVIDIA CPL Extension"
+HKLM,"Software\NVIDIA Corporation\RIVA TNT\OpenGL"
+HKLM,"Software\NVIDIA Corporation\RIVA TNT\NV4Tweak"
+HKLM,"Software\NVIDIA Corporation\RIVA TNT\System",Super7Compat
+HKLM,"Software\NVIDIA Corporation\Global\System",CustomizationCode
+
+[Prev.DynReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,NV4QuickTweak
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,NVQuickTweak
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,NvColorInit
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,Nv4ColorInit
+
+[NV4.DelReg]
+
+[NV5.DelReg]
+
+[NVVANTA.DelReg]
+
+[NVM64.DelReg]
+
+[NVULTRA.DelReg]
+
+[NVA0.DelReg]
+
+[NV10.DelReg]
+
+[NV10DDR.DelReg]
+
+[NV10GL.DelReg]
+
+[NV11.DelReg]
+
+[NV11DDR.DelReg]
+
+[NV11GL.DelReg]
+
+[NV15.DelReg]
+
+[NV15DDR.DelReg]
+
+[NV15BR.DelReg]
+
+[NV15GL.DelReg]
+
+[NV20.DelReg]
+
+[NV.AddReg]
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"16,800,600"
+HKR,DEFAULT,drv,,nvdisp.drv
+HKR,DEFAULT,drv2,,nvdisp.drv
+HKR,DEFAULT,minivdd,,"nvmini.vxd"
+HKR,DEFAULT,minivdd2,,"nvmini2.vxd"
+HKR,DEFAULT,vdd,,"*vdd"
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,"MODES\4\640,480",drv,,vga.drv
+HKR,"MODES\4\640,480",vdd,,*vdd
+HKLM,Software\Microsoft\Windows\CurrentVersion\OpenGLdrivers,RIVATNT,2,"nvopengl.dll"
+HKCU,"Control Panel\Keyboard","KeyboardSpeed",,"31"
+HKCU,"Control Panel\Keyboard","KeyboardDelay",,"0"
+
+[VGARTD.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\VGARTD,StaticVxD,2,"vgartd.vxd"
+
+[AGARTD.AddReg]
+HKLM,"System\CurrentControlSet\Services\VxD\AGARTD",StaticVxD,,"agartd.vxd"
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\162110B9",Instance,1,00,00,00,00
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\162110B9",Name,,"ALi M1621"
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\162110B9",Path,,"ALIPCIMP.PCI"
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\163110B9",Instance,1,00,00,00,00
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\163110B9",Name,,"ALi M1631"
+HKLM,"System\CurrentControlSet\Services\VxD\PCI\GARTMINIPORTS\163110B9",Path,,"ALIPCIMP.PCI"
+
+[NV4Modes.AddReg]
+HKR,"MODES\8\640,480",,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\640,480",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\800,600",,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\800,600",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\1024,768",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1024,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1152,864",,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,1024",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,1024",,,"60,70,72,75,85"
+HKR,"MODES\8\1600,1024",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\8\1600,1200",,,"60,70,72,75,85"
+HKR,"MODES\8\1600,1200",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1080",,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1080",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1200",,,"60,70,72,75"
+HKR,"MODES\8\1920,1200",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\1024,768"
+HKR,"MODES\32\1152,864",,,"60,70,72,75,85,100,120,140"
+HKR,"MODES\32\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140"
+HKR,"MODES\32\1280,1024",,,"60,70,72,75,85,100"
+HKR,"MODES\32\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\32\1600,1024",,,"60,70,72,75"
+HKR,"MODES\32\1600,1024",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\32\1600,1200",,,"60,70,72,75"
+HKR,"MODES\32\1600,1200",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\32\1920,1080",,,"60,70,72"
+HKR,"MODES\32\1920,1080",ModeRefreshRateList,,"60,70,72"
+HKR,"MODES\32\1920,1200",,,"60"
+HKR,"MODES\32\1920,1200",ModeRefreshRateList,,"60"
+
+[NV5Modes.AddReg]
+HKR,"MODES\8\640,480",,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\640,480",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\800,600",,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\800,600",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\1024,768",,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\8\1024,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\8\1152,864",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,720",,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,720",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,960",,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,960",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,1024",,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1600,900",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,900",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,1024",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1600,1024",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\8\1600,1200",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1600,1200",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1080",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1080",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1200",,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1200",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1440",,,"60,70,72,75"
+HKR,"MODES\8\1920,1440",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\8\2048,1536",,,"60"
+HKR,"MODES\8\2048,1536",ModeRefreshRateList,,"60"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,720"
+HKR,"MODES\16\1280,960"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,900"
+HKR,"MODES\16\1600,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\16\1920,1440"
+HKR,"MODES\16\2048,1536"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\1024,768",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\32\1024,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\32\1152,864",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,720",,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1280,720",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1280,960",,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1280,960",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1280,1024",,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1600,900",,,"60,70,72,75,85"
+HKR,"MODES\32\1600,900",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\32\1600,1024",,,"60,70,72,75,85"
+HKR,"MODES\32\1600,1024",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\32\1600,1200",,,"60,70,72,75,85"
+HKR,"MODES\32\1600,1200",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\32\1920,1080",,,"60,70,72,75"
+HKR,"MODES\32\1920,1080",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\32\1920,1200",,,"60,70"
+HKR,"MODES\32\1920,1200",ModeRefreshRateList,,"60,70"
+HKR,"MODES\32\1920,1440",,,"60"
+HKR,"MODES\32\1920,1440",ModeRefreshRateList,,"60"
+
+[NV10Modes.AddReg]
+HKR,"MODES\8\640,480",,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\640,480",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\848,480",,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\848,480",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\800,600",,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\800,600",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,170,200,240"
+HKR,"MODES\8\1024,768",,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\1024,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200,240"
+HKR,"MODES\8\1152,864",,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\8\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\8\1280,720",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,720",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,768",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,960",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,960",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,1024",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1360,768",,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1360,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170"
+HKR,"MODES\8\1600,900",,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1600,900",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150"
+HKR,"MODES\8\1600,1024",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,1200",,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1600,1200",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\8\1920,1080",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1080",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1200",,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1200",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\8\1920,1440",,,"60,70,72,75,85"
+HKR,"MODES\8\1920,1440",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\8\2048,1536",,,"60,70,72,75"
+HKR,"MODES\8\2048,1536",ModeRefreshRateList,,"60,70,72,75"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\848,480"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,720"
+HKR,"MODES\16\1280,768"
+HKR,"MODES\16\1280,960"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1360,768"
+HKR,"MODES\16\1600,900"
+HKR,"MODES\16\1600,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\16\1920,1440"
+HKR,"MODES\16\2048,1536"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\848,480"
+HKR,"MODES\32\1024,768",,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\32\1024,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,144,150,170,200"
+HKR,"MODES\32\1152,864",,,"60,70,72,75,85,100,120,140,150,170"
+HKR,"MODES\32\1152,864",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150,170"
+HKR,"MODES\32\1280,720",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,720",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,768",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,960",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,960",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,1024",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1280,1024",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1360,768",,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1360,768",ModeRefreshRateList,,"60,70,72,75,85,100,120,140,150"
+HKR,"MODES\32\1600,900",,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1600,900",ModeRefreshRateList,,"60,70,72,75,85,100,120"
+HKR,"MODES\32\1600,1024",,,"60,70,72,75,85,100"
+HKR,"MODES\32\1600,1024",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\32\1600,1200",,,"60,70,72,75,85,100"
+HKR,"MODES\32\1600,1200",ModeRefreshRateList,,"60,70,72,75,85,100"
+HKR,"MODES\32\1920,1080",,,"60,70,72,75,85"
+HKR,"MODES\32\1920,1080",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\32\1920,1200",,,"60,70,72,75,85"
+HKR,"MODES\32\1920,1200",ModeRefreshRateList,,"60,70,72,75,85"
+HKR,"MODES\32\1920,1440",,,"60,70,75"
+HKR,"MODES\32\1920,1440",ModeRefreshRateList,,"60,70,75"
+HKR,"MODES\32\2048,1536",,,"60"
+HKR,"MODES\32\2048,1536",ModeRefreshRateList,,"60"
+
+[NV4.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NV5.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NVA0.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NVVANTA.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NVM64.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NVULTRA.AddReg]
+HKR,NVIDIA\DirectDraw,OverlayMode,65537,1
+HKR,NVIDIA\DirectDraw,OverlayColorControlEnable,65537,1
+
+[NV10.AddReg]
+
+[NV10DDR.AddReg]
+
+[NV10GL.AddReg]
+
+[NV11.AddReg]
+
+[NV11DDR.AddReg]
+
+[NV11GL.AddReg]
+
+[NV15.AddReg]
+
+[NV15DDR.AddReg]
+
+[NV15BR.AddReg]
+
+[NV15GL.AddReg]
+
+[NV20.AddReg]
+
+[NV.Update.SystemINI]
+%10%\SYSTEM.INI,386Enh,EMMExclude,,C000-CFFF,11
+
+[NVTweak.AddReg]
+HKCR,CLSID\{67E0E3C0-3068-11D3-8BD1-00104B6F7516},,,"NVIDIA CPL Extension"
+HKCR,CLSID\{67E0E3C0-3068-11D3-8BD1-00104B6F7516}\InProcServer32,,,"%11%\nvcpl.dll"
+HKCR,CLSID\{67E0E3C0-3068-11D3-8BD1-00104B6F7516}\InProcServer32,ThreadingModel,,Apartment
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\NVIDIA CPL Extension",,,"{67E0E3C0-3068-11D3-8BD1-00104B6F7516}"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\NVIDIA
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\NVIDIA,DisplayName,,%UnInstDisplayName%
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\NVIDIA,UninstallString,,"rundll32.exe %11%\nvinst32.dll,NvUninstall9x %INFName%"
+HKLM,"Software\NVIDIA Corporation\Global\NVTweak",CoolBits,0x10001,3
+
+[Strings]
+Disk1Name="NVIDIA Compatible Display Driver Disk 1"
+Disk2Name="NVIDIA Compatible Display Driver Disk 2"
+Disk3Name="NVIDIA Compatible Display Driver Disk 3"
+Disk4Name="NVIDIA Compatible Display Driver Disk 4"
+Disk5Name="NVIDIA Compatible Display Driver Disk 5"
+Disk6Name="NVIDIA Compatible Display Driver Disk 6"
+Disk7Name="NVIDIA Compatible Display Driver Disk 7"
+INFName="nvagp.inf"
+NVIDIA&DEV_0020.DeviceDesc="NVIDIA RIVA TNT"
+NVIDIA&DEV_0028.DeviceDesc="NVIDIA RIVA TNT2/TNT2 Pro"
+NVIDIA&DEV_0029.DeviceDesc="NVIDIA RIVA TNT2 Ultra"
+NVIDIA&DEV_002C.DeviceDesc="NVIDIA Vanta/Vanta LT"
+NVIDIA&DEV_002D.DeviceDesc="NVIDIA RIVA TNT2 Model 64/Model 64 Pro"
+NVIDIA&DEV_00A0.DeviceDesc="NVIDIA Aladdin TNT2"
+NVIDIA&DEV_0100.DeviceDesc="NVIDIA GeForce 256"
+NVIDIA&DEV_0101.DeviceDesc="NVIDIA GeForce DDR"
+NVIDIA&DEV_0103.DeviceDesc="NVIDIA Quadro"
+NVIDIA&DEV_0110.DeviceDesc="NVIDIA GeForce2 MX/MX 400"
+NVIDIA&DEV_0111.DeviceDesc="NVIDIA GeForce2 MX 100/200"
+NVIDIA&DEV_0113.DeviceDesc="NVIDIA Quadro2 MXR"
+NVIDIA&DEV_0150.DeviceDesc="NVIDIA GeForce2 GTS/GeForce2 Pro"
+NVIDIA&DEV_0151.DeviceDesc="NVIDIA GeForce2 GTS"
+NVIDIA&DEV_0152.DeviceDesc="NVIDIA GeForce2 Ultra"
+NVIDIA&DEV_0153.DeviceDesc="NVIDIA Quadro2 Pro"
+NVIDIA&DEV_0200.DeviceDesc="NVIDIA GeForce3"
+Mfg="NVIDIA"
+UnInstDisplayName="NVIDIA Windows 95/98/ME Display Drivers"
+

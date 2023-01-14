@@ -1,0 +1,148 @@
+:Base pdeskeng.hlp>Main
+:Title Matrox PowerDesk
+
+1 Overview=IDH_OVERVIEW
+
+1 Using this guide=IDH_CONVENTIONS
+
+1 Matrox QuickDesk menu
+2	Overview=IDH_QUICKDESK_OVERVIEW
+2	Menu items
+3		Desktop Schemes=IDH_DESKTOP_SCHEMES
+3		Window Positions=IDH_WINDOW_POSITIONS
+3		Desktop Icons=IDH_ICON_POSITIONS
+3		Help=IDH_QUICKDESK_HELP
+3		Hot Keys=IDH_HOT_KEYS
+3		Start Matrox DeskNav=IDH_START_MATROX_DESKNAV
+3		Start Screen Saver=IDH_START_SCREEN_SAVER
+3		Display Properties=IDH_DISPLAY_PROPERTIES
+3		Close Matrox QuickDesk=IDH_CLOSE_MATROX_QUICKDESK
+
+1 Monitor Settings property sheet
+2	Overview=IDH_MONITOR
+2	Controls
+3		Current refresh=IDH_CURRENT_REFRESH
+3		Use customizations to Windows monitor settings=IDH_USE_CUSTOM_SETTINGS
+3		Adjust the current display mode=IDH_MODIFY_CURRENT_MODE
+3		Adjust a different display mode=IDH_MODIFY_OTHER_MODE
+3		Select customizations from the Matrox list=IDH_SELECT_PROFILE
+3		Load a customization file=IDH_LOAD_CUSTOMIZATIONS
+3		Save a customization file=IDH_SAVE_CUSTOMIZATIONS
+3		Delete all customizations=IDH_DELETE_CUSTOMIZATIONS
+3		Use simplified monitor controls=IDH_USE_SIMPLE_CONTROLS
+
+1 Color property sheet
+2	Overview=IDH_COLOR_OVERVIEW
+
+1 Options property sheet
+2	Overview=IDH_OPTIONS_OVERVIEW
+
+1 Information property sheet
+2	Overview=IDH_INFORMATION_OVERVIEW
+2	Items
+3		Graphics hardware=IDH_INFORMATION_HARDWARE
+3		Model=IDH_MODEL
+3		Graphics chip=IDH_GRAPHICS_CHIP
+3		Amount of memory=IDH_MEMORY
+3		Memory type=IDH_MEMORY_TYPE
+3		Maximum RAMDAC speed=IDH_RAMDAC_SPEED
+3		Serial number=IDH_SERIAL_NUMBER
+3		Extra hardware=IDH_EXTRA_HARDWARE
+3		Graphics software (versions)=IDH_INFORMATION_SOFTWARE
+3		Matrox driver package=IDH_MATROX_DRIVER_PACKAGE
+3		Display driver=IDH_DISPLAY_DRIVER
+3		Mini-VDD (Windows 95/98 only)=IDH_VDD
+3		Kernel driver (Windows 2000 only)=IDH_KERNEL_DRIVER
+3		DirectDraw/Direct3D driver=IDH_DIRECTDRAW_DIRECT3D_DRIVER
+3		OpenGL ICD=IDH_OPENGL_ICD
+3		TurboGL driver=IDH_TURBOGL_DRIVER
+3		Matrox PowerDesk=IDH_MATROX_POWERDESK
+3		Graphics BIOS=IDH_GRAPHICS_BIOS
+3		Microsoft DirectX=IDH_MICROSOFT_DIRECTX
+
+1 DualHead property sheet
+2	Overview=IDH_DUALHEAD_OVERVIEW
+2	Features
+3		DualHead Multi-Display
+4			Overview=IDH_DUALHEAD_MULTIDISPLAY
+4			Use DualHead Multi-Display=IDH_USE_DUALHEAD_MULTIDISPLAY
+4			DualHead Multi-Display -- Limitations=IDH_DUALHEAD_MULTIDISPLAY_LIMITATIONS
+4			DualHead Multi-Display mode (Windows 2000 only)=IDH_DUALHEAD_MULTIDISPLAY_MODE
+3		DualHead Clone
+4			Overview=IDH_DUALHEAD_CLONE
+4			Allow scaling=IDH_ALLOW_SCALING
+4			Quality/Performance=IDH_QUALITY_PERFORMANCE
+3		DualHead Zoom
+4			Overview=IDH_DUALHEAD_ZOOM
+4			Follow mouse pointer=IDH_FOLLOW_MOUSE_POINTER
+4			Center on mouse pointer=IDH_CENTER_ON_MOUSE_POINTER
+4			Smooth zoomed area=IDH_SMOOTH_ZOOMED_AREA
+3		DualHead DVDMax
+4			Overview=IDH_DUALHEAD_DVDMAX
+4			Use DualHead DVDMax=IDH_USE_DUALHEAD_DVDMAX
+4			Aspect ratio=IDH_ASPECT_RATIO
+4			Always scale to full screen=IDH_SCALE_FULL_SCREEN
+4			Preserve aspect ratio=IDH_PRESERVE_ASPECT_RATIO
+4			TV aspect ratio=IDH_TV_ASPECT_RATIO
+4			Aspect ratio detection method=IDH_ASPECT_RATIO_DETECTION
+4			Advanced settings=IDH_DVDMAX_ADVANCED_SETTINGS
+4			Preserve source cropping=IDH_PRESERVE_SOURCE_CROPPING
+4			Scale only on page flip=IDH_SCALE_ONLY_ON_PAGE_FLIP
+4			Use field-based scaling=IDH_USE_FIELD_BASED_SCALING
+2	Advanced Settings
+3		Secondary Monitor Limits
+4			Overview=IDH_DUALHEAD_SECONDARY_MONITOR_LIMITS
+3		Display Capabilities
+4			Overview=IDH_DUALHEAD_DISPLAY_CAPABILITIES
+4			Maximum graphics memory for secondary display=IDH_MAXIMUM_GRAPHICS_MEMORY
+4			Supported display modes=IDH_SUPPORTED_DISPLAY_MODES
+3		AGP Memory
+4			Overview=IDH_DUALHEAD_AGP_MEMORY
+2	TV Output
+3		Overview=IDH_TV_SETTINGS
+3		TV Adjustments
+4			Overview=IDH_DUALHEAD_TV_ADJUSTMENTS
+2	Select Secondary Output
+3		Overview=IDH_DUALHEAD_SELECT_SECONDARY_OUTPUT
+
+1 TV Output property sheet
+2	Overview=IDH_TV_OUTPUT
+
+1 Matrox DeskNav
+2	Overview=IDH_DESKNAV_OVERVIEW
+2	Menus / menu items
+3		Always on Top=IDH_ALWAYS_ON_TOP
+3		Show Menu=IDH_SHOW_MENU
+3		Show Toolbar=IDH_SHOW_TOOLBAR
+3		Show Preview=IDH_SHOW_PREVIEW_AREA
+3		Update Preview=IDH_DESKNAV_PREVIEW_REFRESH
+3		Proportional Sizing=IDH_PROPORTIONAL_SIZING
+3		Preferences=IDH_DESKNAV_PREFERENCES
+3		Window=IDH_DESKNAV_WINDOW
+2	Toolbar option buttons
+3		Zoom In=IDH_DESKNAV_ZOOMIN
+3		Zoom Out=IDH_DESKNAV_ZOOMOUT
+3		CenterWINDOW=IDH_DESKNAV_CENTERWINDOW
+2	Preferences
+3		Snap to corner=IDH_SNAP_TO_CORNER
+3		Keep DeskNav in mouse-pointer display=IDH_MOUSE_POINTER_DISPLAY
+3		Center mouse pointer when changing view area=IDH_CENTER_MOUSE_POINTER
+3		Proportional sizing=IDH_PROPORTIONAL_SIZING_PREFERENCE
+3		Show menu=IDH_SHOW_MENU
+3		Show toolbar=IDH_SHOW_TOOLBAR
+3		Show preview=IDH_SHOW_PREVIEW_AREA
+3		Show desktop snapshot=IDH_SHOW_DESKTOP_SNAPSHOT
+3		Hide DeskNav in desktop snapshot=IDH_HIDE_DESKNAV_SNAPSHOT
+3		Automatically update desktop snapshot=IDH_AUTOMATICALLY_UPDATE
+
+1 More information
+2	More information=IDH_MORE_INFORMATION
+2	Terms
+3		Color palette=IDH_COLOR_PALETTE
+3		Desktop area=IDH_DESKTOP_AREA
+3		Display area=IDH_DISPLAY_AREA
+3		Display mode=IDH_DISPLAY_MODE
+3		Display resolution=IDH_DISPLAY_RESOLUTION
+3		Multi-display desktop=IDH_MULTI_DISPLAY_DESKTOP
+3		Pixel=IDH_PIXEL
+3		Refresh rate=IDH_TERM_REFRESH_RATE

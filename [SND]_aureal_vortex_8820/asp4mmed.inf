@@ -1,0 +1,990 @@
+;*---------------------------------------------------------------------------
+;*
+;* $Workfile: asp4mmed.inf $
+;*
+;*---------------------------------------------------------------------------
+;*
+;* $Revision: 209 $  $Date: 9/14/99 7:06p $  
+;*				
+;*---------------------------------------------------------------------------
+;*
+;* Vortex inf file for multimedia support
+;*
+;*---------------------------------------------------------------------------
+;* 
+;* Copyright (c) 1997 Aureal Semiconductor, Inc. - All rights reserved. 
+;*
+;* This is UNPUBLISHED PROPRIETARY SOURCE CODE of Aureal Semiconductor;
+;* the contents of this file may not be disclosed to third parties, copied or
+;* duplicated in any form, in whole or in part, without the prior written
+;* permission of Aureal Semiconductor.
+;*
+;* RESTRICTED RIGHTS LEGEND:
+;* Use, duplication or disclosure by the Government is subject to restrictions
+;* as set forth in subdivision (c)(1)(ii) of the Rights in Technical Data
+;* and Computer Software clause at DFARS 252.227-7013, and/or in similar or
+;* successor clauses in the FAR, DOD or NASA FAR Supplement. Unpublished  -
+;* rights reserved under the Copyright Laws of the United States.
+;*
+;*---------------------------------------------------------------------------
+;*$NoKeywords: $
+
+[Version]
+LayoutFile=layout.inf
+Signature="$CHICAGO$"
+Class=Media
+Provider=%Mfg%
+Verinfo=%ProductVersion%
+
+[ControlFlags]
+ExcludeFromSelect=VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK
+ExcludeFromSelect=VIRTUAL\PCI_VEN_12EB&DEV_0001_MPU401
+ExcludeFromSelect=VIRTUAL\PCI_VEN_12EB&DEV_0001_SBFMAUDIO
+ExcludeFromSelect=MODEMWAVE\VORTEX_56K-V90_VOICE_MODEM
+ExcludeFromSelect=MODEMWAVE\VORTEX_SOFT_MODEM
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll				    
+
+[Manufacturer]
+%Mfg%=AurealSemiconductor
+
+[AurealSemiconductor]
+%MF\PCI_VEN_12EB&DEV_0001_AUDIO.DeviceDesc% = AUDIO_DEVICE, MF\PCI_VEN_12EB&DEV_0001_AUDIO
+%VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK.DeviceDesc% = JOYSTICK_DEVICE, VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK
+%VIRTUAL\PCI_VEN_12EB&DEV_0001_MPU401.DeviceDesc% = MPU401_DEVICE, VIRTUAL\PCI_VEN_12EB&DEV_0001_MPU401
+%VIRTUAL\PCI_VEN_12EB&DEV_0001_SBFMAUDIO.DeviceDesc% = SBFMAUDIO_DEVICE, VIRTUAL\PCI_VEN_12EB&DEV_0001_SBFMAUDIO
+%Rockwell.DeviceDesc%  = ROCKWELL,MODEMWAVE\VORTEX_56K_VOICE_MODEM
+%ASMK90.DeviceDesc%=ASMK90, MODEMWAVE\VORTEX_56K-V90_VOICE_MODEM
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[ASMK90]
+AddReg=MSSERWAVE.AddReg, ASMK90.AddReg
+CopyFiles=MSSERWAVE.CopyList
+
+[ASMK90.AddReg]
+HKR,Drivers\wave\serwvdrv.drv,Description,,%ASMK90.DeviceDesc%
+HKR,Config,XformModule,  , "umdmxfrm.dll"
+HKR,Config,XformID,     1, 04, 00, 00, 00
+HKR,Config,WaveDevices,  1, 01, 00
+
+[MSSERWAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\wave,,,
+HKR,,Driver,,serwave.vxd
+HKR,Drivers\wave\serwvdrv.drv,Driver,,serwvdrv.drv
+HKR,Drivers,SubClasses,,"wave"
+
+[MSSERWAVE.CopyList]
+serwave.vxd,,
+serwvdrv.drv,,
+vmodctl.dll,,
+
+;================================================================;
+;=== Vortex PCI Audio                                         ===;
+;================================================================;
+
+[AUDIO_DEVICE]
+AddReg=AspenAudio.Addreg,A3D.Addreg,AspenOverides.Addreg,AspenLocalization.Addreg,AspenCustomization.Addreg
+CopyFiles=AspenAudio.CopyList,AspenDOSAudio.CopyList,AspenAppsAudio.CopyList
+
+[JOYSTICK_DEVICE]
+AddReg=AspenJoystick.Addreg
+CopyFiles=AspenJoystick.CopyList
+
+[MPU401_DEVICE]
+AddReg=AspenMpu401.Addreg
+CopyFiles=AspenMpu401.CopyList
+
+[SBFMAUDIO_DEVICE]
+AddReg=AspenSBFMAudio.Addreg
+CopyFiles=AspenSBFMAudio.CopyList
+
+[ROCKWELL]
+AddReg=MSSERWAVE.AddReg, ROCKWELL.AddReg
+CopyFiles=MSSERWAVE.CopyList
+
+[AspenAudio.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,asp4core.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers,SubClasses,,"aux,midi,mixer,wave"
+HKR,Drivers\aux,,,
+HKR,Drivers\midi,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\wave,,,
+; aux driver
+HKR,Drivers\aux\asp4mix.drv,Driver,,asp4mix.drv
+HKR,Drivers\aux\asp4mix.drv,Description,,%PCI_VEN_12EB&DEV_0001_AUX.DeviceDesc%
+HKR,Drivers\aux\asp4mix.drv,Driver,,asp4mix.drv
+; mixer driver
+HKR,Drivers\mixer\asp4mix.drv,Driver,,asp4mix.drv
+HKR,Drivers\mixer\asp4mix.drv,Description,,%PCI_VEN_12EB&DEV_0001_MIX.DeviceDesc%
+HKR,Drivers\mixer\asp4mix.drv,Driver,,asp4mix.drv
+; wave driver
+HKR,,EnumPropPages,,"wavedrv.drv,DrvEnumPropPages"
+HKR,Drivers\wave\asp4wave.drv,Driver,,asp4wave.drv
+HKR,Drivers\wave\asp4wave.drv,Description,,%PCI_VEN_12EB&DEV_0001_WAVE.DeviceDesc%
+HKR,Drivers\wave\asp4wave.drv,Driver,,asp4wave.drv
+; wave table driver
+HKR,Drivers\midi\asp4wt.drv,Driver,,asp4wt.drv
+HKR,Drivers\midi\asp4wt.drv,Description,,%PCI_VEN_12EB&DEV_0001_WT.DeviceDesc%
+HKR,Drivers\midi\asp4wt.drv,Driver,,asp4wt.drv
+; configuration entries
+HKR,Config\Platform,ClientDrivers,,"asp4appy.vxd asp4wt.vxd asp4sbfm.vxd asp4mix.vxd asp4wave.vxd"
+HKR,Config\Platform,PC98ClientDrivers,,"asp4appy.vxd asp4wt.vxd asp4mix.vxd asp4wave.vxd"
+HKR,Config\SBFM,ClientDrivers,,"asp4fm.vxd"
+HKR,Config\Platform,DosActivator,,"asp4dos.com"
+HKR,Config\SBFM,DosActivator,,"asp4dos.com"
+; install optional components
+HKLM,%KEY_OPT_COMPONENTS%\Vol,,,
+HKLM,%KEY_OPT_COMPONENTS%\ACM,,,
+HKLM,%KEY_OPT_COMPONENTS%\Rec,,,
+HKLM,%KEY_OPT_COMPONENTS%\MPlay,,,
+HKLM,%KEY_OPT_COMPONENTS%\CDPlayer,,,
+HKLM,%KEY_OPT_COMPONENTS%\Clips,,,
+
+[AspenOverides.Addreg]
+; virtual devices
+;HKR,Config,DisableJoystick,1,1
+;HKR,Config,DisableMPU401,1,1
+;HKR,Config,DisableDOSModemPort,1,1
+;HKR,Config,DisableSBFM,1,1
+;HKR,Config,DisableRealModeLegacySBFM,1,1
+HKR,Config,DisableBusDetection,1,1
+; a3d
+;HKR,Config,EnableA3DReserve,1,1
+;HKR,Config,NumHost3DBuffers,1,6
+
+[A3D.Addreg]
+HKCR,A3d,,,"A3d Object"
+HKCR,A3d\CLSID,,,{d8f1eee0-f634-11cf-8700-00a0245d918b}
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b},,,"A3d Object"
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32,,,a3d.dll
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32,"ThreadingModel",,"Apartment"
+
+[AspenJoystick.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,,,
+HKR,Drivers\joystick\msjstick.drv,Description,,%VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+HKLM,%KEY_OEM_JOY%\"Vortex Gameport Interface",OEMName,,%VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK.DeviceDesc%
+HKLM,%KEY_OEM_JOY%\"Vortex Gameport Interface",OEMCallout,,asp4joys.vxd
+HKLM,%KEY_OEM_JOY%\"Vortex Gameport Interface",OEMData,1,0,0,0,4,4,0,0,0
+
+[AspenMpu401.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,asp4midi.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers\midi,,,
+HKR,Drivers\midi\asp4midi.drv,Driver,,asp4midi.drv
+HKR,Drivers\midi\asp4midi.drv,Description,,%VIRTUAL\PCI_VEN_12EB&DEV_0001_MPU401.DeviceDesc%
+HKR,Drivers\midi\asp4midi.drv,Driver,,asp4midi.drv
+
+[AspenSBFMAudio.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,asp4sbfm.vxd
+
+[ROCKWELL.AddReg]
+HKR,Drivers\wave\serwvdrv.drv,Description,,%Rockwell.DeviceDesc%
+HKR,Config,XformModule,  , "umdmxfrm.dll"
+HKR,Config,XformID,     1, 01, 00, 00, 00
+
+[MSSERWAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\wave,,,
+HKR,,Driver,,serwave.vxd
+HKR,Drivers\wave\serwvdrv.drv,Driver,,serwvdrv.drv
+HKR,Drivers,SubClasses,,"wave"
+
+[AspenLocalization.Addreg]
+;Vortex driver name strings
+HKLM,%DriverNames%,"WaveOutDriverName",0x00020000,%StrWaveOutDriverName%
+HKLM,%DriverNames%,"WaveInDriverName",0x00020000,%StrWaveInDriverName%
+HKLM,%DriverNames%,"MixerDriverName",0x00020000,%StrMixerDriverName%
+HKLM,%DriverNames%,"AuxDriverName",0x00020000,%StrAuxDriverName%
+HKLM,%DriverNames%,"WavetableDriverName",0x00020000,%StrWavetableDriverName%
+HKLM,%DriverNames%,"MidiDriverName",0x00020000,%StrMidiDriverName%
+
+;Message box strings
+HKLM,%MsgBoxStr%,"CapAurealVortex",0x00020000,%StrCapAurealVortex%
+HKLM,%MsgBoxStr%,"CapAurealA3D",0x00020000,%StrCapAurealA3D%
+HKLM,%MsgBoxStr%,"CapPCIError",0x00020000,%StrCapPCIError%
+HKLM,%MsgBoxStr%,"CapAurealWt",0x00020000,%StrCapAurealWt%
+HKLM,%MsgBoxStr%,"CapAurealTone Control",0x00020000,%StrCapAurealToneControl%
+HKLM,%MsgBoxStr%,"CapAurealModem",0x00020000,%StrCapAurealModem%
+HKLM,%MsgBoxStr%,"MsgPromptInstallDX5",0x00020000,%StrMsgPromptInstallDX5%
+HKLM,%MsgBoxStr%,"MsgWarningInstallDX5",0x00020000,%StrMsgWarningInstallDX5%
+HKLM,%MsgBoxStr%,"MsgWarningPrimaryPCI",0x00020000,%StrMsgWarningPrimaryPCI%
+HKLM,%MsgBoxStr%,"MsgWarningPrimaryPCI2",0x00020000,%StrMsgWarningPrimaryPCI2%
+HKLM,%MsgBoxStr%,"MsgWarningDrvDisabled",0x00020000,%StrMsgWarningDrvDisabled%
+HKLM,%MsgBoxStr%,"MsgWarningMMXCPU",0x00020000,%StrMsgWarningMMXCPU%
+HKLM,%MsgBoxStr%,"MsgWarningPCIError",0x00020000,%StrMsgWarningPCIError%
+HKLM,%MsgBoxStr%,"MsgWarningEnableWtEffects",0x00020000,%StrMsgWarningEnableWtEffects%
+HKLM,%MsgBoxStr%,"MsgWarningModemDeviceInUse",0x00020000,%StrMsgWarningModemDeviceInUse%
+HKLM,%MsgBoxStr%,"MsgWarningEnableToneControl",0x00020000,%StrMsgWarningEnableToneControl%
+
+;Mixer source line strings
+HKLM,%MixerStr%,"MixSrcWtShortName",0x00020000,%MixSrcWtShortName%
+HKLM,%MixerStr%,"MixSrcWtName",0x00020000,%MixSrcWtName%
+HKLM,%MixerStr%,"MixSrcWaveShortName",0x00020000,%MixSrcWaveShortName%
+HKLM,%MixerStr%,"MixSrcWaveName",0x00020000,%MixSrcWaveName%
+HKLM,%MixerStr%,"MixSrcSpdifShortName",0x00020000,%MixSrcWaveName%
+HKLM,%MixerStr%,"MixSrcSpdisName",0x00020000,%MixSrcSpdisName%
+HKLM,%MixerStr%,"MixSrcBeepShortName",0x00020000,%MixSrcBeepShortName%			
+HKLM,%MixerStr%,"MixSrcBeepName",0x00020000,%MixSrcBeepName%
+HKLM,%MixerStr%,"MixSrcPhoneShortName",0x00020000,%MixSrcPhoneShortName%
+HKLM,%MixerStr%,"MixSrcPhoneName",0x00020000,%MixSrcPhoneName%
+HKLM,%MixerStr%,"MixSrcMicShortName",0x00020000,%MixSrcMicShortName%
+HKLM,%MixerStr%,"MixSrcMicName",0x00020000,%MixSrcMicName%
+HKLM,%MixerStr%,"MixSrcLineInShortName",0x00020000,%MixSrcLineInShortName%
+HKLM,%MixerStr%,"MixSrcLineInName",0x00020000,%MixSrcLineInName%
+HKLM,%MixerStr%,"MixSrcCDShortName",0x00020000,%MixSrcCDShortName%
+HKLM,%MixerStr%,"MixSrcCDName",0x00020000,%MixSrcCDName%
+HKLM,%MixerStr%,"MixSrcVideoShortName",0x00020000,%MixSrcVideoShortName%
+HKLM,%MixerStr%,"MixSrcVideoName",0x00020000,%MixSrcVideoName%
+HKLM,%MixerStr%,"MixSrcAuxShortName",0x00020000,%MixSrcAuxShortName%
+HKLM,%MixerStr%,"MixSrcAuxName",0x00020000,%MixSrcAuxName%
+HKLM,%MixerStr%,"MixSrcStereoMixShortName",0x00020000,%MixSrcStereoMixShortName%
+HKLM,%MixerStr%,"MixSrcStereoMixName",0x00020000,%MixSrcStereoMixName%
+HKLM,%MixerStr%,"MixSrcMonoMixShortName",0x00020000,%MixSrcMonoMixShortName%
+HKLM,%MixerStr%,"MixSrcMonoMixName",0x00020000,%MixSrcMonoMixName%
+
+HKLM,%MixerStr%,"MixSrcMonoOutShortName",0x00020000,%MixSrcMonoOutShortName%
+HKLM,%MixerStr%,"MixSrcMonoOutName",0x00020000,%MixSrcMonoOutName%
+HKLM,%MixerStr%,"MixSrcHpOutShortName",0x00020000,%MixSrcHpOutShortName%
+HKLM,%MixerStr%,"MixSrcHpOutName",0x00020000,%MixSrcHpOutName%
+HKLM,%MixerStr%,"MixSrcSpdifOutShortName",0x00020000,%MixSrcSpdifOutShortName%
+HKLM,%MixerStr%,"MixSrcSpdifOutName",0x00020000,%MixSrcSpdifOutName%
+HKLM,%MixerStr%,"MixSrc3DCenterShortName",0x00020000,%MixSrc3DCenterShortName%
+HKLM,%MixerStr%,"MixSrc3DCenterName",0x00020000,%MixSrc3DCenterName%
+HKLM,%MixerStr%,"MixSrc3DDepthShortName",0x00020000,%MixSrc3DDepthShortName%
+HKLM,%MixerStr%,"MixSrc3DDepthName",0x00020000,%MixSrc3DDepthName%
+HKLM,%MixerStr%,"MixSrcFRSpkrShortName",0x00020000,%MixSrcFRSpkrShortName%
+HKLM,%MixerStr%,"MixSrcFRSpkrName",0x00020000,%MixSrcFRSpkrName%
+
+;Mixer destination line strings
+HKLM,%MixerStr%,"MixDestLineOutShortName",0x00020000,%MixDestLineOutShortName%
+HKLM,%MixerStr%,"MixDestLineOutName",0x00020000,%MixDestLineOutName%
+HKLM,%MixerStr%,"MixDestWaveInShortName",0x00020000,%MixDestWaveInShortName%
+HKLM,%MixerStr%,"MixDestWaveInName",0x00020000,%MixDestWaveInName%
+HKLM,%MixerStr%,"MixDestVoiceInShortName",0x00020000,%MixDestVoiceInShortName%
+HKLM,%MixerStr%,"MixDestVoiceInName",0x00020000,%MixDestVoiceInName%
+HKLM,%MixerStr%,"MixDestAC97CtrlsOutShortName",0x00020000,%MixDestAC97CtrlsOutShortName%
+HKLM,%MixerStr%,"MixDestLineAC97CtrlsOutName",0x00020000,%MixDestLineAC97CtrlsOutName%
+
+;Mixer control strings
+HKLM,%MixerStr%,"MixMixerLineOutShortName",0x00020000,%MixMixerLineOutShortName%
+HKLM,%MixerStr%,"MixMixerLineOutName",0x00020000,%MixMixerLineOutName%
+HKLM,%MixerStr%,"MixMuxWaveInShortName",0x00020000,%MixMuxWaveInShortName%
+HKLM,%MixerStr%,"MixMuxWaveInName",0x00020000,%MixMuxWaveInName%
+HKLM,%MixerStr%,"MixMuxVoiceInShortName",0x00020000,%MixMuxVoiceInShortName%
+HKLM,%MixerStr%,"MixMuxVoiceInName",0x00020000,%MixMuxVoiceInName%
+
+HKLM,%MixerStr%,"MixVolLWtShortName",0x00020000,%MixVolLWtShortName%
+HKLM,%MixerStr%,"MixVolLWtName",0x00020000,%MixVolLWtName%
+HKLM,%MixerStr%,"MixVolLWaveShortName",0x00020000,%MixVolLWaveShortName%
+HKLM,%MixerStr%,"MixVolLWaveName",0x00020000,%MixVolLWaveName%
+HKLM,%MixerStr%,"MixVolLSpdifShortName",0x00020000,%MixVolLSpdifShortName%
+HKLM,%MixerStr%,"MixVolLSpdifName",0x00020000,%MixVolLSpdifName%
+HKLM,%MixerStr%,"MixVolLBeepShortName",0x00020000,%MixVolLBeepShortName%
+HKLM,%MixerStr%,"MixVolLBeepName",0x00020000,%MixVolLBeepName%
+HKLM,%MixerStr%,"MixVolLPhoneShortName",0x00020000,%MixVolLPhoneShortName%
+HKLM,%MixerStr%,"MixVolLPhoneName",0x00020000,%MixVolLPhoneName%
+HKLM,%MixerStr%,"MixVolLMicShortName",0x00020000,%MixVolLMicShortName%
+HKLM,%MixerStr%,"MixVolLMicName",0x00020000,%MixVolLMicName%
+HKLM,%MixerStr%,"MixVolLLineInShortName",0x00020000,%MixVolLLineInShortName%
+HKLM,%MixerStr%,"MixVolLLineInName",0x00020000,%MixVolLLineInName%
+HKLM,%MixerStr%,"MixVolLCDShortName",0x00020000,%MixVolLCDShortName%
+HKLM,%MixerStr%,"MixVolLCDName",0x00020000,%MixVolLCDName%
+HKLM,%MixerStr%,"MixVolLVideoShortName",0x00020000,%MixVolLVideoShortName%
+HKLM,%MixerStr%,"MixVolLVideoName",0x00020000,%MixVolLVideoName%
+HKLM,%MixerStr%,"MixVolLAuxShortName",0x00020000,%MixVolLAuxShortName%
+HKLM,%MixerStr%,"MixVolLAuxName",0x00020000,%MixVolLAuxName%
+
+HKLM,%MixerStr%,"MixVolLineOutMasterShortName",0x00020000,%MixVolLineOutMasterShortName%
+HKLM,%MixerStr%,"MixVolLineOutMasterName",0x00020000,%MixVolLineOutMasterName%
+HKLM,%MixerStr%,"MixVolLineOutHpShortName",0x00020000,%MixVolLineOutHpShortName%
+HKLM,%MixerStr%,"MixVolLineOutHpName",0x00020000,%MixVolLineOutHpName%
+HKLM,%MixerStr%,"MixVolLineOutMonoShortName",0x00020000,%MixVolLineOutMonoShortName%
+HKLM,%MixerStr%,"MixVolLineOutMonoName",0x00020000,%MixVolLineOutMonoName%
+HKLM,%MixerStr%,"MixVolLineOutSpdifShortName",0x00020000,%MixVolLineOutSpdifShortName%
+HKLM,%MixerStr%,"MixVolLineOutSpdifName",0x00020000,%MixVolLineOutSpdifName%
+
+HKLM,%MixerStr%,"MixVolWPhoneShortName",0x00020000,%MixVolWPhoneShortName%
+HKLM,%MixerStr%,"MixVolWPhoneName",0x00020000,%MixVolWPhoneName%
+HKLM,%MixerStr%,"MixVolWMicShortName",0x00020000,%MixVolWMicShortName%
+HKLM,%MixerStr%,"MixVolWMicName",0x00020000,%MixVolWMicName%
+HKLM,%MixerStr%,"MixVolWLineInShortName",0x00020000,%MixVolWLineInShortName%
+HKLM,%MixerStr%,"MixVolWLineInName",0x00020000,%MixVolWLineInName%
+HKLM,%MixerStr%,"MixVolWCDShortName",0x00020000,%MixVolWCDShortName%
+HKLM,%MixerStr%,"MixVolWCDName",0x00020000,%MixVolWCDName%
+HKLM,%MixerStr%,"MixVolWVideoShortName",0x00020000,%MixVolWVideoShortName%
+HKLM,%MixerStr%,"MixVolWVideoName",0x00020000,%MixVolWVideoName%
+HKLM,%MixerStr%,"MixVolWAuxShortName",0x00020000,%MixVolWAuxShortName%
+HKLM,%MixerStr%,"MixVolWAuxName",0x00020000,%MixVolWAuxName%
+HKLM,%MixerStr%,"MixVolWStereoMixShortName",0x00020000,%MixVolWStereoMixShortName%
+HKLM,%MixerStr%,"MixVolWStereoMixName",0x00020000,%MixVolWStereoMixName%
+HKLM,%MixerStr%,"MixVolWMonoMixShortName",0x00020000,%MixVolWMonoMixShortName%
+HKLM,%MixerStr%,"MixVolWMonoMixName",0x00020000,%MixVolWMonoMixName%
+
+HKLM,%MixerStr%,"MixVolVMicShortName",0x00020000,%MixVolVMicShortName%
+HKLM,%MixerStr%,"MixVolVMicName",0x00020000,%MixVolVMicName%
+HKLM,%MixerStr%,"MixVolVLineInShortName",0x00020000,%MixVolVLineInShortName%
+HKLM,%MixerStr%,"MixVolVLineInName",0x00020000,%MixVolVLineInName%
+
+HKLM,%MixerStr%,"MixMuteLWtShortName",0x00020000,%MixMuteLWtShortName%
+HKLM,%MixerStr%,"MixMuteLWtName",0x00020000,%MixMuteLWtName%
+HKLM,%MixerStr%,"MixMuteLWaveShortName",0x00020000,%MixMuteLWaveShortName%
+HKLM,%MixerStr%,"MixMuteLWaveName",0x00020000,%MixMuteLWaveName%
+HKLM,%MixerStr%,"MixMuteLSpdifShortName",0x00020000,%MixMuteLSpdifShortName%
+HKLM,%MixerStr%,"MixMuteLSpdifName",0x00020000,%MixMuteLSpdifName%
+HKLM,%MixerStr%,"MixMuteLBeepShortName",0x00020000,%MixMuteLBeepShortName%
+HKLM,%MixerStr%,"MixMuteLBeepName",0x00020000,%MixMuteLBeepName%
+HKLM,%MixerStr%,"MixMuteLPhoneShortName",0x00020000,%MixMuteLPhoneShortName%
+HKLM,%MixerStr%,"MixMuteLPhoneName",0x00020000,%MixMuteLPhoneName%
+HKLM,%MixerStr%,"MixMuteLMicShortName",0x00020000,%MixMuteLMicShortName%
+HKLM,%MixerStr%,"MixMuteLMicName",0x00020000,%MixMuteLMicName%
+HKLM,%MixerStr%,"MixMuteLLineInShortName",0x00020000,%MixMuteLLineInShortName%
+HKLM,%MixerStr%,"MixMuteLLineInName",0x00020000,%MixMuteLLineInName%
+HKLM,%MixerStr%,"MixMuteLCDShortName",0x00020000,%MixMuteLCDShortName%
+HKLM,%MixerStr%,"MixMuteLCDName",0x00020000,%MixMuteLCDName%
+HKLM,%MixerStr%,"MixMuteLVideoShortName",0x00020000,%MixMuteLVideoShortName%
+HKLM,%MixerStr%,"MixMuteLVideoName",0x00020000,%MixMuteLVideoName%
+HKLM,%MixerStr%,"MixMuteLAuxShortName",0x00020000,%MixMuteLAuxShortName%
+HKLM,%MixerStr%,"MixMuteLAuxName",0x00020000,%MixMuteLAuxName%
+
+HKLM,%MixerStr%,"MixMuteLineOutMasterShortName",0x00020000,%MixMuteLineOutMasterShortName%
+HKLM,%MixerStr%,"MixMuteLineOutMasterName",0x00020000,%MixMuteLineOutMasterName%
+HKLM,%MixerStr%,"MixMuteLineOutHpShortName",0x00020000,%MixMuteLineOutHpShortName%
+HKLM,%MixerStr%,"MixMuteLineOutHpName",0x00020000,%MixMuteLineOutHpName%
+HKLM,%MixerStr%,"MixMuteLineOutMonoShortName",0x00020000,%MixMuteLineOutMonoShortName%
+HKLM,%MixerStr%,"MixMuteLineOutMonoName",0x00020000,%MixMuteLineOutMonoName%
+HKLM,%MixerStr%,"MixMuteLineOutSpdifShortName",0x00020000,%MixMuteLineOutSpdifShortName%
+HKLM,%MixerStr%,"MixMuteLineoutSpdifName",0x00020000,%MixMuteLineoutSpdifName%
+
+HKLM,%MixerStr%,"MixSelectMicMixShortName",0x00020000,%MixSelectMicMixShortName%
+HKLM,%MixerStr%,"MixSelectMicMixName",0x00020000,%MixSelectMicMixName%
+
+HKLM,%MixerStr%,"MixOnOff3DShortName",0x00020000,%MixOnOff3DShortName%
+HKLM,%MixerStr%,"MixOnOff3DName",0x00020000,%MixOnOff3DName%
+HKLM,%MixerStr%,"MixOnOffLoudnessShortName",0x00020000,%MixOnOffLoudnessShortName%
+HKLM,%MixerStr%,"MixOnOffLoudnessName",0x00020000,%MixOnOffLoudnessName%
+HKLM,%MixerStr%,"MixOnOffPopShortName",0x00020000,%MixOnOffPopShortName%
+HKLM,%MixerStr%,"MixOnOffPopName",0x00020000,%MixOnOffPopName%
+HKLM,%MixerStr%,"MixOnOffSimStereoShortName",0x00020000,%MixOnOffSimStereoShortName%
+HKLM,%MixerStr%,"MixOnOffSimStereoName",0x00020000,%MixOnOffSimStereoName%
+
+HKLM,%MixerStr%,"Mix3DCenterShortName",0x00020000,%Mix3DCenterShortName%
+HKLM,%MixerStr%,"Mix3DCenterName",0x00020000,%Mix3DCenterName%
+HKLM,%MixerStr%,"Mix3DDepthShortName",0x00020000,%Mix3DDepthShortName%
+HKLM,%MixerStr%,"Mix3DDepthName",0x00020000,%Mix3DDepthName%
+
+HKLM,%MixerStr%,"MixSelectMic2ShortName",0x00020000,%MixSelectMic2ShortName%
+HKLM,%MixerStr%,"MixSelectMic2Name",0x00020000,%MixSelectMic2Name%
+
+HKLM,%MixerStr%,"MixOnOffMicGainShortName",0x00020000,%MixOnOffMicGainShortName%
+HKLM,%MixerStr%,"MixOnOffMicGainName",0x00020000,%MixOnOffMicGainName%
+
+HKLM,%MixerStr%,"MixOnOffToneShortName",0x00020000,%MixOnOffToneShortName%
+HKLM,%MixerStr%,"MixOnOffToneName",0x00020000,%MixOnOffToneName%
+HKLM,%MixerStr%,"MixBaseLineOutShortName",0x00020000,%MixBaseLineOutShortName%
+HKLM,%MixerStr%,"MixBaseLineOutName",0x00020000,%MixBaseLineOutName%
+HKLM,%MixerStr%,"MixTrebleLineOutShortName",0x00020000,%MixTrebleLineOutShortName%
+HKLM,%MixerStr%,"MixTrebleLineOutName",0x00020000,%MixTrebleLineOutName%
+
+HKLM,%MixerStr%,"MixVuLineOutWaveShortName",0x00020000,%MixVuLineOutWaveShortName%
+HKLM,%MixerStr%,"MixVuLineOutWaveName",0x00020000,%MixVuLineOutWaveName%
+HKLM,%MixerStr%,"MixVuWaveInMicShortName",0x00020000,%MixVuWaveInMicShortName%
+HKLM,%MixerStr%,"MixVuWaveInMicName",0x00020000,%MixVuWaveInMicName%
+HKLM,%MixerStr%,"MixVuWaveInLineShortName",0x00020000,%MixVuWaveInLineShortName%
+HKLM,%MixerStr%,"MixVuWaveInLineName",0x00020000,%MixVuWaveInLineName%
+HKLM,%MixerStr%,"MixVuVoiceInMicShortName",0x00020000,%MixVuVoiceInMicShortName%
+HKLM,%MixerStr%,"MixVuVoiceInMicName",0x00020000,%MixVuVoiceInMicName%
+HKLM,%MixerStr%,"MixVuVoiceInLineShortName",0x00020000,%MixVuVoiceInLineShortName%
+HKLM,%MixerStr%,"MixVuVoiceInLineName",0x00020000,%MixVuVoiceInLineName%
+
+HKLM,%MixerStr%,"MixPlayCDEQShortName",0x00020000,%MixPlayCDEQShortName%
+HKLM,%MixerStr%,"MixPlayCDEQName",0x00020000,%MixPlayCDEQName%
+
+HKLM,%MixerStr%,"MixPanFrontRearSpkrShortName",0x00020000,%MixPanFrontRearSpkrShortName%
+HKLM,%MixerStr%,"MixPanFrontRearSpkrName",0x00020000,%MixPanFrontRearSpkrName%
+
+[AspenCustomization.Addreg]
+;; This setction contaions all registry keys used to disable the Vortex driver related features
+;; or customize the functions provided by Vortex drivers/apps.
+
+; A3D Demo apps	(DWORD value: 1 - enable)
+HKLM,%CustomInf%,"EnableA3dDemosInstall",0x00010001,0,0,0,0				
+
+; Vortex Control Panel Tray Icon (DWORD value: 1 - disable)
+HKLM,%CustomInf%,"DisableTrayIcon",0x00010001,0,0,0,0					
+
+; Vortex Control Panel
+HKLM,%CustomInf%,"ControlPanelTitle",0x00020000,"Vortex Control Panel"		;title
+HKLM,%CustomInf%,"ControlPanelPageConfig",0x00020000,"01235"				;page config
+HKLM,%CustomInf%,"ControlPanelActivePage",0x00020000,"0"					;active page
+HKLM,%CustomInf%,"ControlPanelIconDesc",0x00020000,"Aureal Vortex Audio"	;description
+HKLM,%CustomInf%,"ControlPanelIconInfo",0x00020000,"Vortex Control Panel"	;info
+;HKLM,%ControlStr%,"SoftSynthMode",0x00010001,0,0,0,0						;WT mode (0 - 2)
+;HKLM,%ControlStr%,"AspenWavetableEffect",0x00010001,0,0,0,0				;WT effects on/off (1/0)
+;HKLM,%ControlStr%,"ReverbAmount",0x00010001,0,0,0,0						;WT reverb amount (0 - 127)
+;HKLM,%ControlStr%,"ChorusAmount",0x00010001,0,0,0,0						;WT chorus amount (0 - 127)
+
+; Vortex Uninstaller
+HKLM,%CustomInf%,"UninstallerName",0x00020000,"Aureal Vortex AU8820"        ;name in Add/Remove Programs control panel
+HKLM,%CustomInf%,"ManufacturerName",0x00020000,"Aureal Semiconductor"		;OEM manufacturer name
+HKLM,%CustomInf%,"ProductName",0x00020000,"Vortex"							;OEM product name
+HKLM,%CustomInf%,"EnableOneStepUninstall",0x00010001,1,0,0,0				;0 - disable, 1 - enable
+
+; Software Modem Detect
+HKLM, %InstallStr%,"SoftModemDetect",0x00010001,1,0,0,0				;DWORD value: 1 - disable, 0 - enable										
+
+; Software Tone Control stages
+HKLM,%InstallStr%,"SWTCStages",0x00010001,7,0,0,0						
+HKLM,%InstallStr%,"SWTCStagesUsed",0x00010001,7,0,0,0						
+HKLM,%InstallStr%,"SpeakerCompEQEnable",0x00010001,0,0,0,0	
+HKLM,%InstallStr%,"TCEnable",0x00010001,0,0,0,0						
+HKLM,%InstallStr%,"SpeakerCompEQGainAll",0x00010001,57,41,0,0						
+HKLM,%InstallStr%,"SWSpeakerEQcoeffs",0x00000001,\
+		6f, 08, 52, 10, 00, 00, 00, 00, 91, f7, ad, ef, ce, 1c, 60, a3, 23, ef, 5b, 1f, 00, 00, 00, 10,\
+        e5, a9, 54, 00, 00, 00, 00, 00, 1b, 56, ab, ff, 7f, 85, 8b, 80, 2e, 46, 77, 3f, 00, 00, 00, 10,\
+        f6, 28, 5c, 7f, 37, 0e, af, 41, b0, e3, 17, 07, 9b, 62, b9, 24, d2, 6d, 2c, 0b, 00, 00, 00, 10,\
+        57, 66, 63, 00, 5e, f3, dd, ff, ce, 47, 08, 00, fa, 85, 8d, 85, 52, 54, b5, 3a, 00, 00, 00, 10,\
+        53, 12, ad, ff, bf, a5, 49, 00, 5e, fa, 08, 00, 74, f4, 58, 80, f8, 51, a7, 3f, 00, 00, 00, 10
+
+; SW TC Bass & Treble coefficients
+HKLM,%InstallStr%,"SWTCCoeffs",0x00000001,\
+		10,	CF,	EF,	03,	10,	CF,	EF,	03,	00,	00,	00,	00,	1E,	9E,	DF,	C7,	00,	00,	00,	00,	00,	00,	00,	00,\
+		F1,	30,	10,	3C,	0E,	CF,	EF,	C3,	00,	00,	00,	00,	1E,	9E,	DF,	C7,	00,	00,	00,	00,	00,	00,	00,	00
+
+; S/PDIF settings
+HKLM,%CustomInf%,"EnableSpdifIn",0x00010001,0,0,0,0					;DWORD value: 1 - enable 
+HKLM,%CustomInf%,"EnableSpdifOut",0x00010001,1,0,0,0				;DWORD value: 1 - enable
+HKLM,%CustomInf%,"SpdifFrequency",0x00010001,48000					;DWORD value: 0 - 32kHz, 1 - 44.1kHz, 2 - 48kHz
+HKLM,%CustomInf%,"SportFrequency",0x00010001,44100					;DWORD value: 0 - 32kHz, 1 - 44.1kHz, 2 - 48kHz
+
+; Mixer tone control and 3D control config
+HKLM,%CustomInf%,"ToneControlType",0x00010001,2,0,0,0				;DWORD Value: 0 - no TC, 1 - HW TC, 2 - SW TC
+HKLM,%CustomInf%,"DisableAC97Codec3DEffect",0x00010001,0,0,0,0		;DWORD Value: 1 - disable, 0 - enable
+
+; mixer sources config (Binary Value: 1 - enable, 0 - disable)
+HKLM,%CustomInf%,"MixConfigPlay",0x00000001,1,1,1,1,1,1,1,1,1,0			
+HKLM,%CustomInf%,"MixConfigRec",0x00000001,1,1,1,1,1,1,1,1				
+HKLM,%CustomInf%,"MixConfigVoice",0x00000001,1,1						
+HKLM,%CustomInf%,"MixConfigAC97Ctrl",0x00000001,1,0,1,1,1,1				
+
+; mixer controls config	(DWORD value: 1 - enable, 0 - disable)
+HKLM,%CustomInf%,"MixConfigLineOutMixer",0x00010001,0,0,0,0              
+HKLM,%CustomInf%,"MixConfigPlayLoudness",0x00010001,0,0,0,0              
+HKLM,%CustomInf%,"MixConfigPlayPopPost3D",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"MixConfigPLaySimStereo",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"MixConfigPlayMicMixSelect",0x00010001,1,0,0,0         
+HKLM,%CustomInf%,"MixConfigPlayMic12Select",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"MixConfigPlayMic20dBBoost",0x00010001,1,0,0,0         
+
+; initial mixer Master Vol/Mute
+HKLM,%CustomInf%,"MixInitMasterVol",0x00010001,0D,0,0,0				;DWORD Value: 0x00 - 0x10
+HKLM,%CustomInf%,"MixInitMasterMute",0x00010001,0,0,0,0				;DWORD Value: 1 - mute, 0 - unmute
+
+; initial mixer vol level (Binary Value: 0x00 - 0x10)
+; ORDER: WT, Wave Out, S/PDIF In, Telephone, Mic, LineIn, CD, Video, Aux, PC-Beep
+HKLM,%CustomInf%,"MixInitPlayVol",0x00000001,0D,0D,0C,0E,02,0D,0D,0B,0C,0C 
+; ORDER: Telephone, Mic, LineIn, CD, Video, Aux
+HKLM,%CustomInf%,"MixInitRecVol",0x00000001,08,07,07,07,08,08,07,08		
+; ORDER: Mic, LineIn
+HKLM,%CustomInf%,"MixInitVoiceVol",0x00000001,07,07						
+; ORDER: Mono Out, Headphone Out, S/PDIF Out, 3D Center, 3D Depth
+HKLM,%CustomInf%,"MixInitAC97CtrlVol",0x00000001,0E,0E,07,0C,0A,08		
+
+; initial mixer mute
+HKLM,%CustomInf%,"MixInitPlayMute",0x00000001,0,0,0,1,1,0,0,1,0,1	;Binary Value: 1 - mute, 0 - unmute
+HKLM,%CustomInf%,"MixInitRecSelect",0x00000001,0,1,0,0,0,0,0,0		;Binary Value: 1 - selected
+HKLM,%CustomInf%,"MixInitVoiceSelect",0x00000001,1,0				;Binary Value: 1 - selected
+HKLM,%CustomInf%,"MixInitAC97CtrlMute",0x00000001,1,1,0,0,0,0		;Binary Value: 1 - mute, 0 - unmute
+
+; initial tone control - first BYTE for enable (1) / disable (0)
+;  and last two BYTE's for Bass and Treble amounts
+HKLM,%CustomInf%,"MixInitLineOutToneCtrl",0x00000001,00,08,08		;Binary Value
+
+; initial status of on/off controls for playback (DWORD Value: 1 - on, 0 - off)
+HKLM,%CustomInf%,"MixInitLineOut3D",0x00010001,1,0,0,0					
+HKLM,%CustomInf%,"MixInitPlayLoudness",0x00010001,0,0,0,0				
+HKLM,%CustomInf%,"MixInitPlayPopPost3D",0x00010001,0,0,0,0				
+HKLM,%CustomInf%,"MixInitPLaySimStereo",0x00010001,0,0,0,0				
+HKLM,%CustomInf%,"MixInitPlayMicMixSelect",0x00010001,1,0,0,0			
+HKLM,%CustomInf%,"MixInitPlayMic12Select",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"MixInitPlayMic20dBBoost",0x00010001,1,0,0,0			
+
+; CODEC Mixer Values for playback
+HKLM,%CustomInf%,"PlayVolGainPhone",0x00010001,2,0,0,0		
+HKLM,%CustomInf%,"PlayVolGainMic",0x00010001,8,0,0,0		
+HKLM,%CustomInf%,"PlayVolGainLineIn",0x00010001,2,0,0,0		
+HKLM,%CustomInf%,"PlayVolGainCD",0x00010001,7,0,0,0			
+HKLM,%CustomInf%,"PlayVolGainVideo",0x00010001,2,0,0,0		
+HKLM,%CustomInf%,"PlayVolGainAux",0x00010001,7,0,0,0			
+HKLM,%CustomInf%,"PlayVolGainPCBeep",0x00010001,8,0,0,0		
+
+; CODEC Mixer Values for record
+HKLM,%CustomInf%,"RecVolGainPhone",0x00010001,0,0,0,0		
+HKLM,%CustomInf%,"RecVolGainMic",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"RecVolGainLineIn",0x00010001,0,0,0,0		
+HKLM,%CustomInf%,"RecVolGainCD",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"RecVolGainVideo",0x00010001,0,0,0,0	
+HKLM,%CustomInf%,"RecVolGainAux",0x00010001,0,0,0,0			
+HKLM,%CustomInf%,"RecVolGainStereoMix",0x00010001,0,0,0,0	
+HKLM,%CustomInf%,"RecVolGainMonoMix",0x00010001,0,0,0,0		
+
+; Digital Mixer Values for record (valid value: 0x0 - 0xffff)
+HKLM,%CustomInf%,"RecMaxVolPhone",0x00010001,50,46,0,0		
+HKLM,%CustomInf%,"RecMaxVolMic",0x00010001,FF,FF,0,0			
+HKLM,%CustomInf%,"RecMaxVolLineIn",0x00010001,50,46,0,0		
+HKLM,%CustomInf%,"RecMaxVolCD",0x00010001,FF,FF,0,0
+HKLM,%CustomInf%,"RecMaxVolVideo",0x00010001,50,46,0,0		
+HKLM,%CustomInf%,"RecMaxVolAux",0x00010001,FF,FF,0,0
+HKLM,%CustomInf%,"RecMaxVolStereoMix",0x00010001,99,21,0,0	
+HKLM,%CustomInf%,"RecMaxVolMonoMix",0x00010001,99,21,0,0		
+
+; Maximum playback volume for EQed analog inputs
+HKLM,%CustomInf%,"MaxEQedPhonePlayVol",0x00010001,18,2E,0,0						
+HKLM,%CustomInf%,"MaxEQedMicPlayVol",0x00010001,18,79,0,0						
+HKLM,%CustomInf%,"MaxEQedLineInPlayVol",0x00010001,18,2E,0,0						
+HKLM,%CustomInf%,"MaxEQedCDPlayVol",0x00010001,00,70,0,0						
+HKLM,%CustomInf%,"MaxEQedVideoPlayVol",0x00010001,18,2E,0,0						
+HKLM,%CustomInf%,"MaxEQedAuxPlayVol",0x00010001,00,70,0,0						
+
+HKLM,%CustomInf%,"MixEnableTADSpecialFeature",0x00010001,0,0,0,0			; DWORD Value: 0 - disable, 1 - enable
+
+HKLM,%CustomInf%,"AddLegacySettingInBegin",0x00010001,1,0,0,0				; DWORD Value: 0 - disable, 1 - enable
+
+; Initial mixer line states for Microsoft Volume Control Panel
+HKLM,%CustomInf%,"MixCplLineStatesPlay",0x00000001,1,1,1,0,0,0,1,1,0,0,0	; Binary Value: 1 - display
+HKLM,%CustomInf%,"MixCplLineStatesRec",0x00000001,0,1,1,1,0,0,1,0			; Binary Value: 1 - display
+HKLM,%CustomInf%,"MixCplLineStatesVoice",0x00000001,1,1						; Binary Value: 1 - display
+HKLM,%CustomInf%,"MixCplLineStatesAC97Ctrl",0x00000001,0,0,1,1,1			; Binary Value: 1 - display 
+HKLM,%CustomInf%,"MixCplEnableAdvancedButton",0x00010001,1,0,0,0			; DWORD Value: 1 - enable, 0 - disable
+
+; Turn on/off the Sigmatel STAC9704 attenuation program 
+HKLM,%CustomInf%,"ST9704ATTEN",0x00010001,0,0,0,0							; DWORD Value: 1 - on, 0 - off
+
+; Analog EQ feature
+HKLM,%CustomInf%,"SupportAnalogEQ",0x00010001,1,0,0,0						; DWORD Value: 1 - on, 0 - off
+HKLM,%ControlStr%,"AnalogEQEnableState",0x00010001,1,0,0,0					; DWORD Value: 1 - enable, 0 - disable
+HKLM,%ControlStr%,"AnalogEQSrcLine",0x00010001,3,0,0,0						; DWORD Value: Phone = 0, Mic, LineIn, CD, Video, Aux
+
+; codec PCM Out volume
+; DWORD Value: 0x0 = +12dB, 0x1 = +10.5dB, ... 0x8 = 0dB, ..., 0x1f = -34.5dB
+HKLM,%CustomInf%,"AC97PCMOutVol",0x00010001,08,0,0,0	
+
+; codec PCM2 Out, Mixer Front Out and Mixer Rear Out volumes (only applied to symmetric quad codecs)
+; DWORD Value: 0x0 = +12dB, 0x1 = +10.5dB, ... 0x8 = 0dB, ..., 0x1f = -34.5dB
+HKLM,%CustomInf%,"AC97PCM2OutVol",0x00010001,08,0,0,0	
+HKLM,%CustomInf%,"AC97MixerFrontOutVol",0x00010001,08,0,0,0	
+HKLM,%CustomInf%,"AC97MixerRearOutVol",0x00010001,08,0,0,0	
+
+; Set default state of "Speaker Compensation" check box in Vortex cpl
+HKLM,%ControlStr%,"SpeakerCompEQEnable",0x00010001,0,0,0,0				; DWORD Value: 1 - enable, 0 - disable
+HKLM,%CustomInf%,"SupportSpeakerEQ",0x00010001,0,0,0,0					; DWORD Value: 1 - on, 0 - off
+HKLM,%CustomInf%,"SpeakerEqGainCurve",0x00010001,0,0,0,0				; DWORD Value: 1 - on, 0 - off
+
+; HW & SW Voice Number in WT
+HKLM,%CustomInf%,"WtMaxNumHwVoice",0x00010001,20,0,0,0					; DWORD Value: WtNumHwVoice = 32
+HKLM,%CustomInf%,"WtMaxNumSwVoice",0x00010001,20,0,0,0					; DWORD Value: WtNumSwVoice = 32
+
+HKLM,%CustomInf%,"WtNumVoicesStrings",0x00010001,3,0,0,0				; Number of strings for control panel
+
+HKLM,%CustomInf%,"WtNumVoicesString0",0x00020000,%WtNumVoicesString0%	; Strings for Wt control panel
+HKLM,%CustomInf%,"WtNumVoicesString1",0x00020000,%WtNumVoicesString1%	; Strings for Wt control panel
+HKLM,%CustomInf%,"WtNumVoicesString2",0x00020000,%WtNumVoicesString2%	; Strings for Wt control panel
+
+HKLM,%CustomInf%,"WtNumVoicesParams0",0x00000001,0,0,20,0,0,64,0		; Preset ID, num Hard Voices msb, Num Hard Voices Lsb,num Soft Voices msb, Num Soft Voices Lsb, CPU utilization, mode
+HKLM,%CustomInf%,"WtNumVoicesParams1",0x00000001,1,0,20,0,20,64,3		; Preset ID, num Hard Voices msb, Num Hard Voices Lsb,num Soft Voices msb, Num Soft Voices Lsb, CPU utilization, mode
+HKLM,%CustomInf%,"WtNumVoicesParams2",0x00000001,2,0,20,0,20,64,2		; Preset ID, num Hard Voices msb, Num Hard Voices Lsb,num Soft Voices msb, Num Soft Voices Lsb, CPU utilization, mode
+
+HKLM,%ControlStr%,"SoftSynthModeIndex",0x00010001,0						; Inital index setting
+
+[AspenAudio.CopyList]
+asp4core.vxd,,
+asp4appy.vxd,,
+asp4wt.vxd,,
+asp4wt.drv,,
+asp4wave.vxd,,
+asp4wave.drv,,
+asp4mix.vxd,,
+asp4mix.drv,,
+asp4thru.dll,,
+asp4sbfm.vxd,,
+asp4cpl.cpl,,
+a3d.vxd,,
+a3d.dll,,
+aurealgm,,
+asp4joys.vxd,,
+asp4midi.vxd,,
+asp4midi.drv,,
+asp4sbfm.vxd,,
+asp4port.vxd,,
+version.txt,,
+au20dal.dll,,
+SSA3D30.OCX,,
+asp4setp.vxd,,
+
+[AspenDOSAudio.CopyList]
+asp4dos.com,,
+
+[AspenAppsAudio.CopyList]
+asp4cpl.exe,,
+asp4tray.exe,,
+asp4cpl1.hlp,,
+asp4cpl2.hlp,,
+asp4cpl3.hlp,,
+asp4cpl4.hlp,,
+asp4cpl5.hlp,,
+asp4cpl6.hlp,,
+asp4cpl7.hlp,,
+
+asp4cpl1.gid,,
+asp4cpl2.gid,,
+asp4cpl3.gid,,
+asp4cpl4.gid,,
+asp4cpl5.gid,,
+asp4cpl6.gid,,
+asp4cpl7.gid,,
+a3dsplsh.exe,,
+a3dsplh.wav,,
+a3dspls.wav,,
+
+[AspenJoystick.CopyList]
+;vjoyd.vxd,,
+msjstick.drv,,
+
+[AspenMpu401.CopyList]
+
+[AspenSBFMAudio.CopyList]
+
+[MSSERWAVE.CopyList]
+serwave.vxd,,
+serwvdrv.drv,,
+vmodctl.dll,,
+
+[SourceDisksFiles]
+a3d.vxd=42
+a3d.dll=42
+a3dsplsh.exe=42
+a3dsplh.wav=42
+a3dspls.wav=42
+asp4core.vxd=42
+asp4appy.vxd=42
+asp4wt.vxd=42
+asp4wt.drv=42
+asp4wave.vxd=42
+asp4wave.drv=42
+asp4mix.vxd=42
+asp4mix.drv=42
+asp4thru.dll=42
+asp4dos.com=42
+asp4joys.vxd=42
+asp4midi.vxd=42
+asp4midi.drv=42
+asp4sbfm.vxd=42
+asp4cpl.exe=42
+asp4cpl.cpl=42
+asp4tray.exe=42
+asp4cpl1.hlp=42
+asp4cpl2.hlp=42
+asp4cpl3.hlp=42
+asp4cpl4.hlp=42
+asp4cpl5.hlp=42
+asp4cpl6.hlp=42
+asp4cpl7.hlp=42
+asp4cpl1.gid=42
+asp4cpl2.gid=42
+asp4cpl3.gid=42
+asp4cpl4.gid=42
+asp4cpl5.gid=42
+asp4cpl6.gid=42
+asp4cpl7.gid=42
+asp4dos.com=42
+aurealgm=42
+asp4port.vxd=42
+version.txt=42
+au20dal.dll=42
+SSA3D30.OCX=42
+asp4setp.vxd=42
+
+[SourceDisksNames]
+42=%DiskName%,,0000-0000
+
+[DestinationDirs]
+DefaultDestDir = 11
+AspenDOSAudio.CopyList = 10
+AspenAppsAudio.CopyList = 10
+MSSERWAVE.CopyList = 11
+
+[Strings]
+; Variables used for install
+DriverNames="Software\Aureal\Vortex\DriverNames"
+MixerStr="Software\Aureal\Vortex\MixerStrings"
+MsgBoxStr="Software\Aureal\Vortex\MsgBoxStrings"
+CustomInf="Software\Aureal\Vortex\Customization"
+ControlStr="Software\Aureal\Vortex\ControlPanel"
+InstallStr="Software\Aureal\Vortex\InstallSettings"
+
+;Non-localized strings - standard Microsoft values
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+
+;Localized strings - standard Microsoft values
+MediaClassName="Sound, video and game controllers"
+
+;Non-localized strings - device-specific
+ProductVersion="0.01.00.0001"
+
+;Localized strings - device-specific
+DiskName="Vortex Installation & Driver Disk"
+Mfg="Aureal Semiconductor"
+MF\PCI_VEN_12EB&DEV_0001_AUDIO.DeviceDesc= "Vortex PCI Audio"
+PCI_VEN_12EB&DEV_0001_WAVE.DeviceDesc= "Vortex Wave Audio"
+PCI_VEN_12EB&DEV_0001_AUX.DeviceDesc= "Vortex Auxilary Audio"
+PCI_VEN_12EB&DEV_0001_MIX.DeviceDesc= "Vortex Audio Mixer"
+PCI_VEN_12EB&DEV_0001_WT.DeviceDesc= "Vortex Wavetable MIDI"
+VIRTUAL\PCI_VEN_12EB&DEV_0001_JOYSTICK.DeviceDesc = "Vortex Gameport Interface"
+VIRTUAL\PCI_VEN_12EB&DEV_0001_MPU401.DeviceDesc = "Vortex MPU-401 Interface"
+VIRTUAL\PCI_VEN_12EB&DEV_0001_SBFMAUDIO.DeviceDesc = "Vortex Sound Blaster Pro Emulation"
+Rockwell.DeviceDesc="Vortex Modem Serial Wave Device"
+ASMK90.DeviceDesc="Vortex 56K-V90 Voice Modem Serial Wave Device"
+
+KEY_OEM_JOY="SYSTEM\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM"
+KEY_OPT_COMPONENTS="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+KEY_RUN="Software\Microsoft\Windows\CurrentVersion\Run"
+KEY_RUN_ONCE="Software\Microsoft\Windows\CurrentVersion\RunOnce"
+
+;Localized driver name strings - device-specific
+StrWaveOutDriverName="Aureal Vortex Playback"
+StrWaveInDriverName="Aureal Vortex Record"
+StrMixerDriverName="Aureal Vortex Mixer"
+StrAuxDriverName="Aureal Vortex Auxiliary"
+StrWavetableDriverName="Vortex Wavetable"
+StrMidiDriverName="Vortex MPU-401"
+
+;Localized message-box strings - device-specific
+StrCapAurealVortex="Aureal Vortex"
+StrCapAurealA3D="Aureal A3D"
+StrCapPCIError="PCI Error"
+StrCapAurealWt="Aureal Wavetable"
+StrCapAurealToneControl="Aureal Tone Control"
+StrCapAurealModem="Aureal Modem"
+StrMsgPromptInstallDX5="The Vortex PCI Audio System requires that DirectX5 or later be installed. Would you like to install DirectX5 now?"
+StrMsgWarningInstallDX5="The Vortex PCI Audio System will be disabled until DirectX5 or later is installed."				
+StrMsgWarningPrimaryPCI="Your Vortex adapter is not plugged into the primary PCI bus. The MPU401, joystick, modem and Sound Blaster capabilities"
+StrMsgWarningPrimaryPCI2=" may not work when on a secondary PCI Bus. Please consult your users manual for more details. Do you want this message displayed in the future?"
+StrMsgWarningDrvDisabled="This version of the drivers is intended for use in the USA and Europe only. The drivers have been disabled. Please contact Aureal Semiconductor."
+StrMsgWarningMMXCPU="Your system does not have an MMX CPU. This application may experience degraded performance on systems without MMX. Do you want this message displayed in the future?"
+StrMsgWarningPCIError="Vortex PCI Error: "
+StrMsgWarningEnableWtEffects="Insufficient hardware resources to enable wavetable effects. Close DirectSound or Waveout devices and try again."
+StrMsgWarningModemDeviceInUse="The Modem device is already in use. You must first close all applications and services which are currently using the Modem and try again."
+StrMsgWarningEnableToneControl="Insufficient hardware resources to enable tone control. Close DirectSound or Waveout devices and try again."
+
+;Localized mixer source line strings - device-specific
+MixSrcWtShortName="Wavetbl"					;"Wavetbl"
+MixSrcWtName="Wavetable Synthesizer"		;"Wavetable Synthesizer"
+MixSrcWaveShortName="Wave"					;"Wave"
+MixSrcWaveName="Wave Out"					;"Wave Out"
+MixSrcSpdifShortName="SP-DIF"				;"SP-DIF"
+MixSrcSpdisName="SP-DIF Input"				;"SP-DIF Input"
+MixSrcBeepShortName="Beep"					;"Beep"				
+MixSrcBeepName="PC Beep"					;"PC Beep"
+MixSrcPhoneShortName="Phone"				;"Phone"
+MixSrcPhoneName="Telephone"					;"Telephone"
+MixSrcMicShortName="Mic"					;"Mic"
+MixSrcMicName="Microphone"					;"Microphone"
+MixSrcLineInShortName="Line"				;"Line"
+MixSrcLineInName="Line-In"					;"Line-In"
+MixSrcCDShortName="CD"						;"CD"
+MixSrcCDName="CD-ROM"						;"CD-ROM"
+MixSrcVideoShortName="Video"				;"Video"
+MixSrcVideoName="Video"						;"Video"
+MixSrcAuxShortName="Aux"					;"Aux"
+MixSrcAuxName="Auxiliary"					;"Auxiliary"
+MixSrcStereoMixShortName="StereoMix"		;"StereoMix"
+MixSrcStereoMixName="StereoMixer Input"		;"Stereo Mixer Input"
+MixSrcMonoMixShortName="MonoMix"			;"MonoMix"
+MixSrcMonoMixName="MonoMixer Input"			;"Mono Mixer Input"
+
+MixSrcMonoOutShortName="MonoOut"			;"MonoOut"
+MixSrcMonoOutName="Mono Out"				;"Mono Out"	
+MixSrcHpOutShortName="HPOut"				;"HPOut"
+MixSrcHpOutName="Headphone Out"				;"Headphone Out"	
+MixSrcSpdifOutShortName="SpdifOut"			;"SpdifOut"
+MixSrcSpdifOutName="SP-DIF Out"				;"SP-DIF Out"	
+MixSrc3DCenterShortName="3DCenter"			;"3DCenter"
+MixSrc3DCenterName="3D Center"				;"3D Center"	
+MixSrc3DDepthShortName="3DDepth"			;"3DDepth"
+MixSrc3DDepthName="3D Depth"				;"3D Depth"	
+MixSrcFRSpkrShortName="F/R Fader"			;"F/R Fader"
+MixSrcFRSpkrName="Front/Rear Fader"			;"Front/Rear Fader"	
+
+;Localized mixer destination line strings - device-specific
+MixDestLineOutShortName="Vol"				;"Vol"
+MixDestLineOutName="Volume Control"			;"Volume Control"
+MixDestWaveInShortName="Rec"				;"Rec"
+MixDestWaveInName="Recording Control"		;"Recording Control"
+MixDestVoiceInShortName="Voice"				;"Voice"
+MixDestVoiceInName="Voice Commands"			;"Voice Commands"
+MixDestAC97CtrlsOutShortName="AC97Ctrls"	;"AC97Ctrls"
+MixDestLineAC97CtrlsOutName="AC97 Controls"	;"AC97 Controls"
+
+;Localized mixer control strings - device-specific
+MixMixerLineOutShortName="PlayMix"			;"PlayMix"
+MixMixerLineOutName="Playback Mixer"		;"Playback Mixer"
+MixMuxWaveInShortName="WaveInMux"
+MixMuxWaveInName="Wave Input Mux"
+MixMuxVoiceInShortName="VoiceInMux"
+MixMuxVoiceInName="Voice Input Mux"
+
+MixVolLWtShortName="WTVol"
+MixVolLWtName="Volume Control for Wavetable Out"
+MixVolLWaveShortName="WaveVol"
+MixVolLWaveName="Volume Control for Wave Out"
+MixVolLSpdifShortName="SPDIFVol"
+MixVolLSpdifName="Volume Control for SPDIF Input"
+MixVolLBeepShortName="PCBeepVol"
+MixVolLBeepName="Volume Control for PC Beep Input"
+MixVolLPhoneShortName="PhoneVol"
+MixVolLPhoneName="Volume Control for Phone Input"
+MixVolLMicShortName="MicVol"
+MixVolLMicName="Volume Control for Microphone Input"
+MixVolLLineInShortName="LineInVol"
+MixVolLLineInName="Volume Control for Line Input"
+MixVolLCDShortName="CD_ROMVol"
+MixVolLCDName="Volume Control for Internal CD_ROM Input"
+MixVolLVideoShortName="VideoVol"
+MixVolLVideoName="Volume Control for Video Input"
+MixVolLAuxShortName="AuxVol"
+MixVolLAuxName="Volume Control for Aux Input"
+
+MixVolLineOutMasterShortName="MasterVol"
+MixVolLineOutMasterName="Master Volume Control for LineOut"
+MixVolLineOutHpShortName="HPVol"
+MixVolLineOutHpName="Master Volume Control for Headphone Output"
+MixVolLineOutMonoShortName="MonoVol"
+MixVolLineOutMonoName="Master Volume Control for Mono Output"
+MixVolLineOutSpdifShortName="SPDIFVol"
+MixVolLineOutSpdifName="Volume Control for SPDIF Output"
+
+MixVolWPhoneShortName="PhoneVol"
+MixVolWPhoneName="Volume Control for Telephone Input"
+MixVolWMicShortName="MicVol"
+MixVolWMicName="Volume Control for Mic Input"
+MixVolWLineInShortName="LineVol"
+MixVolWLineInName="Volume Control for Line Input"
+MixVolWCDShortName="CDVol"
+MixVolWCDName="Volume Control for CD Input"
+MixVolWVideoShortName="VideoVol"
+MixVolWVideoName="Volume Control for Video Input"
+MixVolWAuxShortName="AuxVol"
+MixVolWAuxName="Volume Control for Aux Input"
+MixVolWStereoMixShortName="StereoMixVol"
+MixVolWStereoMixName="Volume Control for Stereo Mixer Input"
+MixVolWMonoMixShortName="MonoMixVol"
+MixVolWMonoMixName="Volume Control for Mono Mixer Input"
+
+MixVolVMicShortName="MicVol"
+MixVolVMicName="Volume Control for Mic Input"
+MixVolVLineInShortName="LineVol"
+MixVolVLineInName="Volume Control for Line-In Input"
+
+MixMuteLWtShortName="WTMute"
+MixMuteLWtName="Mute Control for Wavetable Out"
+MixMuteLWaveShortName="WaveMute"
+MixMuteLWaveName="Mute Control for Wave Out"
+MixMuteLSpdifShortName="SPDIFMute"
+MixMuteLSpdifName="Mute Control for SPDIF Input"
+MixMuteLBeepShortName="PCBeepMute"
+MixMuteLBeepName="Mute Control for PC Beep Input"
+MixMuteLPhoneShortName="PhoneMute"
+MixMuteLPhoneName="Mute Control for Tephone Input"
+MixMuteLMicShortName="MicMute"
+MixMuteLMicName="Mute Control for Microphone Input"
+MixMuteLLineInShortName="LineInMute"
+MixMuteLLineInName="Mute Control for Line Input"
+MixMuteLCDShortName="CD_ROMMute"
+MixMuteLCDName="Mute Control for Internal CD_ROM Input"
+MixMuteLVideoShortName="VideoMute"
+MixMuteLVideoName="Mute Control for Video Input"
+MixMuteLAuxShortName="AuxMute"
+MixMuteLAuxName="Mute Control for Aux Input"
+
+MixMuteLineOutMasterShortName="MaserMute"
+MixMuteLineOutMasterName="Master Mute Control for LineOut"
+MixMuteLineOutHpShortName="HPMute"
+MixMuteLineOutHpName="Master Mute Control for Headphone Output"
+MixMuteLineOutMonoShortName="MonoMute"
+MixMuteLineOutMonoName="Master Mute Control for Mono Output"
+MixMuteLineOutSpdifShortName="SPDIFMute"
+MixMuteLineoutSpdifName="Mute Control for SPDIF Output"
+
+MixSelectMicMixShortName="SelectLine"
+MixSelectMicMixName="Select Line out to modem"
+
+MixOnOff3DShortName="3DStereo On"
+MixOnOff3DName="3D Stereo Enhancement On"
+MixOnOffLoudnessShortName="Loudness On"
+MixOnOffLoudnessName="Loudness (bass boost) On"
+MixOnOffPopShortName="POP Pre3D On"
+MixOnOffPopName="POP Pre3D On"
+MixOnOffSimStereoShortName="SimStereo On"
+MixOnOffSimStereoName="Simulated Stereo Enhancement On"
+
+Mix3DCenterShortName="3D Center"
+Mix3DCenterName="Center of the 3D stereo enhancement"
+Mix3DDepthShortName="3D Depth"
+Mix3DDepthName="Depth of the 3D stereo enhancement"
+
+MixSelectMic2ShortName="Mic2 Select"
+MixSelectMic2Name="Select Mic2"
+
+MixOnOffMicGainShortName="Mic Gain"
+MixOnOffMicGainName="Mic Gain (+20dB)"
+
+MixOnOffToneShortName="Tone Control On"
+MixOnOffToneName="Enable Tone control"
+MixBaseLineOutShortName="Bass"
+MixBaseLineOutName="Bass Control for LineOut"
+MixTrebleLineOutShortName="Treble"
+MixTrebleLineOutName="Treble Control for LineOut"
+
+MixVuLineOutWaveShortName="WaveOutVu"
+MixVuLineOutWaveName="VU for Wave Output"
+MixVuWaveInMicShortName="VU-Mic"
+MixVuWaveInMicName="VU for Wave Input (Mic)"
+MixVuWaveInLineShortName="VU-Line"
+MixVuWaveInLineName="VU for Wave Input (Line)"
+MixVuVoiceInMicShortName="VU-Mic"
+MixVuVoiceInMicName="VU for Voice Input (Mic)"
+MixVuVoiceInLineShortName="VU-Line"
+MixVuVoiceInLineName="VU for Voice Input (Line)"
+
+MixPlayCDEQShortName="Enable EQ"
+MixPlayCDEQName="Enable Graphic Equalizer"
+
+MixPanFrontRearSpkrShortName="F/R Fader"
+MixPanFrontRearSpkrName="Front/Rear Fader"
+
+WtNumVoicesString0="32 Voice Pro"
+WtNumVoicesString1="64 Voice Gamer"
+WtNumVoicesString2="64 Voice Pro"

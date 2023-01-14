@@ -1,0 +1,53 @@
+:Base pdmmdger.hlp>Main
+:Title Matrox MultiDesk
+
+1 Überblick=IDH_MATROX_MULTIDESK
+
+1 Verwendungshinweise=IDH_CONVENTIONS
+
+1 Matrox MultiDesk Menü
+2	Überblick=IDH_MATROX_MULTIDESK_MENU
+2	Menüelement
+3		Programme=IDH_PROGRAMS
+3		Desktops verwalten=IDH_MANAGE_DESKTOPS
+3		Hilfe=IDH_MMD_MENU_HELP
+3		Nächster Desktop=IDH_NEXT_DESKTOP
+3		Matrox MultiDesk schließen=IDH_CLOSE_MATROX_MULTIDESK
+
+1 Desktop manager
+2	Überblick=IDH_DESKTOP_MANAGER
+2	Menüelement
+3		Desktop
+4			Überblick=IDH_DESKTOP_MENU
+4			Anzeigen=IDH_DESKTOP_SHOW
+4			Neu=IDH_DESKTOP_NEW
+4			Umbenennen=IDH_DESKTOP_RENAME
+4			Löschen=IDH_DESKTOP_DELETE
+4			Aktualisieren=IDH_DESKTOP_REFRESH
+4			Eigenschaften=IDH_DESKTOP_PROPERTIES
+3		Programm
+4			Überblick=IDH_PROGRAM_MENU
+4			Anzeigen=IDH_PROGRAM_SHOW
+4			Ausschneiden=IDH_PROGRAM_CUT
+4			Einfügen=IDH_PROGRAM_PASTE
+4			Löschen=IDH_PROGRAM_DELETE
+4			Auf allen Desktops anzeigen=IDH_SHOW_ON_ALL_DESKTOPS
+4			Desktop beim Öffnen des Programms wechseln=IDH_SWITCH_DESKTOP
+3		Optionen
+4			Überblick=IDH_OPTIONS_MENU
+4			Einstellungen=IDH_PREFERENCES
+3		Hilfe
+4			Überblick=IDH_HELP_MENU
+4			Zugriff auf alle Programme gestatten=IDH_MAKE_ALL_PROGRAMS_ACCESSIBLE
+4			MultiDesk-Hilfe=IDH_HELP_MULTIDESK_OVERVIEW
+4			Info=IDH_HELP_ABOUT
+2	Dialogfelder
+3 		Eigenschaften
+4			Symbol ändern=IDH_CHANGE_ICON
+4			Hotkey=IDH_PROPERTIES_HOTKEY
+4			Darstellung=IDH_APPEARANCE
+3 		Einstellungen
+4			Symbol in Windows-Taskleiste darstellen=IDH_SHOW_ICON
+4			Doppelklick-Aktion für Taskleisten-Symbol=IDH_DOUBLECLICK_ACTION
+4			Optionen=IDH_START_MULTIDESK_WITH_WINDOWS
+4			Hotkey für Desktop-Liste=IDH_PREFERENCES_HOTKEY

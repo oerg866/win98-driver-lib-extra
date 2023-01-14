@@ -1,0 +1,9 @@
+PCI audio Windows 95/98 drivers uninstall procedures
+
+1. Extract driver files into an empty folder by WINZIP program.
+2. Run UINSTDRV.EXE in the folder you extracted drivers to remove 
+   old drivers.
+3. Reboot system when old drivers removed.
+4. Windows system will find new hardware and ask for new drivers.
+5. Specify the folder that new drivers is in.
+6. Windows system will install new drivers automatically.

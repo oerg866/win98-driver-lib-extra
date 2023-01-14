@@ -1,0 +1,95 @@
+;*---------------------------------------------------------------------------
+;*
+;* $Workfile: au30port.inf $
+;*
+;*---------------------------------------------------------------------------
+;*
+;* $Revision: 13 $  $Date: 7/24/98 4:57p $  
+;*				
+;*---------------------------------------------------------------------------
+;*
+;* Vortex inf file for Windows & DOS modem port support
+;*
+;*---------------------------------------------------------------------------
+;* 
+;* Copyright (c) 1997 Aureal Semiconductor, Inc. - All rights reserved. 
+;*
+;* This is UNPUBLISHED PROPRIETARY SOURCE CODE of Aureal Semiconductor;
+;* the contents of this file may not be disclosed to third parties, copied or
+;* duplicated in any form, in whole or in part, without the prior written
+;* permission of Aureal Semiconductor.
+;*
+;* RESTRICTED RIGHTS LEGEND:
+;* Use, duplication or disclosure by the Government is subject to restrictions
+;* as set forth in subdivision (c)(1)(ii) of the Rights in Technical Data
+;* and Computer Software clause at DFARS 252.227-7013, and/or in similar or
+;* successor clauses in the FAR, DOD or NASA FAR Supplement. Unpublished  -
+;* rights reserved under the Copyright Laws of the United States.
+;*
+;*---------------------------------------------------------------------------
+;*$NoKeywords: $
+
+[Version]
+LayoutFile=layout.inf
+Signature="$CHICAGO$"
+Class=Ports
+Provider=%Mfg%
+Verinfo=%ProductVersion%
+
+[ControlFlags]
+ExcludeFromSelect=VIRTUAL\PCI_VEN_12EB&DEV_0002_DOSMODEM
+
+[Manufacturer]
+%Mfg%=AurealSemiconductor
+
+[AurealSemiconductor]
+%VIRTUAL\PCI_VEN_12EB&DEV_0002_DOSMODEM.DeviceDesc% = DOSMODEMPORT_DEVICE, VIRTUAL\PCI_VEN_12EB&DEV_0002_DOSMODEM
+;%MF\PCI_VEN_12EB&DEV_0002_MODEM.DeviceDesc% = WINMODEMPORT_DEVICE, MF\PCI_VEN_12EB&DEV_0002_MODEM
+
+[WINMODEMPORT_DEVICE]
+CopyFiles=ComPort.Copy
+AddReg=ComPort.AddReg
+
+[DOSMODEMPORT_DEVICE]
+AddReg=AspenDosModemPort.Addreg
+CopyFiles=AspenDosModemPort.CopyList
+
+[AspenDosModemPort.AddReg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,DeviceDriver,,au30port.vxd
+
+[ComPort.AddReg]
+HKR,,DevLoader,,*vcomm
+HKR,,Enumerator,,serenum.vxd
+HKR,,PortDriver,,serial.vxd
+HKR,,Contention,,*vcd
+HKR,,ConfigDialog,,serialui.dll
+HKR,,DCB,3,1C,00,00,00, 80,25,00,00, 11,33,00,00, 00,00, 0a,00, 0a,00, 08, 00, 00, 11, 13, 00, 00, 00
+HKR,,PortSubClass,1,01
+HKR,,EnumPropPages,,"serialui.dll,EnumPropPages"
+
+[AspenDosModemPort.CopyList]
+;au30port.vxd,,
+
+[ComPort.Copy]
+serial.vxd
+serialui.dll
+
+[SourceDisksFiles]
+au30port.vxd=42
+
+[SourceDisksNames]
+42=%DiskName%,,0000-0000
+
+[DestinationDirs]
+DefaultDestDir = 11
+
+[Strings]
+;Non-localized strings - device-specific
+ProductVersion="0.01.00.0001"
+
+;Localized strings - device-specific
+Mfg="Aureal Semiconductor"
+DiskName="Vortex AU8830 Installation & Driver Disk"
+VIRTUAL\PCI_VEN_12EB&DEV_0002_DOSMODEM.DeviceDesc = "Vortex AU8830 DOS Modem Port"
+MF\PCI_VEN_12EB&DEV_0002_MODEM.DeviceDesc="Vortex AU8830 Windows Modem Port"

@@ -1,0 +1,226 @@
+;
+; CMI8338 PCI Audio Adapter INF file
+;
+; Created : 7/28/98  John C. Chiang
+; modify  : 10/12/98 Merge A3D drivers
+;           10/19/98 merge softmidi
+;           10/27/98 add install volume controls
+;           01/28/98 change legacy device ID
+;           02/09/99 optional CPU performance for HRTF 3D
+;           03/20/99 set mixer default volume
+;
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+provider="C-Media"
+LayoutFile=layout.inf
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,1
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%MfgName%=CMEDIA
+
+[CMEDIA]
+%DEV_3031.DeviceDesc%=DEV3031.Device,PCI\VEN_13F6&DEV_0100&SUBSYS_FFFF13F6&REV_10,PCI\VEN_13F6&DEV_0100&SUBSYS_FFFF13F6,PCI\VEN_13F6&DEV_0100&REV_10,PCI\VEN_13F6&DEV_0100
+%SSC-Legacy.DeviceDesc%=SSC_Legacy_Device, VIRTUAL\SSC-SBEmu
+%SSC-Joystk.DeviceDesc%=SSC_Legacy_Joystk, VIRTUAL\SSC-Joystk
+%SSC-DOSEmu.DeviceDesc%=SSC_DOSEmu, VIRTUAL\SSC-DOSEmu
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+;---------------------------------------------------------------;
+[DEV3031.Device]
+CopyFiles=sscncrt.SystemCopyList,Audio3D.CopyList
+AddReg=WAVE.AddReg, MIXER.AddReg, C4080.AddReg, sscncrt.AddReg ,Audio3D.AddReg
+
+[SSC_Legacy_Device]
+AddReg=SSC_Legacy_Device.AddReg, HW_MIDI.AddReg
+
+[SSC_Legacy_Joystk]
+CopyFiles=CM8338_Joystk.CopyList
+AddReg=JOYSTICK.AddReg,CM8338_Joystk.AddReg
+UpdateInis=CM8338_JSTICK.UpdateInis
+
+[SSC_DOSEmu]
+CopyFiles=DOSEmu.CopyList, SWMIDI.CopyList
+AddReg=DOSEmu.AddReg, SW_MIDI.AddReg
+UpdateInis=DOSEmu.UpdateInis
+
+;---------------------------------------------------------------;
+
+[sscncrt.SystemCopyList]
+cm8338.vxd,,
+cmpci95.drv,,
+cm8338fm.drv,,
+cmmpupci.drv,,
+
+[Audio3D.CopyList]
+Audio3D.dll,,
+
+[CM8338_Joystk.CopyList]
+vjoyd.vxd,,
+msjstick.drv,,
+
+[DOSEmu.CopyList]
+cmswmpu.vxd,,
+cmmpu.exe,,
+smidi32p.dll,,
+
+[SWMIDI.CopyList]
+cmsmidi.drv,,
+smidipci.dll,,
+dlswave.dat,,
+dlstable.dat,,
+
+;---------------------------------------------------------------;
+
+[C4080.AddReg]
+HKR,Drivers\wave\cmpci95.drv,Description,,%DEV_3031.DeviceDesc%
+HKR,Drivers\mixer\cmpci95.drv,Description,,%DEV_3031.DeviceDesc%
+HKR,Drivers\aux\cmpci95.drv,Description,,%DEV_3031.DeviceDesc%
+
+[sscncrt.AddReg]
+HKR,,Driver,,cm8338.vxd
+HKR,Drivers\wave\cmpci95.drv,,,
+HKR,Drivers\wave\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers\mixer\cmpci95.drv,,,
+HKR,Drivers\mixer\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers\aux\cmpci95.drv,,,
+HKR,Drivers\aux\cmpci95.drv,Driver,,cmpci95.drv
+HKR,Drivers,SubClasses,,"wave,aux,mixer"
+;;HKR,,EnumPropPages,,"cmpci95.drv,DrvEnumPropPages"
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,,,
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+;;HKR,Config,LeftMasterVol,1,7f,7f,00,00
+;;HKR,Config,RightMasterVol,1,7f,7f,00,00
+;;HKR,Config,LeftDACVol,1,7f,7f,00,00
+;;HKR,Config,RightDACVol,1,7f,7f,00,00
+HKR,Config,enable_lib,1,1
+
+[MIXER.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,SystemTray,0,SysTray.Exe
+HKLM,%KEY_IOC%\Vol,,0,
+
+[SSC_Legacy_Device.AddReg]
+HKR,,Devloader,,mmdevldr.vxd
+HKR,,Driver,,cm8338.vxd
+HKR,,SBEmu,1,01
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\midi,,,
+
+[HW_MIDI.AddReg]
+HKR,Drivers\midi\cm8338fm.drv,,,
+HKR,Drivers\midi\cm8338fm.drv,Driver,,cm8338fm.drv
+HKR,Drivers\midi\cmmpupci.drv,,,
+HKR,Drivers\midi\cmmpupci.drv,Driver,,cmmpupci.drv
+HKR,Drivers\midi\cmmpupci.drv,External,1,01,00,00,00
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers\midi\cm8338fm.drv,Description,,%CM8338.InternalMIDI%
+HKR,Drivers\midi\cmmpupci.drv,Description,,%CM8338.ExternalMIDI%
+
+[Audio3D.AddReg]
+HKCR,Audio3D,,0,Audio3DObject
+HKCR,Audio3D\CLSID,,0,%Audio3D_CLSID%
+HKCR,CLSID\%Audio3D_CLSID%,,0,Audio3DObject
+HKCR,CLSID\%Audio3D_CLSID%\InProcServer32,,0,Audio3D.dll
+HKCR,CLSID\%Audio3D_CLSID%\InProcServer32,ThreadingModel,0,Apartment
+
+[JOYSTICK.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,Drivers\joystick,,,
+
+[CM8338_Joystk.AddReg]
+HKR,,Driver,,vjoyd.vxd
+HKR,Drivers\joystick\msjstick.drv,Description,,%SSC-Joystk.DeviceDesc%
+HKR,Drivers\joystick\msjstick.drv,Driver,,msjstick.drv
+HKR,Drivers,SubClasses,,"joystick"
+
+[DOSEmu.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,cmswmpu.vxd
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers,MIGRATED,,0
+
+[SW_MIDI.AddReg]
+HKR,Drivers\midi,,,
+HKR,,Driver,,cmswmpu.vxd
+HKR,Drivers\midi\cmsmidi.drv,Driver,,cmsmidi.drv
+HKR,Drivers,SubClasses,,"midi"
+HKR,Drivers\midi\cmsmidi.drv,Description,,%SMIDI.DeviceDesc%
+
+
+;---------------------------------------------------------------;
+
+[CM8338_JSTICK.UpdateInis]
+system.ini,drivers,"joystick="
+
+[DOSEmu.UpdateInis]
+win.ini,windows,,"run=%11%\cmmpu.exe",
+
+;---------------------------------------------------------------;
+
+
+
+[DestinationDirs]
+DefaultDestDir             =    11  ; LDID_SYS
+sscncrt.SystemCopyList      =    11
+sscncrt.WinDirCopyList      =    10
+sscncrt.HelpDirCopyList     =   18
+
+
+[SourceDisksNames]
+1="CMI8338/C3DX PCI Audio Driver Disk",,0000-0000
+
+[SourceDisksFiles]
+cm8338.vxd=1,.,
+cmpci95.drv=1,.,
+cm8338fm.drv=1,.,
+cmmpupci.drv=1,.,
+vjoyd.vxd=1,.,
+msjstick.drv=1,.,
+Audio3D.dll=1,.,
+cmswmpu.vxd=1,.,
+cmmpu.exe=1,.,
+smidipci.dll=1,.,
+cmsmidi.drv=1,.,
+smidi32p.dll=1,.,
+dlswave.dat=1,.,
+dlstable.dat=1,.,
+sndvol32.exe=1,.,
+sndvol32.cnt=1,.,
+sndvol32.hlp=1,.,
+
+;---------------------------------------------------------------;
+
+[Strings]
+MfgName="C-MEDIA"
+DEV_3031.DeviceDesc="CMI8338/C3DX PCI Audio Device"
+SSC-Legacy.DeviceDesc="CMI8338/C3DX PCI Audio Legacy Device"
+SSC-Joystk.DeviceDesc="CMI8338/C3DX PCI Audio Joystick Device"
+SSC-DOSEmu.DeviceDesc="DOS Mode MPU-401 Emulator"
+SSC-SWMIDI.DeviceDesc="C-Media SoftMidi Driver"
+CM8338.ExternalMIDI="CMI8338/C3DX PCI Audio External MIDI Port"
+CM8338.InternalMIDI="CMI8338/C3DX PCI Audio FM Emulator"
+MediaClassName="Sound, video and game controllers"
+V_CLSWAVEFORM="Audio"
+V_CLSMIDI="MIDI"
+V_CLSMIXER="Mixer"
+V_CLSAUX="Auxiliary"
+V_GENERAL="General MIDI Instrument"
+Audio3D_CLSID="{D8F1EEE0-F634-11CF-8700-00A0245D918B}"
+SMIDI.DeviceDesc="C-Media SoftMidi Driver"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"

@@ -1,0 +1,89 @@
+;VIA Technologies, INC
+;VIA VT82C580 Bus Master IDE
+;Copyright 1993 Microsoft Corporation
+
+[version]
+signature="$CHICAGO$"
+Class=hdc
+ClassGUID={4d36e96a-e325-11ce-bfc1-08002be10318}
+Provider=%VIA%
+CatalogFile=viadsk.cat
+DriverVer=05/13/2003,2.0.950.320
+
+[ClassInstall]
+AddReg=HDC_Class
+
+[HDC_Class]
+HKR,,,,%HDCClassName%
+
+[Manufacturer]
+%VIA-Drivers%=VIATECH_HDC
+
+[VIATECH_HDC]
+%PCI\VEN_1106&DEV_0571.DeviceDesc%= DUAL_VIAIDE, PCI\VEN_1106&DEV_0571 ;Generic bus master PCI IDE
+%MF\VIAPRIMARY.DeviceDesc% = VIAIDE, MF\VIAPRIMARY
+%MF\VIASECONDARY.DeviceDesc% = VIAIDE, MF\VIASECONDARY
+
+[DUAL_VIAIDE]
+AddReg=StandardMF.Reg
+CopyFiles= MoveMiniPort
+
+[VIAIDE]
+AddReg = VIAIDE_AddReg
+
+[VIAIDE.PosDup]
+*PNP0571
+
+[DUAL_VIAIDE.HW]
+DelReg=DelMF.RegHW
+AddReg=DUAL_VIAIDE.RegHW
+
+[DelMF.RegHW]
+HKLM,Enum\MF\Child0000
+HKLM,Enum\MF\Child0001
+
+[DUAL_VIAIDE.RegHW]
+HKR,Child0000,HardwareID,,MF\VIAPRIMARY
+HKR,Child0000,ResourceMap,1,00,01,02,06
+HKR,Child0001,HardwareID,,MF\VIASECONDARY
+HKR,Child0001,ResourceMap,1,03,04,05,07
+HKR,,PCIDualIDE,1,01
+HKR,,ReferenceBIOS,1,00
+
+[StandardMF.Reg]
+HKR,,DevLoader,,*CONFIGMG
+HKR,,Enumerator,,*CONFIGMG
+HKR,,CMDrivFlags,1,03,00,00,00
+HKR,,AutoInsertNotificationDrive0,1,01
+
+
+[VIAIDE_AddReg]
+HKR,,DriverDesc,,"VIA Bus Master PCI IDE Controller"
+HKR,,DevLoader,,*IOS
+HKR,,PortDriver,,viadsk.mpd
+HKR,,IDEDMADRIVE0,1,01
+HKR,,IDEDMADRIVE1,1,01
+
+[DestinationDirs]
+DefaultDestDir = 12             ; IOSubsys directory
+
+[SourceDisksFiles]
+viadsk.mpd = 1
+viaide.vxd = 1
+
+[MoveMiniPort]
+viadsk.mpd
+viaide.vxd
+
+[SourceDisksNames]
+1 = %VIA_DiskNames%,, 
+
+[Strings]
+VIA                      ="VIA Technologies, Inc."
+VIA_DiskNames           = ""
+HDCClassName            = "Hard disk controllers"
+VIA-Drivers 		= "VIA bus master IDE drivers"
+PCI\VEN_1106&DEV_0571.DeviceDesc= "VIA Bus Master PCI IDE Controller"
+MF\VIAPRIMARY.DeviceDesc= "Primary Bus Master IDE controller (dual fifo)"
+MF\VIASECONDARY.DeviceDesc= "Secondary Bus Master IDE controller (dual fifo)"
+
