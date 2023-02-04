@@ -1,0 +1,15 @@
+FileSize Typ Name
+======== === =================================
+  484352 dat Dc95cpl.dll
+  126272 dat PROMTN.DRV
+    7771 dat PROMTN.vxd
+    6049 dat dc95.hlp
+    8048 dat fxmemmap.vxd
+   47104 dat fxoem2x.dll
+  444416 dat glide2x.dll
+  441979 dat glide2x.ovl
+  512512 dat glide3x.dll
+    6141 txt license.txt
+  280576 dat msvcrt.dll
+   85504 bin pmgamma.exe
+  137728 dat vg96dd32.dll

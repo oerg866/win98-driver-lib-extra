@@ -1,0 +1,155 @@
+; PROMTN.INF
+;
+; AT25 + Voodoo Rush 
+;	
+
+[version]
+Class=DISPLAY
+signature="$Chicago$"
+Provider=%Mfg%
+
+[DestinationDirs]
+DefaultDestDir  = 11    ; LDID_SYS
+Prev.DelFiles = 11
+Driver.Copy = 11
+Control.Copy = 11
+KeepInf.Copy=17
+Glide.Win = 10
+Glide.WinSys = 11
+
+[SourceDisksNames]
+1="AT25 + Voodoo Rush Driver Disk",,0
+
+[SourceDisksFiles]
+promtn.drv=1
+promtn.vxd=1
+dc95cpl.dll=1
+pmgamma.exe=1
+vg96dd32.dll=1
+msvcrt.dll=1
+fxmemmap.vxd=1
+glide2x.ovl=1
+glide2x.dll=1
+fxoem2x.dll=1
+glide3x.dll=1
+3dfxOGL.dll=1
+3dfxspl2.dll=1
+3dfxspl3.dll=1
+dc95.hlp=1
+
+[Manufacturer]
+%Mfg%=Mfg
+
+[Mfg]
+%PROMOTION.DeviceDesc%=Driver.Install, PCI\VEN_1142&DEV_6422, PCI\VEN_1142&DEV_6424, PCI\VEN_1142&DEV_3210, PCI\VEN_1142&DEV_643D
+
+[Driver.Install]
+CopyFiles=Driver.Copy,Control.Copy,Glide.Win,Glide.WinSys,KeepInf.Copy,Help.Copy
+DelReg=Prev.DelReg
+AddReg=Driver.AddReg,Control.AddReg,Driver.AddClock
+DelFiles=Prev.DelFiles
+
+[Driver.AddClock]
+HKEY_LOCAL_MACHINE,"SOFTWARE\Alliance Semiconductor\Driver\HW Acceleration Settings",MCLKFrequency,,72
+HKEY_LOCAL_MACHINE,"SOFTWARE\Alliance Semiconductor\Driver\HW Acceleration Settings",VG96_MCLKFrequency,,50
+HKEY_LOCAL_MACHINE,"SOFTWARE\Alliance Semiconductor\Driver\HW Acceleration Settings",DualCycleThreshold,,90
+
+[Prev.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKEY_LOCAL_MACHINE,"SOFTWARE\Alliance Semiconductor\Director's Chair 95"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,ProMotion1,,pmgamma.exe
+HKEY_CLASSES_ROOT,"CLSID\{921BD320-8CB5-11CF-84CF-885835D9DC01}\InProcServer32",,,dc95.dll
+HKEY_CLASSES_ROOT,"CLSID\{921BD320-8CB5-11CF-84CF-885835D9DC01}\InProcServer32",,,dc95cpl.dll
+HKEY_CLASSES_ROOT,"CLSID\{921BD320-8CB5-11CF-84CF-885835D9DC01}\InProcServer32",ThreadingModel,,Apartment
+HKEY_LOCAL_MACHINE,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\DriverPages",,,"{921BD320-8CB5-11CF-84CF-885835D9DC01}"
+HKEY_LOCAL_MACHINE,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ProMotion Director's Chair",,,"{921BD320-8CB5-11CF-84CF-885835D9DC01}"
+HKEY_LOCAL_MACHINE,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\Intense 3D Voodoo",,,"{921BD320-8CB5-11CF-84CF-885835D9DC01}"
+HKEY_LOCAL_MACHINE,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\Directors Chair",,,"{921BD320-8CB5-11CF-84CF-885835D9DC01}"
+
+[Prev.DelFiles]
+dc95.dll
+pmsplash.exe
+
+[Driver.Copy]
+promtn.drv
+promtn.vxd
+vg96dd32.dll
+fxmemmap.vxd
+msvcrt.dll
+
+[Glide.Win]
+glide2x.ovl,,,4
+
+[Glide.WinSys]
+glide2x.dll
+fxoem2x.dll
+glide3x.dll
+3dfxOGL.dll
+3dfxspl2.dll
+3dfxspl3.dll
+
+[Driver.AddReg]
+HKR,,Ver,,4.10.01.2073
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"16,640,480"
+HKR,DEFAULT,drv,,promtn.drv
+HKR,DEFAULT,vdd,,*vdd
+HKR,DEFAULT,minivdd,,promtn.vxd
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,DEFAULT,ExtModeSwitch,,1
+HKR,"MODES\4\640,480",drv,,vga.drv
+HKR,"MODES\4\640,480",vdd,,*vdd
+HKR,"MODES\4\800,600",drv,,supervga.drv
+HKR,"MODES\4\800,600",vdd,,*vdd
+HKR,"MODES\4\1024,768"
+HKR,"MODES\4\1280,1024"
+HKR,"MODES\8\640,480"
+HKR,"MODES\8\800,600"
+HKR,"MODES\8\1024,768"
+HKR,"MODES\8\1152,864"
+HKR,"MODES\8\1280,1024"
+HKR,"MODES\8\1600,1200"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\32\640,400"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\1024,768"
+HKR,"MODES\32\1152,864"
+
+[Control.Copy]
+dc95cpl.dll
+pmgamma.exe
+
+[Help.Copy]
+dc95.hlp
+
+[Control.AddReg]
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,ProMotion1,,pmgamma.exe
+HKEY_CLASSES_ROOT,"CLSID\{921BD320-8CB5-11CF-84CF-885835D9DC01}\InProcServer32",,,dc95cpl.dll
+HKEY_CLASSES_ROOT,"CLSID\{921BD320-8CB5-11CF-84CF-885835D9DC01}\InProcServer32",ThreadingModel,,Apartment
+HKEY_LOCAL_MACHINE,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\Directors Chair",,,"{921BD320-8CB5-11CF-84CF-885835D9DC01}"
+HKEY_LOCAL_MACHINE,"SOFTWARE\Alliance Semiconductor\Director's Chair 95",Mfg,,%Mfg%
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\AT25VRush,DisplayName,,"AT25 + Voodoo Rush"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\AT25VRush,UninstallString,,"RunDll setupx.dll,InstallHinfSection ControlUninstall 4 promtn.inf"
+
+[KeepInf.Copy]
+promtn.inf
+
+[ControlUninstall]
+DelReg = Control.AddReg
+DelFiles = Control.Copy,Glide.Win,Glide.WinSys,KeepInf.Copy,Help.Copy
+
+[Strings]
+Mfg="Alliance Semiconductor"
+PROMOTION.DeviceDesc="AT25 + Voodoo Rush (Single Board)"
+
