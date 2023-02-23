@@ -1,6 +1,6 @@
 
 [Version]
-Signature=$WINDOWS95$
+Signature="$CHICAGO$"
 Class=Media
 Provider=%String0%
 LayoutFile=layout.inf
