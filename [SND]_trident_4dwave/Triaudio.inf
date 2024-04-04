@@ -1,0 +1,483 @@
+;	Copyright Trident Microsystems, Inc (c) 1997  All Rights Reserved.
+;	Portions Copyright (c) 1993 Microsoft Corporation.  All Rights Reserved.
+;
+;	Title:    OEMSETUP.INF - Trident PCI Audio Installation File
+;       Author:   Tom Warren - Trident Microsystems, Arizona Product Group
+;       Updated:  10/29/97 - TRIDWAVE/TRIDWNW name change - TCW APG
+;       Updated:  10/30/97 - Fix MIDIMAP wavetable auto-assign - TCW APG
+;       Updated:  11/18/97 - Added 4DWave and 9753Wave Rev B
+;       Updated:  12/03/97 - Added Autoexec update for WAVEINIT/WAVETSR.
+;       Updated:  12/12/97 - Switched midi devices 0 and 1.
+;       Updated:  12/19/97 - Fixed Joystick install??, added sample set CD.
+;       Updated:  02/12/98 - Removed all LogConfig stuff, not needed.
+;       Updated:  02/13/98 - Added QA3D installation code.
+;       Updated:  02/20/98 - Added code to install Microsoft Joystick.
+;       Updated:  03/18/98 - Added Q3DCTL control program to install & run.
+;       Updated:  03/23/98 - Added our own flavor of Joystick.
+;       Updated:  03/23/98 - Disabled A3D installation for this release.
+;       Updated:  04/01/98 - Added handling of Direct Input installation.
+;                            This installs tridinpt.inf and standard joystick.
+;       Updated:  04/29/98 - Reenable A3D installation for this release.
+;       Updated:  04/29/98 - Remove Q3DCTL, no internationalization support.
+;       Updated:  05/12/98 - Added NX support, removed 9753 support.
+;       Updated:  06/30/98 - Added TridTray.exe and TridCpl.cpl.
+;       Updated:  08/14/98 - Added some PCI strings for NX to ease 98 installs.
+;       Updated:  08/31/98 - Modified Legacy device to use mmdevldr,
+;                            plus assigned VxD to Legacy as its driver.
+;       Updated:  11/18/98 - Added triq3d.exe to the install.
+;       Updated:  12/07/98 - Support for NX rev C.
+;       Updated:  12/30/98 - Added Support for most common NX EPROM Values.
+;       Updated:  01/21/99 - Added lines suport OEM EEPROM SUBSYS_1400122D.
+;       Updated:  01/27/99 - Added strings from Mixer, for OEM Customization.
+;       Updated:  01/28/99 - Change NX to 2/4 MB Sample Sets only.
+;       Updated:  01/29/99 - Proliferated 11 languages
+;       Updated:  02/03/99 - Now supports OEM flag field
+;       Updated:  03/26/99 - Support new NX Sample Sets & QSound MaxPan field.
+;       Updated:  05/05/99 - Added support for RestoreCDRearAfterRecord.
+;       Updated:  05/14/99 - Added support for Spdif feature removal.
+;       Updated:  05/26/99 - Added support for aggressive legacy IRQ allocation.
+;       Updated:  06/21/99 - Added support for new MIDI engine.
+;       Updated:  08/31/99 - Modified Q3D fields to be loaded under DevNode Key.
+;       Updates   10/08/99 - Modified to include TriFace.dll.
+
+; English Version
+
+
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+Provider=%TMS%
+LayoutFile=LAYOUT.INF
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[Manufacturer]
+%TRIDMfgName%=TRID
+
+[TRID]
+%PCI\VEN_1023&DEV_2000.DeviceDesc% = TRID4DDX, PCI\VEN_1023&DEV_2000
+%PCI\VEN_1023&DEV_2000.DeviceDesc% = TRID4DDX, PCI\VEN_1023&DEV_2000&SUBSYS_20001023&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001
+; Windows 98.  Add more lines for each OEM's SubSys ID when available.
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_FFFFFFFF&REV_00
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_00000000&REV_01
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_0000FFFF&REV_01
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_FFFF0000&REV_01
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_FFFFFFFF&REV_01
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_20011023&REV_01
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_00000000&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_0000FFFF&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_FFFF0000&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_FFFFFFFF&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_20011023&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_1400122D&REV_02
+%PCI\VEN_1023&DEV_2001.DeviceDesc% = TRID4DNX, PCI\VEN_1023&DEV_2001&SUBSYS_1400122D
+%Trident_Legacy_Device.DeviceDesc% = Trid_Legacy.Install,VIRTUAL\Trid_Legacy
+
+[TRID4DDX]
+CopyFiles=TRID_SysCopyFiles, TRID_SampleSets
+UpdateInis=TRID_UpdateInis
+AddReg=WAVE.AddReg, MIXER.AddReg, TRID4DDX.AddReg, TRAY.AddReg, QA3D.AddReg 
+UpdateAutoBat=TRID_Update_Autobat
+
+[TRID4DNX]
+CopyFiles=TRID_SysCopyFiles, TRID_SampleSets
+UpdateInis=TRID_UpdateInis
+AddReg=WAVE.AddReg, MIXER.AddReg, TRID4DNX.AddReg, TRAY.AddReg, QA3D.AddReg 
+UpdateAutoBat=TRID_Update_Autobat
+
+;---------------------------------------------------------------;
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[Det.DevINFs]
+VIRTUAL\Trid_Gameport=tridinpt.inf
+
+;---------------------------------------------------------------;
+
+[TRID_SysCopyFiles]
+TRIDWNW.VXD
+TRIDWAVE.DRV
+TRIDCPL.CPL
+TRIDTRAY.EXE
+WAVEINIT.EXE
+WAVETSR.COM
+QHOOK.VXD
+QA3D.DLL
+A3D.DLL
+QA3DLOAD.DLL
+TRIQ3D.EXE
+TRIFACE.DLL
+
+[TRID_SampleSets]
+GM16NX.SF2
+GM50NX.SF2
+
+[TRID_UpdateInis]
+system.ini,drivers,"midi=TRIDWAVE.DRV",,0
+system.ini,drivers,"mixer=TRIDWAVE.DRV",,0
+system.ini,drivers,"wave=TRIDWAVE.DRV",,0
+system.ini,drivers,"aux=TRIDWAVE.DRV",,0
+system.ini,drivers,"joystick="
+
+[TRID_Update_AutoBat]
+CmdAdd=WAVEINIT.EXE,"/v"
+CmdAdd=WAVETSR.COM
+
+[DestinationDirs]
+TRID_SysCopyFiles = 11 ; 	System Directory
+TRID_WinCopyFiles = 10 ;	Windows Directory
+DefaultDestDir=11
+
+[WAVE.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+; OEM Aztech
+;HKR,%OEM%,OEMSelect,1,01,00,00,00
+; OEM Trident
+HKR,%OEM%,OEMSelect,1,00,00,00,00
+
+[MIXER.AddReg]
+HKLM,%KEY_RUN%,SystemTray,,"SysTray.Exe"
+HKLM,%KEY_IOC%\Vol,,,
+
+;** MIXER_VOLUME Settings.
+; Do not change these names, as they are used by the driver
+;
+HKR,%CONFIG%,LineoutVolMute,1,00,00,00,00
+HKR,%CONFIG%,HeadphoneVolMute,1,00,00,00,00
+HKR,%CONFIG%,MonooutVolMute,1,00,00,00,00
+HKR,%CONFIG%,LineInVolMute,1,00,00,00,00
+HKR,%CONFIG%,MidiVolMute,1,00,00,00,00
+HKR,%CONFIG%,CDVolMute,1,00,00,00,00
+HKR,%CONFIG%,MonoMICVolMute,1,00,00,00,00
+HKR,%CONFIG%,WaveVolMute,1,00,00,00,00
+HKR,%CONFIG%,PCBeepVolMute,1,00,00,00,00
+HKR,%CONFIG%,AUXVolMute,1,00,00,00,00
+HKR,%CONFIG%,VideoVolMute,1,00,00,00,00
+HKR,%CONFIG%,PhoneVolMute,1,00,00,00,00
+HKR,%CONFIG%,PCMVolMute,1,00,00,00,00
+HKR,%CONFIG%,LeftLineoutVol,1,ff,df,00,00
+HKR,%CONFIG%,RightLineoutVol,1,ff,df,00,00
+HKR,%CONFIG%,LeftHeadphoneVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightHeadphoneVol,1,ff,ff,00,00
+HKR,%CONFIG%,MonooutVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftLineInVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightLineInVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftMidiVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightMidiVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftCDVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightCDVol,1,ff,ff,00,00
+HKR,%CONFIG%,MonoMICVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftWaveVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveVol,1,ff,ff,00,00
+HKR,%CONFIG%,MonoPCBeepVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftAUXVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightAUXVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftVideoVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightVideoVol,1,ff,ff,00,00
+HKR,%CONFIG%,MonoPhoneVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftPCMVol,1,00,c0,00,00
+HKR,%CONFIG%,RightPCMVol,1,00,c0,00,00
+HKR,%CONFIG%,LeftWaveInLineInVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveInLineInVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftWaveInCDVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveInCDVol,1,ff,ff,00,00
+HKR,%CONFIG%,WaveInMicVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftWaveInAUXVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveInAUXVol,1,ff,ff,00,00
+HKR,%CONFIG%,LeftWaveInVideoVol,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveInVideoVol,1,ff,ff,00,00
+HKR,%CONFIG%,WaveInPhone,1,ff,ff,00,00
+HKR,%CONFIG%,LeftWaveInStereoMix,1,ff,ff,00,00
+HKR,%CONFIG%,RightWaveInStereoMix,1,ff,ff,00,00
+HKR,%CONFIG%,WaveInMonoMix,1,ff,ff,00,00
+HKR,%CONFIG%,WaveInSource,="LineIn"
+HKR,%CONFIG%,MonoOutSource,="MonoMix"
+HKR,%CONFIG%,ToneBass,1,ff,ff,00,00
+HKR,%CONFIG%,ToneTreble,1,ff,ff,00,00
+HKR,%CONFIG%,MonoMix,1,ff,ff,00,00
+HKR,%CONFIG%,Microphone,1,ff,ff,00,00
+HKR,%CONFIG%,4SpeakerMuteMic,1,01
+HKR,%CONFIG%,RestoreCDRearAfterRecord,1,01
+HKR,%CONFIG%,SpdifFeatureNotPresent,1,00
+HKR,%CONFIG%,ForceAggressiveLegacyIRQAllocation,1,00
+
+
+;** MIXER_LABEL_SETINGS
+; Constraints on labels:
+; LONG labels can be up to 64 characters long, including the null terminator
+; SHORT labels can be up to 16 characters long, including the null terminator
+;
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE0_LONG,, "Line-In"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE1_LONG,, "MIDI"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE2_LONG,, "CD Audio"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE3_LONG,, "Microphone"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE4_LONG,, "Wave"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE5_LONG,, "PC Speaker"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE6_LONG,, "AUX"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE7_LONG,, "Video"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE8_LONG,, "Phone"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE9_LONG,, "StereoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE10_LONG,, "MonoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE11_LONG,, "PCMOut"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE0_SHORT,, "LineIn"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE1_SHORT,, "MIDI"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE2_SHORT,, "CD"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE3_SHORT,, "Mic"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE4_SHORT,, "Wave"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE5_SHORT,, "Speaker"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE6_SHORT,, "AUX"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE7_SHORT,, "Video"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE8_SHORT,, "Phone"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE9_SHORT,, "StereoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE10_SHORT,, "MonoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_SOURCE11_SHORT,, "PCM"
+
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST0_LONG,, "Master Volume"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST1_LONG,, "Record Gain"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST2_LONG,, "MonoOut Control"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST0_SHORT,, "Playback"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST1_SHORT,, "Record"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_DEST2_SHORT,, "MonoOut"
+
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL0_LONG,, "Trident PCI Line-In Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL1_LONG,, "Trident PCI Music Output Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL2_LONG,, "Trident PCI CD Output Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL3_LONG,, "Trident PCI Microphone Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL4_LONG,, "Trident PCI Wave Output Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL5_LONG,, "Trident PCI PC Speaker Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL6_LONG,, "Trident PCI AUX Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL7_LONG,, "Trident PCI Video Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL8_LONG,, "Trident PCI Phone Volume For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL9_LONG,, "Trident PCI Line-In Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL10_LONG,, "Trident PCI Music Output Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL11_LONG,, "Trident PCI CD Output Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL12_LONG,, "Trident PCI Microphone Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL13_LONG,, "Trident PCI Wave Output Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL14_LONG,, "Trident PCI PC Speaker Signal Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL15_LONG,, "Trident PCI AUX Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL16_LONG,, "Trident PCI Video Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL17_LONG,, "Trident PCI Phone Mute For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL18_LONG,, "Trident PCI Line-In Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL19_LONG,, "Trident PCI CD Output Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL20_LONG,, "Trident PCI Microphone Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL21_LONG,, "Trident PCI AUX Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL22_LONG,, "Trident PCI Video Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL23_LONG,, "Trident PCI Phone Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL24_LONG,, "Trident PCI StereoMix Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL25_LONG,, "Trident PCI MonoMix Volume For Recording"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL26_LONG,, "Trident PCI Recording Input MUX Type Source Selector"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL27_LONG,, "Trident PCI Master Volume For Line Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL28_LONG,, "Trident PCI Master Volume For Headphone Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL29_LONG,, "Trident PCI Master Volume For Mono Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL30_LONG,, "Trident PCI Mute For Line Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL31_LONG,, "Trident PCI Mute For Headphone Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL32_LONG,, "Trident PCI Mute For Mono Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL33_LONG,, "Trident PCI Bass For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL34_LONG,, "Trident PCI Treble For Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL35_LONG,, "Trident PCI MonoOut MonoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL36_LONG,, "Trident PCI MonoOut Microphone"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL37_LONG,, "Trident PCI PeakMeter For Wave Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL38_LONG,, "Trident PCI General Purpose Control For Output and Input"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL39_LONG,, "Trident PCI Volume For PCM Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL40_LONG,, "Trident PCI Mute For PCM Output"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL41_LONG,, "Trident PCI MonoOut Input MUX Type Source Selector"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL42_LONG,,  "Microphone 20dB Boost"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL43_LONG,,  "Microphone 20dB Boost"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL0_SHORT,, "LineInVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL1_SHORT,, "MidiVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL2_SHORT,, "CDVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL3_SHORT,, "MicVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL4_SHORT,, "WaveVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL5_SHORT,, "PcBpVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL6_SHORT,, "AUXVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL7_SHORT,, "VideoVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL8_SHORT,, "PhoneVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL9_SHORT,, "LineInMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL10_SHORT,, "MidiMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL11_SHORT,, "CDMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL12_SHORT,, "MicMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL13_SHORT,, "WaveMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL14_SHORT,, "PcBpMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL15_SHORT,, "AUXMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL16_SHORT,, "VideoMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL17_SHORT,, "PhoneMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL18_SHORT,, "LineInVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL19_SHORT,, "CDVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL20_SHORT,, "MicVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL21_SHORT,, "AUXVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL22_SHORT,, "VideoVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL23_SHORT,, "PhoneVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL24_SHORT,, "StereoVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL25_SHORT,, "MonoVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL26_SHORT,, "WaveInMux"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL27_SHORT,, "LineOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL28_SHORT,, "HdphOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL29_SHORT,, "MonoOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL30_SHORT,, "LineOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL31_SHORT,, "HdphOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL32_SHORT,, "MonoOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL33_SHORT,, "Bass"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL34_SHORT,, "Treble"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL35_SHORT,, "MonoMix"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL36_SHORT,, "Microphone"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL37_SHORT,, "WaveOutPM"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL38_SHORT,, "GeneralPP"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL39_SHORT,, "PCMOutVol"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL40_SHORT,, "PCMOutMute"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL41_SHORT,, "MonoOutMux"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL42_SHORT,, "Microphone 20dB Boost"
+HKR,%MIXER_LABEL_SETTINGS%,SR_STR_MIXER_CONTROL43_SHORT,, "Microphone 20dB Boost"
+
+
+[TRID4DDX.AddReg]
+HKR,,Driver,,TRIDWNW.VXD
+HKR,Drivers,MIGRATED,,1
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+HKR,Drivers\wave\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\mixer\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\aux\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\wave\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2000.DeviceDesc%
+HKR,Drivers\mixer\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2000.DeviceDesc%
+HKR,Drivers\aux\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2000.DeviceDesc%
+;***
+HKR,Drivers\wave\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\mixer\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\aux\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+;***
+HKR,Drivers\midi\%V_WAVETABLE%,Driver,,TRIDWAVE.DRV
+HKR,Drivers\midi\%V_WAVETABLE%,Description,,%V_WAVETABLE%
+HKR,Drivers\midi\%V_WAVETABLE%,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\%V_WAVETABLE%,Port,1,00,00,00,00
+;***
+HKR,Drivers\midi\%V_EXTERNAL%,Driver,,TRIDWAVE.DRV
+HKR,Drivers\midi\%V_EXTERNAL%,Description,,%V_EXTERNAL%
+HKR,Drivers\midi\%V_EXTERNAL%,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\%V_EXTERNAL%,Port,1,01,00,00,00
+;***
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,%SETTINGS%,,,
+HKR,,EnumPropPages,,"TRIDWAVE.DRV,DrvEnumPropPages"
+
+[TRID4DNX.AddReg]
+HKR,,Driver,,TRIDWNW.VXD
+HKR,Drivers,MIGRATED,,1
+HKR,Drivers\midi,,,
+HKR,Drivers\wave,,,
+HKR,Drivers\mixer,,,
+HKR,Drivers\aux,,,
+HKR,Drivers\wave\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\mixer\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\aux\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\wave\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2001.DeviceDesc%
+HKR,Drivers\mixer\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2001.DeviceDesc%
+HKR,Drivers\aux\TRIDWAVE.DRV,Description,,%PCI\VEN_1023&DEV_2001.DeviceDesc%
+;***
+HKR,Drivers\wave\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\mixer\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+HKR,Drivers\aux\TRIDWAVE.DRV,Driver,,TRIDWAVE.DRV
+;***
+HKR,Drivers\midi\%V_WAVETABLE%,Driver,,TRIDWAVE.DRV
+HKR,Drivers\midi\%V_WAVETABLE%,Description,,%V_WAVETABLE%
+HKR,Drivers\midi\%V_WAVETABLE%,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\%V_WAVETABLE%,Port,1,00,00,00,00
+;***
+HKR,Drivers\midi\%V_EXTERNAL%,Driver,,TRIDWAVE.DRV
+HKR,Drivers\midi\%V_EXTERNAL%,Description,,%V_EXTERNAL%
+HKR,Drivers\midi\%V_EXTERNAL%,NumPorts,1,02,00,00,00
+HKR,Drivers\midi\%V_EXTERNAL%,Port,1,01,00,00,00
+;***
+HKR,Drivers,SubClasses,,"wave,midi,aux,mixer"
+HKR,%SETTINGS%,,,
+HKR,,EnumPropPages,,"TRIDWAVE.DRV,DrvEnumPropPages"
+
+[TRAY.AddReg]
+HKLM,%KEY_RUN%,TridTray,,%11%\tridtray.exe" 
+
+[QA3D.AddReg]
+HKCR,A3D,,0,A3d Object
+HKCR,A3D\CLSID,,0,{d8f1eee0-f634-11cf-8700-00a0245d918b}
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b},,0,A3d Object
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32,,0,a3d.dll
+HKCR,CLSID\{d8f1eee0-f634-11cf-8700-00a0245d918b}\InprocServer32,ThreadingModel,0,Apartment
+HKR,%KEY_Q3D%,MaxPan,,"1000"
+HKR,%KEY_Q3D%,Ranging,,"1"
+HKR,%KEY_Q3D%,Elevation,,"1"
+HKR,%KEY_Q3D%,RateConversion,,"1"
+;HKLM,%KEY_RUN%,Q3DControlPanel,,%11%\q3dctl.exe" 
+
+
+;---------------------------------------------------------------;
+
+[Trid_Legacy.Install]
+AddReg=Trid_Legacy.AddReg
+
+[Trid_Legacy.AddReg]
+HKR,,DevLoader,,mmdevldr.vxd
+HKR,,Driver,,tridwnw.vxd
+HKR,Drivers,MIGRATED,,0
+HKR,,EnumPropPages,,"EnumPropPages"
+
+[SourceDisksFiles]
+TRIDWNW.VXD=2
+TRIDWAVE.DRV=2
+TRIDCPL.CPL=2
+TRIDTRAY.EXE=2
+WAVEINIT.EXE=2
+WAVETSR.COM=2
+QHOOK.VXD=2
+QA3D.DLL=2
+A3D.DLL=2
+QA3DLOAD.DLL=2
+TRIQ3D.EXE=2
+TRIFACE.DLL=2
+GM16NX.SF2=2
+GM50NX.SF2=2
+
+[SourceDisksNames]
+1=%DirectX5CD%,%DirectX5%,0
+2=%AudioInstallCD%,,
+
+[Strings]
+;Non-localized strings
+KEY_WARNVER="SYSTEM\CurrentControlSet\Control\SessionManager\WarnVerDLLs"
+KEY_CHKVER="SYSTEM\CurrentControlSet\Control\SessionManager\CheckVerDLLs"
+KEY_FIL="SYSTEM\CurrentControlSet\Control\MediaResources\FilterList"
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+KEY_RUN="Software\Microsoft\Windows\CurrentVersion\Run"
+KEY_OEM="System\CurrentControlSet\Control\MediaProperties\PrivateProperties\Joystick\OEM\Trident GameCard"
+KEY_Q3D="Q3D"
+CONFIG="Config"
+SETTINGS="Settings"
+OEM="OEM"
+MIXER_LABEL_SETTINGS="Settings\MixerLabels"
+
+;Localized strings
+TMS="Trident Microsystems, Inc. APG"
+TRIDMfgName="TRID"
+DirectX5CD="DirectX 5.0 Drivers Redist"
+DirectX5="DirectX5.0"
+AudioInstallCD="Trident PCI Audio Driver Install CD"
+MediaClassName="Sound, video and game controllers"
+PCI\VEN_1023&DEV_2000.DeviceDesc="Trident 4DWave(DX) PCI Audio"
+PCI\VEN_1023&DEV_2001.DeviceDesc="Trident 4DWave(NX) PCI Audio"
+Trident_Legacy_Device.DeviceDesc="Trident Legacy Audio"
+V_WAVETABLE="Trident PCI WaveTable MIDI"
+V_EXTERNAL="Trident PCI External MIDI"
+Trident_Joystick.DeviceDesc="Trident Gameport"
+GameCard.DeviceDesc="Trident Direct Input Driver"
+
+; **** End of OEMSETUP.INF ****
+
