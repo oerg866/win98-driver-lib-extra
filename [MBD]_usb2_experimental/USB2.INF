@@ -1,0 +1,304 @@
+; Copyright 2001-2003
+; Microsoft Corporation
+; USB2.INF
+; USB 2.0 Add-On Driver support
+; For Windows 98SE and Windows ME
+; Maximus Decim modified - 08/07/2011, 01.01   add new devides (Intel, ATI, nVidia, VMware, Philips)
+; Maximus Decim modified - 31/05/2012, 01.02   add new devides (Intel, ATI)
+
+[Version]
+signature="$CHICAGO$"
+Class=USB
+ClassGUID={36FC9E60-C465-11CF-8056-444553540000}
+Provider=%Msft%
+DriverVer=09/26/2003,4.90.3000.10
+
+[SourceDisksNames]
+1=%Distribution%,usbehci.sys,, 
+
+[SourceDisksFiles]
+usbehci.sys = 1
+usbport.sys = 1
+usbhub20.sys = 1
+usb2.inf = 1
+
+[ControlFlags]
+ExcludeFromSelect = *
+
+[DestinationDirs]
+DefaultDestDir=10 
+EHCI.CopyFiles         = 10, system32\drivers
+HUB20.CopyFiles        = 10, system32\drivers
+INF.CopyFiles          = 17
+
+; note that these are in alphabetical order
+;
+
+[Manufacturer]
+%Generic%=Generic
+%Intel%=Intel
+%NEC%=NEC
+%VIA%=VIA
+%ATI%=ATI
+%SIS%=SIS
+%ALI%=ALI
+%nVidia%=NVIDIA
+%VMware%=VMWARE
+%Philips%=PHILIPS
+; --------------------------------------------------------------
+; EHCI 
+; --------------------------------------------------------------
+
+[EHCI]
+AddReg=EHCI.AddReg
+CopyFiles=EHCI.CopyFiles
+
+[EHCI.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,usbehci.sys
+HKR,,EnumPropPages,,"sysclass.dll,USBControllerPropPage"
+
+[EHCI.CopyFiles]
+usbehci.sys
+usbport.sys
+
+; --------------------------------------------------------------
+; USB ROOT HUB (USB 2.0)
+; --------------------------------------------------------------
+
+[ROOTHUB2]
+AddReg=Usb2Hub.AddReg
+CopyFiles=HUB20.CopyFiles
+
+; --------------------------------------------------------------
+; USB 2.0 Hub Support
+; --------------------------------------------------------------
+
+[Usb2Hub.Dev]
+CopyFiles=HUB20.CopyFiles
+AddReg=Usb2Hub.AddReg
+
+[Usb2Hub.AddReg]
+HKR,,DevLoader,,*NTKERN
+HKR,,NTMPDriver,,usbhub20.sys
+HKR,,EnumPropPages,,"sysclass.dll,USBHubPropPage"
+
+[HUB20.CopyFiles]
+usbhub20.sys
+
+; =================== GENERIC ===================================
+[Generic]
+%PCI\CC_0C0320.DeviceDesc%=EHCI,PCI\CC_0C0320
+%USB\ROOT_HUB20.DeviceDesc%=ROOTHUB2,USB\ROOT_HUB20
+; 2.0 HUBs
+%USB\HubClass.DeviceDesc%=Usb2Hub.Dev,USB\HubClass
+
+; =================== NEC ==================================
+[NEC] 
+%PCI\VEN_1033&DEV_00E0&REV_01.DeviceDesc%=EHCI,PCI\VEN_1033&DEV_00E0&REV_01
+%PCI\VEN_1033&DEV_00E0&REV_02.DeviceDesc%=EHCI,PCI\VEN_1033&DEV_00E0&REV_02
+%PCI\VEN_1033&DEV_00E0&REV_04.DeviceDesc%=EHCI,PCI\VEN_1033&DEV_00E0&REV_04
+%PCI\VEN_1033&DEV_00E0&REV_05.DeviceDesc%=EHCI,PCI\VEN_1033&DEV_00E0&REV_05
+%PCI\VEN_1033&DEV_00E0.DeviceDesc%=EHCI,PCI\VEN_1033&DEV_00E0
+
+; =================== INTEL =================================
+[Intel]
+%PCI\VEN_8086&DEV_24CD.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_24CD
+%PCI\VEN_8086&DEV_24DD.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_24DD
+%PCI\VEN_8086&DEV_25AD.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_25AD
+%PCI\VEN_8086&DEV_265C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_265C
+%PCI\VEN_8086&DEV_27CC.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_27CC
+%PCI\VEN_8086&DEV_283A.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_283A
+%PCI\VEN_8086&DEV_2836.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_2836
+%PCI\VEN_8086&DEV_293A.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_293A
+%PCI\VEN_8086&DEV_293C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_293C
+%PCI\VEN_8086&DEV_268C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_268C
+%PCI\VEN_8086&DEV_3B34.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3B34
+%PCI\VEN_8086&DEV_3B3C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3B3C
+%PCI\VEN_8086&DEV_3A6A.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3A6A
+%PCI\VEN_8086&DEV_3A6C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3A6C
+%PCI\VEN_8086&DEV_3A3A.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3A3A
+%PCI\VEN_8086&DEV_3A3C.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_3A3C
+%PCI\VEN_8086&DEV_8807.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_8807
+%PCI\VEN_8086&DEV_880F.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_880F
+%PCI\VEN_8086&DEV_1C26.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1C26
+%PCI\VEN_8086&DEV_1C2D.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1C2D
+%PCI\VEN_8086&DEV_8117.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_8117
+%PCI\VEN_8086&DEV_5035.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_5035
+%PCI\VEN_8086&DEV_2334.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_2334
+%PCI\VEN_8086&DEV_2335.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_2335
+%PCI\VEN_8086&DEV_2359.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_2359
+%PCI\VEN_8086&DEV_235A.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_235A
+%PCI\VEN_8086&DEV_1D26.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1D26
+%PCI\VEN_8086&DEV_1D2D.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1D2D
+%PCI\VEN_8086&DEV_1D26.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1E26
+%PCI\VEN_8086&DEV_1D2D.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_1E2D
+%PCI\VEN_8086&DEV_0806.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_0806
+%PCI\VEN_8086&DEV_0811.DeviceDesc%=EHCI,PCI\VEN_8086&DEV_0811
+
+; =================== VIA ===================================
+[VIA]
+%PCI\VEN_1106&DEV_3104&REV_51.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104&REV_51
+%PCI\VEN_1106&DEV_3104&REV_63.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104&REV_63
+%PCI\VEN_1106&DEV_3104&REV_82.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104&REV_82
+%PCI\VEN_1106&DEV_3104&REV_86.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104&REV_86
+%PCI\VEN_1106&DEV_3104&REV_90.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104&REV_90
+%PCI\VEN_1106&DEV_3104.DeviceDesc%=EHCI,PCI\VEN_1106&DEV_3104
+
+; =================== SiS ===================================
+[SIS]
+%PCI\VEN_1039&DEV_7002.DeviceDesc%=EHCI,PCI\VEN_1039&DEV_7002
+
+; =================== Ali ===================================
+[ALI]
+%PCI\VEN_10B9&DEV_5239.DeviceDesc%=EHCI,PCI\VEN_10B9&DEV_5239
+
+; =================== nVidia ================================
+[NVIDIA]
+%PCI\VEN_10DE&DEV_0068.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0068
+%PCI\VEN_10DE&DEV_0088.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0088
+%PCI\VEN_10DE&DEV_00D8.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_00D8
+%PCI\VEN_10DE&DEV_00E8.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_00E8
+%PCI\VEN_10DE&DEV_055F.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_055F
+%PCI\VEN_10DE&DEV_056A.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_056A
+%PCI\VEN_10DE&DEV_077C.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_077C
+%PCI\VEN_10DE&DEV_077E.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_077E
+%PCI\VEN_10DE&DEV_0AA6.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0AA6
+%PCI\VEN_10DE&DEV_0AA9.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0AA9
+%PCI\VEN_10DE&DEV_0AAA.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0AAA
+%PCI\VEN_10DE&DEV_005B.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_005B
+%PCI\VEN_10DE&DEV_003C.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_003C
+%PCI\VEN_10DE&DEV_026E.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_026E
+%PCI\VEN_10DE&DEV_036D.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_036D
+%PCI\VEN_10DE&DEV_03F2.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_03F2
+%PCI\VEN_10DE&DEV_0455.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0455
+%PCI\VEN_10DE&DEV_0457.DeviceDesc%=EHCI,PCI\VEN_10DE&DEV_0457
+
+; =================== ATI ===================================
+[ATI]
+%PCI\VEN_1002&DEV_4345.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4345
+%PCI\VEN_1002&DEV_4365.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4365
+%PCI\VEN_1002&DEV_4373.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4373
+%PCI\VEN_1002&DEV_4373&REV_80.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4373&REV_80
+%PCI\VEN_1002&DEV_4386.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4386
+%PCI\VEN_1002&DEV_4396.DeviceDesc%=EHCI,PCI\VEN_1002&DEV_4396
+
+; =================== VMware ================================
+[WMVARE]
+%PCI\VEN_15AD&DEV_0770.DeviceDesc%=EHCI,PCI\VEN_15AD&DEV_0770
+
+; =================== Philips ===============================
+[PHILIPS]
+%PCI\VEN_1131&DEV_1562.DeviceDesc%=EHCI,PCI\VEN_1131&DEV_1562
+
+; =================== DefaultInstall ========================
+[DefaultInstall]
+CopyFiles=INF.CopyFiles,EHCI.CopyFiles,HUB20.CopyFiles
+
+[INF.CopyFiles]
+usb2.inf
+
+;------------------------------------------ cut here ---------------------------
+
+[Strings] 
+Distribution="USB 2.0 (EHCI) Driver Disk"
+Msft="Microsoft"
+
+Generic="(Standard USB Host Controller / Hub)"
+Intel="Intel"
+NEC="NEC"
+VIA="VIA"
+NVIDIA="nVidia"
+ATI="ATI/AMD"
+ALI="ALi/ULi"
+SIS="SiS"
+VMWARE="VMware"
+PHILIPS="Philips"
+
+;Nec
+PCI\VEN_1033&DEV_00E0&REV_01.DeviceDesc="NEC PCI to USB Enhanced Host Controller B0"
+PCI\VEN_1033&DEV_00E0&REV_02.DeviceDesc="NEC uPD720100A USB 2.0 Enhanced Host Controller"
+PCI\VEN_1033&DEV_00E0&REV_04.DeviceDesc="NEC uPD720101 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1033&DEV_00E0&REV_05.DeviceDesc="NEC uPD720102 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1033&DEV_00E0.DeviceDesc="NEC USB 2.0 Enhanced Host Controller"
+;INTEL
+PCI\VEN_8086&DEV_24CD.DeviceDesc="Intel 82801DB/DBM (ICH4 Family) USB2 Enhanced Host Controller - 24CD"
+PCI\VEN_8086&DEV_24DD.DeviceDesc="Intel 82801EB (ICH5 Family) USB2 Enhanced Host Controller - 24DD"
+PCI\VEN_8086&DEV_25AD.DeviceDesc="Intel 6300ESB USB2 Enhanced Host Controller - 25AD"
+PCI\VEN_8086&DEV_265C.DeviceDesc="Intel 82801FB/FBM (ICH6 Family) USB2 Enhanced Host Controller - 265C"
+PCI\VEN_8086&DEV_27CC.DeviceDesc="Intel 82801G (ICH7 Family) USB2 Enhanced Host Controller - 27CC"
+PCI\VEN_8086&DEV_283A.DeviceDesc="Intel 82801H (ICH8 Family) USB2 Enhanced Host Controller - 283A"
+PCI\VEN_8086&DEV_2836.DeviceDesc="Intel 82801H (ICH8 Family) USB2 Enhanced Host Controller - 2836"
+PCI\VEN_8086&DEV_293A.DeviceDesc="Intel ICH9 Family USB2 Enhanced Host Controller - 293A"
+PCI\VEN_8086&DEV_293C.DeviceDesc="Intel ICH9 Family USB2 Enhanced Host Controller - 293C"
+PCI\VEN_8086&DEV_268C.DeviceDesc="Intel 631xESB/6321ESB/3100 Chipset USB2 Enhanced Host Controller - 268C"
+PCI\VEN_8086&DEV_3B34.DeviceDesc="Intel 5 Series/3400 Series Chipset Family USB Enhanced Host Controller - 3B34"
+PCI\VEN_8086&DEV_3B3C.DeviceDesc="Intel 5 Series/3400 Series Chipset Family USB Enhanced Host Controller - 3B3C"
+PCI\VEN_8086&DEV_3A6A.DeviceDesc="Intel ICH10 Family USB Enhanced Host Controller - 3A6A"
+PCI\VEN_8086&DEV_3A6C.DeviceDesc="Intel ICH10 Family USB Enhanced Host Controller - 3A6C"
+PCI\VEN_8086&DEV_3A3A.DeviceDesc="Intel ICH10 Family USB Enhanced Host Controller - 3A3A"
+PCI\VEN_8086&DEV_3A3C.DeviceDesc="Intel ICH10 Family USB Enhanced Host Controller - 3A3C"
+PCI\VEN_8086&DEV_8807.DeviceDesc="Intel Platform Controller Hub EG20T USB2 EHCI Controller #2 - 8807"
+PCI\VEN_8086&DEV_880F.DeviceDesc="Intel Platform Controller Hub EG20T USB2 EHCI Controller #1 - 880F"
+PCI\VEN_8086&DEV_1C26.DeviceDesc="Intel 6 Series/C200 Series Chipset Family USB Enhanced Host Controller - 1C26"
+PCI\VEN_8086&DEV_1C2D.DeviceDesc="Intel 6 Series/C200 Series Chipset Family USB Enhanced Host Controller - 1C2D"
+PCI\VEN_8086&DEV_8117.DeviceDesc="Intel System Controller Hub (SCH Poulsbo) USB EHCI #1"
+PCI\VEN_8086&DEV_5035.DeviceDesc="Intel EP80579 USB 2.0 Controller"
+PCI\VEN_8086&DEV_2334.DeviceDesc="Intel DH89xxCC USB 2.0 Controller 1 - 2334"
+PCI\VEN_8086&DEV_2335.DeviceDesc="Intel DH89xxCC USB 2.0 Controller 1 - 2335"
+PCI\VEN_8086&DEV_2359.DeviceDesc="Intel DH89xxCC USB EHCI virtual HC #1 - 2359"
+PCI\VEN_8086&DEV_235A.DeviceDesc="Intel DH89xxCC USB EHCI virtual HC #2 - 235A"
+PCI\VEN_8086&DEV_1D26.DeviceDesc="Intel C600/X79 series chipset USB2 Enhanced Host Controller #1 - 1D26"
+PCI\VEN_8086&DEV_1D2D.DeviceDesc="Intel C600/X79 series chipset USB2 Enhanced Host Controller #2 - 1D2D"
+PCI\VEN_8086&DEV_1E26.DeviceDesc="Intel 7 Series/C216 Chipset Family USB Enhanced Host Controller - 1E26"
+PCI\VEN_8086&DEV_1E2D.DeviceDesc="Intel 7 Series/C216 Chipset Family USB Enhanced Host Controller - 1E2D"
+PCI\VEN_8086&DEV_0806.DeviceDesc="Intel SM35 Express Chipset USB2 Enhanced Host Controller MPH  - 0806"
+PCI\VEN_8086&DEV_0811.DeviceDesc="Intel SM35 Express Chipset USB2 Enhanced Host Controller SPM  - 0811"
+;VIA
+PCI\VEN_1106&DEV_3104&REV_51.DeviceDesc="VIA VT6202 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1106&DEV_3104&REV_63.DeviceDesc="VIA VT6212 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1106&DEV_3104&REV_82.DeviceDesc="VIA VT8235 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1106&DEV_3104&REV_86.DeviceDesc="VIA VT8237/A/R USB 2.0 Enhanced Host Controller"
+PCI\VEN_1106&DEV_3104&REV_90.DeviceDesc="VIA VT8251 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1106&DEV_3104.DeviceDesc="VIA PCI to USB Enhanced Host Controller"
+;SIS
+PCI\VEN_1039&DEV_7002.DeviceDesc="SiS 7002 USB 2.0 Enhanced Host Controller"
+;Ali
+PCI\VEN_10B9&DEV_5239.DeviceDesc="ULi/ALi USB 2.0 Enhanced Host Controller"
+;nVidia
+PCI\VEN_10DE&DEV_0068.DeviceDesc="nVidia nForce2 USB 2.0 Enhanced Host Controller"
+PCI\VEN_10DE&DEV_0088.DeviceDesc="nVidia MCP2A USB 2.0 Enhanced Host Controller"
+PCI\VEN_10DE&DEV_00D8.DeviceDesc="nVidia nForce3 USB 2.0 Enhanced Host Controller"
+PCI\VEN_10DE&DEV_00E8.DeviceDesc="nVidia nForce3 250 USB 2.0 Enhanced Host Controller"
+PCI\VEN_10DE&DEV_055F.DeviceDesc="nVidia MCP67 EHCI USB 2.0 Controller"
+PCI\VEN_10DE&DEV_056A.DeviceDesc="nVidia MCP73 [nForce 630i] USB 2.0 EHCI  Controller"
+PCI\VEN_10DE&DEV_077C.DeviceDesc="nVidia MCP78S [GeForce 8200] USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_077E.DeviceDesc="nVidia MCP78S [GeForce 8200] USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_0AA6.DeviceDesc="nVidia MCP79 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_0AA9.DeviceDesc="nVidia MCP79 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_0AAA.DeviceDesc="nVidia MCP79 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_005B.DeviceDesc="nVidia NForce4 (CK804) USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_003C.DeviceDesc="nVidia MCP04 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_026E.DeviceDesc="nVidia MCP51 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_036D.DeviceDesc="nVidia MCP55 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_03F2.DeviceDesc="nVidia MCP61 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_0455.DeviceDesc="nVidia MCP65 USB 2.0 EHCI Controller"
+PCI\VEN_10DE&DEV_0457.DeviceDesc="nVidia MCP65 USB 2.0 EHCI Controller"
+;ATI
+PCI\VEN_1002&DEV_4345.DeviceDesc="ATI USB 2.0 Enhanced Host Controller"
+PCI\VEN_1002&DEV_4365.DeviceDesc="ATI USB 2.0 Enhanced Host Controller"
+PCI\VEN_1002&DEV_4373.DeviceDesc="ATI SB400 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1002&DEV_4373&REV_80.DeviceDesc="ATI SB450 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1002&DEV_4386.DeviceDesc="ATI SB600 USB 2.0 Enhanced Host Controller"
+PCI\VEN_1002&DEV_4396.DeviceDesc="ATI SB7x0/SB8x0/SB9x0 USB 2.0 Enhanced Host Controller"
+;VMware
+PCI\VEN_15AD&DEV_0770.DeviceDesc="VMware Abstract USB2 EHCI Controller"
+;Philips
+PCI\VEN_1131&DEV_1562.DeviceDesc="Philips Semiconductors USB 2.0 Host Controller"
+
+PCI\CC_0C0320.DeviceDesc="Standard PCI to USB Enhanced Host Controller"
+USB\ROOT_HUB20.DeviceDesc="USB 2.0 Root Hub"
+USB\HubClass.DeviceDesc="Generic USB Hub"
+
+
+
