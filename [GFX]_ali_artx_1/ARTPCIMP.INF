@@ -1,0 +1,53 @@
+; artpcimp.inf
+;
+; Installation file (.inf) for the ArtX, Inc. ArtX1 device.
+;
+; (c) Copyright 2000 ArtX, Inc.
+;
+
+[version]
+signature="$CHICAGO$"
+Class=System
+ClassGUID={CED58E00-E9A6-11D1-80CE-00A0C9696BAE}
+DriverVer=03/21/2000, 04.12.01.0429-D
+CatalogFile=artpcimp.cat
+Provider=%ARTX_INC%
+
+[Manufacturer]
+;Use your name here
+%ARTX_MFG%=ARTX_SYS
+
+[SourceDisksNames]
+;Only one source disk
+1 = "ARTX 1 Miniport Installation Disk",,0
+
+[SourceDisksFiles]
+;The miniport comes from our only source disk
+axpcimp.sys = 1
+
+[DestinationDirs]
+;The miniport goes into the system directory
+AGPCopyFiles = 11          ; LDID_SYS
+
+[ARTX_SYS]
+; Use the correct ven-dev id here for your chipset
+%PCI\VEN_1400&DEV_0001.DeviceDesc%=AGP_BRIDGE_DRV, PCI\VEN_1400&DEV_0001
+
+[AGP_BRIDGE_DRV]
+AddReg=AddGARTMiniport
+CopyFiles=AGPCopyFiles
+
+[AddGARTMiniport]
+; Use the correct ven-dev id here for your chipset 
+HKLM,System\CurrentControlSet\Services\VxD\PCI\GARTMiniports\00011400,Name,,"1400 0001"
+HKLM,System\CurrentControlSet\Services\VxD\PCI\GARTMiniports\00011400,Path,,"AXPCIMP.SYS"
+HKLM,System\CurrentControlSet\Services\VxD\PCI\GARTMiniports\00011400,Instance,1,00,00,00,00
+
+[AGPCopyFiles]
+; Miniport name
+axpcimp.sys
+
+[Strings]
+ARTX_INC = "ArtX, Inc."
+ARTX_MFG = "ArtX AGP Chipset"
+PCI\VEN_1400&DEV_0001.DeviceDesc="ArtX 1 AGP System Controller"

@@ -1,0 +1,61 @@
+; artxmm.inf
+;
+; Installation file (.inf) for the ArtX, Inc. ArtX1 device.
+;
+; (c) Copyright 2000 ArtX, Inc.
+;
+
+[Version]
+Signature=$CHICAGO$
+Class=MEDIA
+DriverVer=03/21/2000, 04.12.01.0429-D
+CatalogFile=artxmm.cat
+Provider=%String0%
+
+[ClassInstall]
+AddReg=MMReg
+
+[MMReg]
+HKR,,,,MEDIA
+HKR,,Icon,,1
+
+
+[DestinationDirs]
+DefaultDestDir=11
+
+[Manufacturer]
+%String1%=Mfg.ARTX
+
+[Mfg.ARTX]
+%String2%=ARTX,PCI\VEN_1400&DEV_0003&SUBSYS_00011400
+
+[ARTX]
+CopyFiles=ARTX.Copy
+AddReg=ARTX.AddReg
+DelReg=ARTX.DelReg
+Restart
+
+[ARTX.Copy]
+axvdd.vxd
+
+[ARTX.AddReg]
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*configmg
+
+
+[ARTX.DelReg]
+HKR,,Ver
+
+[ControlFlags]
+
+[SourceDisksNames]
+1=ArtX Windows 98 Media Driver,,0
+
+[SourceDisksFiles]
+axvdd.vxd=1
+
+[Strings]
+String0="ArtX, Inc."
+String1="ArtX"
+String2="ArtX Device"
+

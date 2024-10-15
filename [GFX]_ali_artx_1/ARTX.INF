@@ -1,0 +1,121 @@
+; artx.inf
+;
+; Installation file (.inf) for the ArtX, Inc. ArtX1 device.
+;
+; (c) Copyright 2000 ArtX, Inc.
+;
+
+[Version]
+Signature=$CHICAGO$
+Class=DISPLAY
+DriverVer=03/21/2000, 04.12.01.0429-D
+CatalogFile=artx.cat
+Provider=%String0%
+
+[ClassInstall]
+
+[DestinationDirs]
+DefaultDestDir=11
+Help.Copy=18
+
+[Manufacturer]
+%String1%=Mfg.ARTX
+
+[Mfg.ARTX]
+%String2%=ARTX.install,PCI\VEN_1400&DEV_0004&SUBSYS_00011400
+
+[ARTX.install]
+CopyFiles=ARTX.Copy, Help.Copy
+AddReg=ARTX.AddReg,ARTX.AddControl
+DelReg=ARTX.DelReg
+Restart
+
+[ARTX.Copy]
+axgdi.drv
+axgdi32.dll
+axvdd.vxd
+axdsp.dll
+axogl.dll
+axcpl.dll
+
+[Help.Copy]
+axcpl.hlp
+
+[ARTX.AddReg]
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"16,640,480"
+HKR,DEFAULT,drv,0,axgdi.drv
+HKR,DEFAULT,drv2,0,axgdi.drv
+HKR,DEFAULT,vdd,0,"*vdd,*vflatd"
+HKR,DEFAULT,minivdd,,axvdd.vxd
+HKR,DEFAULT,minivdd2,,axvdd.vxd
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,"MODES\4\640,480",drv,0,vga.drv
+HKR,"MODES\4\640,480",vdd,0,*vdd
+HKR,"MODES\8\640,480",,,"60,72,75,85"
+HKR,"MODES\8\800,600",,,"60,72,75,85"
+HKR,"MODES\8\1024,768",,,"60,70,75,85"
+HKR,"MODES\8\1280,1024",,,"60,75,85"
+HKR,"MODES\8\1600,1200",,,"60,65"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\1024,768"
+HKR,"MODES\32\1280,1024"
+HKR,"MODES\32\1600,1200"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\OpenGLDrivers",axdsp,0,axogl
+HKLM,"Software\ArtX, Inc.\ArtX1",AGPFlags,65537,1,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\DirectX",VSyncEnabled, 65537,1,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\DirectX",MultiTextureEnabled, 65537,0,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\DirectX",ColorKeyEnabled, 65537,1,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\DirectX",DepthCompression, 65537,4,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\DirectX",UsePixelFogForVertexFog, 65537,0,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",FlippingEnabled, 65537,1,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",MaxTexelSize, 65537,20,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",DepthCompression, 65537,4,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",VsyncEnabled, 65537,1,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",ClampToEdge, 65537,0,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL",PalettedTextureEnabled, 65537,0,0,0,0
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL\Profiles","Grand Prix Legends", 1,67,70,6C,2E,65,78,65,3B,43,6C,61,6D,70,54,6F,45,64,67,65,3B,30,78,30,30,30,30,30,30,30,31,3B,00
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL\Profiles","Spec Ops", 1,62,72,61,76,6F,2E,65,78,65,3B,46,6C,69,70,70,69,6E,67,45,6E,61,62,6C,65,64,3B,30,78,30,30,30,30,30,30,30,30,3B,00
+HKLM,"Software\ArtX, Inc.\ArtX1\OpenGL\Profiles","KO Boxing", 1,6B,6F,2E,65,78,65,3B,43,6C,61,6D,70,54,6F,45,64,67,65,3B,30,78,30,30,30,30,30,30,30,31,3B,46,6C,69,70,70,69,6E,67,45,6E,61,62,6C,65,64,3B,30,78,30,30,30,30,30,30,30,30,3B,00
+
+[ARTX.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+
+
+[ARTX.AddControl]
+HKCR,\CLSID\{8F2ABC73-107C-11d2-B496-00104B335FEC},"",,"ArtX Control Panel Display Extension"
+HKCR,\CLSID\{8F2ABC73-107C-11d2-B496-00104B335FEC}\InProcServer32,"",,"axcpl.dll"
+HKCR,\CLSID\{8F2ABC73-107C-11d2-B496-00104B335FEC}\InProcServer32,ThreadingModel,,"Apartment"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ArtX Display Extension",,,"{8F2ABC73-107C-11d2-B496-00104B335FEC}"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved","{8F2ABC73-107C-11d2-B496-00104B335FEC}",,"ArtX Control Panel Display Extension"
+
+[ControlFlags]
+
+[SourceDisksNames]
+1="ArtX Windows 98 Display Driver",,0
+
+[SourceDisksFiles]
+axvdd.vxd=1
+axgdi.drv=1
+axgdi32.dll=1
+axdsp.dll=1
+axogl.dll=1
+axcpl.dll=1
+axcpl.hlp=1
+
+[Strings]
+String0="ArtX, Inc."
+String1="ArtX"
+String2="ArtX Display Device"

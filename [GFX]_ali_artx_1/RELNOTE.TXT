@@ -1,0 +1,26 @@
+----------------------------------------------------------------------
+Copyright (C) 2000 ArtX Inc.
+----------------------------------------------------------------------
+
+March 24, 2000
+
+Windows 98 Display and System Device Drivers Version 4.12.01.0429-D
+Release Notes
+======================================================================
+
+1.  Added registry entries for controling control panel behavior.
+2.  Turned off overlay support on 1280x1024x32bpp 60Hz and 75Hz.  This   
+    fixed the overlay QualScale WHQL DCT test.                           
+3.  Removed custom settings option from the D3D Control Panel page.
+
+Known Issues
+----------------------------------------------------------------------
+1.  When System Standby is triggered and a full screen OpenGL app is     
+    running the system will hang. No safe recovery possible, reboot      
+    required.  Workaround: Disable Windows System Standy timers (set     
+    to Always On).                                                       
+2.  ACPI option in BIOS not working (DO NOT USE!). This functionality    
+    has not yet been implemented.  Workaround: Do not enable this        
+    option in the system BIOS.  Use only Advanced Power Management in    
+    Windows.                                                             
+
