@@ -1,0 +1,193 @@
+; Copyright (c) 2001 Avance Logic, Inc.
+; Module Name:
+;   valcx95.inf
+;
+;    INF file for installing Avance AC97 VXD Driver for Intel(R)/VIA{R}/SiS{R} Audio controller
+;
+
+[Version]
+Signature="$Chicago$"
+Class=MEDIA
+provider=%AVANCE%
+;;LayoutFile=layout.inf
+DriverVer = 03/17/2001
+
+[ClassInstall]
+AddReg=Class.AddReg
+
+[Class.AddReg]
+HKR,,,,%MediaClassName%
+HKR,,Icon,,"-1"
+HKR,,Installer,,mmci.dll
+
+[DestinationDirs]
+DefaultDestDir=11
+ALCAUD.CopyList=11
+ALCWTB.CopyList=10
+ALCINI.CopyList=10
+
+[ControlFlags]
+ExcludeFromSelect=VIRTUAL\ALC_SBEmulation
+
+[Manufacturer]
+%MfgName%=Avance
+
+[Avance]
+%ALCVIA_DEV3058.DeviceDesc%=ALCVIA, PCI\VEN_1106&DEV_3058
+%ALCVIA_DEV3059.DeviceDesc%=ALCAUD, PCI\VEN_1106&DEV_3059
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2415
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2445
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_24C5
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2425
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_7195
+%ALCSIS.DeviceDesc%=ALCAUD, PCI\VEN_1039&DEV_7012
+%ALCVIA_DEV3058.DeviceDesc%=ALCVIA, PCI\VEN_1106&DEV_3058&CC_0401
+%ALCVIA_DEV3059.DeviceDesc%=ALCAUD, PCI\VEN_1106&DEV_3059&CC_0401
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2415&CC_0401
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2445&CC_0401
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_24C5&CC_0401
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_2425&CC_0401
+%ALCICH.DeviceDesc%=ALCAUD, PCI\VEN_8086&DEV_7195&CC_0401
+%ALCSIS.DeviceDesc%=ALCAUD, PCI\VEN_1039&DEV_7012&CC_0401
+%ALCAUD_SB.DeviceDesc%=ALCSB, VIRTUAL\ALC_SBEmulation
+
+[PreCopySection]
+HKR,,NoSetupUI,0,1
+
+;---------------------------------------------------------------;
+[ALCVIA]
+CopyFiles=ALCAUD.CopyList, ALCWTB.CopyList, ALCINI.CopyList
+AddReg=Mixer.AddReg, ALCVIA.AddReg, SBOPTION.AddReg
+DelReg=ALCVIA.DelReg
+;---------------------------------------------------------------;
+[ALCAUD]
+CopyFiles=ALCAUD.CopyList, ALCWTB.CopyList, ALCINI.CopyList
+AddReg=Mixer.AddReg, ALCAUD.AddReg, SBOPTION.AddReg
+
+;---------------------------------------------------------------;
+[ALCSB]
+AddReg=ALCSB.AddReg
+
+;---------------------------------------------------------------;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+; REGISTRY SETTINGS
+;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[ALCVIA.DelReg]
+HKLM,Enum\Root\*PNPB002
+HKLM,Enum\Root\*PNPB006
+HKLM,Enum\Root\*PNPB02F
+
+[Mixer.AddReg]
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,SystemTray,,"SysTray.Exe"
+HKLM,%KEY_IOC%\Vol,,,
+
+; This section adds the device information to the registry
+
+[ALCVIA.AddReg]
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,,Driver,,"VALCX95.vxd"
+;;HKR,,EnumPropPages,,"ALCX95.drv,DrvEnumPropPages"
+HKR,Drivers,MIGRATED,0,0
+HKR,Drivers,SubClasses,,"wave,mixer,aux,midi"
+HKR,Drivers\wave,,0,
+HKR,Drivers\wave\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\mixer,,0,
+HKR,Drivers\mixer\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\aux,,0,
+HKR,Drivers\aux\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\midi,,0,
+HKR,Drivers\midi\alswwt.drv,Driver,,alswwt.drv
+;;MPU401
+HKR,Drivers\midi\ALCX95.drv,Driver,0,ALCX95.drv
+HKR,Drivers\midi\ALCX95.drv,External,1,01,00,00,00
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+HKR,Drivers\wave\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\mixer\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\aux\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\midi\alswwt.drv,Description,0,%ALSWWT.DeviceDesc%
+HKR,Drivers\midi\ALCX95.drv,Description,0,%MPU401.DeviceDesc%
+
+[ALCAUD.AddReg]
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,,Driver,,"VALCX95.vxd"
+;;HKR,,EnumPropPages,,"ALCX95.drv,DrvEnumPropPages"
+HKR,Drivers,MIGRATED,0,0
+HKR,Drivers,SubClasses,,"wave,mixer,aux,midi"
+HKR,Drivers\wave,,0,
+HKR,Drivers\wave\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\mixer,,0,
+HKR,Drivers\mixer\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\aux,,0,
+HKR,Drivers\aux\ALCX95.drv,Driver,,ALCX95.drv
+HKR,Drivers\midi,,0,
+HKR,Drivers\midi\alswwt.drv,Driver,,alswwt.drv
+HKLM,%KEY_IOC%\acm,,,
+HKLM,%KEY_IOC%\Rec,,,
+HKLM,%KEY_IOC%\MPlay,,,
+HKR,Drivers\wave\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\mixer\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\aux\ALCX95.drv,Description,,%ALCWAVE.DeviceDesc%
+HKR,Drivers\midi\alswwt.drv,Description,0,%ALSWWT.DeviceDesc%
+
+
+[SBOPTION.AddReg]
+HKR,Drivers,SBEmulation,,"YES"
+
+[ALCSB.AddReg]
+HKR,,DevLoader,0,mmdevldr.vxd
+HKR,,Driver,,"VALCX95.vxd"
+;;HKR,,EnumPropPages,,"ALCX95.drv,DrvEnumPropPages"
+HKR,Drivers,MIGRATED,0,0
+
+; The following is the list of the driver files to be copied at
+; installation
+
+[ALCAUD.CopyList]
+valcx95.vxd;	=main vxd
+alcx95.drv;	=main drv
+alswwt.drv;	=swmidi drv
+alswwt16.dll;	=swmidi dll
+swwtac97.ton;	=swmidi ton
+
+[ALCWTB.CopyList]
+swwtac97.dat;	=swmidi dat
+
+[ALCINI.CopyList]
+alcx95.ini;	=ini file
+
+[SourceDisksNames]
+1="Avance AC'97 Audio Installation Disk","AVANCE", 0
+
+[SourceDisksFiles]
+valcx95.vxd=1
+alcx95.drv=1
+alswwt.drv=1
+swwtac97.ton=1
+alswwt16.dll=1
+swwtac97.dat=1
+alcx95.ini=1
+
+[Strings]
+
+; Strings related to installation.
+; Non-localized strings
+;
+KEY_IOC="SYSTEM\CurrentControlSet\Control\MediaResources\InstallOptionalComponents"
+
+AVANCE="Avance Logic, Inc."
+MfgName="Avance Logic, Inc."
+
+ALCVIA_DEV3058.DeviceDesc="Avance AC'97 Audio for VIA686/8231 Audio Controller"
+ALCVIA_DEV3059.DeviceDesc="Avance AC'97 Audio for VIA8233 Audio Controller"
+ALCICH.DeviceDesc="Avance AC'97 Audio for Intel(R) Audio Controller"
+ALCSIS.DeviceDesc="Avance AC'97 Audio for SiS(R) Audio Controller"
+
+ALCWAVE.DeviceDesc="Avance AC'97 Audio"
+ALCAUD_SB.DeviceDesc="Avance SB Emulation"
+ALSWWT.DeviceDesc="Avance Logic Inc. Internal MIDI (SW WaveTable)"
+MPU401.DeviceDesc="Avance Logic Inc. External MIDI (MPU-401)"
+MediaClassName="Sound, video and game controllers"
