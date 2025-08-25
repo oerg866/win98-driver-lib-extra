@@ -1,0 +1,17 @@
+:Base 3dlTBCHS.hlp
+1 3Dlabs显示器驱动程序配置管理器简介=3DL_Intro
+1 命令
+2 关于 3Dlabs 显示器管理器=HIDR_ABOUT
+2更改显示器分辨率=3DL_Setres
+2显示器驱动程序信息=HIDR_INFO
+2转至 3Dlabs 网站=HIDR_GO3DLABS
+2弹出显示控制面板=HIDR_CALLDESKCPL
+2从系统托盘删除=HIDR_3DLEXIT
+2选择优化的应用程序=3DL_Setapps
+1如何...
+2确定当前显示器驱动程序的设置=HIDR_INFO
+2针对特定应用程序配置显示器驱动程序=3DL_Setapps
+2获得最新的驱动程序=3DL_Getdriver
+2获得技术支持=3DL_GetSupport
+2故障诊断=3DL_Trouble
+

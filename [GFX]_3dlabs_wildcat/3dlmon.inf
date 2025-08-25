@@ -1,0 +1,197 @@
+; 3DLmon.inf
+;
+; 3D labs information file for monitors.
+; The data contained here is read by the 3Dlabs
+; display control panel extension to configure 
+; and set-up user monitors.
+;
+; The file syntax is:
+;
+; Mode     = X,Y,refresh
+; Range    = x,y, X,Y, fh,FH, fv,FV, pclk, PClk
+; Detailed = raw EDID detailed timing data
+; Timing   = HFP,HSW,HBP,HA,VFP,VSW,VBP,VA,Pclk,HSP,VSP,Xmm,Ymm
+; Flags    = None, one or more of the following:
+;				AddExtras				Add in extra modes which the ranges given
+;				LimitXY					When adding extra modes, limit according to resolution as well as frequency
+;				DigiSig					The monitor uses digital signalling (DVI-D, DFP)
+;				DigiConForceOn			The monitor uses a digital connector (DVI-I, DVI-D, DVI-A, DFP)
+;				DigiConForceOff			The monitor uses an analogue connector (VGA)
+;
+; Date: 11/9/2000
+; Version 2.2
+; Copyright (c) 2000, 3Dlabs Incorporated
+
+Manufacturer=Dell Computer Corp.
+	Monitor=D1028L
+		Mode=640,480,60
+		Mode=640,480,75
+		Mode=800,600,60
+		Mode=800,600,75
+		Mode=800,600,85
+		Mode=1024,768,60
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,60
+		Range=640,480,1280,1024,31.5,68.7,60,85
+		Flags=AddExtras
+
+	Monitor=D1025HTX
+		Mode=640,480,60
+		Mode=640,480,75
+		Mode=800,600,60
+		Mode=800,600,75
+		Mode=800,600,85
+		Mode=1024,768,60
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,60
+		Range=640,480,1280,1024,31.5,68.7,60,85
+		Flags=AddExtras
+
+	Monitor=D1025TM
+		Mode=640,480,60
+		Mode=640,480,75
+		Mode=800,600,60
+		Mode=800,600,75
+		Mode=800,600,85
+		Mode=1024,768,60
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,60
+		Mode=1280,1024,75
+		Range=640,480,1280,1024,31.5,80.0,60,85
+		Flags=AddExtras
+
+	Monitor=D1226H
+		Mode=640,480,60
+		Mode=640,480,75
+		Mode=800,600,60
+		Mode=800,600,75
+		Mode=800,600,85
+		Mode=1024,768,60
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,60
+		Mode=1280,1024,75
+		Mode=1280,1024,85
+		Range=640,480,1280,1024,31.5,91.1,60,85
+		Flags=AddExtras
+
+	Monitor=D1626HT
+		Mode=640,480,60
+		Mode=640,480,85
+		Mode=800,600,75
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,75
+		Mode=1280,1024,85
+		Mode=1600,1200,60
+		Mode=1600,1200,75
+		Mode=1600,1200,85
+		Range=640,480,1600,1200,31.5,106.3,60,85
+		Flags=AddExtras
+
+	Monitor=Hi Res 24inch
+		Mode=640,480,60
+		Mode=640,480,85
+		Mode=800,600,75
+		Mode=800,600,85
+		Mode=1024,768,75
+		Mode=1024,768,85
+		Mode=1280,1024,75
+		Mode=1280,1024,85
+		Mode=1600,1200,60
+		Mode=1600,1200,75
+		Mode=1600,1200,85
+		Mode=1920,1080,60
+		Range=640,480,1920,1080,31.5,106.3,60,85
+		Flags=AddExtras
+
+Manufacturer=Sony
+	Monitor=GDM-W900
+		Mode= 640, 480,85
+		Mode= 856, 480,85
+		Mode= 800, 600,85
+		Mode=1024, 768,85
+		Mode=1152, 864,85
+		Mode=1280,1024,85
+		Mode=1600,1200,75
+		;Timing = HFP,HSW,HBP,  HA,VFP,VSW,VBP,  VA,  Pclk,HSP,VSP,Xmm,Ymm
+		Timing  =  32,144,272,1920,  3,  3, 39,1080,159.84,  -,  -,474,266		; 1920 x 1080 x 60
+		Timing  =  48,216,376,1920,  3,  3, 86,1080,216.03,  -,  -,474,266		; 1920 x 1080 x 72
+		Timing  =  32,160,304,1600,  3,  3, 40,1024,170.45,  -,  -,474,296		; 1600 x 1024 x 76
+		Timing  =  64,256,344,1920,  3,  3, 44,1200,245.48,  -,  -,474,296		; 1920 x 1200 x 76
+		;Range= x, y,   X,    Y,  fh,  FH,  fv,   FV,  pclk,  PClk
+		Range=640,480,2048,1280,30.0,96.0,50.0,160.0,25.175,245.48
+		Flags=AddExtras
+
+Manufacturer=Generic
+	Monitor=Super Fast
+		Range=640,480,2048,2048,10.0,1000.0,10,1000,10.00,1000.00
+		Flags=AddExtras
+
+	Monitor=Samsung 1920x1200
+		; Range= x, y,   X,    Y,  fh,  FH,  fv,  FV,pclk, PClk
+		;Range=640,480,1920,1200,56.0,85.0,30.0,81.0,30.0,200.0
+		;Flags=AddExtras
+		;Mode=2048,1536,40
+		;Timing = HFP,HSW,HBP,  HA,VFP,VSW,VBP,  VA,   Pclk,HSP,VSP,Xmm,Ymm
+		Timing =   24, 64,104,2048,  1,  2,  1,1536,237.984,  -,  -,474,296
+
+	Monitor=Obscenely Huge
+		Range=640,480,2048,2048,30.0,200.0,40.0,200.0,20.0,400.0
+		Mode=1600,1024,60
+		Flags=AddExtras
+
+	Monitor=Obscenely Huge DVI
+		Range=640,480,2048,2048,30.0,200.0,60.0,60.0,20.0,400.0
+		Mode=1600,1024,60
+		Flags=AddExtras, DigiSig
+
+	Monitor=Wide Screen
+		;Mode=640,480,75
+		;Mode=800,600,75
+		;Mode=1024,768,75
+		;Mode=1024,768,85
+		;Mode=1280,800,75
+		;Mode=1280,1024,75
+		;Mode=1600,1000,60
+		;Mode=1600,1000,75
+		;Mode=1600,1024,60
+		;Mode=1600,1024,75
+		;Mode=1600,1200,60
+		;Mode=1600,1200,75
+		;Mode=1920,1080,60
+		;Mode=1920,1080,75
+		;Mode=1920,1200,60
+		;Mode=1920,1200,75
+		;Detailed=95,42,40,F0,61,00,2E,40,20,A0,33,00,DA,28,11,00,00,18
+		Timing=32,160,304,1600,3,3,40,1024,170.450,-,-,474,296
+		Range=640,480,1920,1200,30.0,96.0,50,160,23.00,253.00
+		;Range=640,480,1920,1200,31.5,95.0,60,85
+		Mode=856,480,60
+		Flags=AddExtras
+
+	Monitor=MultiSync
+		Mode=640,480,60
+		Mode=640,480,75
+		Mode=800,600,60
+		Mode=800,600,75
+		Mode=1024,768,60
+		Mode=1024,768,75
+		Mode=1280,1024,60
+		Mode=1600,1200,60
+		Range=640,480,1600,1200,31.5,75.0,60,85
+		Flags=AddExtras
+
+	Monitor=SVGA
+		Mode=640,480,60
+		Mode=800,600,60
+		Range=640,480,800,600,31.5,37.8,60,60
+		Flags=AddExtras
+
+	Monitor=VGA
+		Mode=640,480,60
+		Range=640,480,640,480,31.5,31.5,60,60
+		Flags=AddExtras

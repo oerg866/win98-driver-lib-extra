@@ -1,0 +1,17 @@
+:Base 3dlTBCHT.hlp
+1 3Dlabs 顯示驅動程式組態管理員簡介=3DL_Intro
+1 指令
+2 關於 3Dlabs 顯示管理員=HIDR_ABOUT
+2 改變顯示解析度=3DL_Setres
+2 顯示驅動程式資訊=HIDR_INFO
+2 到 3Dlabs 的網站=HIDR_GO3DLABS
+2 彈出式顯示控制面板=HIDR_CALLDESKCPL
+2 從系統匣中移除=HIDR_3DLEXIT
+2 選擇最佳化的應用程式=3DL_Setapps
+1 如何...
+2 確定目前的顯示驅動程式設定值=HIDR_INFO
+2 為特定應用程式組態顯示驅動程式=3DL_Setapps
+2 獲得最新的驅動程式=3DL_Getdriver
+2 獲得技術支援=3DL_GetSupport
+2 疑難排解=3DL_Trouble
+

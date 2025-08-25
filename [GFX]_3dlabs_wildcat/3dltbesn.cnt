@@ -1,0 +1,16 @@
+:Base 3dlTBESN.hlp
+1 Introducción al administrador de configuración del controlador de pantalla de 3Dlabs=3DL_Intro
+1 Comandos
+2 Acerca del administrador de configuración del controlador de pantalla de 3Dlabs=HIDR_ABOUT
+2 Cambiar resolución de pantalla=3DL_Setres
+2 Información del controlador de pantalla=HIDR_INFO
+2 Ir al sitio web de 3Dlabs=HIDR_GO3DLABS
+2 Mostrar panel de pantalla=HIDR_CALLDESKCPL
+2 Quitar de la bandeja del sistema=HIDR_3DLEXIT
+2 Seleccionar la aplicación optimizada=HIDC_NT_APP_APPSLIST
+1 Cómo...
+2 Determinar la configuración del controlador de pantalla=HIDR_INFO
+2 Configurar el controlador de pantalla para una aplicación determinada=3DL_Setapps
+2 Obtener los controladores más recientes=3DL_Getdriver
+2 Obtener soporte técnico=3DL_GetSupport
+2 Solucionar problemas=3DL_Trouble

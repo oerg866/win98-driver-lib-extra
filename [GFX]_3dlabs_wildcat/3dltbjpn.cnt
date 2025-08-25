@@ -1,0 +1,16 @@
+:Base 3dlTBJPN.hlp
+1 3Dlabsディスプレイドライバ設定マネージャへようこそ=3DL_Intro
+1 コマンド
+2 3Dlabsディスプレイマネージャのバージョン情報=HIDR_ABOUT
+2 ディスプレイ解像度の変更=3DL_Setres
+2 ディスプレイドライバ情報=HIDR_INFO
+2 3DlabsのWebサイトへ=HIDR_GO3DLABS
+2 ディスプレイコントロールパネルをポップアップ=HIDR_CALLDESKCPL
+2 システムトレイから削除=HIDR_3DLEXIT
+2 最適化されたアプリケーションの選択=3DL_Setapps
+1 操作方法...
+2 ディスプレイドライバの設定を確認する=HIDR_INFO
+2 ディスプレイドライバを特定のアプリケーション用に設定する=3DL_Setapps
+2 最新のドライバを入手する=3DL_Getdriver
+2 テクニカルサポートを受ける=3DL_GetSupport
+2 トラブルシューティング=3DL_Trouble

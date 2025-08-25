@@ -1,0 +1,16 @@
+:Base 3dlTBENU.hlp
+1 Introduction to the 3Dlabs Display Driver Configuration Manager=3DL_Intro
+1 Commands
+2 About 3Dlabs Display manager=HIDR_ABOUT
+2 Change Display Resolution=3DL_Setres
+2 Display Driver Information=HIDR_INFO
+2 Go to 3Dlabs Website=HIDR_GO3DLABS
+2 Pop-up the Display Control panel=HIDR_CALLDESKCPL
+2 Remove from System Tray=HIDR_3DLEXIT
+2 Select optimized Application=3DL_Setapps
+1 How To ...
+2 Determine current display driver settings=HIDR_INFO
+2 Configure the display driver for a particular application=3DL_Setapps
+2 Get the latest drivers=3DL_Getdriver
+2 Get technical Support=3DL_GetSupport
+2 TroubleShoot=3DL_Trouble

@@ -1,0 +1,356 @@
+
+[Version]
+Signature=$CHICAGO$
+Class=DISPLAY
+ClassGuid={4d36e968-e325-11ce-bfc1-08002be10318} 
+Provider=%String0%
+
+[DestinationDirs]
+InfFiles_CopyFiles=17
+HelpFiles_CopyFiles=18
+DefaultDestDir=11
+
+[Manufacturer]
+%String0%=3Dlabs
+
+[3Dlabs]
+%P10Generic%=P10Generic,PCI\VEN_3D3D&DEV_0020
+%P10Generic2%=P10Generic,PCI\VEN_3D3D&DEV_0022
+%P10CAD%=P10CAD,PCI\VEN_3D3D&DEV_0020&SUBSYS_01563D3D
+%P10DCC%=P10DCC,PCI\VEN_3D3D&DEV_0020&SUBSYS_01573D3D
+%P10VizyxT65%=P10VizyxT65,PCI\VEN_3D3D&DEV_0020&SUBSYS_01583D3D
+%P10OEM%=P10OEM,PCI\VEN_3D3D&DEV_0020&SUBSYS_01593D3D
+%P10ExtremeDCC%=P10ExtremeDCC,PCI\VEN_3D3D&DEV_0020&SUBSYS_01603D3D
+%P10MLKBringup%=P10MLKBringup,PCI\VEN_3D3D&DEV_0020&SUBSYS_01653D3D
+%P10MLKDCC%=P10MLKDCC,PCI\VEN_3D3D&DEV_0020&SUBSYS_01673D3D
+%P10MLKExtremeDCC%=P10MLKExtremeDCC,PCI\VEN_3D3D&DEV_0020&SUBSYS_01683D3D
+%P9Generic%=P9Generic,PCI\VEN_3D3D&DEV_0024
+%P9FBGA%=P9FBGA,PCI\VEN_3D3D&DEV_0024&SUBSYS_01623D3D
+%P9Workstation%=P9Workstation,PCI\VEN_3D3D&DEV_0024&SUBSYS_01633D3D
+%P9Desktop%=P9Desktop,PCI\VEN_3D3D&DEV_0024&SUBSYS_10661102
+
+[P10Generic]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10Generic
+DelReg=DEL_CURRENT_REG
+
+[P10CAD]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64,Glint_AddReg_P10CAD
+DelReg=DEL_CURRENT_REG
+
+[P10DCC]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10DCC
+DelReg=DEL_CURRENT_REG
+
+[P10ExtremeDCC]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10ExtremeDCC
+DelReg=DEL_CURRENT_REG
+
+[P10MLKBringup]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10MLKBringup
+DelReg=DEL_CURRENT_REG
+
+[P10MLKDCC]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg256,Glint_AddReg_P10MLKDCC
+DelReg=DEL_CURRENT_REG
+
+[P10MLKExtremeDCC]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg512,Glint_AddReg_P10MLKExtremeDCC
+DelReg=DEL_CURRENT_REG
+
+[P10VizyxT65]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10VizyxT65
+DelReg=DEL_CURRENT_REG
+
+[P10OEM]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128,Glint_AddReg_P10OEM
+DelReg=DEL_CURRENT_REG
+
+[P9Generic]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64H,Glint_AddReg_P9Generic
+DelReg=DEL_CURRENT_REG
+
+[P9FBGA]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64H,Glint_AddReg_P9FBGA
+DelReg=DEL_CURRENT_REG
+
+[P9Workstation]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64H,Glint_AddReg_P9Workstation
+DelReg=DEL_CURRENT_REG
+
+[P9Desktop]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64H,Glint_AddReg_P9Desktop
+DelReg=DEL_CURRENT_REG
+
+[P10]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg128
+DelReg=DEL_CURRENT_REG
+
+[P10_64]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64
+DelReg=DEL_CURRENT_REG
+
+[P9]
+CopyFiles=InfFiles_CopyFiles,HelpFiles_CopyFiles,P10_CopyFiles
+AddReg=Glint_AddReg,Glint_AddReg64H
+DelReg=DEL_CURRENT_REG
+
+[InfFiles_CopyFiles]
+3dldsk.inf
+3dlwrk.inf
+
+[HelpFiles_CopyFiles]
+3DLTBENU.CNT
+3DLTBENU.HLP
+3DLTBCHS.CNT
+3DLTBCHS.HLP
+3DLTBCHT.CNT
+3DLTBCHT.HLP
+3DLTBDEU.CNT
+3DLTBDEU.HLP
+3DLTBFRA.CNT
+3DLTBFRA.HLP
+3DLTBITA.CNT
+3DLTBITA.HLP
+3DLTBJPN.CNT
+3DLTBJPN.HLP
+3DLTBKOR.CNT
+3DLTBKOR.HLP
+3DLTBESN.CNT
+3DLTBESN.HLP
+
+[P10_CopyFiles]
+3dlcp.dll
+3dltb.exe
+3dlinst.dll
+3dlmp.vxd
+3dldd.drv
+3dldx.dll
+3dlunin.exe
+3dlicd.dll
+3dlext.dll
+3dlwinmn.dll
+3dlwmwiz.exe
+glslang.dll
+
+[ExtModeSwitch_AddReg]
+HKR,DEFAULT,ExtModeSwitch,0,0
+
+[Glint_AddReg]
+HKR,,DevLoader,0,*vdd
+HKR,,Ver,0,"4.0"
+HKR,,ProviderName,0,"3Dlabs Incorporated"
+HKR,DEFAULT,Mode,0,"8,640,480"
+HKR,DEFAULT,drv,0,3dldd.drv
+HKR,DEFAULT,drv2,0,3dldd.drv
+HKR,DEFAULT,vdd,0,*vdd
+HKR,DEFAULT,minivdd,0,3dlmp.vxd
+HKR,DEFAULT,minivdd2,0,3dlmp.vxd
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,DEFAULT,Configuration,,3Dlabs 
+HKR,DEFAULT,3DlabsVGAHost,1,1
+HKR,INFO,InstalledDisplayDrivers,0,"3dldd"
+HKR,INFO,InstalledD3DDrivers,0,"3dldx"
+HKR,INFO,P10.UseAltClock,0x10001,0
+HKR,INFO,Direct3D.OptimizedApplication,0,"DirectX(tm) Default"
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\OpenGLDrivers,p3r3,0,p3r3ogl.dll
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\OpenGLDrivers,"3Dlabs Miranda driver",0,3dlicd.dll
+HKLM,SOFTWARE\3Dlabs\DirectX,Direct3DHAL.Initialised,0,0
+
+HKLM,SOFTWARE\3Dlabs\DirectX,OpenGL.IgnoreInitBuffersDialog,0,1
+HKLM,SOFTWARE\3Dlabs\DirectX,OpenGL.GammaAdjustment,0,"1.00"
+HKLM,SOFTWARE\3Dlabs\DirectX,OpenGL.GammaPresent,1,0,0,0,0
+
+HKEY_CLASSES_ROOT,"CLSID\{6F8CC873-D8F2-4086-9288-F7F03ECF55BF}\InProcServer32",,,3dlcp.dll
+HKEY_CLASSES_ROOT,"CLSID\{6F8CC873-D8F2-4086-9288-F7F03ECF55BF}\InProcServer32",ThreadingModel,,Apartment
+HKR,"shellex\PropertySheetHandlers\3DLabs",,,"{6F8CC873-D8F2-4086-9288-F7F03ECF55BF}"
+
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\3Dlabs Acuity Driver",DisplayName,0,"3Dlabs Acuity Driver"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\3Dlabs Acuity Driver",UninstallString,0,"%11%\3Dlunin.exe /ZapNTIS"
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Run","3Dlabs TaskBar Display Manager",0,3dltb.exe,0,
+
+HKR,"MODES\4\640,480",   drv,0,vga.drv
+HKR,"MODES\4\640,480",   vdd,0,*vdd
+HKR,"MODES\8\640,480",,,"60,72,75,85,100,120,140,160,180,200"
+HKR,"MODES\16\640,480"  
+HKR,"MODES\32\640,480"    
+HKR,"MODES\8\800,600",,,"60,72,75,85,100,120,140,160,180,200"
+HKR,"MODES\16\800,600",    
+HKR,"MODES\32\800,600",    
+HKR,"MODES\8\1024,768",,,"60,70,75,85,90,95,100,120,140,160,180,200"
+HKR,"MODES\16\1024,768",  
+HKR,"MODES\32\1024,768", 
+HKR,"MODES\8\1152,864",,,"60,70,75,85,100,120,140,160,180,200"
+HKR,"MODES\16\1152,864",  
+HKR,"MODES\32\1152,864",  
+HKR,"MODES\8\1280,960",,,"60,75,85,100,120,140,160"
+HKR,"MODES\16\1280,960",
+HKR,"MODES\32\1280,960",
+HKR,"MODES\8\1280,1024",,,"60,75,85,100,120,140,160"
+HKR,"MODES\16\1280,1024",
+HKR,"MODES\32\1280,1024",
+HKR,"MODES\8\1600,1024",,,"60,65,70,75,85,100,120"
+HKR,"MODES\16\1600,1024",
+HKR,"MODES\32\1600,1024",
+HKR,"MODES\8\1600,1200",,,"60,65,70,75,85,100,120"
+HKR,"MODES\16\1600,1200",
+HKR,"MODES\32\1600,1200",
+HKR,"MODES\8\1920,1080",,,"60,65,70,75,85,100,120"
+HKR,"MODES\16\1920,1080",
+HKR,"MODES\32\1920,1080",
+HKR,"MODES\8\1920,1200",,,"60,65,70,75,85,100"
+HKR,"MODES\16\1920,1200",
+HKR,"MODES\32\1920,1200",
+HKR,"MODES\8\1920,1440",,,"60,65,70,75,85,90"
+HKR,"MODES\16\1920,1440",
+HKR,"MODES\32\1920,1440",
+HKR,"MODES\8\2048,1536",,,"60,65,70,75,80"
+HKR,"MODES\16\2048,1536",
+HKR,"MODES\32\2048,1536",
+
+[Glint_Addreg512]
+
+[Glint_Addreg256]
+
+[Glint_Addreg128]
+
+[Glint_Addreg64]
+
+[Glint_Addreg64H]
+
+
+[Glint_AddReg_P10Generic]
+HKR,,DriverDesc,0,"Generic 3Dlabs Acuity Driver"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10CAD]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP760"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10DCC]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP870"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10ExtremeDCC]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP970"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10VizyxT65]
+HKR,,DriverDesc,0,"3Dlabs Wildcat T65"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10OEM]
+HKR,,DriverDesc,0,"3Dlabs OEM"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P9Generic]
+HKR,,DriverDesc,0,"Generic 3Dlabs Acuity Driver"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P9FBGA]
+HKR,,DriverDesc,0,"3Dlabs FBGA Engineering"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P9Workstation]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP560"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P9Desktop]
+HKR,,DriverDesc,0,"Graphics Blaster Picture Perfect"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Games Default"
+
+[Glint_AddReg_P10MLKBringup]
+HKR,,DriverDesc,0,"3Dlabs MLK Bringup Board"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10MLKDCC]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP880 Pro"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[Glint_AddReg_P10MLKExtremeDCC]
+HKR,,DriverDesc,0,"3Dlabs Wildcat VP990 Pro"
+HKR,INFO,OpenGL.OptimizedApplication,0,"OpenGL(tm) Default"
+
+[DEL_CURRENT_REG]
+HKR,,DevLoader,0,
+HKR,,Ver,0,
+HKR,,EnumPropPages,0,
+HKR,DEFAULT,ExtModeSwitch,0,
+HKR,DEFAULT\TIMINGS,,0,
+HKR,MODES,,0,
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\DriverPages",,0,
+HKR,"shellex\PropertySheetHandlers\3DLabs",,0,
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,3dltb.exe,0,
+HKLM,"Software\3Dlabs, Inc\WinMan",,0,
+
+[ControlFlags]
+
+[SourceDisksNames]
+1="3Dlabs Driver Disk 1",,,x86
+
+[SourceDisksFiles]
+3dlcp.dll=1,Common
+3dltb.exe=1,Common
+3dldx.dll=1,Win9x
+3dlmp.vxd=1,Win9x
+3dldsk.inf=1,Common
+3dlwrk.inf=1,Common
+3dlext.dll=1,Win9x
+3dlinst.dll=1,Win9x
+3dldd.drv=1,Win9x
+3dlicd.dll=1,Common
+3dlunin.exe=1,Common
+3dlwinmn.dll=1,Common
+3dlwmwiz.exe=1,Common
+glslang.dll=1,Common
+3DLTBENU.CNT=1,Help
+3DLTBENU.HLP=1,Help
+3DLTBCHS.CNT=1,Help
+3DLTBCHS.HLP=1,Help
+3DLTBCHT.CNT=1,Help
+3DLTBCHT.HLP=1,Help
+3DLTBDEU.CNT=1,Help
+3DLTBDEU.HLP=1,Help
+3DLTBFRA.CNT=1,Help
+3DLTBFRA.HLP=1,Help
+3DLTBITA.CNT=1,Help
+3DLTBITA.HLP=1,Help
+3DLTBJPN.CNT=1,Help
+3DLTBJPN.HLP=1,Help
+3DLTBKOR.CNT=1,Help
+3DLTBKOR.HLP=1,Help
+3DLTBESN.CNT=1,Help
+3DLTBESN.HLP=1,Help
+
+
+[Strings]
+String0="3Dlabs Incorporated"
+P10Generic="Generic 3Dlabs Acuity Driver Install"
+P10Generic2="Generic 3Dlabs Acuity Driver Install" 
+P10CAD="3Dlabs Wildcat VP760"
+P10DCC="3Dlabs Wildcat VP870"
+P10ExtremeDCC="3Dlabs Wildcat VP970"
+P10VizyxT65="3Dlabs Vizyx T65"
+P10OEM="3Dlabs OEM"
+P9Generic="Generic 3Dlabs Acuity Driver Install"
+P9FBGA="3Dlabs FBGA Engineering"
+P9Workstation="3Dlabs Wildcat VP560"
+P9Desktop="Graphics Blaster Picture Perfect"
+P10MLKBringup="MLK Bringup Board"
+P10MLKDCC="3Dlabs Wildcat VP880 Pro"
+P10MLKExtremeDCC="3Dlabs Wildcat VP990 Pro"

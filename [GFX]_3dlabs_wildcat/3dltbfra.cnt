@@ -1,0 +1,16 @@
+:Base 3dlTBFRA.hlp
+1 Présentation du gestionnaire de configuration du pilote d'affichage 3Dlabs=3DL_Intro
+1 Commandes
+2 À propos du gestionnaire d'affichage 3Dlabs=HIDR_ABOUT
+2 Modifier la résolution d'affichage=3DL_Setres
+2 Afficher les informations sur le pilote=HIDR_INFO
+2 Consulter le site Web de 3Dlabs=HIDR_GO3DLABS
+2 Afficher le panneau d'affichage=HIDR_CALLDESKCPL
+2 Supprimer de la barre des tâches=HIDR_3DLEXIT
+2 Sélectionner l'application optimisée=HIDC_NT_APP_APPSLIST
+1 Comment...
+2 Définir les paramètres du pilote d'affichage=HIDR_INFO
+2 Configurer le pilote d'affichage pour une application particulière=3DL_Setapps
+2 Obtenir les pilotes les plus récents=3DL_Getdriver
+2 Obtenir de l'aide=3DL_GetSupport
+2 Effectuer un dépannage=3DL_Trouble

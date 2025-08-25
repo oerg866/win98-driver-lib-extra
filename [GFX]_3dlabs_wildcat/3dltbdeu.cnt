@@ -1,0 +1,16 @@
+:Base 3dlTBDEU.hlp
+1 Einführung in den 3Dlabs-Konfigurationsmanager für den Anzeigetreiber=3DL_Intro
+1 Befehle
+2 Info über den 3Dlabs-Konfigurationsmanager für den Anzeigetreiber=HIDR_ABOUT
+2 Anzeigeauflösung ändern=3DL_Setres
+2 Treiberinformationen anzeigen=HIDR_INFO
+2 3Dlabs-Website aufrufen=HIDR_GO3DLABS
+2 Anzeige-Systemsteuerung einblenden=HIDR_CALLDESKCPL
+2 Aus Systemablage entfernen=HIDR_3DLEXIT
+2 Optimierte Anwendung auswählen=3DL_Setapps
+1 Vorgehensweise
+2 Festlegen der Einstellungen für den Anzeigetreiber=HIDR_INFO
+2 Konfigurieren des Anzeigetreibers für eine bestimmte Anwendung=3DL_Setapps
+2 Laden der aktuellen Treiber=3DL_Getdriver
+2 Anfordern von technischer Unterstützung=3DL_GetSupport
+2 Fehlerbehebung=3DL_Trouble

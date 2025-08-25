@@ -1,0 +1,16 @@
+:Base 3dlTBKOR.hlp
+1 3Dlabs 디스플레이 드라이버 구성 관리자 개요=3DL_Intro
+1 명령어
+2 3Dlabs 디스플레이 관리자 정보=HIDR_ABOUT
+2 디스플레이 해상도 변경=3DL_Setres
+2 디스플레이 드라이버 정보=HIDR_INFO
+2 3Dlabs 웹사이트로 이동=HIDR_GO3DLABS
+2 디스플레이 컨트롤 패널 띄우기=HIDR_CALLDESKCPL
+2 시스템 트레이에서 삭제=HIDR_3DLEXIT
+2 최적화된 애플리케이션 선택=3DL_Setapps
+1 사용 방법 ...
+2 현재 디스플레이 드라이버 설정 선택=HIDR_INFO
+2 특정 애플리케이션용 디스플레이 드라이버 구성=3DL_Setapps
+2 최신 드라이버 받기=3DL_Getdriver
+2 기술 지원 받기=3DL_GetSupport
+2 문제 해결=3DL_Trouble

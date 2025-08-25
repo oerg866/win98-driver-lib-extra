@@ -1,0 +1,16 @@
+:Base 3dlTBITA.hlp
+1 Introduzione al gestore della configurazione del driver del monitor 3Dlabs=3DL_Intro
+1 Comandi
+2 Informazioni sul gestore del monitor 3Dlabs=HIDR_ABOUT
+2 Modifica risoluzione schermo=3DL_Setres
+2 Informazioni sul driver schermo=HIDR_INFO
+2 Sito Web 3Dlabs=HIDR_GO3DLABS
+2 Mostra pannello schermo=HIDR_CALLDESKCPL
+2 Rimuovi da System Tray=HIDR_3DLEXIT
+2 Seleziona applicazione ottimizzata=3DL_Setapps
+1 Come...
+2 Determinare le impostazioni del driver del monitor=HIDR_INFO
+2 Configurare il driver del monitor per un'applicazione particolare  =3DL_Setapps
+2 Ottenere i driver più aggiornati=3DL_Getdriver
+2 Ottenere assistenza tecnica=3DL_GetSupport
+2 Risolvere i problemi=3DL_Trouble

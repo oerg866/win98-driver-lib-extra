@@ -1,0 +1,16 @@
+:Base 3dlTBNLD.hlp
+1 Inleiding bij 3Dlabs Configuratiebeheer beeldschermstuurprogramma=3DL_Intro
+1 Menuopties
+2 Info 3Dlabs Configuratiebeheer beeldschermstuurprogramma=HIDR_ABOUT
+2 Beeldschermresolutie wijzigen=3DL_Setres
+2 Informatie beeldschermstuurprogramma=HIDR_INFO
+2 Ga naar de website van 3Dlabs=HIDR_GO3DLABS
+2 Informatiescherm weergeven=HIDR_CALLDESKCPL
+2 Verwijderen uit Taakbalk=HIDR_3DLEXIT
+2 Geoptimaliseerde toepassing selecteren=3DL_Setapps
+1 Hoe...
+2 Bepaal ik de instellingen voor het beeldschermstuurprogramma=HIDR_INFO
+2 Configureer ik het beeldschermstuurprogramma voor een bepaalde toepassing=3DL_Setapps
+2 Haal ik de nieuwste versie van het stuurprogramma op=3DL_Getdriver
+2 Krijg ik ondersteuning=3DL_GetSupport
+2 Los ik problemen op=3DL_Trouble

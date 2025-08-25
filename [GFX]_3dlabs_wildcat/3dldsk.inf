@@ -1,0 +1,346 @@
+; 3Dldsk.inf
+;
+; 3D labs information file for application support
+; this file uses the same format as microsoft
+; .inf files used in Windows 9X and NT4/2K/XP
+; The data contained here is read by the 3Dlabs
+; display control panel extension to configure 
+; and set-up the driver for specific applications. 
+; It SHOULD ONLY be edited by 3Dlabs.
+
+; [version] section
+;
+; Date :14th-June-2002
+; Version 3.00
+; copyright (c) 1998,2002 3Dlabs Incorporated
+
+
+[Version]
+LayoutFile=Layout.inf, Layout1.inf, Layout2.inf
+signature="$CHICAGO$"
+Provider="3Dlabs"
+
+; Application types
+;-------------------------------------------------
+[Application_type]
+%Direct3D%=Direct3D
+%OpenGL%=OpenGL
+
+
+[Direct3D]
+%Battle_Realms%=Battle_Realms
+%DAOC%=DAOC
+%Direct3D_Default%=Direct3D_Default
+%Direct3D_Games_Default%=Direct3D_Games_Default
+%Direct3D_3DStudio_Max%=Direct3D_3DStudio_Max
+%EarthAndBeyond%=EarthAndBeyond
+%GhostRecon%=GhostRecon
+%Grand_Theft_Auto_3%=Grand_Theft_Auto_3
+%Hitman2%=Hitman2
+%IcewindDale2%=IcewindDale2
+%Morrowind%=Morrowind
+%MedievalTotalWar%=MedievalTotalWar
+%NOLF2%=NOLF2
+%NHL%=NHL
+%PinnacleVideo%=PinnacleVideo
+
+[OpenGL]
+%OGL_Default%=OGL_Default
+%OpenGL_Games_Default%=OpenGL_Games_Default
+
+
+; Install sections
+;-------------------------------------------------
+
+; ------------ Direct3D apps setups----------------
+
+[Direct3D_Default]
+AddReg=Direct3D_Default.AddReg
+
+[Direct3D_Games_Default]
+AddReg=Direct3D_Games_Default.AddReg
+
+[DAOC]
+AddReg=DAOC.AddReg
+
+[EarthAndBeyond]
+AddReg=EarthAndBeyond.AddReg
+
+[Grand_Theft_Auto_3]
+AddReg=Grand_Theft_Auto_3.AddReg
+
+[Hitman2]
+AddReg=Hitman2.AddReg
+
+[IcewindDale2]
+AddReg=IcewindDale2.AddReg
+
+[Direct3D_3DStudio_Max]
+AddReg=Direct3D_3DStudio_Max.AddReg
+
+[PinnacleVideo]
+AddReg=PinnacleVideo.AddReg
+
+[Battle_Realms]
+AddReg=Battle_Realms.AddReg
+
+[Morrowind]
+AddReg=Morrowind.AddReg
+
+[MedievalTotalWar]
+AddReg=MedievalTotalWar.AddReg
+
+[NOLF2]
+AddReg=NOLF2.AddReg
+
+[NHL]
+AddReg=NHL.AddReg
+
+[GhostRecon]
+AddReg=GhostRecon.AddReg
+
+; -------------- OpenGL apps ---------------
+
+[OGL_Default]
+AddReg=OGL_Default.AddReg
+
+[OpenGL_Games_Default]
+AddReg=OpenGL_Games_Default.AddReg
+
+
+; AddReg sections
+;-------------------------------------------------
+
+
+; ----------- OpenGl application Settings -------- 
+
+[OGL_Default.AddReg]
+3DExtensions.ExportSwapCopy=0,Redisplay
+3DExtensions.ForceAlphaOrOverlay=0,Redisplay
+DoubleBuffer.DisablePageFlip=0
+OpenGL.ApplicationControl=0
+OpenGL.SupportAcad2000=0
+OpenGL.SupportSoftimage351=0,Redisplay
+OpenGL.SupportSolidWorks=0
+OpenGL.WaitForVBlank=0
+OpenGL.EnableStereo=0,Redisplay
+OpenGL.ZBufferDepth=0,Redisplay
+OpenGL.P10LBWidth=32,Reboot
+OpenGL.GLVersionNumber=3
+OpenGL.DisableDiamondExit=0;
+
+[OpenGL_Games_Default.AddReg]
+3DExtensions.ExportSwapCopy=0,Redisplay
+3DExtensions.ForceAlphaOrOverlay=0,Redisplay
+DoubleBuffer.DisablePageFlip=0
+OpenGL.ApplicationControl=0
+OpenGL.EnableStereo=0,Redisplay
+OpenGL.ZBufferDepth=0,Redisplay
+OpenGL.P10LBWidth=32,Reboot
+OpenGL.GLVersionNumber=3
+OpenGL.DisableDiamondExit=0;
+
+; ----------- Direct3D application Settings -------- 
+
+[DAOC.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=0,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Direct3D_Default.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Direct3D_Games_Default.Addreg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[EarthAndBeyond.Addreg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=0,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Grand_Theft_Auto_3.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Hitman2.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardbandEnable=0,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[IcewindDale2.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=1,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Direct3D_3DStudio_Max.Addreg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=1,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0.Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Battle_Realms.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=1,Reboot;
+
+[PinnacleVideo.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=1,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[Morrowind.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardbandEnable=0,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[MedievalTotalWar.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=4,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[NHL.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=1,Redisplay
+Direct3DHAL.ComplementZ=0,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[GhostRecon.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=0,Redisplay
+Direct3DHAL.ComplementZ=1,Redisplay
+DisableUndetectedSecondary=0,Reboot;
+
+[NOLF2.AddReg]
+Direct3DHAL.NoVBlankWait=0,Redisplay
+Direct3DHAL.AllocPhysicalMemPreferred=0,Redisplay
+Direct3DHAL.PermanentPinnacleLock=0,Redisplay
+Direct3DHAL.AnisotropicFilterFeedback=0,Redisplay
+Direct3DHAL.EnableSurfaceReformatting=1,Redisplay
+Direct3DHAL.ZFormatOverride=0,Redisplay
+Direct3DHAL.GuardBandEnable=0,Redisplay
+DisableUndetectedSecondary=0,Reboot
+Direct3DHAL.ComplementZ=1,Redisplay;
+
+; User visible strings
+;-------------------------------------------------
+[Strings]
+; 3DL="3Dlabs"
+
+; the default application should be listed first
+; the "D" after the application string indicates 
+; a Default appliction that will not be deleted 
+; by the control panel
+
+
+; ----- DirectX apps -----
+; Direct3D_Default="Direct3D(TM) Default",D
+
+Direct3D_Default="DirectX (TM) Default",D
+Direct3D_Games_Default="Direct3D (TM) Games Default",D
+Battle_Realms="Battle Realms (TM)",D
+DAOC="Dark Age of Camelot (TM)",D
+Direct3D_3DStudio_Max="Direct3D 3DStudio MAX (TM)",D
+Grand_Theft_Auto_3="Grand Theft Auto 3 (TM)",D
+EarthAndBeyond="Earth And Beyond (TM)",D
+GhostRecon="Ghost Recon: Island Thunder (TM)",D
+Hitman2="Hitman 2 (TM)",D
+IcewindDale2="Icewind Dale 2 (TM)",D
+Morrowind="Morrowind (TM)",D
+MedievalTotalWar="Medieval: Total War (TM)",D
+NHL="NHL 2002 (TM)",D
+NOLF2="No One Lives Forever 2 (TM)",D
+PinnacleVideo="Pinnacle Video Capture (TM)",D
+
+; ----- OpenGL apps ------
+OGL_Default="OpenGL (TM) Default",D
+OpenGL_Games_Default="OpenGL (TM) Games Default",D
+
+; --------- user settings stored here ----------
+
+
