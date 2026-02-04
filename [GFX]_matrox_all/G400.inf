@@ -94,7 +94,7 @@ Files.PDesk = 11, PDesk
 %Str07%%ENG%=IN01.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5F52102B
 %Str08%%ENG%=IN02.ENG,PCI\VEN_102B&DEV_0525&SUBSYS_5EB0102B
 ;---------------
-;G400 - Français
+;G400 - Francais
 ;---------------
 %Str00%%FRE%=IN00.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_3693102B
 %Str01%%FRE%=IN01.FRE,PCI\VEN_102B&DEV_0525&SUBSYS_217D102B
@@ -621,7 +621,7 @@ HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,ShowSupport,0x00000001,0
 HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/registration/home.cfm"
 
 [AddReg.Settings.FRE]
-HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Logiciel graphique (désinstaller uniquement)"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Logiciel graphique (dï¿½sinstaller uniquement)"
 HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"FRE"
 
 [AddReg.Web.Fre]
@@ -642,7 +642,7 @@ HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"GER"
 HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/mga/deutsch/registration/home.cfm"
 
 [AddReg.Settings.SPA]
-HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Software de visualización (sólo eliminar)"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Uninstall\Matrox Graphics Uninstaller,DisplayName,,"Matrox - Software de visualizaciï¿½n (sï¿½lo eliminar)"
 HKLM,Software\Matrox\PowerDesk\Version6\CurrentSettings,SelectedLanguage,,"SPA"
 
 [AddReg.Web.Spa]
@@ -655,7 +655,7 @@ HKLM,Software\Matrox\PowerDesk\Version6,RegisterWebPath,,"http://www.matrox.com/
 Disk1 = "Matrox Graphics Installation Disk 1"
 Matrox = "Matrox Graphics Inc."
 ENG = " - English"
-FRE = " - Français"
+FRE = " - Francais"
 ITA = " - Italiano"
 GER = " - Deutsch"
 SPA = " - Espanol"

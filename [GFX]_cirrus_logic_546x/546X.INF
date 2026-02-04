@@ -37,9 +37,9 @@ clrefrsh.hl_=1
 lgm32thk.dl_=1
 clvmd3d.dl_=1
 vgartd.vx_=1
-msvcrt40.dl_=1
-msvcrt.dl_=1
-msvcirt.dl_=1
+;msvcrt40.dl_=1
+;msvcrt.dl_=1
+;msvcirt.dl_=1
 5465vpm.dl_=1
 vpm16t.dl_=1
 vpm32t.dl_=1
@@ -82,9 +82,9 @@ clrefrsh.hlp,clrefrsh.hl_
 lgm32thk.dll,lgm32thk.dl_
 clvmd3d.dll,clvmd3d.dl_
 vgartd.vxd,vgartd.vx_
-msvcrt40.dll,msvcrt40.dl_
-msvcrt.dll,msvcrt.dl_
-msvcirt.dll,msvcirt.dl_
+msvcrt40.dll
+msvcrt.dll
+msvcirt.dll
 5465vpm.dll,5465vpm.dl_
 vpm16t.dll,vpm16t.dl_
 vpm32t.dll,vpm32t.dl_

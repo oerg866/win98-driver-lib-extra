@@ -1,4 +1,4 @@
-The files in this folder are driver files to be saved to DRIVERS.EX on the CD.
+The files in this folder are driver files to be saved to DRIVER.EX on the CD.
 
 They will *NOT* be copied to the hard drive or integrated in the windows
 installation.

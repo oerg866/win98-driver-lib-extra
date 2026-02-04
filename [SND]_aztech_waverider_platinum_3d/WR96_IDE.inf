@@ -26,8 +26,10 @@ WR96_AUD.inf,,
 1=" Disk 1",,0001
 
 [SourceDisksFiles]
-ide.inf=1
-audio.inf=1
+;98QI mod - file doesn't exist
+;ide.inf=1
+;98QI mod - file doesn't exist
+;audio.inf=1
 
 [AztechLabs]
 %*AZT0000.DeviceDesc%=AZT0000_Device, ISAPNP\AZT1023_DEV0000

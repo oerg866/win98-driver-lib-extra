@@ -25,7 +25,8 @@ xgigr.vxd=1
 XGIdx.dll=1
 XGIdx32.dll=1
 XGIgl.dll=1
-oemrom.bin=1
+;98QI mod - File doesn't exist
+;oemrom.bin=1
 XGIInst.dll=1
 XGIParse.dll=1
 XGIBase.dll=1
@@ -85,7 +86,8 @@ XGIdx32.dll
 XGIgl.dll
 
 [OEMROM.Copy]
-oemrom.bin
+;98QI mod - File doesn't exist
+;oemrom.bin
 
 [Uninst.Copy]
 XGIParse.dll,,,4

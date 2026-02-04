@@ -734,8 +734,10 @@ DefaultDestDir = 11
 [SourceDisksFiles]
 cwchmix.vxd=1
 cwchfx.vxd=1
-cwchrsnd.osp=1
-cwcrvsnd.osp=1
+;98QI mod - File doesn't exist
+;cwchrsnd.osp=1
+;98QI mod - File doesn't exist
+;cwcrvsnd.osp=1
 cwcdls.osp=1
 cwc3d.osp=1
 cwc4610.osp=1
@@ -901,7 +903,7 @@ CtrlShortLineInVolume="Line In"
 CtrlLongLineInMute="Line In Mute"
 CtrlShortLineInMute="Line In"
 CtrlLongVideoVolume="Video Volume"
-CtrlShortVideoVolume="Video
+CtrlShortVideoVolume="Video"
 CtrlLongVideoMute="Video Mute"
 CtrlShortVideoMute="Video"
 CtrlLongMicVolume="Microphone Volume"

@@ -88,28 +88,50 @@ nvcpzht.hlp=5
 vgartd.vxd=6
 agartd.vxd=6
 alipcimp.pci=6
-nvada.inf=1
-nvade.inf=1
-nvaen.inf=1
-nvaeng.inf=1
-nvaes.inf=1
-nvaesm.inf=1
-nvafi.inf=1
-nv4ada.inf=1
-nv4ade.inf=1
-nv4aen.inf=1
-nv4aeng.inf=1
-nv4aes.inf=1
-nv4aesm.inf=1
-nv4afi.inf=1
-nv4agp.inf=1
-nv4disp.inf=1
-nv4disp.drv=1
-nv4dd32.dll=1
-nv4ogl.dll=1
-nv4cpl.dll=1
-nv4cpl.hlp=1
-nv4qtwk.dll=1
+;98QI mod - file doesn't exist
+;nvada.inf=1
+;98QI mod - file doesn't exist
+;nvade.inf=1
+;98QI mod - file doesn't exist
+;nvaen.inf=1
+;98QI mod - file doesn't exist
+;nvaeng.inf=1
+;98QI mod - file doesn't exist
+;nvaes.inf=1
+;98QI mod - file doesn't exist
+;nvaesm.inf=1
+;98QI mod - file doesn't exist
+;nvafi.inf=1
+;98QI mod - file doesn't exist
+;nv4ada.inf=1
+;98QI mod - file doesn't exist
+;nv4ade.inf=1
+;98QI mod - file doesn't exist
+;nv4aen.inf=1
+;98QI mod - file doesn't exist
+;nv4aeng.inf=1
+;98QI mod - file doesn't exist
+;nv4aes.inf=1
+;98QI mod - file doesn't exist
+;nv4aesm.inf=1
+;98QI mod - file doesn't exist
+;nv4afi.inf=1
+;98QI mod - file doesn't exist
+;nv4agp.inf=1
+;98QI mod - file doesn't exist
+;nv4disp.inf=1
+;98QI mod - file doesn't exist
+;nv4disp.drv=1
+;98QI mod - file doesn't exist
+;nv4dd32.dll=1
+;98QI mod - file doesn't exist
+;nv4ogl.dll=1
+;98QI mod - file doesn't exist
+;nv4cpl.dll=1
+;98QI mod - file doesn't exist
+;nv4cpl.hlp=1
+;98QI mod - file doesn't exist
+;nv4qtwk.dll=1
 
 [Manufacturer]
 %Mfg%=Mfg

@@ -219,7 +219,9 @@ als04m.ins=1
 als16m.ins=1
 alspci.ini=1
 loadins.exe=1
-legacy.exe=1
+;98QI mod - File doesn't exist
+;legacy.exe=1
+legacy.com=1
 apsinit.exe=1
 dos4gw.exe=1
 stest8.wav=1

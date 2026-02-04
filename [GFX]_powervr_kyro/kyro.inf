@@ -101,7 +101,8 @@ gamestng.reg=1
 pmxreg.exe=1 
 pmx2.drv=1 
 pmx2hal.dll=1 
-vxdem.vxd=1 
+;98QI mod - file doesn't exist
+;vxdem.vxd=1 
 pmxmini.vxd=1 
 pmxmini2.vxd=1 
 pmxserv.vxd=1 
