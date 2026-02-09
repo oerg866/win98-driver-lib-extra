@@ -691,7 +691,7 @@ HKR,Glide,FX_GL_COMPRESS_LEGACY_TEXTURES,,"1"
 HKR,Glide\%Force16bppTextures%,Control,,"Combo"
 HKR,Glide\%Force16bppTextures%,List,,"%Disable%,%Enable%"
 HKR,Glide\%Force16bppTextures%,Value,,"0"
-HKR,Glide\%Force16bppTextures%,Default,,"0"		]
+HKR,Glide\%Force16bppTextures%,Default,,"0"
 HKR,Glide\%Force16bppTextures%,Performance,,"1"
 HKR,Glide\%Force16bppTextures%,Quality,,"0"
 HKR,Glide\%Force16bppTextures%,"Tweak Value",,"FX_GL_FORCE_16BPP_TEXTURES"
