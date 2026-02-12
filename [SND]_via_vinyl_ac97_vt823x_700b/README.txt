@@ -25,10 +25,6 @@ Designed for manual installation or Win98 QuickInstall (DRIVER.EX).
 ### Notes
 - WDM driver – requires DirectX 8.0+ (DX 8.1 or 9.0c recommended for full features).  
 - No legacy VxD/SBPro DOS support included (use older VIA packages for DOS emulation if needed).  
-- Common community-reported issues with VIA AC'97 on Win98SE (not always present; many systems like HP t5530 work flawlessly out-of-box):  
-  - Crackling/distortion at high volumes (e.g. Windows startup sounds) → Reported with v7.00b WDM; older versions like 5.80 sometimes avoid it [VOGONS thread](https://www.vogons.org/viewtopic.php?t=87648).  
-  - Low volume or weak output on some codecs → Enable "Mic 20dB Boost" in Windows mixer if needed [various AC'97 discussions](https://www.vogons.org/viewtopic.php?t=93006).  
-  - Occasional clicks/noise or suspend/resume glitches → Disable hardware acceleration in Multimedia → Audio properties, or power management for the device [VOGONS AC'97 threads](https://www.vogons.org/viewtopic.php?t=45511).  
 - Auxiliary INF files (Vinyl971.inf, Vinyl972.inf, VinylCmp.inf) handle codec variants (VT1612/1616/1618).  
 - Tested on: HP t5530 Thin Client (VT8237 rev 60 + CN700) – works perfectly without tweaks; also VIA EPIA boards and Shuttle VT8237 systems.
 
