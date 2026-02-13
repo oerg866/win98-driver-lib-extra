@@ -1,0 +1,527 @@
+;******************************************************************
+;
+;		PowerVR OEM Installation 
+;		        
+;                   PCX1 & PCX2
+;
+;
+;
+;				Last Modified : 27th August, 1998
+;******************************************************************
+
+[Version]
+Signature="$CHICAGO$"
+Class=MEDIA
+Provider=%String0%
+
+;******************************************************************
+;The Default directory for installing files is Windows
+;PowerVR copies files into the Windows directory (Midas_WindowsFiles)
+;and the Windows\System directory (Midas_SystemFiles). 
+;
+;It is recommended that these are not changed.
+;
+;Midas is the internal name for PowerVR.
+;******************************************************************
+[DestinationDirs]
+DefaultDestDir=10
+Midas_WindowsFiles=10
+Midas_SystemFiles=11
+
+[Manufacturer]
+%String1%=Mfg
+
+;******************************************************************
+;From reading the Vendor and Device ID for the board being
+;installed, the installer can determine whether it is a PCX1 or PCX2. 
+;A PCX2 will take the install path set out as Midas5
+;A PCX1 will take the install path set out as Midas4
+;******************************************************************
+[Mfg]
+%String23%=Midas5,PCI\VEN_1033&DEV_0046,PCI\VEN_1033&DEV_0046
+%String22%=Midas4,PCI\VEN_1033&DEV_002A,PCI\VEN_1033&DEV_002A
+
+;******************************************************************
+;The Install Route
+;-----------------
+;
+;Taking the relevent install route (e.g. PCX2 - Midas5) 
+;the installation process is as follows:
+;
+;1. Delete Registry settings that may be resident from previous installations.
+;2. Delete any files that may be resident and are now redundant.
+;3. Copy the relevent files.
+;4. Add the new registry settings.
+;5. Update the .ini settigns.
+;6. Force Windows to reboot (to install any system files in use at time of installation).
+;******************************************************************
+[Midas5]
+DelReg=Midas_DelReg
+DelFiles=Midas_DelFiles
+CopyFiles=Midas5_WindowsFiles,Midas_SystemFiles
+AddReg=Midas5_AddReg,Common
+UpdateInis=Midas5_UpdateInis
+Restart
+
+[Midas4]
+DelReg=Midas_DelReg
+DelFiles=Midas_DelFiles
+CopyFiles=Midas4_WindowsFiles,Midas_SystemFiles
+AddReg=Midas4_AddReg,Common
+UpdateInis=Midas4_UpdateInis
+Restart
+
+
+;******************************************************************
+;Copy files
+;----------
+;
+;Copy the files into their destined directories.
+;Midas5_WindowsFiles = Windows Directory
+;Midas_SystemFiles   = Systems Directory
+;******************************************************************
+[Midas5_WindowsFiles]
+sgl.dll
+sglmid5.dll
+pvros.dll
+pvrmid5.dll
+pvrsmx.dll
+
+[Midas4_WindowsFiles]
+sgl.dll
+sglmid4.dll
+pvros.dll
+pvrmid4.dll
+pvrsmx.dll
+
+[Midas_SystemFiles]
+vsgl.vxd
+pvrsm3d.dll
+pvrhal32.dll
+pvrinit.exe
+
+;******************************************************************
+;System CleanUp
+;--------------
+;
+;The system is cleared of any settings within SGLHW.INI and 
+;the PowerVR section of the Registry ready for the defualt
+;settings of the current build
+;******************************************************************
+[Midas_DelFiles]
+sglhw.ini
+
+[Midas_DelReg]
+HKLM,SOFTWARE\VideoLogic\PowerVR
+HKLM,SOFTWARE\Matrox\m3D
+HKLM,SOFTWARE\PowerVR\PCX1&2
+
+;******************************************************************
+;Add Registry Settings
+;---------------------
+;
+;Midas5_AddReg = PCX2
+;
+; The Registry structure is 
+;
+;	HKR,,DevLoader,0,vsgl.vxd (VXD install)
+;	HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,PowerVR,0,pvrinit.exe (PVRINIT upon Windows StartUp)
+;
+;	HKLM, SOFTWARE\PowerVR\PCX1&2
+;			|
+;			|__AppHints
+;			|	|
+;			|	|_flight
+;			|	|
+;			|	|_vlflite
+;			|
+;			|__HWINI
+;			|	|
+;			|	|_Defaults
+;			|	|
+;			|	|_PVRHAL
+;			|
+;			|__LastApp
+;			|
+;			|
+;			|__Smart3D
+;			|	|
+;			|	|_Layout
+;			|
+;			|__StartUp
+;			
+;
+;******************************************************************
+[Midas5_AddReg]
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String11%,0,"Flight Unlimited"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String4%,0,0.000001
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String28%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String11%,0,"Flight Unlimited"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String4%,0,0.000001
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String28%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mech2.exe,%String11%,0,"MechWarrior2"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mech2.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mech2.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mech2.exe,%String35%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wpodpvr.exe,%String11%,0,"POD"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wpodpvr.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wpodpvr.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\podpvrx.exe,%String11%,0,"POD"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\podpvrx.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\podpvrx.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\revolt.exe,%String11%,0,"Revolte"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\revolt.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\revolt.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String11%,0,"Wizmark lite"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String25%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String11%,0,"MDK D3D - Internet demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String11%,0,"MDK D3D - Retail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower4.exe,%String11%,0,"Tower4 - SGL Demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower4.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower4.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower5.exe,%String11%,0,"Tower5 - SGL Demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower5.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tower5.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ants.exe,%String11%,0,"Ants - SGL Demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ants.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ants.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\u-race.exe,%String11%,0,"Ultimate Race"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\u-race.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\u-race.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String11%,0,"Terracide"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\aw.bin,%String11%,0,"Agile Warrior"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\aw.bin,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\goman.exe,%String11%,0,"Team 47 GoMan"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\goman.exe,%String25%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tomb2.exe,%String11%,0,"TombRaider II"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tomb2.exe,%String38%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wipeout2.exe,%String11%,0,"WipeOut"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wipeout2.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wipeout2.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\4x4.exe,%String11%,0,"Hardcore 4x4"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\4x4.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\4x4.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hyperx.exe,%String11%,0,"HyperBlade"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hyperx.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hyperx.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String11%,0,"Motoracer"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\moto.exe,%String33%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\id4.exe,%String11%,0,"Independence Day"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\id4.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String11%,0,"Melt"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\if22.exe,%String11%,0,"iF22"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\if22.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\if22.exe,%String28%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\if22.exe,%String29%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\gpolice.exe,%String11%,0,"GPolice Demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\gpolice.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\gpolice.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sabreace.exe,%String11%,0,"Sabre Ace"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sabreace.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\diehard2.exe,%String11%,0,"Die Hard Trilogy - Die Harder"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\diehard2.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\diehard2.exe,%String27%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ob.exe,%String11%,0,"Overboard!"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ob.exe,%String36%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ob.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ob.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sw.exe,%String11%,0,"Shipwreckers!"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sw.exe,%String36%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sw.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sw.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tnp.exe,%String11%,0,"Take No Prisoners"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tnp.exe,%String36%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tnp.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tnp.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mageslay.exe,%String11%,0,"Mageslayer"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mageslay.exe,%String36%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mageslay.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mageslay.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String11%,0,"TOCA Touring car championship"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String36%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String34%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String33%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String32%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String27%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tourcars.exe,%String39%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hg.exe,%String11%,0,"Heavy Gear"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hg.exe,%String33%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hg.exe,%String17%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String11%,0,"A5 (D3D version)"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String37%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String32%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cart.exe,%String11%,0,"Cart Precision Racing"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cart.exe,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\f1_d3dv5.exe,%String11%,0,"F1 Racing simulation"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\f1_d3dv5.exe,%String34%,0,3
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\f1_d3dv5.exe,%String27%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cyber.exe,%String11%,0,"Cyber Gladiators"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cyber.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\rlr_D3d.exe,%String11%,0,"Redline Racer"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\rlr_D3d.exe,%String34%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\rlr_D3d.exe,%String33%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\rlr_D3d.exe,%String27%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\panzer.exe,%String11%,0,"Panzer Commander"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\panzer.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\panzer.exe,%String33%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\panzer.exe,%String34%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\panzer.exe,%String27%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\keepd3d.exe,%String11%,0,"Dungeon Keeper D3D"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\keepd3d.exe,%String34%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\deepd3d.exe,%String11%,0,"The Deeper Dungeons D3D"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\keepd3d.exe,%String34%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,AppTitle,0,PowerVR
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,MainLogo,0,""
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,InfoBitmap,0,""
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,GroupText",0,"3D Control Settings"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,CheckboxText,0,"&Enable PowerVR HAL"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,MainText,0,"This page allows you to adjust the PowerVR properties.  You can enable or disable the HAL."
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,BoardText,0,"Board ID: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,VersionText,0,"HAL version: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,SGLVersionText,0,"SGL version: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksGroupText,0,"2D/3D Acceleration"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksOnText,0,"Standard"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksOffText,0,"Optimized (recommended)"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,ProductReleaseText,0,"Product Release: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,"SLReadOnly",0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ProductRelease,0,%String30%
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,StrictLocks,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ISPParamSize,0,1536
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,TSPParamSize,0,256
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ObjectParamSize,0,512
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,BilinearCtlEnable,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,BilinearState,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,EnableHAL,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,AllowQuads,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,AutoMIPMAP,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,ColourKey,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,Deferred2D,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,DisableNewPassPerTri,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,GouraudSpecular,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,TableFog,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,VertexFog,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,Enable24BitMode,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,E24RemoveCheckbox,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,FullSort,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,SetMaskingBGColour,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,FullMaskingPlane,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,BilinearFilteringMode,0,3
+HKLM,SOFTWARE\VideoLogic\PowerVR\App hints,,0
+
+[Midas4_AddReg]
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String11%,0,"Flight Unlimited"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\flight.exe,%String4%,0,0.000001
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String11%,0,"Flight Unlimited"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\vlflite.exe,%String4%,0,0.000001
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tex4.exe,%String11%,0,"D3D SDK TEX4 Example"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tex4.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tex5.exe,%String11%,0,"D3D SDK TEX5 Example"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\tex5.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\oct1.exe,%String11%,0,"D3D SDK OCT1 Example"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\oct1.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\triangle.exe,%String11%,0,"D3D SDK TRIANGLE Example"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\triangle.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monsterx.exe,%String11%,0,"Monster Truck Madness - Trail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monsterx.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monsterx.exe,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monster.exe,%String11%,0,"Monster Truck Madness - Retail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monster.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\monster.exe,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\aw.bin,%String11%,0,"Agile Warrior"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\aw.bin,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hellbndx.exe,%String11%,0,"Hellbender - Trail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hellbndx.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hellbend.exe,%String11%,0,"Hellbender - Retail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\hellbend.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String11%,0,"MDK D3D - Internet demo"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkdem3d.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String11%,0,"MDK D3D - Retail version"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mdkd3d.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String11%,0,"Wizmark lite"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\wizmark.exe,%String25%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String11%,0,"Terracide"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\terawin.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\isle.exe,%String11%,0,"Adventures in LEGO island"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\isle.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\winbball.exe,%String11%,0,"Grand Slam"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\winbball.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\id4.exe,%String11%,0,"Independence Day"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\id4.exe,%String7%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String11%,0,"MELT"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\melt.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\goman.exe,%String11%,0,"Team 47 GoMan (Shareware demo)"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\goman.exe,%String25%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sabreace.exe,%String11%,0,"Sabre Ace"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\sabreace.exe,%String14%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mnf98.exe,%String11%,0,"Monday Night Football '98"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\mnf98.exe,%String6%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String11%,0,"A5 (D3D version)"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String37%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\a5j.exe,%String32%,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cart.exe,%String11%,0,"Cart Precision Racing"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\cart.exe,%String31%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ForsakenHW.exe,%String11%,0,"Forsaken"
+HKLM,SOFTWARE\PowerVR\PCX1&2\%String3%\ForsakenHW.exe,%String36%,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,AppTitle,0,PowerVR
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,MainLogo,0,""
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,InfoBitmap,0,""
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,GroupText",0,"3D Control Settings"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,CheckboxText,0,"&Enable PowerVR HAL"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,MainText,0,"This page allows you to adjust the PowerVR properties.  You can enable or disable the HAL."
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,BoardText,0,"Board ID: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,VersionText,0,"HAL version: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,SGLVersionText,0,"SGL version: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksGroupText,0,"2D/3D Acceleration"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksOnText,0,"Standard"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,StrictLocksOffText,0,"Optimized (recommended)"
+HKLM,SOFTWARE\PowerVR\PCX1&2\Smart3d\Layout,ProductReleaseText,0,"Product Release: %s"
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,"SLReadOnly",0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ProductRelease,0,%String30%
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,StrictLocks,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ISPParamSize,0,1536
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,TSPParamSize,0,256
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,ObjectParamSize,0,512
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,BilinearCtlEnable,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,BilinearState,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,EnableHAL,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,AllowQuads,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,AutoMIPMAP,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,ColourKey,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,Deferred2D,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,DisableNewPassPerTri,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,GouraudSpecular,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,TableFog,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\PVRHAL,VertexFog,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,FullSort,0,0
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,SetMaskingBGColour,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,FullMaskingPlane,0,1
+HKLM,SOFTWARE\PowerVR\PCX1&2\HWINI\Defaults,BilinearFilteringMode,0,0
+HKLM,SOFTWARE\VideoLogic\PowerVR\App hints,,0
+
+[Common]
+HKLM,System\CurrentControlSet\Control\SessionManager\KnownVxDs,SGL,0,vsgl.vxd
+HKLM,Software\Microsoft\DirectDraw\Secondary,Name,0,pvrhal32.dll
+HKCR,CLSID\{6B1823E0-AC36-11d0-821F-00802964BD71},,0,"PowerVR Shell Extension"
+HKCR,CLSID\{6B1823E0-AC36-11d0-821F-00802964BD71}\InProcServer32,,0,%11%"\pvrsm3d.dll"
+HKCR,CLSID\{6B1823E0-AC36-11d0-821F-00802964BD71}\InProcServer32,ThreadingModel,0,Apartment
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\"Controls Folder"\Display\shellex\PropertySheetHandlers\PowerVRPage,,0,{6B1823E0-AC36-11d0-821F-00802964BD71}
+HKCR,POWERVR\CLSID,,0,{6B1823E0-AC36-11d0-821F-00802964BD71}
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,PowerVR,0,pvrinit.exe
+HKR,,DevLoader,0,vsgl.vxd
+;******************************************************************
+;Update .ini Files
+;-----------------
+;
+;******************************************************************
+[Midas5_UpdateInis]
+%10%\system.ini,386Enh,,"device=vsgl.vxd",0
+%10%\system.ini,display,"NonVirge=*",,0
+%10%\system.ini,"VideoLogic Svga","NonVirge=*",,0
+%10%\sglhw.ini,default,,"StrictLocks=0",0
+%10%\sglhw.ini,default,,"SW_XRegionSize=32",0
+%10%\sglhw.ini,default,,"SW_YRegionSize=32",0
+
+[Midas4_UpdateInis]
+%10%\system.ini,386Enh,,"device=vsgl.vxd",0
+%10%\system.ini,VSGL,,"Buffer1Size=128",0
+%10%\system.ini,VSGL,,"Buffer2Size=128",0
+%10%\system.ini,display,"NonVirge=*",,0
+%10%\system.ini,"VideoLogic Svga","NonVirge=*",,0
+%10%\sglhw.ini,default,,"StrictLocks=0",0
+%10%\sglhw.ini,default,,"SW_XRegionSize=32",0
+%10%\sglhw.ini,default,,"SW_YRegionSize=32",0
+
+;******************************************************************
+;Source Info
+;-----------
+;
+;SourceDiskNames is left blank to force user to point installer to files
+;
+;SourceDisksFiles - All the files to be installed
+;******************************************************************
+[SourceDisksNames]
+1=%String5%,,0
+
+[SourceDisksFiles]
+sgl.dll=1
+sglmid5.dll=1
+sglmid4.dll=1
+pvros.dll=1
+pvrmid5.dll=1
+pvrmid4.dll=1
+vsgl.vxd=1
+pvrsm3d.dll=1
+pvrhal32.dll=1
+pvrinit.exe=1
+pvrsmx.dll=1
+
+;******************************************************************
+;Strings
+;-------
+;
+;Strings used throughout the .inf file
+;******************************************************************
+[Strings]
+String0="PowerVR"
+String1="PowerVR"
+String3="App hints"
+String4="Near Z Clip"
+String5="PowerVR OEM Windows '9x Installation disk"
+String6="Need3DOn2D"
+String7="AutoMIPMap"
+String8="Alt2DBuffer"
+String9="StackRendersTillFlip"
+String10="ExpandTopMap"
+String11="Description"
+String12="DummyZ"
+String13="ReverseTrans"
+String14="Deferred2D"
+String15="SW_XRegionSize"
+String16="SW_YRegionSize"
+String18="AllowQuads"
+String19="OverrideExclusiveOnlyAsync"
+String20="SW_MinYSize"
+String21="BilinearFilteringMode"
+String22="PowerVR PCX1"
+String23="PowerVR PCX2"
+String24="RenderTimeout"
+String25="Export565"
+String26="FullSort"
+String27="DisableNewPassPerTri"
+String28="BilinearState"
+String29="BilinearCtlEnable"
+String30="PowerVR generic v4.1.2c1"
+String31="DisablePVR"
+String32="VertexFog"
+String33="Dithering"
+String34="SglTransSort"
+String35="IncScreenXYby1"
+String36="ColourKey"
+String37="TableFog"
+String38="FullMaskingPlane"
+String39="ZAlways"
+
+
+
