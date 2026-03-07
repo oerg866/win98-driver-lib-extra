@@ -1,0 +1,9 @@
+03/31/1998
+UDMA Win 9x ver. 1.07p3 errata list
+WHQL Certification testing complete with several boards
+
+Known errata:
+WHQL XCOPY test fails with anything other than 128mb.
+WHQL File System API test fails with anything other than 128mb.
+
+This is believed to be a problem with the test

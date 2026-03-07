@@ -1,0 +1,17 @@
+WIN9X UDMA installation instructions
+1. Start
+2. Settings
+3. Control Panel
+4. Add new hardware
+5. WIN 98 will automatically search and find PCI bridge, audio and video if no drivers are installed. Choose none of these devices and then choose hard disk controllers. 
+6. Have disk
+7. Point to location of files. a:/
+8. Cx5530 IDE controller should appear. Choose next
+9. Files will be copied
+9. Do not restart if prompted to do so
+10.Right click on My Computer and choose properties
+11.choose device manager
+12.expand hard disk controllers
+13.remove standard dual PCI ide controller
+14.Restart system
+15. Computer should prompt for reboot two-three times
