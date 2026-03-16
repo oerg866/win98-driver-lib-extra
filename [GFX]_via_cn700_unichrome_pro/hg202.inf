@@ -1,0 +1,424 @@
+; INF file for VIA/S3G UniChrome Family Win9x/ME Display Driver.
+; Copyright 2005, VIA/S3G.
+
+[version]
+Class=DISPLAY
+signature="$CHICAGO$"
+Provider=%Mfg%
+DriverVer=08/28/2006, 4.14.10.0068
+;16.01.23.24
+;CatalogFile=viagfxp.cat
+
+[DestinationDirs]
+DefaultDestDir  = 11    ; LDID_SYS
+Driver.Copy     = 11
+Refresh.Copy    = 11
+
+UtilitySys.Copy = 11
+UtilityHlp.Copy = 18
+TraypSys.Copy    = 11
+TraypHlp.Copy    = 18
+
+[SourceDisksNames]
+1="Windows 98/ME VIA/S3G UniChrome Family Driver Disk",,0
+
+[SourceDisksFiles]
+vtdisp.drv=1
+vtmini.vxd=1
+vtdd.dll=1
+vticd.dll=1
+gtf.dll=1
+
+;S3 utility
+vtinfo2.dll  = 1
+vtinfo2.cfg  = 1
+vtin2wst.hlp = 1
+vtin2chs.hlp = 1
+vtin2cht.hlp = 1
+vtin2jpn.hlp = 1
+vtin2kor.hlp = 1
+
+VTDisply.dll = 1
+VTDisply.cfg = 1
+VTDispl2.cfg = 1
+VTDspWST.hlp = 1
+VTDspCHS.hlp = 1
+VTDspCHT.hlp = 1
+VTDspJPN.hlp = 1
+VTDspKOR.hlp = 1
+
+VTGamma2.dll = 1
+VTGamma2.cfg = 1
+VTGm2WST.hlp = 1
+VTGm2CHS.hlp = 1
+VTGm2CHT.hlp = 1
+VTGm2JPN.hlp = 1
+VTGm2KOR.hlp = 1
+
+vtovrlay.dll = 1
+vtovrlay.cfg = 1
+vtovlwst.hlp = 1
+vtovlchs.hlp = 1
+vtovlcht.hlp = 1
+vtovljpn.hlp = 1
+vtovlkor.hlp = 1
+
+VTTrayp.exe = 1
+VTTrayp.cfg = 1
+VTTpwst.hlp = 1
+
+VTTimer.exe = 1
+VTuninst.exe = 1
+
+[Manufacturer]
+%Mfg%=Mfg
+
+[Mfg]
+%viagfx.DeviceDesc01% = Driver.Install, PCI\VEN_1106&DEV_7205
+%viagfx.DeviceDesc02% = Driver2.Install, PCI\VEN_1106&DEV_3344
+
+[Driver.Install]
+CopyFiles=Driver.Copy, UtilitySys.Copy, UtilityHlp.Copy
+DelReg=Prev.DelReg
+AddReg=Driver.AddReg, Utility.AddReg
+
+[Driver2.Install]
+CopyFiles=Driver.Copy, UtilitySys.Copy, UtilityHlp.Copy, TraypSys.Copy, TraypHlp.Copy
+DelReg=Prev.DelReg
+AddReg=Driver.AddReg, Utility.AddReg, TrayPlus.AddReg
+
+;
+;Copy File Section
+;
+
+[Driver.Copy]
+vtdisp.drv
+vtmini.vxd
+vtdd.dll
+vticd.dll
+gtf.dll
+
+[UtilitySys.Copy]
+;S3Info2
+VTInfo2.dll
+VTInfo2.cfg
+
+;S3Display
+VTDisply.dll
+VTDisply.cfg
+VTDispl2.cfg
+
+;S3Gamma2
+VTGamma2.dll
+VTGamma2.cfg
+
+;S3Overlay
+VTOvrlay.dll
+VTOvrlay.cfg
+
+VTuninst.exe
+VTTimer.exe
+
+[TraypSys.Copy]
+; S3TrayPlus
+VTTrayp.exe
+VTTrayp.cfg
+
+[UtilityHlp.Copy]
+;S3Info2
+vtin2wst.hlp
+vtin2chs.hlp
+vtin2cht.hlp
+vtin2jpn.hlp
+vtin2kor.hlp
+
+;S3Display
+VTDspWST.hlp
+VTDspCHS.hlp
+VTDspCHT.hlp
+VTDspJPN.hlp
+VTDspKOR.hlp
+
+;S3Gamma2
+VTGm2WST.hlp
+VTGm2CHS.hlp
+VTGm2CHT.hlp
+VTGm2JPN.hlp
+VTGm2KOR.hlp
+
+;S3Overlay
+vtovlwst.hlp
+vtovlchs.hlp
+vtovlcht.hlp
+vtovljpn.hlp
+vtovlkor.hlp
+
+[TraypHlp.Copy]
+; S3TrayPlus
+VTtpwst.hlp
+
+;
+;Registry Section
+;
+[Prev.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKLM,"Software\Microsoft\Windows\CurrentVersion\OpenGLDrivers",vticd.dll
+
+HKCR,CLSID\%UTDspCLSID%,,,"VIA Display Property Sheet"
+HKCR,CLSID\%UTDspCLSID%\InProcServer32,,,"VTDisply.dll"
+HKCR,CLSID\%UTDspCLSID%\InProcServer32,ThreadingModel,,"Apartment"
+HKR,ShellEx\PropertySheetHandlers\VTDisply,"",,%UTDspCLSID%
+HKLM,Software\VIA\DisplayUtility\VTDisply,,,""
+
+HKCR,CLSID\%UTGmaCLSID%,,,"VIA Gamma Property Sheet"
+HKCR,CLSID\%UTGmaCLSID%\InProcServer32,,,"VTGamma.dll"
+HKCR,CLSID\%UTGmaCLSID%\InProcServer32,ThreadingModel,,"Apartment"
+HKR,ShellEx\PropertySheetHandlers\VTGamma,"",,%UTGmaCLSID%
+
+HKCR,CLSID\%UTInfCLSID%,,,"VIA Info Property Sheet"
+HKCR,CLSID\%UTInfCLSID%\InProcServer32,,,"VTInfo.dll"
+HKCR,CLSID\%UTInfCLSID%\InProcServer32,ThreadingModel,,"Apartment"
+HKR,ShellEx\PropertySheetHandlers\VTInfo,"",,%UTInfCLSID%
+
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,ViaDisplayTray,,"VTTray.exe"
+
+HKR,ShellEx\PropertySheetHandlers\S3Display,"",,%OLD_DispCLSID%
+HKR,ShellEx\PropertySheetHandlers\S3Gamma2,"",,%OLD_GmmaCLSID%
+HKR,ShellEx\PropertySheetHandlers\S3Info2,"",,%OLD_InfoCLSID%
+HKR,ShellEx\PropertySheetHandlers\S3Overlay,"",,%OLD_OvlyCLSID%
+
+[Driver.AddReg]
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"8,640,480"
+HKR,DEFAULT,drv,,vtdisp.drv
+HKR,DEFAULT,drv2,,vtdisp.drv
+HKR,DEFAULT,vdd,,"*vdd"
+HKR,DEFAULT,minivdd,,vtmini.vxd
+HKR,DEFAULT,minivdd2,,vtmini.vxd
+HKR,DEFAULT,RefreshRate,,"-1"
+HKR,DEFAULT,DDC,,"1"
+HKR,DEFAULT,ExtModeSwitch,,0    ;disables full screen extended modes in a window?
+HKR,INFO,Install,1,01,00,00,00
+HKR,INFO,Native,1,01,00,00,00
+HKR,"MODES\8\640,480"    ,,,"60,75,85,100,120"
+HKR,"MODES\8\720,480"    ,,,"60,75"
+HKR,"MODES\8\720,576"    ,,,"60,75"
+HKR,"MODES\8\800,600"    ,,,"60,75,85,100,120"
+HKR,"MODES\8\848,480"    ,,,"60,75,85"
+HKR,"MODES\8\1024,768"   ,,,"60,75,85,100"
+HKR,"MODES\8\1152,864"   ,,,"60,75"
+HKR,"MODES\8\1280,768"   ,,,"60,75,85"
+HKR,"MODES\8\1280,960"   ,,,"60,75,85"
+HKR,"MODES\8\1280,1024"  ,,,"60,75,85"
+HKR,"MODES\8\1400,1050"  ,,,"60,75"
+HKR,"MODES\8\1600,1200"  ,,,"60,75,85"
+HKR,"MODES\8\1920,1440"  ,,,"60,75"
+HKR,"MODES\16\640,480"   ,,,"60,75,85,100,120"
+HKR,"MODES\16\720,480"   ,,,"60,75"
+HKR,"MODES\16\720,576"   ,,,"60,75"
+HKR,"MODES\16\800,600"   ,,,"60,75,85,100,120"
+HKR,"MODES\16\848,480"   ,,,"60,75,85"
+HKR,"MODES\16\1024,768"  ,,,"60,75,85,100"
+HKR,"MODES\16\1152,864"  ,,,"60,75"
+HKR,"MODES\16\1280,768"  ,,,"60,75,85"
+HKR,"MODES\16\1280,960"  ,,,"60,75,85"
+HKR,"MODES\16\1280,1024" ,,,"60,75,85"
+HKR,"MODES\16\1400,1050" ,,,"60,75"
+HKR,"MODES\16\1600,1200" ,,,"60,75,85"
+HKR,"MODES\16\1920,1440" ,,,"60,75"
+HKR,"MODES\32\640,480"   ,,,"60,75,85,100,120"
+HKR,"MODES\32\720,480"   ,,,"60,75"
+HKR,"MODES\32\720,576"   ,,,"60,75"
+HKR,"MODES\32\800,600"   ,,,"60,75,85,100"
+HKR,"MODES\32\848,480"   ,,,"60,75,85"
+HKR,"MODES\32\1024,768"  ,,,"60,75,85"
+HKR,"MODES\32\1152,864"  ,,,"60,75"
+HKR,"MODES\32\1280,768"  ,,,"60,75,85"
+HKR,"MODES\32\1280,960"  ,,,"60,75,85"
+HKR,"MODES\32\1280,1024" ,,,"60,75,85"
+HKR,"MODES\32\1400,1050" ,,,"60,75"
+HKR,"MODES\32\1600,1200" ,,,"60"
+HKR,"MODES\32\1920,1440" ,,,"60,75"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\OpenGLDrivers",viagfx,,vticd.dll
+HKLM,"Software\VIA\2D",UseSAMM,1,00,00,00,00
+HKLM,"Software\VIA\D3D",CRTTVDuoView,1,01,00,00,00
+HKLM,"Software\VIA\Video",USE_VideoCapture,1,01,00,00,00
+HKLM,"Software\VIA\Video",ProgressiveScan, 1,00,00,00,00
+HKLM,"Software\VIA\Video",FlipEvenOnly,    1,00,00,00,00
+HKLM,"Software\VIA\Video",Overlay_Brightness,1,ee,02,00,00
+HKLM,"Software\VIA\Video",Overlay_Contrast,1,10,27,00,00
+HKLM,"Software\VIA\Video",Overlay_Hue,1,00,00,00,00
+HKLM,"Software\VIA\Video",Overlay_Saturation,1,10,27,00,00
+HKLM,"Software\VIA\Video",Overlay_InDuoView_toTV,1,1,00,00,00
+;
+;S3 Utility
+;
+
+[Utility.AddReg]
+;----------------- S3Info2 --------------------------------
+HKLM,%CURVER%\Uninstall\VTInfo2,DisplayName,,%SInfo2Desc%
+HKLM,%CURVER%\Uninstall\VTInfo2,UninstallString,,"vtuninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3Info2'"
+HKCR,CLSID\%INFO2CLS%,,,"S3Info2 Property Sheet"
+HKCR,CLSID\%INFO2CLS%\InProcServer32,,,VTInfo2.dll
+HKCR,CLSID\%INFO2CLS%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTInfo2,"",,%INFO2CLS%
+HKLM,%INFO2KEY%,Filename,,VTInfo2.dll
+HKLM,%INFO2KEY%,URL,,http://www.s3graphics.com
+HKLM,%INFO2KEY%,UMAEnabled,,ON
+HKLM,%INFO2KEY%,UIStyle,,Chrome
+;; -------------------- Uninstallation information ---------------------
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","10.DelKey",,HKLM\%INFO2KEY%
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","11.DelKey",,HKCR\CLSID\%INFO2CLS%
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","12.DelKey",,HKLM\%CURVER%\Uninstall\VTInfo2
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","13.DelKey",,HKLM\%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTInfo2
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","20.DelFiles",,%11%\VTInfo2.dll
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","21.DelFiles",,%18%\VTIn2*.hlp
+HKLM,"Software\S3\VT\S3Uninst\S3Info2","22.DelFiles",,%11%\VTInfo2.cfg
+;; ----------- The following lines are only for Win98 ------------------
+HKR,shellex\PropertySheetHandlers\VTInfo2,"",,%INFO2CLS%
+
+;----------------- S3Display --------------------------------
+HKLM,%CURVER%\Uninstall\VTDisplay,DisplayName,,%SDispDesc%
+HKLM,%CURVER%\Uninstall\VTDisplay,UninstallString,,"vtuninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3Display'"
+HKCR,CLSID\%S3DISPCLS%,,,"S3Display Property Sheet"
+HKCR,CLSID\%S3DISPCLS%\InProcServer32,,,VTDisply.dll
+HKCR,CLSID\%S3DISPCLS%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTDisplay,"",,%S3DISPCLS%
+HKLM,%S3DSPKEY%,Filename,,VTDisply.dll
+HKLM,%S3DSPKEY%,ConfigNum,,0
+HKLM,%S3DSPKEY%,URL,,http://www.s3graphics.com
+HKLM,%S3DSPKEY%,UIStyle,,Chrome
+;; -------------------- Uninstallation information ---------------------
+HKLM,"Software\S3\VT\S3Uninst\S3Display","10.DelKey",,HKLM\%S3DSPKEY%
+HKLM,"Software\S3\VT\S3Uninst\S3Display","11.DelKey",,HKCR\CLSID\%S3DISPCLS%
+HKLM,"Software\S3\VT\S3Uninst\S3Display","12.DelKey",,HKLM\%CURVER%\Uninstall\VTDisplay
+HKLM,"Software\S3\VT\S3Uninst\S3Display","13.DelKey",,HKLM\%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTDisplay
+HKLM,"Software\S3\VT\S3Uninst\S3Display","20.DelFiles",,%11%\VTDisply.dll
+HKLM,"Software\S3\VT\S3Uninst\S3Display","21.DelFiles",,%18%\VTDsp*.hlp
+HKLM,"Software\S3\VT\S3Uninst\S3Display","22.DelFiles",,%11%\VTDispl*.cfg
+;; ----------- The following lines are only for Win98 ------------------
+HKR,shellex\PropertySheetHandlers\VTDisplay,"",,%S3DISPCLS%
+
+;----------------- S3Gamma2 --------------------------------
+HKLM,%CURVER%\Uninstall\VTGamma2,DisplayName,,%SGm2Desc%
+HKLM,%CURVER%\Uninstall\VTGamma2,UninstallString,,"vtuninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3Gamma2'"
+HKCR,CLSID\%GM2CLSID%,,,"S3Gamma2 Property Sheet"
+HKCR,CLSID\%GM2CLSID%\InProcServer32,,,VTGamma2.dll
+HKCR,CLSID\%GM2CLSID%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTGamma2,"",,%GM2CLSID%
+HKLM,%S3G2KEY%,Filename,,VTGamma2.dll
+HKLM,%S3G2KEY%,URL,,http://www.s3graphics.com
+HKLM,%S3G2KEY%,UIStyle,,Chrome
+;; ---------- Following lines are uninstall information ------------
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","10.DelKey",,HKLM\%S3G2KEY%
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","11.DelKey",,HKCR\CLSID\%GM2CLSID%
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","12.DelKey",,HKLM\%CURVER%\Uninstall\VTGamma2
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","13.DelKey",,HKLM\%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTGamma2
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","20.DelFiles",,%11%\VTGamma2.dll
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","21.DelFiles",,%18%\VTGm2*.hlp
+HKLM,"Software\S3\VT\S3Uninst\S3Gamma2","22.DelFiles",,%11%\VTGamma2.cfg
+;; --- Following lines for Win98, won't work if installed as Standalone ---
+HKR,shellex\PropertySheetHandlers\VTGamma2,"",,%GM2CLSID%
+
+;----------------- S3Overlay2 --------------------------------
+HKLM,%CURVER%\Uninstall\VTOverlay,DisplayName,,%SOverlayDesc%
+HKLM,%CURVER%\Uninstall\VTOverlay,UninstallString,,"vtuninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3Overlay'"
+HKCR,CLSID\%OVERLAYCLS%,,,"S3Overlay Property Sheet"
+HKCR,CLSID\%OVERLAYCLS%\InProcServer32,,,VTOvrlay.dll
+HKCR,CLSID\%OVERLAYCLS%\InProcServer32,ThreadingModel,,Apartment
+HKLM,%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTOverlay,"",,%OVERLAYCLS%
+HKLM,%OVERLAYKEY%,Filename,,VTOvrlay.dll
+HKLM,%OVERLAYKEY%,URL,,http://www.s3graphics.com
+HKLM,%OVERLAYKEY%,UIStyle,,Chrome
+;; -------------------- Uninstallation information ---------------------
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","10.DelKey",,HKLM\%OVERLAYKEY%
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","11.DelKey",,HKCR\CLSID\%OVERLAYCLS%
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","12.DelKey",,HKLM\%CURVER%\Uninstall\VTOverlay
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","13.DelKey",,HKLM\%CURVER%\%CtrlFld%\Display\shellex\PropertySheetHandlers\VTOverlay
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","20.DelFiles",,%11%\VTOvrlay.dll
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","21.DelFiles",,%18%\VTOvl*.hlp
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","22.DelFiles",,%11%\VTOvrl*.cfg
+HKLM,"Software\S3\VT\S3Uninst\S3Overlay","23.DelFiles",,%17%\VTOvrlay.?nf
+;; ----------- The following lines are only for Win98 ------------------
+HKR,shellex\PropertySheetHandlers\VTOverlay,"",,%OVERLAYCLS%
+
+;----------------- S3Timer --------------------------------
+HKLM,%CURVER%\Uninstall\VTTimer,S3TimerName,,%S3TimerDesc%
+HKLM,%CURVER%\Uninstall\VTTimer,UninstallString,,"VTUninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3Timer'"
+HKLM,Software\Microsoft\Windows\CurrentVersion\Run,VTTimer,,"VTTimer.exe"
+HKLM,%S3TimerKey%,NeverLaunched,,1
+;; -------------------- Uninstallation information ---------------------
+HKLM,"Software\S3\VT\S3Uninst\S3Timer","10.DelKey",,HKLM\%S3TimerKey%
+HKLM,"Software\S3\VT\S3Uninst\S3Timer","11.DelKey",,HKLM\%CURVER%\Uninstall\VTTimer
+HKLM,"Software\S3\VT\S3Uninst\S3Timer","12.DelKey",,HKLM\Software\Microsoft\Windows\CurrentVersion\Run\VTTimer
+HKLM,"Software\S3\VT\S3Uninst\S3Timer","20.DelFiles",,%11%\VTTimer.*
+
+[TrayPlus.AddReg]
+;----------------- S3TrayPlus --------------------------------
+HKLM,%CURVER%\Uninstall\VTTrayPlus,DisplayName,,%STrayPlusDesc%
+HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\Run,VTTrayp,,"VTtrayp.exe"
+HKLM,%CURVER%\Uninstall\VTTrayPlus,UninstallString,,"vtuninst.exe -reg 5 'HKLM\Software\S3\VT\S3Uninst\S3TrayPlus'"
+;; -------------------- Uninstallation information ---------------------
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","10.DelKey",,HKLM\%TrayPlusKEY%
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","11.DelKey",,HKLM\%CURVER%\Uninstall\VTTrayPlus
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","12.DelKey",,HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\VTTrayp
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","20.DelFiles",,%11%\VTtrayp.exe
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","21.DelFiles",,%18%\VTTp*.hlp
+HKLM,"Software\S3\VT\S3Uninst\S3TrayPlus","22.DelFiles",,%11%\VTTrayp.cfg
+
+;
+;String Section
+;
+
+[Strings]
+Mfg="VIA/S3 Graphics Co., Ltd."
+viagfx.DeviceDesc01="VIA/S3G UniChrome IGP"
+viagfx.DeviceDesc02="VIA/S3G UniChrome Pro IGP"
+
+;
+;S3 Utility
+;
+
+CtrlFld    = "Controls Folder"
+CURVER     = "Software\Microsoft\Windows\CurrentVersion"
+
+SInfo2Desc = "S3 S3Info2"
+INFO2CLS   = "{300b0162-6129-11d7-8dc7-00d0b72c72f7}"
+INFO2NAME  = "S3Info2"
+INFO2KEY   = "SOFTWARE\S3\VT\S3Info2"
+
+SDispDesc  = "S3 S3Display"
+S3DISPCLS  = "{300b0160-6129-11d7-8dc7-00d0b72c72f7}"
+S3DISPNAME = "S3Display"
+S3DSPKEY   = "SOFTWARE\S3\VT\S3Display"
+
+SGm2Desc   = "S3 S3Gamma2"
+GM2CLSID   = "{300b0161-6129-11d7-8dc7-00d0b72c72f7}"
+S3G2KEY    = "SOFTWARE\S3\VT\S3Gamma2"
+
+SOverlayDesc = "S3 S3Overlay"
+OVERLAYCLS   = "{300b0163-6129-11d7-8dc7-00d0b72c72f7}"
+OVERLAYNAME  = "S3Overlay"
+OVERLAYKEY   = "SOFTWARE\S3\VT\S3Overlay"
+
+STrayPlusDesc = "S3 S3TrayPlus"
+TrayPlusNAME  = "S3TrayPlus"
+TrayPlusKEY   = "SOFTWARE\S3\VT\S3TrayPlus"
+
+S3TimerDesc = "S3 S3Timer"
+S3TimerName = "S3Timer"
+S3TimerKey  = "SOFTWARE\S3\VT\S3Timer"
+
+UTDspCLSID="{AD54F45D-4454-4a94-A57E-EA7BE967A067}"
+UTGmaCLSID="{4EE2C59E-821A-499e-9CE6-6C0B8C0881E1}"
+UTInfCLSID="{B1B0D74D-80CE-48aa-A632-EA10DCF2986C}"
+
+OLD_DispCLSID = "{a3b69838-fc13-48b9-9438-beaf0eda660a}"
+OLD_GmmaCLSID = "{46b23a80-2895-11d3-bfcb-00aa0022f384}"
+OLD_InfoCLSID = "{48429801-16E6-11d4-8ECD-00609784BD62}"
+OLD_OvlyCLSID = "{6c146c80-66e8-11d3-88af-00600837776e}"
