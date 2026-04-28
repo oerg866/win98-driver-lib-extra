@@ -1,0 +1,442 @@
+;-----------------------------------------------
+; ATI Display Information file : ATII9XAA.INF
+; Installation INF for the ATI display driver.
+; Copyright(C) 1985-2001 ATI Technologies Inc.
+; Windows 9x
+
+[version]
+Class=DISPLAY
+signature="$Windows 9x$"
+Provider=%Mfg%
+DriverVer=09/22/2001, 4.13.7192
+CatalogFile=atii9xaa.cat
+
+[SourceDisksNames]
+1="ATI Installation CD ROM",,1
+
+[SourceDisksFiles]
+atfenuxx.hlx=1
+ati2draa.drv=1
+ati2i9aa.dll=1
+ati2q9aa.dll=1
+ati2vxaa.vxd=1
+ati3draa.dll=1
+ati9dgaa.dll=1
+ati9dgaa.exe=1
+ati9dgaa.vxd=1
+ati9diaa.dll=1
+ati9dtxx.dll=1
+atii16xx.dll=1
+atii32xx.dll=1
+atiicdxx.dll=1
+atiicdxx.sys=1
+atiicdxx.vxd=1
+atiiiexx.dll=1
+atiiihxx.exe=1
+atiiisxx.exe=1
+atiiprxx.exe=1
+atimcraa.dll=1
+atimiaxx.dll=1
+atio9xaa.dll=1
+atipdsxx.dll=1
+atiphexx.exe=1
+atippaxx.dll=1
+atiptaxx.exe=1
+atipuixx.dll=1
+atitunep.inf=1
+atitvo32.dll=1
+ativ16xx.dll=1
+ativbtxx.sys=1
+ativdaxx.ax=1
+ativifxx.dll=1
+ativmdxx.inf=1
+ativmdxx.sys=1
+ativmvxx.ax=1
+ativmvxx.inf=1
+ativpdxx.inf=1
+ativpdxx.sys=1
+ativpeaa.dll=1
+ativraxx.inf=1
+ativraxx.sys=1
+ativrvxx.inf=1
+ativrvxx.sys=1
+ativttxx.inf=1
+ativttxx.sys=1
+ativtuxx.sys=1
+ativvxxx.vxd=1
+ativxsxx.inf=1
+ativxsxx.sys=1
+atmenuxx.cnt=1
+atmenuxx.hlx=1
+atpenuxx.hlx=1
+atr9dgaa.dft=1
+atr9diaa.dft=1
+atr9dtxx.dft=1
+atricdxx.dft=1
+atriprxx.dft=1
+atsenuxx.cnt=1
+atsenuxx.hlx=1
+bt829.inf=1
+
+[Manufacturer]
+"%Mfg%"=Mfg
+
+[Mfg]
+"Rage 128 Pro 4XL" = 128_DEFAULT,    PCI\VEN_1002&DEV_5452
+"Rage Fury Pro/Xpert 2000 Pro" = 128_DEFAULT,    PCI\VEN_1002&DEV_5046
+"Rage Fury/Xpert 128/Xpert 2000" = 128_DEFAULT,    PCI\VEN_1002&DEV_5246
+"Xpert 128" = 128_DEFAULT,    PCI\VEN_1002&DEV_5050
+"Xpert 128 " = 128_DEFAULT,    PCI\VEN_1002&DEV_5245
+"Xpert 2000 Pro" = 128_DEFAULT,    PCI\VEN_1002&DEV_5446
+"Xpert 99/Xpert 2000" = 128_DEFAULT,    PCI\VEN_1002&DEV_524C
+"Xpert 99/Xpert 2000 " = 128_DEFAULT,    PCI\VEN_1002&DEV_534D
+
+;-------------------
+; Install sections
+
+[128_DEFAULT]
+Include=msdv.inf
+CopyFiles=128_Copy, 128_DT_Copy, INFFiles, WDMFiles, WDMSystemFiles, INFOther, IniFiles
+DelFiles=MACXW4_DelFiles
+DelReg=MACXW4_DelReg
+AddReg=MACXW4_AddReg, 128_AddReg, 128_DT_AddReg, MACXW4_AddReg, DriverInfoAddReg
+UpdateInis=128_Inis, DVCR.UpdateIni
+UninstallFiles=128_DT_Copy, UninstHlp
+CleanFiles=128_Copy, INFFiles, WDMFiles, WDMSystemFiles, INFOther, IniFiles
+UninstallReg=128_DT_AddReg, MACXW4_AddReg
+CleanReg=MACXW4_AddReg, 128_AddReg, DriverInfoAddReg
+UninstallUpdateInis=128_Inis
+;------------------------
+; Common DelReg sections
+
+[MACXW4_DelReg]
+HKR,,DevLoader
+HKR,,Ver
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKLM,"System\CurrentControlSet\Services\Class\DISPLAY\ATI\00\TVOut"
+HKLM,"System\CurrentControlSet\Services\Class\DISPLAY\ATI\00\Modes\TVOut"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\DriverPages"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ATIPages"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ATIPagesX"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ATIPagesEx"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Desktop\shellex\PropertySheetHandlers\ATIPages"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Desktop\shellex\PropertySheetHandlers\ATIPagesX"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Desktop\shellex\PropertySheetHandlers\ATIPagesEx"
+HKLM,"SOFTWARE\ATI Technologies\Driver\OpenGL"
+HKLM,"Software\Microsoft\Windows NT\CurrentVersion\OpenGLDrivers\ATI ICD Settings"
+HKR,"shellex\PropertySheetHandlers\ATIPagesX"
+HKR,"shellex\PropertySheetHandlers\ATIPagesX2"
+HKR,"shellex\PropertySheetHandlers\ATIPagesEx"
+HKLM,"Software\ATI Technologies\Driver","TV"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Mach64 Display Driver"
+HKLM,"SOFTWARE\ATI Technologies\Driver\VxD\PCIUseAGPMem"
+HKLM,"Software\ATI Technologies\Driver","LCD",1,0
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run\Atitask"
+HKLM,"Software\ATI Technologies\Desktop\Icon"
+HKR,INFO
+HKR,"INFO\INFO\DAL",DALRestrictedModes
+HKR,"INFO\INFO\DAL",DALNonStandardModes
+HKLM,"Software\Microsoft\Windows\CurrentVersion\RunServices",ATIPOLAB
+HKR,"INFO\INFO\ddhal"
+HKR,Desktop
+HKLM,"ENUM\DISPLAY\ATIRTVIDEO"
+HKLM,"ENUM\DISPLAY\ATITUNEP" 
+HKLM,"ENUM\DISPLAY\ATITVAUDIO" 
+HKLM,"ENUM\DISPLAY\ATIVPDXX" 
+HKLM,"ENUM\DISPLAY\ATIXBAR" 
+HKLM,"ENUM\DISPLAY\ATIXSAUDIO" 
+HKLM,"ENUM\DISPLAY\MVDCODEC"
+HKLM,"ENUM\DISPLAY\ATIRTAUDIO"
+HKLM,"ENUM\DISPLAY\ATIVTTXX"
+HKLM,"ENUM\DISPLAY\BT829"
+;-----------------------
+; Model AddReg sections
+
+[128_AddReg]
+HKR,DEFAULT,drv,,"ATI2DRAA.DRV"
+HKR,DEFAULT,drv2,,"ATI2DRAA.DRV"
+HKR,DEFAULT,vdd,,"*vdd,*vflatd"
+HKR,DEFAULT,minivdd,,"ATI2VXAA.VXD"
+HKR,DEFAULT,minivdd2,,"ATI2VXAA.VXD"
+HKR,DEFAULT,RefreshRate,,"-1"
+HKR,DEFAULT,DDC,,"1"
+HKR,"INFO\INFO",INIT,1,1
+HKR,"INFO\INFO\ddhal",Path,,"%a%sddhal"
+HKR,"INFO\INFO\ddhal",AntiAlias,,"0"
+HKR,"INFO\INFO\ddhal",FailUpOverlay,,"0"
+HKR,"INFO\INFO\ddhal",Palette,,"0"
+HKR,"INFO\INFO\ddhal",Break,,"0"
+HKR,"INFO\INFO\ddhal",Primary,,"0"
+HKR,"INFO\INFO\ddhal",EnableKatmai,,"1"
+HKR,"INFO\INFO\ddhal",ZBufferBitDepth,,"0"
+HKR,"INFO\INFO\ddhal",DitherInit,,"1"
+HKR,"INFO\INFO\ddhal",Dither,,"0"
+HKR,"INFO\INFO\ddhal",SysMemBlts,,"1"
+HKR,"INFO\INFO\ddhal",CLIPFVF,,"1"
+HKR,"INFO\INFO\ddhal",ExportCompressedTex,,"1"
+HKR,"INFO\INFO\ddhal",PGF,,"4"
+HKR,"INFO\INFO\DVD",Path,,"DVD"
+HKR,"INFO\INFO\DVD",3,,"Atimiaxx.dll"
+HKR,"INFO\INFO\DAL",Path,,"%a%sDAL"
+HKR,"INFO\INFO\DAL",DALOPTION_MinResBCD,1, 00,00,00,00,00,00,00,56
+HKR,"INFO\INFO\VxD",Path,,"%a%sVxD"
+HKR,"INFO\INFO\VxD",HMDL_UseAGP,1,01,00,00,00
+HKR,"INFO\INFO\2D",Path,,"%a"
+HKR,"INFO\INFO\2D",CmdThrottle,1,00,0F,00,00
+HKLM,"Software\CurrentControlSet\Services\Class\vpm",,,"ativpm32.dll"
+HKR,,ReleaseVersion,,"6.60-010926m-1476C-ATI"
+HKR,,Ver,,"4.00"
+HKR,,DevLoader,,"*vdd"
+HKLM,"Software\ATI Technologies\Driver",BMDefault,,"0"
+HKLM,"Software\ATI Technologies\Driver",MPP,,"1"
+HKLM,"Software\ATI Technologies\Driver",PMBIOS,,"0"
+HKR,"INFO\INFO\DAL",ATIPoll,1,02,00,00,00
+HKLM,"Software\ATI Technologies\ATIPoll",ATIPoll,1,01,00,00,00
+HKR,"INFO\INFO\DAL",DALRULE_NOFORCEBOOT,1,01,00,00,00
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion\OPenGLdrivers","atio9xaa",,"atio9xaa.dll"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\RunServicesOnce",Atiiihxx.exe,,"%11%\Atiiihxx.exe 1"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",1,,"%17%\Other\Ativmdxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",2,,"%17%\Other\Ativmvxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",3,,"%17%\Other\Ativraxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",4,,"%17%\Other\ativrvxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",5,,"%17%\Other\ATIVXSXX.INF"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",6,,"%17%\Other\ativttxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",7,,"%17%\Other\ativpdxx.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",8,,"%17%\Atitunep.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",9,,"%17%\Bt829.inf"
+HKLM,"SOFTWARE\ATI Technologies\ATIIIHXX.EXE",10,,"%17%\Ativmvxx.inf"
+HKR,"INFO\INFO\DAL",DALRULE_NOFORCEBOOT,1,01,00,00,00
+
+[128_DT_AddReg]
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex\PropertySheetHandlers\ATIPagesEx",,,"{700B1221-CAFF-11d1-B9DE-000000001B1B}"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Controls Folder\Desktop\shellex\PropertySheetHandlers\ATIPagesEx",,,"{700B1221-CAFF-11d1-B9DE-000000001B1B}"
+HKCR,%TKM2%,,,"atippaxx.dll"
+HKCR,%TKM2%,ThreadingModel,,"Apartment"
+HKCR,"Display.DisplayServer",,,"DisplayServer Class"
+HKCR,"Display.DisplayServer\CLSID",,,"{E62DCD80-C262-11d1-A419-006097923041}"
+HKCR,"Display.DisplayServer.1",,,"DisplayServer Class"
+HKCR,"Display.DisplayServer.1\CLSID",,,"{E62DCD80-C262-11d1-A419-006097923041}"
+HKCR,"%DPSC%",,,"DisplayServer Class"
+HKCR,"%DPSC%\InProcServer32",,,"atipdsxx.dll"
+HKCR,"%DPSC%\ProgID",,,"Display.DisplayServer.1"
+HKCR,"%DPSC%\VersionIndependentProgID",,,"Display.DisplayServer"
+HKCR,"%ATPS%",,,"User Interface Object, AtiPropertySheet"
+HKCR,"%ATPS%\InProcServer32",,,"atipuixx.dll"
+HKCR,"%ATPS%\ProgID",,,"UserInterfaceObject.AtiPropertySheet.1"
+HKCR,"%ATPS%\VersionIndependentProgID",,,"UserInterfaceObject.AtiPropertySheet"
+HKCR,%TKML%,,,"atitvo32.dll"
+HKCR,%TKML%,ThreadingModel,,"Both"
+HKR,,EnumPropPages,,"ati9diaa.dll,EnumPropPages"
+HKLM,"Software\ATI Technologies\Desktop",HelpID,,"3"
+HKLM,"Software\ATI Technologies\Desktop",EnableIcon,,"1"
+HKLM,"Software\ATI Technologies\Desktop",NoAtipta,,"0"
+HKR,"Desktop",,,
+HKR,"Desktop",CopyDesktopKey,,""
+HKR,"Desktop",D3D,1,01,00,00,00
+HKR,"Desktop",OpenGL,1,01,00,00,00
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Run",AtiPTA,,"Atiptaxx.exe"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver",UninstallString,,"rundll32 %11%\atiiiexx.dll,_InfEngUnInstallINFFile_RunDLL@16 -force_restart -flags:0x2010001 -inf_class:DISPLAY -clean"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver", DisplayName,, "ATI Display Driver"
+
+[MACXW4_AddReg]
+HKR,"MODES\4\640,480",drv,,"vga.drv"
+HKR,"MODES\4\640,480",vdd,,"*vdd"
+HKR,"INFO\INFO\DAL",DALRestrictedModesBCD,1, 00,00,00,00,00,24,00,00
+HKR,"MODES\8\640,480",,,"60,72,75,85,90,100,120,160,200"
+HKR,"MODES\8\800,600",,,"56,60,70,72,75,85,90,100,120,160,200"
+HKR,"MODES\8\848,480",,,"60,88"
+HKR,"MODES\8\1024,768",,,"60,70,72,75,85,90,100"
+HKR,"MODES\8\1152,864",,,"60,70,75,85,100"
+HKR,"MODES\8\1280,1024",,,"60,70,75,85,90,100"
+HKR,"MODES\8\1600,1200",,,"60,70,75,85"
+HKR,"MODES\8\1792,1344",,,"60"
+HKR,"MODES\8\1800,1440",,,"60,70"
+HKR,"MODES\8\1856,1392",,,"60,72"
+HKR,"MODES\8\1920,1080",,,"60,70,75"
+HKR,"MODES\8\1920,1200",,,"60,72,75,85"
+HKR,"MODES\8\1920,1440",,,"60"
+HKR,"MODES\8\2048,1536",,,"60,70,75"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\848,480"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1792,1344"
+HKR,"MODES\16\1800,1440"
+HKR,"MODES\16\1856,1392"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\16\1920,1440"
+HKR,"MODES\16\2048,1536"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\848,480"
+HKR,"MODES\32\1024,768"
+HKR,"MODES\32\1152,864"
+HKR,"MODES\32\1280,1024"
+HKR,"MODES\32\1600,1200"
+HKR,"MODES\32\1792,1344"
+HKR,"MODES\32\1800,1440"
+HKR,"MODES\32\1856,1392"
+HKR,"MODES\32\1920,1080"
+HKR,"MODES\32\1920,1200"
+HKR,"MODES\32\1920,1440"
+HKR,"MODES\32\2048,1536"
+HKR,"INFO\INFO\DAL",DALNonStandardModesBCD1,1,19,20,12,00,00,00,00,00,18,00,14,40,00,00,00,00,19,20,14,40,00,00,00,00,19,20,10,80,00,00,00,00,20,48,15,36,00,00,00,00,17,92,13,44,00,00,00,00,08,48,04,80,00,00,00,00,18,56,13,92,00,00,00,00
+HKR,"INFO\INFO\DAL",DALRestrictedModesBCD1,1,00,00,00,00,00,00,00,43,00,00,00,00,00,00,00,47
+HKLM,"Software\Microsoft\Windows\CurrentVersion\RunServices",ATIPOLAB,,"ati2evxx.exe"
+HKLM,"Software\Microsoft\Windows\CurrentVersion\Uninstall\ATI Display Driver",DisplayName,,"ATI Display Driver"
+HKR,DEFAULT,Mode,,"8,640,480"
+
+[DriverInfoAddReg]
+; This section is added to all INFs to add registry entries for Driver Info.
+HKLM,Software\InstalledOptions\%DriverOEM%\%DriverFamily%\%DriverMfgr%\%DriverProduct%,Description,,%DriverDescription%
+HKLM,Software\InstalledOptions\%DriverOEM%\%DriverFamily%\%DriverMfgr%\%DriverProduct%,CurrentVer,,%DriverOEMVersion%
+HKLM,Software\InstalledOptions\%DriverOEM%\%DriverFamily%\%DriverMfgr%\%DriverProduct%,Ver_%DriverOEMVersion%,,%DriverVersionID%
+HKLM,Software\InstalledOptions\%DriverOEM%\%DriverFamily%\%DriverMfgr%\%DriverProduct%,BaseDriverFileName,,%BaseDriverFileName%
+HKLM,Software\InstalledOptions\%DriverOEM%\%DriverFamily%\%DriverMfgr%\%DriverProduct%,BaseDriverFileVersion,,%BaseDriverFileVersion%
+
+[MACXW4_CleanReg]
+HKR,"ENUM",device1
+HKR,"ENUM",device2
+HKR,"ENUM",device3
+HKR,"ENUM",device4
+HKR,"ENUM",device5
+HKR,"ENUM"
+
+[MACXW4_DelFiles]
+ati64hlp.stb,,,1
+ati64hl2.stb,,,1
+
+[UninstHlp]
+Atfenuxx.hlp
+Attenuxx.hlp
+atpenuxx.hlp
+atvenuxx.hlp
+
+;------------------------
+; File Update References
+
+[DestinationDirs]
+DefaultDestDir=11           ; LDID_SYS
+INFFiles=17	 	    ; windows\inf
+INFOther=17,OTHER           ; windows\inf\other
+IniFiles=10
+WDMSystemFiles=10,system32\drivers      ; system32\drivers
+WDMFiles=30,ATI\INSTALL                 ; c:\ati\install
+
+[INFFiles]
+Atitunep.inf
+Bt829.inf
+Ativmdxx.inf
+Ativmvxx.inf
+
+[INFOther]
+Ativmdxx.inf
+Ativmvxx.inf
+Ativraxx.inf
+ativrvxx.inf
+ATIVXSXX.INF
+ativttxx.inf
+ativpdxx.inf
+
+[WDMFiles]
+
+[WDMSystemFiles]
+ativtuxx.SYS
+ativbtxx.SYS
+Ativmdxx.sys
+ATIVraxx.SYS
+ATIVrvxx.SYS
+ativxsxx.sys
+ativttxx.sys
+ativpdxx.sys
+;--------------------
+; CopyFiles sections
+
+[128_Copy]
+ATI2DRAA.DRV
+ATI2VXAA.VXD
+ATIMIAXX.DLL
+ATI2Q9AA.DLL
+ATI2I9AA.DLL
+ATI3DRAA.DLL
+ATIV16XX.DLL
+ATIVIFXX.DLL
+ATIVVXXX.VXD
+ATITVO32.DLL
+ATIVPEAA.DLL
+atiicdxx.dll
+atiicdxx.vxd
+atiicdxx.sys
+atricdxx.dft
+atiiprxx.exe
+atriprxx.dft
+atiiisxx.exe
+atiiiexx.dll
+atiiihxx.exe
+Atimcraa.dll
+Ativdaxx.ax
+Ativmvxx.ax
+ATIO9XAA.DLL
+
+[128_DT_Copy]
+atiiprxx.exe
+Atii16xx.dll
+Atii32xx.dll
+ati9dgaa.exe
+ati9dgaa.dll
+ati9dgaa.vxd
+ati9diaa.dll
+Ati9dtxx.dll
+atriprxx.dft
+atr9dgaa.dft
+atr9diaa.dft
+Atr9dtxx.dft
+atipdsxx.dll
+atippaxx.dll
+atipuixx.dll
+atiptaxx.exe
+atiphexx.exe
+;ENU
+atrpuixx.enu
+Atfenuxx.hlx
+Atmenuxx.cnt
+Atmenuxx.hlx
+atpenuxx.hlx
+atsenuxx.cnt
+atsenuxx.hlx
+Attenuxx.hlx
+atvenuxx.hlx
+
+[IniFiles]
+;--------------------
+; System.ini Updates
+
+[128_Inis]
+;----------------------
+; User visible strings
+
+[Strings]
+ClassName="Display"
+Mfg="ATI Tech. - Enhanced"
+; Driver Information Entries
+; These items will be set by IHV...
+DriverMfgr="ATI Technologies Inc."			; IHV name
+DriverVersionID="D6.60"					; The IHV driver version
+BaseDriverFileName="Ati2draa.drv" 			; Key file for version 
+BaseDriverFileVersion="4.13.7192" 		        ; version of key file 
+; These items will be set by IHV and updated by OEM 
+DriverOEM="ATI Technologies Inc."			; name of the OEM 
+DriverFamily="Video" 					; device family (NIC, Storage, Video...)
+DriverProduct="ATI Rage128" 				; Specific Name of device (chipset, for example)
+DriverDescription="Graphic Driver" 			; Description of device (product name, OS or system supported)
+DriverOEMVersion="6.60-010926m-1476C-ATI"	 		; OEM-specified version 
+DPSC="CLSID\{E62DCD80-C262-11d1-A419-006097923041}"
+ATPS="CLSID\{F2B8E361-D2E2-11D1-A41F-00609729B902}"
+TKML="CLSID\{EBB5845F-CA80-11CF-BD3C-008029E89281}\InProcServer32"
+TKM2="CLSID\{700B1221-CAFF-11d1-B9DE-000000001B1B}\InProcServer32"
