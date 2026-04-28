@@ -42,18 +42,7 @@ vgartd.vxd   = 1
 %Mfg%=Mfg
 
 [Mfg]
-%Banshee.DeviceDesc.PCI%=Driver.Install.PCI,PCI\VEN_121A&DEV_0003
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0001121A ; AGP_SD
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0003121A ; AGP_SG
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0011121A ; AGP_SD
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0013121A ; AGP_SG
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0021121A ; AGP_SD
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0023121A ; AGP_SG
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_48011092 ; Diamond Monster Fusion AGP
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_48031092 ; Diamond Monster Fusion AGP
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_80351092 ; Diamond Monster Fusion AGP
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0017139C ; Quantum3D Raven
-%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_000110B0 ; Gainward Dragon 4000
+%Banshee.DeviceDesc.AGP%=Driver.Install,PCI\VEN_121A&DEV_0003
 
 [Driver.Install]
 CopyFiles=Driver.System, Driver.Windows, Driver.Inf, Driver.Help, Redistrib.System, Redistrib.System.Win95
@@ -348,6 +337,5 @@ HKR,TIMINGS,UseGTF,,0
 
 [Strings]
 Mfg="3dfx Interactive, Inc."
-Banshee.DeviceDesc.PCI="3dfx Voodoo Banshee PCI"
-Banshee.DeviceDesc.AGP="3dfx Voodoo Banshee AGP"
+Banshee.DeviceDesc.AGP="3dfx Voodoo Banshee"
 IN_USE="0x00010000"
