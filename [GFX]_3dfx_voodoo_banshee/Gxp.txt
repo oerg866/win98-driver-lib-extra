@@ -1,0 +1,310 @@
+
+GlideXP Public Experimental Build 1015 Readme
+=============================================
+
+Release Date: 20th January 2003
+
+Website: http://www.users.on.net/triforce/glidexp/
+
+
+What is it?
+-----------
+
+GlideXP is a project to use the Glide3 sources that were released for Linux, 
+and to get them to compile under Windows. This is to allow me to find and fix
+or bypass the problems that are causing Glide and OpenGL applications to cause
+system crashes under Windows XP.
+
+I believe that GlideXP is functional to the level that would warrant an
+experimental release. Glide3 applications can now be run without issue under
+Windows XP. OpenGL applications (including Windowed) also function correctly.
+A full list of changes is in a section below.
+
+Some level of Glide2 support is also included. At this stage it is still a work
+in progress and as such isn't 100% compatible with all applications yet. 
+
+Also now included is the GxpOGL ICD Interceptor. GxpOGL is designed to fix/work
+around problem with the 3dfx 761 ICD. Eventually there are plans to add new
+Extensions. WGL_ARB_multisample is an example of an extension that I'm planning
+to add sometime in the future.
+
+
+License
+-------
+
+GlideXP, the Glide2 Translator and GxpOGL are all released under the terms of
+the "3DFX GLIDE Source Code General Public License."
+
+Read the "COPYING" file for the details.
+
+
+Revision History
+----------------
+
+20th January 2003 
+
+Public Experimental Release Build 1015
+
+* Fixed a nasty crash when using DXT1 textures.
+
+* Rewrote HWC (used for screenshot key) code to used Optimized MMX code.
+  Screenshot taking is now MUCH MUCH faster in 4x and 8x modes.
+
+* Added new improved CPU detection code. It allow for proper detection of all 
+  CPU features. Consequently the FX_CPU setting has been removed. However a new
+  setting of GXP_GLIDE_NO_CPU_EXTENSIONS has been added. 
+
+* Updated things so all CPUs that support MMX can use the MMX optimized texture
+  download functions (not just AMD as it was before). This should give a minor 
+  speed boost.
+
+* Started work on the GxpOGL ICD Interceptor to fix problems with the 3dfx ICD.
+  Currently it replaces the glTexImage2D function to fix issues with S3TC 
+  textures. S3TC textures are now compressed using the Microsoft compressor and
+  are passed to the ICD as compressed textures. The Microsoft compressor is 
+  much faster and looks much better than the 3dfx compressor. This also fixed 
+  the DXT5 issues that were effecting any games that used that texture format. 
+  This includes the text problems in Star Trek Voyager Elite Force and 
+  Jedi Knight II, that are now fixed when using GxpOGL. More changes planned 
+  sometime in the future.
+
+7th January 2003 
+Public Experimental Release Build 1014 
+
+* Fixed Dither Rotation on Voodoo 5 6000. This should make antialiased 16 bit 
+  mode look much nicer.
+
+* S3TC Compressed Textures are now supported by GlideXP.
+
+* Added special options for application Frame Buffer captures. They will make 
+  it possible for applications to properly capture Antialiased Images on V56Ks
+  and also to properly capture 16 bit images when the Frame Buffer has been
+  forced to 32 bits. These are by default automatically enabled. There are 3
+  new registry settings (which are probably best left alone).
+
+  GXP_GL_LFBLOCK_HACK:
+    0 = Disables OpenGL 16 Bit capture from 32 bit Buffer and V56K antialiased
+        capture
+    1 = Enable them (default)
+
+  GXP_GLIDE_USE_HWC_AA_FOR_LFB_READ:
+    0 = Disable all advanced Frame Buffer reading options
+    1 = Only use it for grLfbReadRegion() calls
+    2 = Only use for grLfbLock() calls
+    3 = Enables advanced 32bit->16bit and Antialiased buffer reading for both 
+        functions (default)
+
+  GXP_GLIDE_DITHER_HWC_AA:
+    0 = Disable dithering of buffer reads using HWC AA
+    1 = Enable Error Diffusion dithering for HWC AA buffer reads (default)
+
+* The FX_GLIDE_NUM_CHIPS env setting can be used to force the Voodoo 5 6000 to 
+  use all 4 chips in Windows 2000 and Windows XP instead of just using a single
+  chip. Just set it to 4. Do NOT set it to any other value.
+
+* Changed the way filenames are generated for Glide screenshots. Format is now 
+  glide_yyyymmdd_hhmmss.tga where yyyymmdd is the date and hhmmss is the time 
+  the screenshot was taken at.
+
+7th October 2002 
+Public Experimental Release Build 1013
+
+* ASM files are now used. GlideXP should be MUCH faster now.
+
+* 2x FSAA can now be used with V5 6K cards in Win2K/XP. It will be as fast as a
+  Voodoo 4 though since only 1 chip is used.
+
+* Misc internal changes (refer to ChangeLog.txt in the source)
+
+* Glide 2 Specific Fixes: 
+  - Added GXP_HINT_AA_MULTI_SAMPLE hint extension. Used by FS2GXP to disable
+    FSAA when drawing text to get rid of the blurryness
+  - The Glide2x.dll will now attempt to first load GlideXP.dll rather than 
+    only Glide3x.dll as in previous versions. This will allow mixing different 
+    Glide dlls, even though it shouldn't really be required as GlideXP is now
+    'fast'.
+
+
+4th September 2002 
+Public Experimental Release Build 1012
+
+* Added setting to control the Pixel Center offset for FSAA modes. This will
+  remove the blur from most 2D graphics when using FSAA. The Default value is 8
+  which works best for most games. Range is -128 to +127, however normal range 
+  is 0 to 16. The Registry Setting is GXP_GLIDE_FSAA_PIXEL_CENTER. Some 
+  standard values for this setting are as follows:
+    4 = Ideal setting for Unreal Tournament
+    8 = Ideal setting for most other games/apps (default)
+   16 = Setting to produce ouput identical to older Glide versions.
+    
+* Actually fixed the Fog issue in the Glide2x games. It should be noted though,
+  that the changes are in Glide3x.dll not Glide2x.dll so Fog will only work
+  properly with matching GlideXP DLL. Mixing DLLs will cause the problem to
+  reappear
+
+
+3rd September 2002 
+Public Experimental Release Build 1011
+
+* Improved Alt-Tab handling. Should be faster than before and more stable.
+  There really should be almost no crashes now on Alt-Tab. 
+
+* Fixed bad crashes on res change and quit in App/Games that use SDL for OpenGL
+  support. 
+
+* Tribes (1) should now properly detect Glide2x
+
+* Fixed an issue with Fog in some Glide2x games
+
+* Possibly improved Glide2x compatibilty with some badly written games/apps
+
+
+16th July 2002
+Public Experimental Release Build 1010
+
+* All New Glide2x.dll. Completely rewritten from scratch. Should offer much 
+  better compatability. Many problems likely to be fixed. Offers 2 new registry
+  settings GXP_GLIDE2_FASTER_PALETTES:
+    0 = Compatable Mode (default)
+    1 = Faster Mode
+  and GXP_GLIDE2_NO_MULTITEXTURE:
+    0 = Multitexture Enabled (default)
+    1 = Multitexture Disabled, TMU0 uses all texture memory (if possible)
+
+* Added new registry settings for Refresh rates that can be used as well as 
+  FX_GLIDE_REFRESH. The new settings work per resolution, and per resolutions
+  and bits per pixel. The format is GXP_GLIDE_REFRESH_???x??? for per 
+  resolution settings and GXP_GLIDE_REFRESH_???x???x?? for res and bpp (16 or
+  32).
+
+* Renamed old registry setting FX_GLIDE_LOD_SUBSAMPLE_DITHER to
+  GXP_GLIDE_LOD_SUBSAMPLE_DITHER.
+
+* General Fixes: 
+  - Fixed problem reading from the frame buffer in Forced 32 Bit mode. Output
+    perviously would be corrupted.
+  - Fixed problem where Unreal engine games would have flickering detail 
+    textures in forced 32 Bit mode.
+
+* Voodoo 5 6000 Fixes: 
+  - Added work around for the FSAA Gamma problem.
+
+* Glide 2 Specific Fixes: 
+  - Unreal Tournament Texture Corruption Fixed
+  - MiniGL now functions
+
+
+31st March 2002
+Public Experimental Release Build 1007
+
+ * Fixing some Glide2 crashes.
+
+
+28th December 2001
+Public Experimental Release Build 1006
+
+ * Stopped fullscreen OpenGL apps crashing when switching from Fullscreen to
+   Windowed.
+
+ * Some general Glide 2 improvments.
+
+ * Making WinXP alt-tab support a little better.
+
+
+23rd December 2001
+Public Experimental Release Build 1005
+
+ * Stopped fullscreen OpenGL apps crashing on Alt-Tab and Quit.
+
+
+22nd December 2001
+Public Experimental Release Build 1004 
+
+ * Fixed a few problems with the Glide Utility Library in Glide 2.
+
+ * Fixed some Antialiased primitive problems in Glide 2.
+
+ * Re-enabled the Splash Screen.
+
+
+20th December 2001
+Private Experimental Release Build 1003 
+
+ * Improved Glide 2 support. Unreal Tournament and Deus Ex now run somewhat
+   correctly.
+
+
+18th December 2001
+Private Experimental Release Build 1002 
+
+ * Adding initial (extremely buggy) Glide 2 support
+
+ * Some refresh rate and multimonitor fixes.
+
+
+14th December 2001
+Initial (Private) Experimental Release Build 1001:
+
+ * Fixed crash on program startup in XP.
+
+ * Fixed Alt-Tab crashes problem in XP.
+
+ * Added environment setting FX_GLIDE_LOD_SUBSAMPLE_DITHER to enable and
+   disable Subsample Mipmap Dithering Trilinear Approximation for use in FSAA
+   modes (Voodoo 5 only). Settings are:
+    0 = Disabled
+    1 = Enabled (except when doing normal mipmap dithering and trilinear)
+    2 = Enabled (except when doing trilinear)
+
+ * Changed FX_GLIDE_LOD_DITHER. Settings are now:
+   -1 = Never (will never allow it even if the app requests it)
+    0 = Auto (only if the app requests it)
+    1 = Always (except when doing trilinear)
+
+ * Fixed screenshot taking on Voodoo 5 6000s.
+
+ * FSAA offset Environment variables for 2x and 4x now work for V5 6ks.
+
+
+Known Issues
+------------
+
+ * Windowed Glide Applications may not work (all operating systems)
+
+ * Some Glide 2 functions aren't yet implemented, and others may not be
+   implemented properly. Some Games/programs will not run correctly, or may
+   not work at all.
+
+
+Bug Reporting
+-------------
+
+If possible, please report all problems with games to me. My contact details
+are written at the bottom of this document.
+
+
+Source Code
+-----------
+
+In order to comply with the terms in COPYING, all sources for released builds
+are freely available to download. The sources for this build are available
+here:
+
+http://www.users.on.net/triforce/glidexp/glidexp_build1015_src.rar
+
+Compiling the sources requires MSVC6 Service Pack 5, The Processor Pack (for
+MASM) and the Windows 98 DDK. Just load the "glide3x.dsw" workspace in MSVC6
+and that should be it. Choose the correct configuration for Glide3x, Glide2x or
+GxpOGL.
+
+The FxASM and Gendate projects will automatically generate some files that are
+required to build the sources.
+
+
+Contact Details
+---------------
+
+Name: Ryan Nunn (Colourless)
+Email: colourles@users.sourceforge.net
+ICQ: 9421058
+WWW: http://www.users.on.net/triforce/glidexp/

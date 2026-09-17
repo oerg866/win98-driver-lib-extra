@@ -1,0 +1,932 @@
+; X-Mojomotion1.0 Final INF file for 3Dfx Banshee
+; Copyright 1999-2000, 3dfx Interactive, Inc.
+; ;Inf compiled and modified by MojoMotion
+; ;  ;HOSTED by www.3dfxzone.it
+; ;[3dfxzone.it board]
+; 18/01/2003
+
+[version]
+LayoutFile=layout.inf
+Class=DISPLAY
+signature="$CHICAGO$"
+Provider=%Mfg%
+CatalogFile=3dfxvb.cat
+DriverVer=18/01/2003,4.12.01.1222
+
+[DestinationDirs]
+DefaultDestDir   = 11    ; LDID_SYS
+Redistrib.System = 11
+Driver.System    = 11
+Driver.Windows   = 10
+Driver.Inf       = 17
+Driver.Help      = 18
+
+[SourceDisksNames]
+1="3dfx Voodoo Driver Install Disk",,0
+
+[SourceDisksFiles]
+3dfx16vb.drv =1
+3dfxvb.vxd   =1
+3dfx32vb.dll =1
+glide2x.dll  =1
+glide2x.ovl  =1
+glide3x.dll  =1
+3dfxvb.inf   =1
+vgartd.vxd   =1
+3dfxSpl2.dll =1
+3dfxSpl3.dll =1
+3dfxICD.dll  =1
+3dfxogl.dll  =1
+
+[Manufacturer]
+%Mfg%=Mfg
+
+[Mfg]
+"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003                        ; Generic
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0002121A&REV_01 ; PCI_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0004121A&REV_01 ; PCI_SG
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0001121A&REV_01 ; AGP_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0003121A&REV_01 ; AGP_SG
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0012121A&REV_01 ; PCI_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0014121A&REV_01 ; PCI_SG
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0011121A&REV_01 ; AGP_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0013121A&REV_01 ; AGP_SG
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0022121A&REV_01 ; PCI_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0024121A&REV_01 ; PCI_SG
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0021121A&REV_01 ; AGP_SD
+;"X-Mojomotion 1.0 for 3Dfx Banshee"=Driver.Install,PCI\VEN_121A&DEV_0003&SUBSYS_0023121A&REV_01 ; AGP_SG
+
+[Driver.Install]
+CopyFiles=Driver.System, Driver.Windows, Redistrib.System
+DelReg=Prev.DelReg
+AddReg=Driver.AddReg, vgartd.AddReg, 3dfxTools.VoodooBanshee
+Reboot
+
+;---- Copy sections ----
+[Driver.System]
+3dfx16vb.drv,,,%COPY_FLAG%
+3dfxvb.vxd,,,%COPY_FLAG%
+3dfx32vb.dll,,,%COPY_FLAG%
+glide2x.dll,,,%COPY_FLAG%
+glide3x.dll,,,%COPY_FLAG%
+3dfxSpl2.dll,,,%COPY_FLAG%
+3dfxSpl3.dll,,,%COPY_FLAG%
+3dfxICD.dll,,,%COPY_FLAG%
+3dfxogl.dll,,,%COPY_FLAG%
+
+[Redistrib.System]
+vgartd.vxd,,,%COPY_FLAG%
+
+[Driver.Windows]
+glide2x.ovl,,,%COPY_FLAG%
+
+;---- Registry Entries ----
+[Prev.DelReg]
+HKR,,Ver
+HKR,,DevLoader
+HKR,DEFAULT
+HKR,MODES
+HKR,CURRENT
+HKR,GLIDE
+HKR,D3D
+HKR,TIMINGS
+HKR,FEATURES
+HKR,"3dfx Tools\3dfxTools Features\Configurations"
+
+[vgartd.AddReg]
+HKLM,System\CurrentControlSet\Services\VxD\VGARTD,StaticVxD,,"vgartd.vxd"
+
+[Driver.AddReg]
+HKR,,Ver,,4.0
+HKR,,DevLoader,,*vdd
+HKR,DEFAULT,Mode,,"16,800,600"
+HKR,DEFAULT,drv,,3dfx16vb.drv
+HKR,DEFAULT,drv2,,3dfx16vb.drv
+HKR,DEFAULT,vdd,,"*vdd"
+HKR,DEFAULT,minivdd,,3dfxvb.vxd
+HKR,DEFAULT,minivdd2,,3dfxvb.vxd
+HKR,DEFAULT,RefreshRate,,-1
+HKR,DEFAULT,DDC,,1
+HKR,,ProviderName,,"3dfx Interactive, Inc."
+HKLM,"Software\Microsoft\Windows\CurrentVersion\OpenGLdrivers","3dfx",,"3dfxogl.dll"
+
+; Modes
+HKR,"MODES\4\640,480",drv,,vga.drv
+HKR,"MODES\4\640,480",vdd,,*vdd
+HKR,"MODES\8\640,480",,,"60,72,75,85,100,120,140,160"
+HKR,"MODES\8\800,600",,,"60,72,75,85,100,120,140,160"
+HKR,"MODES\8\960,720",,,"60,75,85"
+HKR,"MODES\8\1024,768",,,"60,70,75,85,100,120"
+HKR,"MODES\8\1152,864",,,"60,70,75,85,100,120"
+HKR,"MODES\8\1280,960",,,"60,75,85"
+HKR,"MODES\8\1280,1024",,,"60,75,85,100"
+HKR,"MODES\8\1600,1024",,,"60,76,85"
+HKR,"MODES\8\1600,1200",,,"60,65,70,75,80,85,100"
+HKR,"MODES\8\1792,1344",,,"60,75"
+HKR,"MODES\8\1856,1392",,,"60,75"
+HKR,"MODES\8\1920,1080",,,"60,72,75,85"
+HKR,"MODES\8\1920,1200",,,"60,76,85"
+HKR,"MODES\8\1920,1440",,,"60,75"
+HKR,"MODES\16\640,480"
+HKR,"MODES\16\800,600"
+HKR,"MODES\16\960,720"
+HKR,"MODES\16\1024,768"
+HKR,"MODES\16\1152,864"
+HKR,"MODES\16\1280,960"
+HKR,"MODES\16\1280,1024"
+HKR,"MODES\16\1600,1024"
+HKR,"MODES\16\1600,1200"
+HKR,"MODES\16\1792,1344"
+HKR,"MODES\16\1856,1392"
+HKR,"MODES\16\1920,1080"
+HKR,"MODES\16\1920,1200"
+HKR,"MODES\16\1920,1440"
+HKR,"MODES\24\640,480"
+HKR,"MODES\24\800,600"
+HKR,"MODES\24\960,720"
+HKR,"MODES\24\1024,768"
+HKR,"MODES\24\1152,864"
+HKR,"MODES\24\1280,960"
+HKR,"MODES\24\1280,1024"
+HKR,"MODES\24\1600,1024"
+HKR,"MODES\24\1600,1200"
+HKR,"MODES\24\1792,1344"
+HKR,"MODES\24\1856,1392"
+HKR,"MODES\24\1920,1080"
+HKR,"MODES\24\1920,1200"
+HKR,"MODES\24\1920,1440"
+HKR,"MODES\32\640,480"
+HKR,"MODES\32\800,600"
+HKR,"MODES\32\960,720"
+HKR,"MODES\32\1024,768"
+HKR,"MODES\32\1152,864"
+HKR,"MODES\32\1280,960"
+HKR,"MODES\32\1280,1024"
+HKR,"MODES\32\1600,1024"
+HKR,"MODES\32\1600,1200"
+HKR,"MODES\32\1792,1344"
+HKR,"MODES\32\1856,1392"
+HKR,"MODES\32\1920,1080"
+HKR,"MODES\32\1920,1200"
+HKR,"MODES\32\1920,1440"
+
+HKR,"TIMINGS",OptimalRefreshLimit,,"75"
+HKR,"TIMINGS\640,480\60Hz",,,"800,656,752,525,490,492,12,25175000,5994,8,12246"
+HKR,"TIMINGS\640,480\60Hz",AltDFP,,"0xa3,0x4f,0x60,0x8c,0x68,0x1c,0x20,0xb3,0x60,0x70,0x01,0xdf,0x67,0x88,0x20,0x00,0xcf,0x21,0x29,0x6b,0x00,120"
+HKR,"TIMINGS\640,480\60Hz",Supported,,"BPP+8+16+24+32,DDRAW,TVO_DESK,TVO_DD,NTSC,PAL,DFP_DESK,DFP_DD"
+HKR,"TIMINGS\640,480\72Hz",,,"832,664,704,520,489,492,12,31500000,7281,8,14152"
+HKR,"TIMINGS\640,480\72Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\75Hz",,,"840,656,720,500,481,484,12,31500000,7500,8,14351"
+HKR,"TIMINGS\640,480\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\85Hz",,,"832,696,752,509,481,484,12,36000000,8501,8,15875"
+HKR,"TIMINGS\640,480\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\100Hz",,,"GTF"
+HKR,"TIMINGS\640,480\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\120Hz",,,"GTF"
+HKR,"TIMINGS\640,480\120Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\140Hz",,,"GTF"
+HKR,"TIMINGS\640,480\140Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\640,480\160Hz",,,"GTF"
+HKR,"TIMINGS\640,480\160Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\800,600\56Hz",,,"1024,824,896,625,601,603,0,36000000,5625,8,13806"
+HKR,"TIMINGS\800,600\56Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\60Hz",,,"1056,840,968,628,601,605,0,40000000,6032,8,14738"
+HKR,"TIMINGS\800,600\60Hz",AltDFP,,"0xa3,0x63,0x70,0x98,0x74,0x06,0x20,0xf1,0x60,0xa0,0x0d,0x57,0xa0,0xc1,0x00,0x00,0xcf,0x21,0x29,0x6b,0x00,226"
+HKR,"TIMINGS\800,600\60Hz",Supported,,"BPP+8+16+24+32,DDRAW,TVO_DESK,TVO_DD,NTSC,PAL,DFP_DESK,DFP_DD"
+HKR,"TIMINGS\800,600\72Hz",,,"1040,856,976,666,637,643,0,50000000,7219,8,17045"
+HKR,"TIMINGS\800,600\72Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\75Hz",,,"1056,816,896,625,601,604,0,49500000,7500,8,17056"
+HKR,"TIMINGS\800,600\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\85Hz",,,"1048,832,896,631,601,604,0,56250000,8506,8,18751"
+HKR,"TIMINGS\800,600\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\100Hz",,,"GTF"
+HKR,"TIMINGS\800,600\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\120Hz",,,"GTF"
+HKR,"TIMINGS\800,600\120Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\140Hz",,,"GTF"
+HKR,"TIMINGS\800,600\140Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\800,600\160Hz",,,"GTF"
+HKR,"TIMINGS\800,600\160Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\960,720\60Hz",,,"GTF"
+HKR,"TIMINGS\960,720\60Hz",AltDFP,,"0xa3,0x77,0x80,0xa5,0x80,0x94,0x24,0xf5,0x60,0x00,0x09,0xd0,0xf0,0x16,0x00,0x00,0x4f,0x21,0x07,0x6b,0x00,141"
+HKR,"TIMINGS\960,720\60Hz",Supported,,"BPP+8+16+24+32,DDRAW,DFP_DESK,DFP_DD"
+HKR,"TIMINGS\960,720\75Hz",,,"GTF"
+HKR,"TIMINGS\960,720\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\960,720\85Hz",,,"GTF"
+HKR,"TIMINGS\960,720\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1024,768\60Hz",,,"1344,1048,1184,806,771,777,12,65000000,6000,8,18450"
+HKR,"TIMINGS\1024,768\60Hz",Supported,,"BPP+8+16+24+32,DDRAW,DFP_DESK,DFP_DD"
+HKR,"TIMINGS\1024,768\70Hz",,,"1328,1048,1184,806,771,777,12,75000000,7007,8,20441"
+HKR,"TIMINGS\1024,768\70Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1024,768\75Hz",,,"1312,1040,1136,800,769,772,0,78750000,7503,8,21215"
+HKR,"TIMINGS\1024,768\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1024,768\85Hz",,,"1376,1072,1168,808,769,772,0,94500000,8500,8,23923"
+HKR,"TIMINGS\1024,768\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1024,768\100Hz",,,"GTF"
+HKR,"TIMINGS\1024,768\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1024,768\120Hz",,,"GTF"
+HKR,"TIMINGS\1024,768\120Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1152,864\60Hz",,,"1472,1184,1280,905,865,868,0,80000000,6005,8,20587"
+HKR,"TIMINGS\1152,864\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1152,864\70Hz",,,"1480,1184,1280,912,865,868,0,94500000,7001,8,23048"
+HKR,"TIMINGS\1152,864\70Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1152,864\75Hz",,,"1600,1216,1344,900,865,868,0,108000000,7500,8,25101"
+HKR,"TIMINGS\1152,864\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1152,864\85Hz",,,"1568,1216,1344,911,865,868,0,121500000,8506,8,27436"
+HKR,"TIMINGS\1152,864\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1152,864\100Hz",,,"GTF"
+HKR,"TIMINGS\1152,864\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1152,864\120Hz",,,"GTF"
+HKR,"TIMINGS\1152,864\120Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1280,960\60Hz",,,"1800,1376,1488,1000,961,964,0,108000000,6000,8,24397"
+HKR,"TIMINGS\1280,960\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1280,960\75Hz",,,"GTF"
+HKR,"TIMINGS\1280,960\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1280,960\85Hz",,,"1728,1344,1504,1011,961,964,0,148500000,8500,8,30870"
+HKR,"TIMINGS\1280,960\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1280,1024\60Hz",,,"1688,1328,1440,1066,1025,1028,0,108000000,6002,8,24385"
+HKR,"TIMINGS\1280,1024\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1280,1024\75Hz",,,"1688,1296,1440,1066,1025,1028,0,135000000,7502,8,28553"
+HKR,"TIMINGS\1280,1024\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1280,1024\85Hz",,,"1728,1344,1504,1072,1025,1028,0,157500000,8502,8,31961"
+HKR,"TIMINGS\1280,1024\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1280,1024\100Hz",,,"GTF"
+HKR,"TIMINGS\1280,1024\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1600,1024\60Hz",,,"2088,1632,1792,1070,1027,1030,12,134049600,6000,8,28063"
+HKR,"TIMINGS\1600,1024\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1024\76Hz",,,"2088,1632,1792,1070,1027,1030,12,169796160,7600,8,33238"
+HKR,"TIMINGS\1600,1024\76Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1024\85Hz",,,"2088,1632,1792,1070,1027,1030,12,189903600,8500,8,36149"
+HKR,"TIMINGS\1600,1024\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1600,1200\60Hz",,,"2088,1664,1856,1250,1201,1204,0,156600000,6000,8,30931"
+HKR,"TIMINGS\1600,1200\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\65Hz",,,"2088,1664,1856,1250,1201,1204,0,169650000,6500,8,32736"
+HKR,"TIMINGS\1600,1200\65Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\70Hz",,,"2088,1664,1856,1250,1201,1204,0,182700000,7000,8,34541"
+HKR,"TIMINGS\1600,1200\70Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\75Hz",,,"2088,1664,1856,1250,1201,1204,0,195750000,7500,8,36346"
+HKR,"TIMINGS\1600,1200\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\80Hz",,,"2088,1664,1856,1250,1201,1204,0,208800000,8000,8,38151"
+HKR,"TIMINGS\1600,1200\80Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\85Hz",,,"2088,1664,1856,1250,1201,1204,0,221850000,8500,8,39956"
+HKR,"TIMINGS\1600,1200\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1600,1200\100Hz",,,"2088,1664,1856,1250,1201,1204,0,261000000,10000,8,45371"
+HKR,"TIMINGS\1600,1200\100Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1792,1344\60Hz",,,"2448,1920,2120,1394,1345,1348,4,204750000,6000,8,37062"
+HKR,"TIMINGS\1792,1344\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1792,1344\75Hz",,,"2456,1888,2104,1417,1345,1348,4,261000000,7500,8,44170"
+HKR,"TIMINGS\1792,1344\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1856,1392\60Hz",,,"2528,1952,2176,1439,1393,1396,4,218250000,6000,8,38721"
+HKR,"TIMINGS\1856,1392\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1856,1392\75Hz",,,"2560,1984,2208,1500,1393,1396,4,288000000,7500,8,47353"
+HKR,"TIMINGS\1856,1392\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1920,1080\60Hz",,,"2368,1952,2096,1125,1083,1086,12,159840000,6000,8,31714"
+HKR,"TIMINGS\1920,1080\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1080\72Hz",,,"2560,1968,2184,1172,1083,1086,12,216023000,7200,8,38875"
+HKR,"TIMINGS\1920,1080\72Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1080\75Hz",,,"GTF"
+HKR,"TIMINGS\1920,1080\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1080\85Hz",,,"GTF"
+HKR,"TIMINGS\1920,1080\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1920,1200\60Hz",,,"2584,1984,2240,1250,1203,1206,12,193800000,6000,8,35867"
+HKR,"TIMINGS\1920,1200\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1200\76Hz",,,"2584,1984,2240,1250,1203,1206,12,245480000,7600,8,42635"
+HKR,"TIMINGS\1920,1200\76Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1200\85Hz",,,"GTF"
+HKR,"TIMINGS\1920,1200\85Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+HKR,"TIMINGS\1920,1440\60Hz",,,"2600,2048,2256,1500,1441,1444,4,234000000,6000,8,40701"
+HKR,"TIMINGS\1920,1440\60Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+HKR,"TIMINGS\1920,1440\75Hz",,,"2640,2064,2288,1500,1441,1444,4,297000000,7500,8,48589"
+HKR,"TIMINGS\1920,1440\75Hz",Supported,,"BPP+8+16+24+32,DDRAW"
+
+; Windows Desktop Modes end
+
+; Windows Direct Draw Modes begin
+; NOTE: 8 and 16 bit 320x200, 320x240, 400x300, 512x384, and 640x400 are REQUIRED by WHQL! 
+
+HKR,"TIMINGS\320,200\70Hz",,,"400,328,376,449,413,415,5,12587500,7009,8,10661"
+HKR,"TIMINGS\320,200\70Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\320,200\85Hz",,,"416,336,368,445,401,404,5,15750000,8508,8,12466"
+HKR,"TIMINGS\320,200\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\320,240\60Hz",,,"400,328,376,525,490,492,13,12587500,5994,8,9884"
+HKR,"TIMINGS\320,240\60Hz",Supported,,"BPP+8+16,DDRAW,TVO_DD,NTSC,PAL"
+HKR,"TIMINGS\320,240\72Hz",,,"416,336,352,520,489,492,13,15750000,7281,8,11482"
+HKR,"TIMINGS\320,240\72Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\320,240\75Hz",,,"424,328,360,500,481,484,13,15901442,7501,8,11689"
+HKR,"TIMINGS\320,240\75Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\320,240\85Hz",,,"416,344,376,509,481,484,13,18000000,8501,8,12932"
+HKR,"TIMINGS\320,240\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\400,300\60Hz",,,"528,424,488,628,601,605,1,20000000,6032,8,11315"
+HKR,"TIMINGS\400,300\60Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\400,300\72Hz",,,"520,432,488,666,637,643,1,25000000,7219,8,13114"
+HKR,"TIMINGS\400,300\72Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\400,300\75Hz",,,"528,408,448,625,601,604,1,24750000,7500,8,13198"
+HKR,"TIMINGS\400,300\75Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\400,300\85Hz",,,"528,416,448,631,601,604,1,28341346,8507,8,14578"
+HKR,"TIMINGS\400,300\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\512,384\60Hz",,,"672,528,592,806,771,777,13,32500000,6000,8,13417"
+HKR,"TIMINGS\512,384\60Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\512,384\70Hz",,,"664,528,592,806,771,777,13,37500000,7007,8,14916"
+HKR,"TIMINGS\512,384\70Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\512,384\75Hz",,,"656,520,568,800,769,772,13,39375000,7503,8,15546"
+HKR,"TIMINGS\512,384\75Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\512,384\85Hz",,,"688,536,584,808,769,772,13,47250000,8500,8,17403"
+HKR,"TIMINGS\512,384\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\640,400\70Hz",,,"800,656,752,449,413,415,4,25175000,7009,8,13023"
+HKR,"TIMINGS\640,400\70Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\640,400\85Hz",,,"832,672,736,445,401,404,4,31500000,8508,8,15160"
+HKR,"TIMINGS\640,400\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\720,480\60Hz",,,"896,736,856,525,490,492,12,28196000,5994,8,12828"
+HKR,"TIMINGS\720,480\60Hz",Supported,,"BPP+8+16,DDRAW,TVO_DESK,TVO_DD,NTSC,PAL"
+HKR,"TIMINGS\720,480\72Hz",,,"920,736,872,520,489,492,12,34832000,7281,8,14813"
+HKR,"TIMINGS\720,480\72Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\720,480\85Hz",,,"936,784,848,509,481,484,12,40500000,8501,8,16613"
+HKR,"TIMINGS\720,480\85Hz",Supported,,"BPP+8+16,DDRAW"
+
+HKR,"TIMINGS\720,576\72Hz",,,"936,752,848,642,578,582,0,43266000,7200,8,15872"
+HKR,"TIMINGS\720,576\72Hz",Supported,,"BPP+8+16,DDRAW"
+HKR,"TIMINGS\720,576\100Hz",,,"936,752,848,642,578,582,0,60089400,10000,8,20354"
+HKR,"TIMINGS\720,576\100Hz",Supported,,"BPP+8+16,DDRAW"
+
+; Windows Direct Draw Modes end
+
+HKR,TIMINGS,UseGTF,,0
+HKR,DEFAULT,DefMemLatency,,"1 2 1 2"
+HKR,DEFAULT,SSTH3_FASTMEM,,1
+HKR,DEFAULT,SSTH3_FASTPCIRD,,1
+HKR,DEFAULT,SSTH3_BACKPORCH,,1
+HKR,DEFAULT,SSTH3_FAST_CAS_READS,,1
+HKR,DEFAULT,SSTH3_VIDEO_CLEARCOLOR,,1 
+HKR,DEFAULT,SSTH3_MEMFIFO,,"1"
+HKR,DEFAULT,SSTH3_VFIFO_THRESH,,"0"
+HKR,DEFAULT,SSTH3_MEMINFO_LWM,,1
+HKR,D3D,SSTH3_SGRAM_MODE,,"1"
+HKR,D3D,SSTH3_SGRAM_222,,"1"
+HKR,Glide,FX_GL_GBLEFT,,"1"
+HKR,Glide,FX_GL_GBRIGHT,,"1"
+HKR,Glide,FX_GL_GBTOP,,"1"
+HKR,Glide,FX_GL_GBBOTTOM,,"1"
+HKR,Glide,FX_GLIDE_NO_DITHER_SUB,,"1"
+HKR,Glide,SSTH3_SGRAM_MODE,,"1"
+HKR,Glide,SSTH3_SGRAM_222,,"1"
+HKR,Glide,FX_GLIDE_NUM_AUX_BUFFERS,,"1"
+HKR,Glide,FX_GLIDE_16BPPGAMMAOFFSET,,"1"
+HKR,Glide,FX_GLIDE_V3FIFO,,"1"
+HKR,Glide,SSTH3_EDGEAA,,"1"
+
+[3dfxTools.VoodooBanshee]
+
+;HTML Help
+
+HKR,Default,"HTML Card Help",,"3dfx Voodoo5 help.chm"
+
+;Overclock Settings
+HKR,DEFAULT,Localisation,,"Hardware settings"
+HKR,DEFAULT,GrxDefault,,100   ;3dfxTools warns if GrxDefault is lower than grxclock.
+HKR,DEFAULT,Help,,"Overclocking (Reboot Required)"
+
+;Graphics Clock
+HKR,DEFAULT\%Grxclock%,Control,,"Simple Slider"
+HKR,DEFAULT\%Grxclock%,"Left Label",,"90MHz"
+HKR,DEFAULT\%Grxclock%,"Right Label",,"130MHz"
+HKR,DEFAULT\%Grxclock%,"Localisation",,"Graphics Clock Speed"
+HKR,DEFAULT\%Grxclock%,Min,,90
+HKR,DEFAULT\%Grxclock%,Max,,130
+HKR,DEFAULT\%Grxclock%,Value,,"100"
+HKR,DEFAULT\%Grxclock%,Default,,"100"
+HKR,DEFAULT\%Grxclock%,"Tweak Value",,"grxclock"
+HKR,DEFAULT\%Grxclock%,"Help",,"You must restart for changes to take effect"
+HKR,DEFAULT,grxclock,,"100"
+
+;Memory Clock
+HKR,DEFAULT\%Memclock%,Control,,"Simple Slider"
+HKR,DEFAULT\%Memclock%,"Left Label",,"90MHz"
+HKR,DEFAULT\%Memclock%,"Right Label",,"130MHz"
+HKR,DEFAULT\%Memclock%,"Localisation",,"Memory Clock Speed"
+HKR,DEFAULT\%Memclock%,Min,,90
+HKR,DEFAULT\%Memclock%,Max,,130
+HKR,DEFAULT\%Memclock%,Value,,"110"
+HKR,DEFAULT\%Memclock%,Default,,"110"
+HKR,DEFAULT\%Memclock%,"Tweak Value",,"memclock"
+HKR,DEFAULT\%Memclock%,"Help",,"You must restart for changes to take effect"
+HKR,DEFAULT,memclock,,"110"
+
+HKR,DEFAULT\"Memory Boost",Control,,"Combo"
+HKR,DEFAULT\"Memory Boost",List,,"%Disable% (Reboot Required),%Enable% (Reboot Required)"
+HKR,DEFAULT\"Memory Boost",Value,,"1"
+HKR,DEFAULT\"Memory Boost",Default,,"1"
+HKR,DEFAULT\"Memory Boost","Tweak Map",,"0,1"
+HKR,DEFAULT\"Memory Boost","Tweak Value",,"SSTH3_FASTMEM_RAS_READS"
+HKR,DEFAULT\"Memory Boost","Help",,"Enable this for increase bandwith performance"
+HKR,DEFAULT,SSTH3_FASTMEM_RAS_READS,,1 
+
+;individual tweaks settings
+;Direct 3D
+
+HKR,D3D,Localisation,,"Direct3D"
+HKR,D3D,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D"
+
+HKR,D3D\%VideoDisplay%,Control,,"Combo"
+HKR,D3D\%VideoDisplay%,List,,"%Automatic%,%Normal%,%High%"
+HKR,D3D\%VideoDisplay%,Value,,"1"
+HKR,D3D\%VideoDisplay%,Default,,"1"
+HKR,D3D\%VideoDisplay%,Offset,,"1"
+HKR,D3D\%VideoDisplay%,"Tweak Value",,"SSTH3_OVERLAYMODE"
+HKR,D3D\%VideoDisplay%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D_Video"
+HKR,D3D,SSTH3_OVERLAYMODE,,"1"
+
+HKR,D3D\%AlphaBlending%,Control,,"Combo"
+HKR,D3D\%AlphaBlending%,List,,"%Automatic%,%Sharper%,%Smoother%"
+HKR,D3D\%AlphaBlending%,Value,,"1"
+HKR,D3D\%AlphaBlending%,Default,,"1"
+HKR,D3D\%AlphaBlending%,Offset,,"1"
+HKR,D3D\%AlphaBlending%,"Tweak Value",,"SSTH3_ALPHADITHERMODE"
+HKR,D3D\%AlphaBlending%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D_Alpha"
+HKR,D3D,SSTH3_ALPHADITHERMODE,,"1"
+
+HKR,D3D\"D3D 24BPP",Control,,"Combo"
+HKR,D3D\"D3D 24BPP",List,,"Disable,Enable"
+HKR,D3D\"D3D 24BPP",Value,,"0"
+HKR,D3D\"D3D 24BPP",Default,,"0"
+HKR,D3D\"D3D 24BPP","Tweak Map",,"0,1"
+HKR,D3D\"D3D 24BPP","Tweak Value",,"SSTH3_VIDEO_24BPP"
+HKR,D3D\"D3D 24BPP","Help",,"Enables/Disables D3D precision at 24bit"
+HKR,D3D,SSTH3_VIDEO_24BPP,,0
+
+HKR,D3D\%LODBias%,Control,,"Simple Slider"
+HKR,D3D\%LODBias%,"Left Label",,"Smooth Image"
+HKR,D3D\%LODBias%,"Right Label",,"Best Performance"
+HKR,D3D\%LODBias%,Min,,-8
+HKR,D3D\%LODBias%,Max,,8
+HKR,D3D\%LODBias%,Value,,"0"
+HKR,D3D\%LODBias%,Default,,"0"
+HKR,D3D\%LODBias%,"Name Map",,"-2,-1.75,-1.50,-1.25,-1.00,-0.75,-0.50,-0.25,0,0.25,0.50,0.75,1.00,1.25,1.50,1.75,2.00"
+HKR,D3D\%LODBias%,"Tweak Value",,"SSTH3_LOD_BIAS"
+HKR,D3D\%LODBias%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D_LOD"
+HKR,D3D,SSTH3_LOD_BIAS,,"0"
+
+HKR,D3D\"Video Tiles",Control,,"Combo"
+HKR,D3D\"Video Tiles",List,,"%Disable%,n4 Tiles,n8 Tiles,n16 Tiles,n32 Tiles"
+HKR,D3D\"Video Tiles",Value,,"0"
+HKR,D3D\"Video Tiles",Default,,"0"
+HKR,D3D\"Video Tiles",Performance,,"4"
+HKR,D3D\"Video Tiles",Quality",,"0"
+HKR,D3D\"Video Tiles","Tweak Value",,"SSTH3_TILESINX"
+HKR,D3D\"Video Tiles","Tweak Map",,"0,4,8,16,32"
+HKR,D3D\"Video Tiles","Help",,"Uses n number of video tiles in X dimension"
+HKR,D3D,SSTH3_TILESINX,,"0"
+
+HKR,D3D\%MaxBufferedFrames%,Control,,"Combo"
+HKR,D3D\%MaxBufferedFrames%,List,,"Default,1 Pending Buffer,2 Pending Buffers,3 Pending Buffers,4 Pending Buffers,5 Pending Buffers,6 Pending Buffers"
+HKR,D3D\%MaxBufferedFrames%,Value,,"0"
+HKR,D3D\%MaxBufferedFrames%,Default,,"0"
+HKR,D3D\%MaxBufferedFrames%,"Tweak Value",,"SSTH3_MAX_PENDING_BUFFERS"
+HKR,D3D\%MaxBufferedFrames%,"Tweak Map",,"0,1,2,3,4,5,6"
+HKR,D3D\%MaxBufferedFrames%,"HTML Help",,"hh ms-its:3dfx%20Voodoo3%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D_SwapBuffer"
+HKR,D3D,SSTH3_MAX_PENDING_BUFFERS,,"0"
+
+HKR,D3D\%Mipmap%,Control,,"Combo"
+HKR,D3D\%Mipmap%,List,,"%Disable%,%Enable%"
+HKR,D3D\%Mipmap%,Value,,"0"
+HKR,D3D\%Mipmap%,Default,,"0"
+HKR,D3D\%Mipmap%,"Tweak Value",,"SSTH3_LOD_DITHER"
+HKR,D3D\%Mipmap%,"Tweak Map",,"0,1"
+HKR,D3D\%Mipmap%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#D3D_Mipmap"
+HKR,D3D,SSTH3_LOD_DITHER,,"0"
+
+HKR,D3D\%ZOptimization%,Control,,"Combo"
+HKR,D3D\%ZOptimization%,List,,"%Enable%,%Disable%"
+HKR,D3D\%ZOptimization%,Value,,"0"
+HKR,D3D\%ZOptimization%,Default,,"0"
+HKR,D3D\%ZOptimization%,"Tweak Map",,"1,0"
+HKR,D3D\%ZOptimization%,"Tweak Value",,"SSTH3_Z_CLEAR_OPTIMIZATION"
+HKR,D3D\%ZOptimization%,"Help",,"Fast Z-Clear-Reads increase Z-buffer performance"
+HKR,D3D,SSTH3_Z_CLEAR_OPTIMIZATION,,"1"
+
+;Edge AA
+HKR,D3D\EdgeAA,Control,,"Combo"
+HKR,D3D\EdgeAA,List,,"%Disable% (Reboot Required),%Enable% (Reboot Required)"
+HKR,D3D\EdgeAA,Value,,"1"
+HKR,D3D\EdgeAA,Default,,"1"
+HKR,D3D\EdgeAA,"Tweak Value",,"SSTH3_ANTIALIAS"
+HKR,D3D\EdgeAA,"Tweak Map",,"0,1"
+HKR,D3D\EdgeAA,Localisation,,"EdgeAA(Oversampling)"
+HKR,D3D\EdgeAA,Help,,"Enables/Disables Edge Anti-Aliasing"
+;HKR,D3D\EdgeAA,Help,,"%VideoDisplayHelp%"
+HKR,D3D\EdgeAA,"Value Help",,"%ValueHelp%"
+HKR,D3D\EdgeAA,"Default On Boot",,"1"
+;HKR,D3D\EdgeAA,"Help",,"AntiAliasing usually improve visual quality"
+
+;Trilinear Filtering
+HKR,D3D\Trilinear,Control,,"Combo"
+HKR,D3D\Trilinear,List,,"%Disable% (Reboot Required),%Enable% (Reboot Required)"
+HKR,D3D\Trilinear,Value,,"0"
+HKR,D3D\Trilinear,Default,,"0"
+HKR,D3D\Trilinear,"Tweak Map",,"0,1"
+HKR,D3D\Trilinear,Localisation,,"Trilinear Filtering"
+HKR,D3D\Trilinear,"Tweak Value",,"SSTH3_TRILINEAR"
+HKR,D3D\Trilinear,"Help",,"Enables/Disables Trilinear Filtering"
+HKR,D3D,SSTH3_TRILINEAR,,"0"
+
+HKR,D3D\"Video Clearing",Control,,"Combo"
+HKR,D3D\"Video Clearing",List,,"Hardware,Software"
+HKR,D3D\"Video Clearing",Value,,"0"
+HKR,D3D\"Video Clearing",Default,,"0"
+HKR,D3D\"Video Clearing","Tweak Value",,"SSTH3_VIDEO_NOCLEAR"
+HKR,D3D\"Video Clearing","Tweak Map",,"0,1"
+HKR,D3D\"Video Clearing","Help",,"Hardware or Software clearing of frame buffers"
+HKR,D3D,SSTH3_VIDEO_NOCLEAR,,"0"
+
+HKR,D3D\%TripleBuff%,Control,,"Combo"
+HKR,D3D\%TripleBuff%,List,,"%Disable%,%Enable%"
+HKR,D3D\%TripleBuff%,Value,,"0"
+HKR,D3D\%TripleBuff%,Default,,"0"
+HKR,D3D\%TripleBuff%,"Tweak Value",,"SSTH3_FORCE_TRIPLE"
+HKR,D3D\%TripleBuff%,"Tweak Map",,"0,1"
+HKR,D3D\%TripleBuff%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Buffer"
+HKR,D3D,SSTH3_FORCE_TRIPLE,,0
+
+; ScrCapKey
+HKR,D3D\%ScrCapKey%,Control,,"Combo"
+HKR,D3D\%ScrCapKey%,List,,"Disable,Num-Lock,Key-Pad /,Key-Pad *,Key-Pad -,F12"
+HKR,D3D\%ScrCapKey%,Value,,"0"
+HKR,D3D\%ScrCapKey%,Default,,"0"
+HKR,D3D\%ScrCapKey%,"Tweak Value",,"SSTH3_SCREENSHOT_TOGGLE_KEY"
+HKR,D3D\%ScrCapKey%,"Tweak Map",,"*,144,111,106,109,123"
+HKR,D3D\%ScrCapKey%,"Help",,"Direct X screen capture toggle on/off key. Defaults to capturing the Screen Capture Limit number of frames"
+
+; ScrCapLimit
+HKR,D3D\%ScrCapLimit%,Control,,"Simple Slider"
+HKR,D3D\%ScrCapLimit%,"Left Label",,"Less"
+HKR,D3D\%ScrCapLimit%,"Right Label",,"More"
+HKR,D3D\%ScrCapLimit%,Min,,1
+HKR,D3D\%ScrCapLimit%,Max,,999
+HKR,D3D\%ScrCapLimit%,Value,,"2"
+HKR,D3D\%ScrCapLimit%,Default,,"1"
+HKR,D3D\%ScrCapLimit%,"Tweak Value",,"SSTH3_SCREENSHOT_FRAMELIMIT"
+HKR,D3D\%ScrCapLimit%,"Help",,"Number of frames to capture when Screen Capture is activated via Screen Capture Toggle"
+HKR,D3D,SSTH3_SCREENSHOT_FRAMELIMIT,,"1"
+
+; ScrCapPath
+HKR,D3D\%ScrCapPath%,Control,,"Combo"
+HKR,D3D\%ScrCapPath%,List,,"Game Directory,c:\temp,c:\My Documents,c:\My Documents\My Pictures,RAM Disk"
+HKR,D3D\%ScrCapPath%,Value,,"0"
+HKR,D3D\%ScrCapPath%,Default,,"0"
+HKR,D3D\%ScrCapPath%,"Tweak Value",,"SSTH3_SCREENSHOT_PATH"
+HKR,D3D\%ScrCapPath%,"Tweak Map",,"*,c:\temp\,c:\My Documents\,c:\My Documents\My Pictures\,z:\temp\"
+HKR,D3D\%ScrCapPath%,"Help",,"Destination for Captured Frames.  Note RAM Disk is mapped to z:\temp"
+
+;V-Sync for D3D
+HKR,D3D\%Vsync%,Control,,"Combo"
+HKR,D3D\%Vsync%,List,,"Disable,Enable"
+HKR,D3D\%Vsync%,Value,,"0"
+HKR,D3D\%Vsync%,Default,,"0"
+HKR,D3D\%Vsync%,"Tweak Map",,"0,1"
+HKR,D3D\%Vsync%,"Tweak Value",,"SSTH3_SWAPINTERVAL"
+HKR,D3D\%Vsync%,"Help",,"Enables/Disables V-Sync on Refresh"
+HKR,D3D,SSTH3_SWAPINTERVAL,,"0"
+
+HKR,D3D\"Pixel-Blending",Control,,"Combo"
+HKR,D3D\"Pixel-Blending",List,,"Automatic,Disable,Enable"
+HKR,D3D\"Pixel-Blending",Value,,"*"
+HKR,D3D\"Pixel-Blending",Default,,"*"
+HKR,D3D\"Pixel-Blending","Tweak Value",,"SSTH3_PIXELCENTER"
+HKR,D3D\"Pixel-Blending","Tweak Map",,"*,0,1"
+HKR,D3D\"Pixel-Blending","Help",,"Pixel-Blending increase Sub-Pixel precision"
+
+; Section for Glide tweaks
+
+HKR,Glide,Localisation,,"OpenGL/Glide"
+HKR,Glide,"HTML Help",,"hh ms-its:3dfx%20Voodoo3%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide"
+
+HKR,Glide\%VideoDisplay%,Control,,"Combo"
+HKR,Glide\%VideoDisplay%,List,,"%Automatic%,%Normal%,%High%"
+HKR,Glide\%VideoDisplay%,Value,,"1"
+HKR,Glide\%VideoDisplay%,Default,,"1"
+HKR,Glide\%VideoDisplay%,Offset,,"1"
+HKR,Glide\%VideoDisplay%,"Tweak Value",,"SSTH3_OVERLAYMODE"
+HKR,Glide\%VideoDisplay%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Video"
+HKR,Glide,SSTH3_OVERLAYMODE,,"1"
+
+HKR,Glide\%AlphaBlending%,Control,,"Combo"
+HKR,Glide\%AlphaBlending%,List,,"%Automatic%,%Sharper%,%Smoother%"
+HKR,Glide\%AlphaBlending%,Value,,"1"
+HKR,Glide\%AlphaBlending%,Default,,"1"
+HKR,Glide\%AlphaBlending%,Offset,,"1"
+HKR,Glide\%AlphaBlending%,"Tweak Value",,"SSTH3_ALPHADITHERMODE"
+HKR,Glide\%AlphaBlending%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Alpha"
+HKR,Glide,SSTH3_ALPHADITHERMODE,,"1"
+
+HKR,Glide\%CompressTextures%,Control,,"Combo"
+HKR,Glide\%CompressTextures%,List,,"Disable,Enable"
+HKR,Glide\%CompressTextures%,Value,,"1"
+HKR,Glide\%CompressTextures%,Default,,"1"
+HKR,Glide\%CompressTextures%,"Tweak Value",,"FX_GL_COMPRESS_LEGACY_TEXTURES"
+HKR,Glide\%CompressTextures%,"Tweak Map",,"0,1"
+HKR,Glide\%CompressTextures%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Texture"
+HKR,Glide,FX_GL_COMPRESS_LEGACY_TEXTURES,,"1"
+
+HKR,Glide\%DepthPrecision16%,Control,,"Combo"
+HKR,Glide\%DepthPrecision16%,List,,"Disable,Medium,MaXx"
+HKR,Glide\%DepthPrecision16%,Value,,"2"
+HKR,Glide\%DepthPrecision16%,Default,,"2"
+HKR,Glide\%DepthPrecision16%,"Tweak Value",,"FX_GL_16BPP_ZPRECISION"
+HKR,Glide\%DepthPrecision16%,"Tweak Map",,"0,1,2"
+HKR,Glide\%DepthPrecision16%,"Help",,"More Z-Depth compression usually improve performance"
+HKR,Glide,FX_GL_16BPP_ZPRECISION,,"2"
+
+HKR,Glide\%HSR%,Control,,"Combo"
+HKR,Glide\%HSR%,List,,"%Disable%,1:1 Forced HSR,2:1 Forced HSR,3:1 Forced HSR,4:1 Forced HSR"
+HKR,Glide\%HSR%,Value,,"1"
+HKR,Glide\%HSR%,Default,,"1"
+HKR,Glide\%HSR%,Performance,,"1"
+HKR,Glide\%HSR%,Quality,,"0"
+HKR,Glide\%HSR%,"Tweak Value",,"FX_GL_HSR"
+HKR,Glide\%HSR%,"Tweak Map",,"0,1,2,3,4"
+HKR,Glide\%HSR%,"Help",,"PixelFX HSR delete non visible pixel increasing performance"
+HKR,Glide,FX_GL_HSR,,"1"
+
+HKR,Glide\"OpenGL-Z Culling",Control,,"Combo"
+HKR,Glide\"OpenGL-Z Culling",List,,"%Disable%,%Enable%"
+HKR,Glide\"OpenGL-Z Culling",Value,,"1"
+HKR,Glide\"OpenGL-Z Culling",Default,,"1"
+HKR,Glide\"OpenGL-Z Culling","Tweak Map",,"*,1"
+HKR,Glide\"OpenGL-Z Culling","Tweak Value",,"FX_GL_ZCULL_ENABLE"
+HKR,Glide\"OpenGL-Z Culling","HTML Help",,"hh ms-its:3dfx%20Voodoo3%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_VSync"
+
+HKR,Glide\%GBC%,Control,,"Combo"
+HKR,Glide\%GBC%,List,,"%Disable%,%Enable%"
+HKR,Glide\%GBC%,Value,,"1"
+HKR,Glide\%GBC%,Default,,"1"
+HKR,Glide\%GBC%,Performance,,"1"
+HKR,Glide\%GBC%,Quality,,"0"
+HKR,Glide\%GBC%,"Tweak Value",,"FX_GL_GUARDBAND_ENABLED"
+HKR,Glide\%GBC%,"Tweak Map",,"0,1"
+HKR,Glide\%GBC%,"Help",,"Band Optimization for optimize bandwith (Only OpenGL)"
+HKR,Glide,FX_GL_GUARDBAND_ENABLED,,"0"
+
+HKR,Glide\"Glide Guardband Clipping",Control,,"Combo"
+HKR,Glide\"Glide Guardband Clipping",List,,"Disable,Enable"
+HKR,Glide\"Glide Guardband Clipping",Value,,"1"
+HKR,Glide\"Glide Guardband Clipping",Default,,"1"
+HKR,Glide\"Glide Guardband Clipping",Performance,,"1"
+HKR,Glide\"Glide Guardband Clipping",Quality,,"0"
+HKR,Glide\"Glide Guardband Clipping","Tweak Value",,"FX_GLIDE_GBC"
+HKR,Glide\"Glide Guardband Clipping","Tweak Map",,"0,1"
+HKR,Glide\"Glide Guardband Clipping","Help",,"GuardBand Clipping reduce the amount of calculation by CPU"
+HKR,Glide,FX_GLIDE_GBC,,"0"
+
+HKR,Glide\"Faster Palettes",Control,,"Combo"
+HKR,Glide\"Faster Palettes",List,,"Disable,Enable"
+HKR,Glide\"Faster Palettes",Default,,"1"
+HKR,Glide\"Faster Palettes",Value,,"1"
+HKR,Glide\"Faster Palettes","Tweak Map",,"0,1"
+HKR,Glide\"Faster Palettes","Tweak Value",,"GXP_GLIDE2_FASTER_PALETTES"
+HKR,Glide\"Faster Palettes","Help",,"Faster palettes usually inprove performance. May work only in Glide"
+HKR,Glide,GXP_GLIDE2_FASTER_PALETTES,,1
+
+HKR,Glide\"Turbo Mode",Control,,"Combo"
+HKR,Glide\"Turbo Mode",List,,"%Disable%,%Enable%"
+HKR,Glide\"Turbo Mode",Value,,"1"
+HKR,Glide\"Turbo Mode",Default,,"1"
+HKR,Glide\"Turbo Mode",Performance,,"1"
+HKR,Glide\"Turbo Mode",Quality,,"0"
+HKR,Glide\"Turbo Mode","Tweak Value",,"FX_GL_FORCE_16BPP_TEXTURES"
+HKR,Glide\"Turbo Mode","Tweak Map",,"0,1"
+HKR,Glide\"Turbo Mode","Help",,"Improve performances with a small lost of quality"
+HKR,Glide,FX_GL_FORCE_16BPP_TEXTURES,,"0"
+
+HKR,Glide\"Select CPU Instructions",Control,,"Combo"
+HKR,Glide\"Select CPU Instructions",List,,"%Disable%,MMX,3DNow!"
+HKR,Glide\"Select CPU Instructions",Value,,"1"
+HKR,Glide\"Select CPU Instructions",Default,,"1"
+HKR,Glide\"Select CPU Instructions","Tweak Map",,"0,1,2"
+HKR,Glide\"Select CPU Instructions","Tweak Value",,"GXP_GLIDE_NO_CPU_EXTENSIONS "
+HKR,Glide\"Select CPU Instructions","Help",,"Select CPU instructions. Can be improve performances with CPUs Intel and AMD"
+
+HKR,Glide\P6 Fencing Limit,Control,,"Combo"
+HKR,Glide\P6 Fencing Limit,List,,"Default,No Fencing,2,4,8,16,32,64,128,256,512,2at11,2at12,2at13,2at14,2at15,2at16,2at17,2at18,2at19,2at20,2at21,2at22,2at23,2at24,2at25,2at26,2at27,2at28,2at29,2at30,2at31(Unlimited),2at32(Over Unlimited)"
+HKR,Glide\P6 Fencing Limit,Default,,"*"
+HKR,Glide\P6 Fencing Limit,Value,,"*"
+HKR,Glide\P6 Fencing Limit,"Tweak Value",,"FX_GLIDE_FENCE_LIMIT"
+HKR,Glide\P6 Fencing Limit,"Tweak Map",,"*,0,2,4,8,16,32,64,128,256,512,1024,2048,4096,8192,16384,32768,65536,131072,262144,524288,1048576,2097152,4194304,8388608,16777216,33554432,67108864,134217728,268435456,536870912,1073741824,2147483648,4294947296"
+HKR,Glide\P6 Fencing Limit,Help,,"Controls the usage of P6 Fencing, a Pentium Pro/II+ assembly optimization used in Glide code. Greater settings usually improve performance."
+
+HKR,Glide\%LODBias%,Control,,"Simple Slider"
+HKR,Glide\%LODBias%,"Left Label",,"Smooth Image"
+HKR,Glide\%LODBias%,"Right Label",,"Best Performance"
+HKR,Glide\%LODBias%,Min,,-8
+HKR,Glide\%LODBias%,Max,,8
+HKR,Glide\%LODBias%,Value,,"0"
+HKR,Glide\%LODBias%,Default,,"0"
+HKR,Glide\%LODBias%,"Name Map",,"-2,-1.75,-1.50,-1.25,-1.00,-0.75,-0.50,-0.25,0,0.25,0.50,0.75,1.00,1.25,1.50,1.75,2.00"
+HKR,Glide\%LODBias%,"Tweak Value",,"FX_GLIDE_LOD_BIAS"
+HKR,Glide\%LODBias%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_LOD"
+HKR,Glide,FX_GLIDE_LOD_BIAS,,"0"		   
+
+HKR,Glide\%Mipmap%,Control,,"Combo"
+HKR,Glide\%Mipmap%,List,,"%Disable%,%Enable%"
+HKR,Glide\%Mipmap%,Value,,"0"
+HKR,Glide\%Mipmap%,Default,,"0"
+HKR,Glide\%Mipmap%,"Tweak Value",,"FX_GLIDE_LOD_DITHER"
+HKR,Glide\%Mipmap%,"Tweak Map",,"*,1"
+HKR,Glide\%Mipmap%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Mipmap"
+
+HKR,Glide\%MaxBufferedFrames%,Control,,"Combo"
+HKR,Glide\%MaxBufferedFrames%,List,,"No Pending Buffers,1 Pending Buffer,2 Pending Buffers,3 Pending Buffers,4 Pending Buffers"
+HKR,Glide\%MaxBufferedFrames%,Value,,"0"
+HKR,Glide\%MaxBufferedFrames%,Default,,"0"
+HKR,Glide\%MaxBufferedFrames%,"Tweak Value",,"FX_GLIDE_SWAPPENDINGCOUNT"
+HKR,Glide\%MaxBufferedFrames%,"Tweak Map",,"0,1,2,3,4"
+HKR,Glide\%MaxBufferedFrames%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#SwapBuffer"
+HKR,Glide,FX_GLIDE_SWAPPENDINGCOUNT,,"1"
+
+HKR,Glide\"Limit Texture Memory",Control,,"Combo"
+HKR,Glide\"Limit Texture Memory",List,,"Software Controlled,Limit Texture Memory to 2MB,Limit Texture Memory to 4MB,Limit Texture Memory to 8MB,Limit Texture Memory to 16MB"
+HKR,Glide\"Limit Texture Memory",Value,,"0"
+HKR,Glide\"Limit Texture Memory",Default,,"0"
+HKR,Glide\"Limit Texture Memory","Tweak Value",,"FX_GLIDE_TMU_MEMSIZE"
+HKR,Glide\"Limit Texture Memory","Tweak Map",,"-1,2,4,8,16"
+HKR,Glide\"Limit Texture Memory","Help",,"Limit texture memory may increase performance in OLD games. Do not use with nowaday games"
+HKR,Glide,FX_GLIDE_TMU_MEMSIZE,,"-1"
+
+HKR,Glide\"Bump-Mapping",Control,,"Combo"
+HKR,Glide\"Bump-Mapping",List,,"Default,Disable,Enable"
+HKR,Glide\"Bump-Mapping",Value,,"1"
+HKR,Glide\"Bump-Mapping",Default,,"1"
+HKR,Glide\"Bump-Mapping","Tweak Map",,"*,0,1"
+HKR,Glide\"Bump-Mapping","Tweak Value",,"FX_GLIDE_BUMP"
+HKR,Glide\"Bump-Mapping","Help",,"BumpMapping increase visual quality with a small lost of performance"
+
+HKR,Glide\"Bump-Map Precision",Control,,"Combo"
+HKR,Glide\"Bump-Map Precision",List,,"Automatic,LowPrecision,MediumPrecision,HighPrecision"
+HKR,Glide\"Bump-Map Precision",Value,,"*"
+HKR,Glide\"Bump-Map Precision",Default,,"*"
+HKR,Glide\"Bump-Map Precision","Tweak Map",,"*,1,2,4"
+HKR,Glide\"Bump-Map Precision","Tweak Value",,"FX_GLIDE_BUMPSIZE"
+HKR,Glide\"Bump-Map Precision","Help",,"Select the bump mapping quality"
+
+HKR,Glide\%TripleBuff%,Control,,"Combo"
+HKR,Glide\%TripleBuff%,List,,"%Disable%,%Enable%"
+HKR,Glide\%TripleBuff%,Value,,"1"
+HKR,Glide\%TripleBuff%,Default,,"1"
+HKR,Glide\%TripleBuff%,"Tweak Value",,"FX_GLIDE_ALLOC_COLOR"
+HKR,Glide\%TripleBuff%,"Tweak Map",,"-1,3"
+HKR,Glide\%TripleBuff%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Buffer"
+HKR,Glide,FX_GLIDE_ALLOC_COLOR,,"-1"
+
+HKR,Glide\"Shading FX",Control,,"Combo"
+HKR,Glide\"Shading FX",List,,"Automatic,Disable,Enable"
+HKR,Glide\"Shading FX",Value,,"*"
+HKR,Glide\"Shading FX",Default,,"*"
+HKR,Glide\"Shading FX","Tweak Map",,"*,0,1"
+HKR,Glide\"Shading FX","Tweak Value",,"FX_GLIDE_LWM"
+HKR,Glide\"Shading FX","Help",,"Shading effects may increase visual quality with a small lost of performance"
+
+HKR,Glide\"Video Clearing",Control,,"Combo"
+HKR,Glide\"Video Clearing",List,,"Software,Hardware"
+HKR,Glide\"Video Clearing",Value,,"1"
+HKR,Glide\"Video Clearing",Default,,"1"
+HKR,Glide\"Video Clearing","Tweak Value",,"SSTH3_VIDEO_NOCLEAR"
+HKR,Glide\"Video Clearing","Tweak Map",,"1,0"
+HKR,Glide\"Video Clearing","Help",,"Hardware or Software clearing of frame buffers"
+HKR,Glide,SSTH3_VIDEO_NOCLEAR,,"0"
+
+HKR,Glide\"Glide 24BPP",Control,,"Combo"
+HKR,Glide\"Glide 24BPP",List,,"Disable,Enable"
+HKR,Glide\"Glide 24BPP",Value,,"0"
+HKR,Glide\"Glide 24BPP",Default,,"0"
+HKR,Glide\"Glide 24BPP","Tweak Map",,"0,1"
+HKR,Glide\"Glide 24BPP","Tweak Value",,"SSTH3_VIDEO_24BPP"
+HKR,Glide\"Glide 24BPP","Help",,"Enables/Disables Glide precision at 24bit"
+HKR,Glide,SSTH3_VIDEO_24BPP,,0
+
+HKR,Glide\"Water Mark",Control,,"Combo"
+HKR,Glide\"Water Mark",List,,"Disable,Enable"
+HKR,Glide\"Water Mark",Value,,"*"
+HKR,Glide\"Water Mark",Default,,"*"
+HKR,Glide\"Water Mark","Tweak Map",,"*,1"
+HKR,Glide\"Water Mark","Tweak Value",,"FX_GLIDE_SHAMELESS_PLUG"
+HKR,Glide\"Water Mark","Help",,"Enable a small 3dfx logo in the right-lower of the screen in Glide games"
+
+HKR,Glide\"Force Voodoo Rush Emul",Control,,"Combo"
+HKR,Glide\"Force Voodoo Rush Emul",List,,"%Disable%,%Enable%"
+HKR,Glide\"Force Voodoo Rush Emul",Value,,"*"
+HKR,Glide\"Force Voodoo Rush Emul",Default,,"*"
+HKR,Glide\"Force Voodoo Rush Emul","Tweak Map",,"*,1"
+HKR,Glide\"Force Voodoo Rush Emul","Tweak Value",,"FX_GLIDE_EMUL_RUSH"
+HKR,Glide\"Force Voodoo Rush Emul","Help",,"Force Voodoo Rush emulation. May increase performance with old Glide games"
+
+HKR,Glide\%SplashScreen%,Control,,"Combo"
+HKR,Glide\%SplashScreen%,List,,"%Enable%,%Disable%"
+HKR,Glide\%SplashScreen%,Value,,"0"
+HKR,Glide\%SplashScreen%,Default,,"0"
+HKR,Glide\%SplashScreen%,"Tweak Map",,"*,1"
+HKR,Glide\%SplashScreen%,"Tweak Value",,"FX_GLIDE_NO_SPLASH"
+HKR,Glide\%SplashScreen%,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide_Splash"
+
+; Screen Capture
+HKR,Glide\%ScrCapGlideKey%,Control,,"Combo"
+HKR,Glide\%ScrCapGlideKey%,List,,"Disable,Num-Lock,Key-Pad /,Key-Pad *,Key-Pad -,F12"
+HKR,Glide\%ScrCapGlideKey%,Value,,"0"
+HKR,Glide\%ScrCapGlideKey%,Default,,"0"
+HKR,Glide\%ScrCapGlideKey%,"Tweak Value",,"FX_GLIDE_SCREENSHOT_KEY"
+HKR,Glide\%ScrCapGlideKey%,"Tweak Map",,"*,144,111,106,109,123"
+HKR,Glide\%ScrCapGlideKey%,"Help",,"Single frame Screen Capture Hot Key"
+HKR,Glide,Localisation,,"OpenGL/Glide"
+HKR,Glide,"HTML Help",,"hh ms-its:3dfx%20Voodoo5%20Help.chm::/Advanced%20Features/3dfx%20Tools%20Advanced%20Features%20Help.htm#Glide"
+
+;V-Sync for Glide
+HKR,Glide\%Vsync%,Control,,"Combo"
+HKR,Glide\%Vsync%,List,,"Disable,Enable"
+HKR,Glide\%Vsync%,Value,,"0"
+HKR,Glide\%Vsync%,Default,,"0"
+HKR,Glide\%Vsync%,"Tweak Map",,"0,1"
+HKR,Glide\%Vsync%,"Tweak Value",,"FX_GLIDE_SWAPINTERVAL"
+HKR,Glide\%Vsync%,"Help",,"Enables/Disables V-Sync on Refresh"
+HKR,Glide,FX_GLIDE_SWAPINTERVAL,,"0"
+
+HKR,Glide\"Glide Refresh Rate (Hz)",Control,,"Simple Slider"
+HKR,Glide\"Glide Refresh Rate (Hz)","Left Label",,"56 Hz"
+HKR,Glide\"Glide Refresh Rate (Hz)","Right Label",,"160 Hz"
+HKR,Glide\"Glide Refresh Rate (Hz)",Min,,56 Hz
+HKR,Glide\"Glide Refresh Rate (Hz)",Max,,160 Hz
+HKR,Glide\"Glide Refresh Rate (Hz)",Value,,"*"
+HKR,Glide\"Glide Refresh Rate (Hz)",Default,,"*"
+HKR,Glide\"Glide Refresh Rate (Hz)","Name Map",,"Default,56 Hz,57 Hz,58 Hz,59 Hz,60 Hz,61 Hz,62 Hz,63 Hz,64 Hz,65 Hz,66 Hz,67 Hz,68 Hz,69 Hz,70 Hz,71 Hz,72 Hz,73 Hz,74 Hz,75 Hz,76 Hz,77 Hz,78 Hz,79 Hz,80 Hz,81 Hz,82 Hz,83 Hz,84 Hz,85 Hz,86 Hz,87 Hz,88 Hz,89 Hz,90 Hz,91 Hz,92 Hz,93 Hz,94 Hz,95 Hz,96 Hz,97 Hz,98 Hz,99 Hz,100 Hz,101 Hz,102 Hz,103 Hz,104 Hz,105 Hz,106 Hz,107 Hz,108 Hz,109 Hz,110 Hz,111 Hz,112 Hz,113 Hz,114 Hz,115 Hz,116 Hz,117 Hz,118 Hz,119 Hz,120 Hz,121 Hz,122 Hz,123 Hz,124 Hz,125 Hz,126 Hz,127 Hz,128 Hz,129 Hz,130 Hz,131 Hz,132 Hz,133 Hz,134 Hz,135 Hz,136 Hz,137 Hz,138 Hz,139 Hz,140 Hz,141 Hz,142 Hz,143 Hz,144 Hz,145 Hz,146 Hz,147 Hz,148 Hz,149 Hz,150 Hz,151 Hz,152 Hz,153 Hz,154 Hz,155 Hz,156 Hz,157 Hz,158 Hz,159 Hz,160 Hz"
+HKR,Glide\"Glide Refresh Rate (Hz)","Tweak Value",,"FX_GLIDE_REFRESH"
+HKR,Glide\"Glide Refresh Rate (Hz)","Help",,"Select the monitor refresh you desire in Glide games"
+
+[Strings]
+Mfg="3dfx Interactive, Inc."
+IN_USE="0x00010000"
+NO_DIALOG="0x00000020"
+;No version Check (0x4) and Force in use (0x8)
+COPY_FLAG="0x0000000C"
+
+; Strings for the Advanced Tweaks Page
+;British English
+;DEFAULT
+
+PageName=3dfx Advanced Tweaks
+Automatic="Automatic"
+Sharper="Sharper"
+Smoother="Smoother"
+Enable="Enable"
+Disable="Disable"
+On="On"
+Off="Off"
+True="True"
+False="False"
+Normal="Normal"
+High="High"
+Low="Low"
+BestForPerformance="Best For performance"
+BestForQuality="Best for quality"
+Default="Default"
+Desktop="Desktop"
+D3D="Direct 3D"
+Glide="Glide"
+SplashScreen="Glide Splash Screen"
+Mipmap="MIP Map Dithering"
+TripleBuff="Triple Buffering"
+AlphaBlending="Alpha-Blending"
+VideoDisplay="3D Filter Quality"
+VideoQuality="Video Quality"
+MaxBufferedFrames="Maximum Buffered Frames"
+CompressTextures="FXT1 Texture Compression(OpenGL)"
+ZOptimization="Fast Z-Clear-Reads"
+TextureMemory="Limit Texture Memory"
+LODBias="Level Of Detail Bias"
+VideoRefreshOpt="Refresh Optimization"
+VideoDisplayHelp=""
+ValueHelp=""
+GeometryAssist="Geometry Assist"
+DepthPrecision16="Z-Depth Compression (16 Bit)"
+Vsync="V-Sync"
+Grxclock="Graphics Clock"
+Memclock="Memory Clock"
+GBC="Band Optimization"
+HSR="Select PixelFX HSR"
+ScrCapKey="Screen Capture Toggle Key"
+ScrCapLimit="Screen Capture Limit"
+ScrCapPath="Screen Capture Destination"
+ScrCapGlideKey="Screen Capture Key"
