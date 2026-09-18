@@ -31,6 +31,8 @@ MM3DFX.DRV=1
 MM3DFX16.DLL=1
 MM3DFX32.DLL=1
 ;MSVCRT.DLL=1
+GLIDE.DLL=1
+SST1INIT.DLL=1
 GLIDE2X.DLL=1
 FXOEM2X.DLL=1
 GLIDE2X.OVL=1
@@ -80,6 +82,8 @@ FXMEMMAP.VXD,,,2
 MM3DFX.DRV,,,2
 MM3DFX16.DLL,,,2
 MM3DFX32.DLL,,,2
+GLIDE.DLL,,,2
+SST1INIT.DLL,,,2
 GLIDE2X.DLL,,,2
 FXOEM2X.DLL,,,2
 GLIDE3X.DLL,,,2
@@ -99,13 +103,11 @@ FXMEMMAP.VXD,,,2
 3DFXV2.DRV,,,2
 3DFX16V2.DLL,,,2
 3DFX32V2.DLL,,,2
-GLIDE2X.DLL,,,2
 FXOEM2X.DLL,,,2
 GLIDE3X.DLL,,,2
 3dfxOGL.DLL,,,2
 3dfxspl2.dll,,,2
 3dfxspl3.dll,,,2
-SST1INIT.DLL,,,2
 MM3DFX.DRV,,,2
 MM3DFX16.DLL,,,2
 MM3DFX32.DLL,,,2
@@ -114,7 +116,6 @@ MM3DFX.VXD,,,2
 3DFXV2PS.DLL,,,2
 
 [Voodoo.DelWinFiles]
-GLIDE2X.OVL,,,2
 
 [Prev.DelReg]
 HKLM,hardware\DirectDrawDrivers\3A0CFD01-9320-11cf-AC-A1-00-A0-24-13-C2-E2
@@ -162,6 +163,4 @@ HKLM,"\SOFTWARE\Microsoft\Windows\CurrentVersion\Controls Folder\Display\shellex
 ;----------------------------------------
 [Strings]
 Mfg="3dfx Interactive, Inc."
-PCI\VEN_121A&DEV_0001.DeviceDesc="Voodoo Graphics 3D Accelerator"
-
-
+PCI\VEN_121A&DEV_0001.DeviceDesc="3Dfx SST-1 Voodoo Graphics"

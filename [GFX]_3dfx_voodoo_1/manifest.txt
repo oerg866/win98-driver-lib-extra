@@ -6,9 +6,10 @@ FileSize Typ Name
   217600 dat 3dfxps.dll
     8072 dat fxmemmap.vxd
    47104 dat fxoem2x.dll
-  216064 dat glide2x.dll
-  195815 dat glide2x.ovl
-  244224 dat glide3x.dll
+  356352 dat glide.dll
+  356352 dat glide2x.dll
+  183003 dat glide2x.ovl
+  393216 dat glide3x.dll
     5827 txt license.txt
    13088 dat mm3dfx.drv
     4384 dat mm3dfx16.dll
